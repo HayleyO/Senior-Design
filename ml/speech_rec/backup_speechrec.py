@@ -5,14 +5,31 @@ import speech_recognition as sr
 
 
 def recognize_speech_from_mic(recognizer, microphone):
-    try:
-        with microphone as source:
-            recognizer.adjust_for_ambient_noise(source)
-            audio_data = recognizer.record(source, duration=5)
+    if not isinstance(recognizer, sr.Recognizer):
+        raise TypeError("`recognizer` must be `Recognizer` instance")
 
-        response = recognizer.recognize_google(audio_data)
-    except Exception as err:
-        print("ERROR: " + err)
+    if not isinstance(microphone, sr.Microphone):
+        raise TypeError("`microphone` must be `Microphone` instance")
+
+    response = {
+        "success": True,
+        "error": None,
+        "transcription": None
+    }
+
+    with microphone as source:
+        recognizer.adjust_for_ambient_noise(source)
+        audio_data = recognizer.record(source, duration=5)
+
+    try:
+        response["transcription"] = recognizer.recognize_google(audio_data)
+    except sr.RequestError:
+        # API was unreachable or unresponsive
+        response["success"] = False
+        response["error"] = "API unavailable"
+    except sr.UnknownValueError:
+        # speech was unintelligible
+        response["error"] = "Unable to recognize speech"
     return response
 
 
@@ -23,4 +40,4 @@ if __name__ == "__main__":
     while True:
         #This does real time with some lag, but this is a good starting ground
         response = recognize_speech_from_mic(recognizer=recognizer, microphone=microphone)
-        print(response)
+        print(response["transcription"])
