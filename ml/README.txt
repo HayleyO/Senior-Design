@@ -1,7 +1,7 @@
 
 
 Model: Listen, Attend, Spell
-Dataset: TIMIT
+Dataset: TIMIT https://catalog.ldc.upenn.edu/LDC93s1
 Preprocessing: https://www.sciencedirect.com/topics/computer-science/cepstral-coefficient
 https://jonathan-hui.medium.com/speech-recognition-feature-extraction-mfcc-plp-5455f5a69dd9
 Wav -> MFC 39 
