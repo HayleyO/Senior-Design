@@ -109,21 +109,23 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Hello = void 0;
+exports.MainPage = void 0;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-var Hello = /** @class */ (function (_super) {
-    __extends(Hello, _super);
-    function Hello() {
+var MainPage = /** @class */ (function (_super) {
+    __extends(MainPage, _super);
+    function MainPage() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Hello.prototype.render = function () {
-        return (React.createElement("h1", null, "Welcome to React!!"));
+    MainPage.prototype.render = function () {
+        return (React.createElement("body", null,
+            React.createElement("div", { id: "root", style: "background-color:blue" },
+                React.createElement("img", { src: "images\\logo.jpg", alt: "heaRING logo" }))));
     };
-    return Hello;
+    return MainPage;
 }(React.Component));
-exports.Hello = Hello;
-ReactDOM.render(React.createElement(Hello, null), document.getElementById('root'));
+exports.MainPage = MainPage;
+ReactDOM.render(React.createElement(MainPage, null), document.getElementById('root'));
 
 
 /***/ }),

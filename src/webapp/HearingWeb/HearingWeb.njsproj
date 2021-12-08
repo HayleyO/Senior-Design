@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ee5ebded-8323-493b-b47c-714541bf270f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>App.tsx</StartupFile>
+    <StartupFile>server.js</StartupFile>
     <StartWebBrowser>True</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -33,6 +33,7 @@
   <ItemGroup>
     <Content Include="dist\app-bundle.js" />
     <Content Include="dist\app-bundle.js.map" />
+    <Content Include="images\logo.jpg" />
     <Content Include="server.js">
       <SubType>Code</SubType>
     </Content>
@@ -46,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dist\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

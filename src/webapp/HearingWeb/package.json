@@ -7,8 +7,8 @@
     "name": ""
   },
   "scripts": {
-    "build": "tsc --build",
-    "clean": "tsc --build --clean"
+    "clean": "tsc --build --clean",
+    "build": "webpack-cli ./app.tsx --config webpack-config.js"
   },
   "devDependencies": {
     "@types/node": "^8.0.14",
@@ -24,7 +24,8 @@
     "webpack": "~4.42.1",
     "webpack-cli": "~3.3.11"
   },
-  "scripts": {
-    "build": "webpack-cli ./app.tsx --config webpack-config.js"
+  "emmet.includeLanguages": {
+    "javascript": "jsx",
+    "typescript": "tsx"
   }
 }
