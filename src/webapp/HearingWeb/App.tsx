@@ -1,17 +1,21 @@
+import { table } from "console";
+import { Header } from "./Header";
+
 declare var require: any
 
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-export class MainPage extends React.Component {
+export class Start extends React.Component {
     render() {
         return (
-                <div id="root">
-                    <img src="images\logo.jpg" alt="heaRING logo"></img>
-                </div>
+            <div id="root">
+                <Header style={{width:"100%"}}/>
+            </div>
+                
         );
     }
 
 }
 
-ReactDOM.render(<MainPage />, document.getElementById('root'));
+ReactDOM.render(<Start/>, document.getElementById('root'));
