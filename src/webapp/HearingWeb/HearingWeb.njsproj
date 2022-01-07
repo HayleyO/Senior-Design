@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="App.tsx" />
-    <TypeScriptCompile Include="Header.tsx">
+    <TypeScriptCompile Include="components\Header.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

@@ -1,5 +1,5 @@
 import { table } from "console";
-import { Header } from "./Header";
+import { Header } from "./components/Header";
 
 declare var require: any
 

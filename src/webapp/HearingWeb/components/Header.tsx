@@ -1,5 +1,5 @@
-import { colors } from "./colors"
-import "./styles.css"
+import { colors } from "../colors"
+import "../styles.css"
 declare var require: any
 
 var React = require('react');
