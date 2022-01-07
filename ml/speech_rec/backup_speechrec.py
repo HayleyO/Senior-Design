@@ -19,7 +19,7 @@ def recognize_speech_from_mic(recognizer, microphone):
 
     with microphone as source:
         recognizer.adjust_for_ambient_noise(source)
-        audio_data = recognizer.record(source, duration=5)
+        audio_data = recognizer.listen(source)
 
     try:
         response["transcription"] = recognizer.recognize_google(audio_data)
