@@ -31,10 +31,17 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="colors.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="dist\app-bundle.js" />
     <Content Include="dist\app-bundle.js.map" />
+    <Content Include="images\hearringtransparent.png" />
     <Content Include="images\logo.jpg" />
     <Content Include="server.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="styles.css">
       <SubType>Code</SubType>
     </Content>
     <Content Include="webpack-config.js" />
@@ -44,10 +51,14 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="App.tsx" />
+    <TypeScriptCompile Include="components\Header.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dist\" />
     <Folder Include="images\" />
+    <Folder Include="components\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

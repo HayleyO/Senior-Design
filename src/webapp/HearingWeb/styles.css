@@ -1,0 +1,9 @@
+.headerTable{
+    width: 100%;
+    background-color: white;
+    table-layout:fixed;
+}
+
+.headerTab {
+    text-align:center;
+}
