@@ -54,6 +54,9 @@
     <TypeScriptCompile Include="components\Header.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="components\TextboxButtonsTTS.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dist\" />
