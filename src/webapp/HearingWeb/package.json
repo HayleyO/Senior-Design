@@ -1,0 +1,32 @@
+{
+  "name": "hearing-web",
+  "version": "0.0.0",
+  "description": "HearingWeb",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "build": "webpack-cli ./app.tsx --config webpack-config.js"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.14",
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "typescript": "^3.9.10",
+    "webpack": "^5.65.0"
+  },
+  "dependencies": {
+    "express": "~4.17.1",
+    "path": "~0.12.7",
+    "react": "~16.13.1",
+    "react-dom": "~16.13.1",
+    "ts-loader": "~7.0.1",
+    "webpack-cli": "~3.3.11"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "jsx",
+    "typescript": "tsx"
+  }
+}
