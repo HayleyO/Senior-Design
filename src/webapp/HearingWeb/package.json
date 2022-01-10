@@ -22,6 +22,7 @@
     "path": "~0.12.7",
     "react": "~16.13.1",
     "react-dom": "~16.13.1",
+    "react-router-dom": "^6.2.1",
     "ts-loader": "~7.0.1",
     "webpack-cli": "~3.3.11"
   },
