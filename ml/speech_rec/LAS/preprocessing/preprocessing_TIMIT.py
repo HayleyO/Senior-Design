@@ -110,8 +110,9 @@ def preprocess_dataset(source_path):
 	return x_inputs, y_outputs
 
 ##### PREPROCESSING #####
-train_source_path = "C:\\Users\\hayle\\OneDrive\\Documents\\School\\hearRing\\Senior-Design\\ml\\speech_rec\\LAS\\preprocessing\\data\\data\\TRAIN\\"
-test_source_path = "C:\\Users\\hayle\\OneDrive\\Documents\\School\\hearRing\\Senior-Design\\ml\\speech_rec\\LAS\\preprocessing\\data\\data\\TEST\\"
+
+train_source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data\\data\\TRAIN\\")
+test_source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data\\data\\TEST\\")
 print('Preprocessing training data...')
 X_train_all, y_train_all = preprocess_dataset(train_source_path)
 print('Preprocessing testing data...')
@@ -153,7 +154,7 @@ X_train = set_type(X_train, data_type)
 X_val 	= set_type(X_val, data_type)
 X_test 	= set_type(X_test, data_type)
 
-target_path = "C:\\Users\\hayle\\OneDrive\\Documents\\School\\hearRing\\Senior-Design\\ml\\speech_rec\\LAS\\preprocessing\\preprocessed_data\\processed_data"
+target_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "preprocessed_data\\processed_data")
 print()
 print('Saving data to ',target_path)
 with open(target_path + '.pkl', 'wb') as cPickle_file:
