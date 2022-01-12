@@ -340,3 +340,10 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Ignore the TIMIT dataset (Way too big for git)
+ml/speech_rec/LAS/preprocessing/data/
+ml/speech_rec/LAS/preprocessing/preprocessed_data/
+
+# default Mac file
+**/.DS_Store
