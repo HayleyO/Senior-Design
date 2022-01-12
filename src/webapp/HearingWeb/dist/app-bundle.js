@@ -30534,7 +30534,9 @@ exports.App = void 0;
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 __webpack_require__(/*! ./styles.css */ "./styles.css");
 var Home_1 = __webpack_require__(/*! ./navigation/Home */ "./navigation/Home.tsx");
-var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var About_1 = __webpack_require__(/*! ./navigation/About */ "./navigation/About.tsx");
+var HowToConnect_1 = __webpack_require__(/*! ./navigation/HowToConnect */ "./navigation/HowToConnect.tsx");
+var Settings_1 = __webpack_require__(/*! ./navigation/Settings */ "./navigation/Settings.tsx");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var App = /** @class */ (function (_super) {
@@ -30546,7 +30548,10 @@ var App = /** @class */ (function (_super) {
         return (React.createElement("div", null,
             React.createElement(react_router_dom_1.HashRouter, null,
                 React.createElement(react_router_dom_1.Routes, null,
-                    React.createElement(react_router_dom_1.Route, { path: "/", element: React.createElement(Home_1.default, null) })))));
+                    React.createElement(react_router_dom_1.Route, { path: "/", element: React.createElement(Home_1.default, null) }),
+                    React.createElement(react_router_dom_1.Route, { path: "/about", element: React.createElement(About_1.default, null) }),
+                    React.createElement(react_router_dom_1.Route, { path: "/howtoconnect", element: React.createElement(HowToConnect_1.default, null) }),
+                    React.createElement(react_router_dom_1.Route, { path: "/settings", element: React.createElement(Settings_1.default, null) })))));
     };
     return App;
 }(React.Component));
@@ -30560,53 +30565,53 @@ ReactDOM.render(React.createElement(App, null), document.getElementById('root'))
 /*!*******************************!*\
   !*** ./components/Header.tsx ***!
   \*******************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Header = void 0;
 var colors_1 = __webpack_require__(/*! ../colors */ "./colors.js");
 __webpack_require__(/*! ../styles.css */ "./styles.css");
-__webpack_require__(/*! ../navigation/Navigation */ "./navigation/Navigation.tsx");
 var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var react_router_1 = __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var Header = /** @class */ (function (_super) {
-    __extends(Header, _super);
-    function Header() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Header.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement("table", { className: "headerTable" },
-                React.createElement("tr", null,
-                    React.createElement("td", null),
-                    React.createElement("td", null,
-                        React.createElement("img", { src: "images\\hearringtransparent.png", alt: "heaRING logo", style: { width: "200" } })),
-                    React.createElement("td", null, "The Hearing Bracelet")),
-                React.createElement("tr", { style: { height: "40" } },
-                    React.createElement("td", { onClick: function () { return "navigate('/', {replace = true})"; }, className: "headerTab", style: { backgroundColor: colors_1.colors.headertab1 } }),
-                    React.createElement("td", { className: "headerTab", style: { backgroundColor: colors_1.colors.headertab2 } }, "Settings"),
-                    React.createElement("td", { className: "headerTab", style: { backgroundColor: colors_1.colors.headertab3 } }, "How To Connect"),
-                    React.createElement("td", { className: "headerTab", style: { backgroundColor: colors_1.colors.headertab4 } }, "About")))));
-    };
-    return Header;
-}(React.Component));
+var Header = function () {
+    var navigate = (0, react_router_1.useNavigate)();
+    return (React.createElement("div", null,
+        React.createElement("table", { className: "headerTable" },
+            React.createElement("tr", null,
+                React.createElement("td", null),
+                React.createElement("td", null,
+                    React.createElement("img", { src: "images\\hearringtransparent.png", alt: "heaRING logo", style: { width: "200" } })),
+                React.createElement("td", null, "The Hearing Bracelet")),
+            React.createElement("tr", { style: { height: "40" } },
+                React.createElement("td", { onClick: function () { return navigate('/', { replace: true }); }, className: "headerTab", style: { backgroundColor: colors_1.colors.headertab1 } }, "Home"),
+                React.createElement("td", { onClick: function () { return navigate('/settings', { replace: true }); }, className: "headerTab", style: { backgroundColor: colors_1.colors.headertab2 } }, "Settings"),
+                React.createElement("td", { onClick: function () { return navigate('/howtoconnect', { replace: true }); }, className: "headerTab", style: { backgroundColor: colors_1.colors.headertab3 } }, "How To Connect"),
+                React.createElement("td", { onClick: function () { return navigate('/about', { replace: true }); }, className: "headerTab", style: { backgroundColor: colors_1.colors.headertab4 } }, "About")))));
+};
 exports.Header = Header;
+
+
+/***/ }),
+
+/***/ "./navigation/About.tsx":
+/*!******************************!*\
+  !*** ./navigation/About.tsx ***!
+  \******************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
+__webpack_require__(/*! ../styles.css */ "./styles.css");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function About() {
+    return (React.createElement("div", null,
+        React.createElement(Header_1.Header, { style: { width: "100%" } }),
+        React.createElement("div", null, "about page")));
+}
+exports["default"] = About;
 
 
 /***/ }),
@@ -30619,13 +30624,9 @@ exports.Header = Header;
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-//import { table } from "console";
 var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
-//import { Routes, Route, Router, BrowserRouter } from "react-router-dom";
 __webpack_require__(/*! ../styles.css */ "./styles.css");
-var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 function Home() {
     return (React.createElement(Header_1.Header, { style: { width: "100%" } }));
 }
@@ -30634,53 +30635,44 @@ exports["default"] = Home;
 
 /***/ }),
 
-/***/ "./navigation/Navigation.tsx":
-/*!***********************************!*\
-  !*** ./navigation/Navigation.tsx ***!
-  \***********************************/
+/***/ "./navigation/HowToConnect.tsx":
+/*!*************************************!*\
+  !*** ./navigation/HowToConnect.tsx ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.headerTabOnClick = void 0;
-var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-var Pages_1 = __webpack_require__(/*! ./Pages */ "./navigation/Pages.tsx");
-function headerTabOnClick(event, page) {
-    var navigate = (0, react_router_dom_1.useNavigate)();
-    switch (page) {
-        case Pages_1.Pages.home:
-            navigate('/');
-            break;
-        case Pages_1.Pages.about:
-            break;
-        case Pages_1.Pages.how_to:
-            break;
-        case Pages_1.Pages.settings:
-            break;
-    }
-    event.stopPropagation();
+var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
+__webpack_require__(/*! ../styles.css */ "./styles.css");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function HowToConnect() {
+    return (React.createElement("div", null,
+        React.createElement(Header_1.Header, { style: { width: "100%" } }),
+        React.createElement("div", null, "how to connect")));
 }
-exports.headerTabOnClick = headerTabOnClick;
+exports["default"] = HowToConnect;
 
 
 /***/ }),
 
-/***/ "./navigation/Pages.tsx":
-/*!******************************!*\
-  !*** ./navigation/Pages.tsx ***!
-  \******************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ "./navigation/Settings.tsx":
+/*!*********************************!*\
+  !*** ./navigation/Settings.tsx ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Pages = void 0;
-var Pages;
-(function (Pages) {
-    Pages[Pages["home"] = 0] = "home";
-    Pages[Pages["about"] = 1] = "about";
-    Pages[Pages["settings"] = 2] = "settings";
-    Pages[Pages["how_to"] = 3] = "how_to";
-})(Pages = exports.Pages || (exports.Pages = {}));
+var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
+__webpack_require__(/*! ../styles.css */ "./styles.css");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function Settings() {
+    return (React.createElement("div", null,
+        React.createElement(Header_1.Header, { style: { width: "100%" } }),
+        React.createElement("div", null, "settings")));
+}
+exports["default"] = Settings;
 
 
 /***/ }),

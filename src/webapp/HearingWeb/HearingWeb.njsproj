@@ -58,13 +58,16 @@
     <TypeScriptCompile Include="components\HeaderTab.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="navigation\About.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="navigation\Home.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="navigation\Navigation.tsx">
+    <TypeScriptCompile Include="navigation\HowToConnect.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="navigation\Pages.tsx">
+    <TypeScriptCompile Include="navigation\Settings.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
