@@ -38,6 +38,7 @@
     <Content Include="dist\app-bundle.js.map" />
     <Content Include="images\hearringtransparent.png" />
     <Content Include="images\logo.jpg" />
+    <Content Include="index.html" />
     <Content Include="server.js">
       <SubType>Code</SubType>
     </Content>

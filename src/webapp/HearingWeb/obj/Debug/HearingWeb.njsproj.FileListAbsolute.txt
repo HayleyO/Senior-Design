@@ -1,1 +1,2 @@
 C:\Users\hanna\source\repos\Senior-Design\src\webapp\HearingWeb\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\hanna\source\repos\Senior-Design\src\webapp\HearingWeb\obj\Debug\HearingWeb.njsprojAssemblyReference.cache
