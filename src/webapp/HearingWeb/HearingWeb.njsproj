@@ -64,6 +64,11 @@
     <TypeScriptCompile Include="navigation\Home.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="navigation\HowToConnectLinux.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectIOS.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectMac.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectAndroid.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectWindows.tsx" />
     <TypeScriptCompile Include="navigation\HowToConnect.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
