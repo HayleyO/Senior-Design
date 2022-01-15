@@ -40,7 +40,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:large;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}", "",{"version":3,"sources":["webpack://./styles.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,uBAAuB;IACvB,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,UAAU;IACV,eAAe;AACnB;;AAEA;IACI,sBAAsB;IACtB,2BAA2B;IAC3B,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,OAAO;IACP,MAAM;AACV","sourcesContent":[".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:large;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader{\r\n    text-align: left;\r\n    font-size:large;\r\n}\r\n\r\n.button{\r\n    font-size:medium;\r\n    border:none;\r\n    margin:10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}", "",{"version":3,"sources":["webpack://./styles.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,uBAAuB;IACvB,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,UAAU;IACV,iBAAiB;AACrB;;AAEA;IACI,sBAAsB;IACtB,2BAA2B;IAC3B,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,OAAO;IACP,MAAM;AACV;;AAEA;IACI,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,WAAW;IACX,0BAA0B;IAC1B,4BAA4B;AAChC","sourcesContent":[".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader{\r\n    text-align: left;\r\n    font-size:large;\r\n}\r\n\r\n.button{\r\n    font-size:medium;\r\n    border:none;\r\n    margin:10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30657,52 +30657,35 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_router_1 = __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js");
 var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
 __webpack_require__(/*! ../styles.css */ "./styles.css");
+var colors_js_1 = __webpack_require__(/*! ../colors.js */ "./colors.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 function HowToConnect() {
     var navigate = (0, react_router_1.useNavigate)();
-    return (React.createElement("div", null,
+    return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab1 } },
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
         React.createElement("div", { className: "pageHeader" }, "How To Connect"),
-        React.createElement("label", null, "What is your operating system?"),
-        React.createElement("table", null,
+        React.createElement("div", { style: { width: "100%", height: "10" } }),
+        React.createElement("div", { style: { width: "100%", textAlign: "center" } }, "What is your operating system?"),
+        React.createElement("table", { style: { tableLayout: "fixed", width: "100%" } },
             React.createElement("tr", null,
+                React.createElement("td", null),
                 React.createElement("td", null,
-                    React.createElement("button", { onClick: function () { return navigate("/howtoconnect/windows"); } }, "Windows")),
-                React.createElement("td", null,
-                    React.createElement("button", { onClick: function () { return navigate("/howtoconnect/mac"); } }, "MacOS")),
-                React.createElement("td", null,
-                    React.createElement("button", { onClick: function () { return navigate("/howtoconnect/linux"); } }, "Linux")),
-                React.createElement("td", null,
-                    React.createElement("button", { onClick: function () { return navigate("/howtoconnect/ios"); } }, "iOS")),
-                React.createElement("td", null,
-                    React.createElement("button", { onClick: function () { return navigate("/howtoconnect/android"); } }, "Android"))))));
+                    React.createElement("table", null,
+                        React.createElement("tr", null,
+                            React.createElement("td", null,
+                                React.createElement("button", { className: "button", onClick: function () { return navigate("/howtoconnect/windows"); } }, "Windows")),
+                            React.createElement("td", null,
+                                React.createElement("button", { className: "button", onClick: function () { return navigate("/howtoconnect/mac"); } }, "MacOS")),
+                            React.createElement("td", null,
+                                React.createElement("button", { className: "button", onClick: function () { return navigate("/howtoconnect/linux"); } }, "Linux")),
+                            React.createElement("td", null,
+                                React.createElement("button", { className: "button", onClick: function () { return navigate("/howtoconnect/ios"); } }, "iOS")),
+                            React.createElement("td", null,
+                                React.createElement("button", { className: "button", onClick: function () { return navigate("/howtoconnect/android"); } }, "Android"))))),
+                React.createElement("td", null)))));
 }
 exports["default"] = HowToConnect;
-function OSOnClick(osType) {
-    switch (osType) {
-        case OS.Windows:
-            break;
-        case OS.Mac:
-            break;
-        case OS.Linux:
-            break;
-        case OS.iOS:
-            break;
-        case OS.Android:
-            break;
-        default:
-            break;
-    }
-}
-var OS;
-(function (OS) {
-    OS[OS["Windows"] = 0] = "Windows";
-    OS[OS["Mac"] = 1] = "Mac";
-    OS[OS["Linux"] = 2] = "Linux";
-    OS[OS["iOS"] = 3] = "iOS";
-    OS[OS["Android"] = 4] = "Android";
-})(OS || (OS = {}));
 
 
 /***/ }),
@@ -30718,14 +30701,16 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_router_1 = __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js");
 var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
 __webpack_require__(/*! ../styles.css */ "./styles.css");
+var colors_js_1 = __webpack_require__(/*! ../colors.js */ "./colors.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 function HowToConnectAndroid() {
     var navigate = (0, react_router_1.useNavigate)();
-    return (React.createElement("div", null,
+    return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab1 } },
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
-        React.createElement("div", { className: "pageHeader" }, "Windows"),
-        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back")));
+        React.createElement("div", { className: "pageHeader" }, "Android"),
+        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back"),
+        React.createElement("div", { className: "pagePanel" })));
 }
 exports["default"] = HowToConnectAndroid;
 
@@ -30743,14 +30728,16 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_router_1 = __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js");
 var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
 __webpack_require__(/*! ../styles.css */ "./styles.css");
+var colors_js_1 = __webpack_require__(/*! ../colors.js */ "./colors.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 function HowToConnectIOS() {
     var navigate = (0, react_router_1.useNavigate)();
-    return (React.createElement("div", null,
+    return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab1 } },
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
         React.createElement("div", { className: "pageHeader" }, "iOS"),
-        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back")));
+        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back"),
+        React.createElement("div", { className: "pagePanel" })));
 }
 exports["default"] = HowToConnectIOS;
 
@@ -30776,9 +30763,8 @@ function HowToConnectLinux() {
     return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab1 } },
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
         React.createElement("div", { className: "pageHeader" }, "Linux"),
-        React.createElement("div", null,
-            React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back")),
-        React.createElement("div", { className: "pagePanel" }, "hello hello hello hello helloLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae lorem non odio euismod tincidunt. Mauris varius pellentesque tellus mattis auctor. In nec orci quis ipsum pulvinar rutrum in id tortor. Ut commodo tincidunt justo et vehicula. Mauris eget tortor sit amet turpis varius semper auctor a quam. Proin vitae ultricies ante, nec fermentum elit. Sed pretium a est non suscipit. Nullam gravida risus a tellus malesuada, vel luctus elit vestibulum. Cras ut sapien enim. Donec euismod cursus pellentesque. Quisque maximus facilisis euismod. Sed neque ex, dignissim non sem vitae, feugiat volutpat lorem. Morbi consequat arcu scelerisque quam consectetur vulputate. Maecenas suscipit vestibulum ante, eget auctor nisi. Etiam non mauris a turpis facilisis pellentesque. Nunc luctus turpis risus, id accumsan lectus condimentum id. Nam dapibus vehicula diam, in venenatis leo tristique ac. Cras pharetra congue gravida. Ut nec facilisis ex, sollicitudin sodales sem. Quisque commodo hendrerit nisi, sit amet mollis nulla porta vel. Quisque imperdiet massa vel eleifend egestas. In scelerisque mattis pharetra. Ut in ipsum at tortor blandit rhoncus. Sed sit amet odio ultricies, dignissim erat a, aliquet nulla. Vivamus nec velit lacus. Nam a erat vitae lectus lobortis condimentum. Donec sed nulla eget quam consectetur cursus at et turpis. Vivamus nec est id nisl iaculis fermentum. Donec rhoncus lacinia enim et luctus. Vestibulum iaculis lorem non ligula vulputate, quis vulputate ligula luctus. Phasellus est tortor, aliquet quis molestie fringilla, iaculis vel dui. Donec at leo lorem. Sed cursus interdum eros sed semper. Suspendisse rhoncus aliquam ligula, eget dictum lectus. In facilisis sed mauris non pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam placerat ex leo, non lobortis nisl mattis in. Cras euismod magna sapien, in dictum nisl ornare et. Mauris a consectetur diam. Praesent bibendum viverra commodo. Nam ullamcorper felis ante, a bibendum libero ornare et. Nunc sed felis vel sapien aliquam elementum. Mauris ullamcorper purus id ullamcorper euismod. Quisque tempor elementum rhoncus. Nullam id sodales tellus. In fermentum, justo eu malesuada posuere, arcu enim venenatis justo, sit amet finibus risus erat laoreet ex. Mauris sollicitudin lectus arcu, iaculis imperdiet velit sollicitudin a. Mauris sed auctor dolor, in placerat lorem. Curabitur ante lectus, dignissim eget auctor nec, fringilla quis odio. Nulla eu odio vehicula, euismod ante eget, sollicitudin ex. Suspendisse potenti. Praesent et fringilla ligula. Etiam dui justo, rutrum fringilla dui ut, suscipit commodo urna. Duis ac neque eu velit tincidunt sollicitudin id vitae nibh. Sed eu sagittis dolor. Vivamus dapibus posuere convallis. Aliquam dignissim, nunc at sollicitudin vestibulum, erat quam semper ex, sed dictum lacus nibh sed erat. Morbi et accumsan metus. Nunc eros erat, maximus dignissim iaculis vitae, iaculis ut ligula. Suspendisse nec lectus tristique, euismod neque id, ultrices urna. Fusce nec orci commodo nunc iaculis volutpat. Pellentesque vel condimentum risus, volutpat tincidunt urna. Duis quis lectus id enim lacinia pulvinar. Sed ultricies semper lectus accumsan cursus. Ut ut eros in lectus bibendum congue. Nam et arcu pulvinar, ornare odio convallis, semper sapien. this is dummy text")));
+        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back"),
+        React.createElement("div", { className: "pagePanel" })));
 }
 exports["default"] = HowToConnectLinux;
 
@@ -30796,14 +30782,16 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_router_1 = __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js");
 var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
 __webpack_require__(/*! ../styles.css */ "./styles.css");
+var colors_js_1 = __webpack_require__(/*! ../colors.js */ "./colors.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 function HowToConnectMac() {
     var navigate = (0, react_router_1.useNavigate)();
-    return (React.createElement("div", null,
+    return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab1 } },
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
         React.createElement("div", { className: "pageHeader" }, "Mac"),
-        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back")));
+        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back"),
+        React.createElement("div", { className: "pagePanel" })));
 }
 exports["default"] = HowToConnectMac;
 
@@ -30821,14 +30809,30 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_router_1 = __webpack_require__(/*! react-router */ "./node_modules/react-router/index.js");
 var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
 __webpack_require__(/*! ../styles.css */ "./styles.css");
+var colors_js_1 = __webpack_require__(/*! ../colors.js */ "./colors.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 function HowToConnectWindows() {
     var navigate = (0, react_router_1.useNavigate)();
-    return (React.createElement("div", null,
+    return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab1 } },
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
         React.createElement("div", { className: "pageHeader" }, "Windows"),
-        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back")));
+        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back"),
+        React.createElement("div", { className: "pagePanel" },
+            React.createElement("p", { className: "subHeader" }, "Connect to the hearRING device on your computer"),
+            React.createElement("p", { style: { padding: "10, 10, 0, 0" } },
+                "Locate the \"Settings\" application on your computer. You should be able to search for it on the left side of your taskbar. ",
+                React.createElement("br", null),
+                "Select the \"Devices\" option and click on \"Bluetooth and other devices\".",
+                React.createElement("br", null),
+                "Click \"Add Bluetooth or other device\".",
+                React.createElement("br", null),
+                "If prompted to choose a type of device, select bluetooth.",
+                React.createElement("br", null),
+                "Find the hearRING bracelet on the list.",
+                React.createElement("br", null),
+                "Select the hearRING bracelet, and you should be connected!",
+                React.createElement("br", null)))));
 }
 exports["default"] = HowToConnectWindows;
 
