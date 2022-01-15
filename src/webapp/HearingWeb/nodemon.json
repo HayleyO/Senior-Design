@@ -1,7 +1,8 @@
 {
     "verbose": true,
     "ignore": [],
-    "watch": ["src/**/*.ts"],
+    "watch": [".", "components/*", "images/*", "navigation/*"],
+    "ext": "tsx,json,js,css",
     "execMap": {
       "ts": "node --inspect=0.0.0.0:9229 --nolazy -r ts-node/register"
     }
