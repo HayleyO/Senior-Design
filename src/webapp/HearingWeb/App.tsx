@@ -9,6 +9,8 @@ import HowToConnectLinux from "./navigation/HowToConnectLinux";
 import HowToConnectIOS from "./navigation/HowToConnectIOS";
 import HowToConnectAndroid from "./navigation/HowToConnectAndroid";
 import Settings from "./navigation/Settings";
+import { TextboxButtonsTTS } from "./components/TextboxButtonsTTS";
+
 
 declare var require: any
 var React = require('react');
@@ -32,6 +34,7 @@ export class App extends React.Component {
                         <Route path="/howtoconnect/android" element={<HowToConnectAndroid />} />
                     </Routes>
                 </HashRouter>
+                <TextboxButtonsTTS />
             </div>
         );
     }
