@@ -30542,6 +30542,7 @@ var HowToConnectLinux_1 = __webpack_require__(/*! ./navigation/HowToConnectLinux
 var HowToConnectIOS_1 = __webpack_require__(/*! ./navigation/HowToConnectIOS */ "./navigation/HowToConnectIOS.tsx");
 var HowToConnectAndroid_1 = __webpack_require__(/*! ./navigation/HowToConnectAndroid */ "./navigation/HowToConnectAndroid.tsx");
 var Settings_1 = __webpack_require__(/*! ./navigation/Settings */ "./navigation/Settings.tsx");
+var TextboxButtonsTTS_1 = __webpack_require__(/*! ./components/TextboxButtonsTTS */ "./components/TextboxButtonsTTS.tsx");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var App = /** @class */ (function (_super) {
@@ -30562,7 +30563,8 @@ var App = /** @class */ (function (_super) {
                     React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/mac", element: React.createElement(HowToConnectMac_1.default, null) }),
                     React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/linux", element: React.createElement(HowToConnectLinux_1.default, null) }),
                     React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/ios", element: React.createElement(HowToConnectIOS_1.default, null) }),
-                    React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/android", element: React.createElement(HowToConnectAndroid_1.default, null) })))));
+                    React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/android", element: React.createElement(HowToConnectAndroid_1.default, null) }))),
+            React.createElement(TextboxButtonsTTS_1.TextboxButtonsTTS, null)));
     };
     return App;
 }(React.Component));
@@ -30602,6 +30604,112 @@ var Header = function () {
                 React.createElement("td", { onClick: function () { return navigate('/about', { replace: true }); }, className: "headerTab", style: { backgroundColor: colors_1.colors.headertab4 } }, "About")))));
 };
 exports.Header = Header;
+
+
+/***/ }),
+
+/***/ "./components/TextboxButtonsTTS.tsx":
+/*!******************************************!*\
+  !*** ./components/TextboxButtonsTTS.tsx ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.TextboxButtonsTTS = void 0;
+__webpack_require__(/*! ../styles.css */ "./styles.css");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var tts = new SpeechSynthesisUtterance();
+tts.lang = "en";
+tts.volume = 0.5;
+function Speech() {
+    tts.text = document.getElementById("texthere").value;
+    window.speechSynthesis.speak(tts);
+}
+function Volume() {
+    tts.volume = document.getElementById("volslider").value;
+}
+function Pitch() {
+    tts.pitch = document.getElementById("pitchslider").value;
+}
+function Rate() {
+    tts.rate = document.getElementById("rateslider").value;
+}
+function SetVoiceList() {
+    if (typeof speechSynthesis === 'undefined') {
+        return;
+    }
+    var voiceBox = document.getElementById("voice");
+    var voices = speechSynthesis.getVoices();
+    if (voiceBox.length > voices.length) {
+        var tmp, L = voiceBox.length - 1;
+        for (tmp = L; tmp >= 0; tmp--) {
+            voiceBox.remove(tmp);
+        }
+    }
+    else if (voiceBox.length == voices.length) {
+        return;
+    }
+    for (var i = 0; i < voices.length; i++) {
+        var option = document.createElement('option');
+        option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+        if (voices[i].default) {
+            option.textContent += ' --DEFAULT';
+        }
+        option.setAttribute('data-lang', voices[i].lang);
+        option.setAttribute('data-name', voices[i].name);
+        document.getElementById("voice").appendChild(option);
+    }
+}
+function voiceUpdate(voice) {
+    var voices = speechSynthesis.getVoices();
+    var voiceBox = document.getElementById("voice");
+    for (var i = 0; i < voices.length; i++) {
+        var check = voices[i].name + " (" + voices[i].lang + ")";
+        if (voiceBox.value == check) {
+            tts.voice = voices[i];
+            return;
+        }
+    }
+}
+var TextboxButtonsTTS = /** @class */ (function (_super) {
+    __extends(TextboxButtonsTTS, _super);
+    function TextboxButtonsTTS() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TextboxButtonsTTS.prototype.render = function () {
+        return (React.createElement("body", { onpageshow: "SetVoiceList" },
+            React.createElement("textarea", { rows: "10", cols: "60", name: "textbox", id: "texthere" }),
+            React.createElement("p", null),
+            React.createElement("button", { id: "speak", onClick: Speech }, "Press to convert text to speech"),
+            React.createElement("p", null, "Volume"),
+            React.createElement("input", { id: "volslider", type: "range", defaultValue: "0.5", min: "0", max: "1", step: "0.1", onInput: Volume }),
+            React.createElement("p", null, "Pitch"),
+            React.createElement("input", { id: "pitchslider", type: "range", defaultValue: "1", min: "0", max: "2", step: "1", onInput: Pitch }),
+            React.createElement("p", null, "Rate"),
+            React.createElement("input", { id: "rateslider", type: "range", defaultValue: "1", min: "0.1", max: "3", step: "0.1", onInput: Rate }),
+            React.createElement("p", null, "Voice"),
+            React.createElement("select", { id: "voice", onClick: SetVoiceList, onChange: voiceUpdate })));
+    };
+    return TextboxButtonsTTS;
+}(React.Component));
+exports.TextboxButtonsTTS = TextboxButtonsTTS;
 
 
 /***/ }),
