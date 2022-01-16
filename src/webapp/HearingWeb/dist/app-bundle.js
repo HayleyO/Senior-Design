@@ -30606,6 +30606,49 @@ exports.Header = Header;
 
 /***/ }),
 
+/***/ "./components/SpeechToTextOutput.tsx":
+/*!*******************************************!*\
+  !*** ./components/SpeechToTextOutput.tsx ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.SpeechToTextOutput = void 0;
+__webpack_require__(/*! ../styles.css */ "./styles.css");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var SpeechToTextOutput = /** @class */ (function (_super) {
+    __extends(SpeechToTextOutput, _super);
+    function SpeechToTextOutput() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SpeechToTextOutput.prototype.render = function () {
+        return (React.createElement("body", null,
+            React.createElement("textarea", { rows: "10", cols: "60", name: "textbox", id: "texthere" })));
+    };
+    return SpeechToTextOutput;
+}(React.Component));
+exports.SpeechToTextOutput = SpeechToTextOutput;
+
+
+/***/ }),
+
 /***/ "./components/TextboxButtonsTTS.tsx":
 /*!******************************************!*\
   !*** ./components/TextboxButtonsTTS.tsx ***!
@@ -30630,7 +30673,6 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.TextboxButtonsTTS = void 0;
-var colors_1 = __webpack_require__(/*! ../colors */ "./colors.js");
 __webpack_require__(/*! ../styles.css */ "./styles.css");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
@@ -30697,11 +30739,12 @@ var TextboxButtonsTTS = /** @class */ (function (_super) {
             React.createElement("textarea", { rows: "10", cols: "60", name: "textbox", id: "texthere" }),
             React.createElement("p", null),
             React.createElement("button", { id: "speak", onClick: Speech }, "Press to convert text to speech"),
-            React.createElement("table", null,
+            React.createElement("p", null),
+            React.createElement("table", { style: { marginLeft: "auto", marginRight: "auto" } },
                 React.createElement("tr", null,
                     React.createElement("td", null,
                         React.createElement("p", null, "Volume"),
-                        React.createElement("input", { id: "volslider", type: "range", defaultValue: "0.5", min: "0", max: "1", step: "0.1", onInput: Volume, style: { color: colors_1.colors.headertab4, backgroundColor: "white" } })),
+                        React.createElement("input", { id: "volslider", type: "range", defaultValue: "0.5", min: "0", max: "1", step: "0.1", onInput: Volume })),
                     React.createElement("td", null,
                         React.createElement("p", null, "Pitch"),
                         React.createElement("input", { id: "pitchslider", type: "range", defaultValue: "1", min: "0", max: "2", step: "1", onInput: Pitch })),
@@ -30751,11 +30794,19 @@ var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Hea
 __webpack_require__(/*! ../styles.css */ "./styles.css");
 var colors_js_1 = __webpack_require__(/*! ../colors.js */ "./colors.js");
 var TextboxButtonsTTS_1 = __webpack_require__(/*! ../components/TextboxButtonsTTS */ "./components/TextboxButtonsTTS.tsx");
+var SpeechToTextOutput_1 = __webpack_require__(/*! ../components/SpeechToTextOutput */ "./components/SpeechToTextOutput.tsx");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function Home() {
     return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab1 } },
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
-        React.createElement(TextboxButtonsTTS_1.TextboxButtonsTTS, null)));
+        React.createElement("table", { style: { tableLayout: "fixed", width: "100%", marginTop: "15" } },
+            React.createElement("tr", null,
+                React.createElement("td", { style: { width: "50%", verticalAlign: "top", textAlign: "center" } },
+                    React.createElement("label", { className: "pageHeader" }, "Speech To Text"),
+                    React.createElement(SpeechToTextOutput_1.SpeechToTextOutput, null)),
+                React.createElement("td", { style: { width: "50%", verticalAlign: "middle", textAlign: "center" } },
+                    React.createElement("label", { className: "pageHeader" }, "Text To Speech"),
+                    React.createElement(TextboxButtonsTTS_1.TextboxButtonsTTS, null))))));
 }
 exports["default"] = Home;
 
