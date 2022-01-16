@@ -40,7 +40,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader{\r\n    text-align: left;\r\n    font-size:large;\r\n}\r\n\r\n.button{\r\n    font-size:medium;\r\n    border:none;\r\n    margin:10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}", "",{"version":3,"sources":["webpack://./styles.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,uBAAuB;IACvB,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,UAAU;IACV,iBAAiB;AACrB;;AAEA;IACI,sBAAsB;IACtB,2BAA2B;IAC3B,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,OAAO;IACP,MAAM;AACV;;AAEA;IACI,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,WAAW;IACX,0BAA0B;IAC1B,4BAA4B;AAChC","sourcesContent":[".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader{\r\n    text-align: left;\r\n    font-size:large;\r\n}\r\n\r\n.button{\r\n    font-size:medium;\r\n    border:none;\r\n    margin:10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader{\r\n    text-align: left;\r\n    font-size:large;\r\n}\r\n\r\n.button{\r\n    font-size:medium;\r\n    border:none;\r\n    margin:10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}\r\n", "",{"version":3,"sources":["webpack://./styles.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,uBAAuB;IACvB,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,UAAU;IACV,iBAAiB;AACrB;;AAEA;IACI,sBAAsB;IACtB,2BAA2B;IAC3B,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,OAAO;IACP,MAAM;AACV;;AAEA;IACI,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,WAAW;IACX,0BAA0B;IAC1B,4BAA4B;AAChC","sourcesContent":[".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader{\r\n    text-align: left;\r\n    font-size:large;\r\n}\r\n\r\n.button{\r\n    font-size:medium;\r\n    border:none;\r\n    margin:10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30542,7 +30542,6 @@ var HowToConnectLinux_1 = __webpack_require__(/*! ./navigation/HowToConnectLinux
 var HowToConnectIOS_1 = __webpack_require__(/*! ./navigation/HowToConnectIOS */ "./navigation/HowToConnectIOS.tsx");
 var HowToConnectAndroid_1 = __webpack_require__(/*! ./navigation/HowToConnectAndroid */ "./navigation/HowToConnectAndroid.tsx");
 var Settings_1 = __webpack_require__(/*! ./navigation/Settings */ "./navigation/Settings.tsx");
-var TextboxButtonsTTS_1 = __webpack_require__(/*! ./components/TextboxButtonsTTS */ "./components/TextboxButtonsTTS.tsx");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var App = /** @class */ (function (_super) {
@@ -30563,8 +30562,7 @@ var App = /** @class */ (function (_super) {
                     React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/mac", element: React.createElement(HowToConnectMac_1.default, null) }),
                     React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/linux", element: React.createElement(HowToConnectLinux_1.default, null) }),
                     React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/ios", element: React.createElement(HowToConnectIOS_1.default, null) }),
-                    React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/android", element: React.createElement(HowToConnectAndroid_1.default, null) }))),
-            React.createElement(TextboxButtonsTTS_1.TextboxButtonsTTS, null)));
+                    React.createElement(react_router_dom_1.Route, { path: "/howtoconnect/android", element: React.createElement(HowToConnectAndroid_1.default, null) })))));
     };
     return App;
 }(React.Component));
@@ -30632,6 +30630,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.TextboxButtonsTTS = void 0;
+var colors_1 = __webpack_require__(/*! ../colors */ "./colors.js");
 __webpack_require__(/*! ../styles.css */ "./styles.css");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
@@ -30698,12 +30697,17 @@ var TextboxButtonsTTS = /** @class */ (function (_super) {
             React.createElement("textarea", { rows: "10", cols: "60", name: "textbox", id: "texthere" }),
             React.createElement("p", null),
             React.createElement("button", { id: "speak", onClick: Speech }, "Press to convert text to speech"),
-            React.createElement("p", null, "Volume"),
-            React.createElement("input", { id: "volslider", type: "range", defaultValue: "0.5", min: "0", max: "1", step: "0.1", onInput: Volume }),
-            React.createElement("p", null, "Pitch"),
-            React.createElement("input", { id: "pitchslider", type: "range", defaultValue: "1", min: "0", max: "2", step: "1", onInput: Pitch }),
-            React.createElement("p", null, "Rate"),
-            React.createElement("input", { id: "rateslider", type: "range", defaultValue: "1", min: "0.1", max: "3", step: "0.1", onInput: Rate }),
+            React.createElement("table", null,
+                React.createElement("tr", null,
+                    React.createElement("td", null,
+                        React.createElement("p", null, "Volume"),
+                        React.createElement("input", { id: "volslider", type: "range", defaultValue: "0.5", min: "0", max: "1", step: "0.1", onInput: Volume, style: { color: colors_1.colors.headertab4, backgroundColor: "white" } })),
+                    React.createElement("td", null,
+                        React.createElement("p", null, "Pitch"),
+                        React.createElement("input", { id: "pitchslider", type: "range", defaultValue: "1", min: "0", max: "2", step: "1", onInput: Pitch })),
+                    React.createElement("td", null,
+                        React.createElement("p", null, "Rate"),
+                        React.createElement("input", { id: "rateslider", type: "range", defaultValue: "1", min: "0.1", max: "3", step: "0.1", onInput: Rate })))),
             React.createElement("p", null, "Voice"),
             React.createElement("select", { id: "voice", onClick: SetVoiceList, onChange: voiceUpdate })));
     };
@@ -30745,9 +30749,13 @@ exports["default"] = About;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var Header_1 = __webpack_require__(/*! ../components/Header */ "./components/Header.tsx");
 __webpack_require__(/*! ../styles.css */ "./styles.css");
+var colors_js_1 = __webpack_require__(/*! ../colors.js */ "./colors.js");
+var TextboxButtonsTTS_1 = __webpack_require__(/*! ../components/TextboxButtonsTTS */ "./components/TextboxButtonsTTS.tsx");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function Home() {
-    return (React.createElement(Header_1.Header, { style: { width: "100%" } }));
+    return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab1 } },
+        React.createElement(Header_1.Header, { style: { width: "100%" } }),
+        React.createElement(TextboxButtonsTTS_1.TextboxButtonsTTS, null)));
 }
 exports["default"] = Home;
 
