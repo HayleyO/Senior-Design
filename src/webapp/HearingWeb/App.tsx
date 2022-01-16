@@ -3,6 +3,11 @@ import "./styles.css"
 import Home from "./navigation/Home";
 import About from "./navigation/About";
 import HowToConnect from "./navigation/HowToConnect";
+import HowToConnectWindows from "./navigation/HowToConnectWindows";
+import HowToConnectMac from "./navigation/HowToConnectMac";
+import HowToConnectLinux from "./navigation/HowToConnectLinux";
+import HowToConnectIOS from "./navigation/HowToConnectIOS";
+import HowToConnectAndroid from "./navigation/HowToConnectAndroid";
 import Settings from "./navigation/Settings";
 import { TextboxButtonsTTS } from "./components/TextboxButtonsTTS";
 
@@ -21,6 +26,12 @@ export class App extends React.Component {
                         <Route path="/about" element={<About />} />
                         <Route path="/howtoconnect" element={<HowToConnect />} />
                         <Route path="/settings" element={<Settings />} />
+                        <Route path="/howtoconnect" element={<HowToConnect />} />
+                        <Route path="/howtoconnect/windows" element={<HowToConnectWindows />} />
+                        <Route path="/howtoconnect/mac" element={<HowToConnectMac />} />
+                        <Route path="/howtoconnect/linux" element={<HowToConnectLinux />} />
+                        <Route path="/howtoconnect/ios" element={<HowToConnectIOS />} />
+                        <Route path="/howtoconnect/android" element={<HowToConnectAndroid />} />
                     </Routes>
                 </HashRouter>
                 <TextboxButtonsTTS />
