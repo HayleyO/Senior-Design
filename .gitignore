@@ -347,3 +347,6 @@ ml/speech_rec/LAS/preprocessing/preprocessed_data/
 
 # default Mac file
 **/.DS_Store
+
+## distribution build does not need to be in git
+dist/
