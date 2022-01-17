@@ -55,7 +55,7 @@
     <TypeScriptCompile Include="components\Header.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="components\HeaderTab.tsx">
+    <TypeScriptCompile Include="components\SpeechToTextOutput.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="navigation\About.tsx">
