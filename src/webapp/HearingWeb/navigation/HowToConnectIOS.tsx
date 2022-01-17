@@ -14,7 +14,7 @@ function HowToConnectIOS() {
         <div className="pageBackground" style={{backgroundColor:colors.headertab3}}>
             <Header style={{ width: "100%" }} />
             <div className="pageHeader">iOS</div>
-            <button onClick={() => navigate('/howtoconnect', { replace: true })}>Back</button>
+            <button className="buttonSmall" onClick={() => navigate('/howtoconnect', { replace: true })}>Back</button>
             <div className="pagePanel"/>
         </div>
     );
