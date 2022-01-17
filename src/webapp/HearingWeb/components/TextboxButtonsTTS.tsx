@@ -26,7 +26,7 @@ function Rate() {
     tts.rate = (document.getElementById("rateslider") as HTMLInputElement).value as unknown as number;
 }
 
-function SetVoiceList() {
+export function SetVoiceList() {
     if (typeof speechSynthesis === 'undefined') {
         return;
     }
@@ -72,30 +72,32 @@ function voiceUpdate(voice) {
 export class TextboxButtonsTTS extends React.Component {
     render() {
         return (
-            <body onpageshow="SetVoiceList">
+            <body onPageShow="SetVoiceList">
                 <textarea rows="10" cols="60" name="textbox" id="texthere"></textarea>
                 <p/>
-                <button id="speak" onClick={Speech}>
+                <button className="button" id="speak" onClick={() => Speech()}>
                     Press to convert text to speech
                 </button>
                 <p/>
-                <table style={{marginLeft:"auto", marginRight:"auto"}}>
+                <table style={{ marginLeft: "auto", marginRight: "auto" }}>
+                    <tbody>
                 <tr>
                     <td>
-                        <p>Volume</p>
+                        <p className="bodyText">Volume</p>
                         <input id="volslider" type="range" defaultValue="0.5" min="0" max="1" step="0.1" onInput={Volume} />
                     </td>
                     <td>
-                        <p>Pitch</p>
+                            <p className="bodyText">Pitch</p>
                         <input id="pitchslider" type="range" defaultValue="1" min="0" max="2" step="1" onInput={Pitch} />
                     </td>
                     <td>
-                        <p>Rate</p>
+                        <p className="bodyText">Rate</p>
                         <input id="rateslider" type="range" defaultValue="1" min="0.1" max="3" step="0.1" onInput={Rate}/> 
                     </td>
-                </tr>
+                        </tr>
+                        </tbody>
                 </table>
-                <p>Voice</p>
+                <p className="bodyText">Voice</p>
                 <select id="voice" onClick={SetVoiceList} onChange={voiceUpdate} />
             </body>
         );

@@ -10,7 +10,7 @@ export class SpeechToTextOutput extends React.Component {
     render() {
         return (
             <body>
-                <textarea rows="10" cols="60" name="textbox" id="texthere" />
+                <textarea rows="10" cols="60" />
             </body>
             )
     }

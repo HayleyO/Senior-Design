@@ -39,8 +39,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Dosis:regular,bold,italic&subset=latin,latin-ext);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Montserrat:wgt@500,regular,bold,italic&subset=latin,latin-ext);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n    border:none;\r\n    border-bottom:none;\r\n    border-collapse:collapse;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n    margin-top:25px;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader{\r\n    text-align: left;\r\n    font-size:large;\r\n}\r\n\r\n.button{\r\n    font-size:medium;\r\n    border:none;\r\n    margin:10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}\r\n", "",{"version":3,"sources":["webpack://./styles.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,uBAAuB;IACvB,kBAAkB;IAClB,WAAW;IACX,kBAAkB;IAClB,wBAAwB;AAC5B;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,UAAU;IACV,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,sBAAsB;IACtB,2BAA2B;IAC3B,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,OAAO;IACP,MAAM;AACV;;AAEA;IACI,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,WAAW;IACX,0BAA0B;IAC1B,4BAA4B;AAChC","sourcesContent":[".headerTable{\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout:fixed;\r\n    border:none;\r\n    border-bottom:none;\r\n    border-collapse:collapse;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n    margin-top:25px;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader{\r\n    text-align: left;\r\n    font-size:large;\r\n}\r\n\r\n.button{\r\n    font-size:medium;\r\n    border:none;\r\n    margin:10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".headerTable {\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout: fixed;\r\n    border: none;\r\n    border-bottom: none;\r\n    border-collapse: collapse;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n    font-family: 'Montserrat';\r\n    font-weight:bold;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n    margin-top:25px;\r\n    font-family:'Montserrat';\r\n    font-weight:bold;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader {\r\n    text-align: left;\r\n    font-size: large;\r\n    font-family: 'Montserrat';\r\n    font-style:italic;\r\n    font-weight:500;\r\n}\r\n\r\n.bodyText {\r\n    font-family: 'Montserrat';\r\n    font-size:small;\r\n}\r\n\r\n.button {\r\n    font-size: medium;\r\n    font-family: 'Montserrat';\r\n    border: none;\r\n    margin: 10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}\r\n\r\n.buttonSmall {\r\n    font-size: small;\r\n    font-family: 'Montserrat';\r\n    border: none;\r\n    margin: 10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}\r\n\r\n.applyFont{\r\n    font-family:'Montserrat';\r\n}", "",{"version":3,"sources":["webpack://./styles.css"],"names":[],"mappings":"AAGA;IACI,WAAW;IACX,uBAAuB;IACvB,mBAAmB;IACnB,YAAY;IACZ,mBAAmB;IACnB,yBAAyB;AAC7B;;AAEA;IACI,iBAAiB;IACjB,yBAAyB;IACzB,gBAAgB;AACpB;;AAEA;IACI,iBAAiB;IACjB,UAAU;IACV,iBAAiB;IACjB,eAAe;IACf,wBAAwB;IACxB,gBAAgB;AACpB;;AAEA;IACI,sBAAsB;IACtB,2BAA2B;IAC3B,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,OAAO;IACP,MAAM;AACV;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,yBAAyB;IACzB,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,yBAAyB;IACzB,eAAe;AACnB;;AAEA;IACI,iBAAiB;IACjB,yBAAyB;IACzB,YAAY;IACZ,2BAA2B;IAC3B,4BAA4B;AAChC;;AAEA;IACI,gBAAgB;IAChB,yBAAyB;IACzB,YAAY;IACZ,2BAA2B;IAC3B,4BAA4B;AAChC;;AAEA;IACI,wBAAwB;AAC5B","sourcesContent":["@import url('https://fonts.googleapis.com/css?family=Dosis:regular,bold,italic&subset=latin,latin-ext');\r\n@import url('https://fonts.googleapis.com/css?family=Montserrat:wgt@500,regular,bold,italic&subset=latin,latin-ext');\r\n\r\n.headerTable {\r\n    width: 100%;\r\n    background-color: white;\r\n    table-layout: fixed;\r\n    border: none;\r\n    border-bottom: none;\r\n    border-collapse: collapse;\r\n}\r\n\r\n.headerTab {\r\n    text-align:center;\r\n    font-family: 'Montserrat';\r\n    font-weight:bold;\r\n}\r\n\r\n.pageHeader{\r\n    text-align:center;\r\n    width:100%;\r\n    font-size:x-large;\r\n    margin-top:25px;\r\n    font-family:'Montserrat';\r\n    font-weight:bold;\r\n}\r\n\r\n.pagePanel{\r\n    background-color:white;\r\n    margin: 10px 10px 10px 10px;\r\n    width: 100%;\r\n    min-height:100px;\r\n}\r\n\r\n.pageBackground {\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n\r\n.subHeader {\r\n    text-align: left;\r\n    font-size: large;\r\n    font-family: 'Montserrat';\r\n    font-style:italic;\r\n    font-weight:500;\r\n}\r\n\r\n.bodyText {\r\n    font-family: 'Montserrat';\r\n    font-size:small;\r\n}\r\n\r\n.button {\r\n    font-size: medium;\r\n    font-family: 'Montserrat';\r\n    border: none;\r\n    margin: 10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}\r\n\r\n.buttonSmall {\r\n    font-size: small;\r\n    font-family: 'Montserrat';\r\n    border: none;\r\n    margin: 10px 10px 10px 10px;\r\n    padding: 10px 15px 10px 15px;\r\n}\r\n\r\n.applyFont{\r\n    font-family:'Montserrat';\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30594,7 +30596,7 @@ var Header = function () {
                 React.createElement("td", null),
                 React.createElement("td", null,
                     React.createElement("img", { src: "images\\hearringtransparent.png", alt: "heaRING logo", style: { width: "200" } })),
-                React.createElement("td", null, "The Hearing Bracelet")),
+                React.createElement("td", { className: "applyFont" }, "The Hearing Bracelet")),
             React.createElement("tr", { style: { height: "40" } },
                 React.createElement("td", { onClick: function () { return navigate('/', { replace: true }); }, className: "headerTab", style: { backgroundColor: colors_1.colors.headertab1 } }, "Home"),
                 React.createElement("td", { onClick: function () { return navigate('/settings', { replace: true }); }, className: "headerTab", style: { backgroundColor: colors_1.colors.headertab2 } }, "Settings"),
@@ -30640,7 +30642,7 @@ var SpeechToTextOutput = /** @class */ (function (_super) {
     }
     SpeechToTextOutput.prototype.render = function () {
         return (React.createElement("body", null,
-            React.createElement("textarea", { rows: "10", cols: "60", name: "textbox", id: "texthere" })));
+            React.createElement("textarea", { rows: "10", cols: "60" })));
     };
     return SpeechToTextOutput;
 }(React.Component));
@@ -30672,7 +30674,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.TextboxButtonsTTS = void 0;
+exports.TextboxButtonsTTS = exports.SetVoiceList = void 0;
 __webpack_require__(/*! ../styles.css */ "./styles.css");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
@@ -30718,6 +30720,7 @@ function SetVoiceList() {
         document.getElementById("voice").appendChild(option);
     }
 }
+exports.SetVoiceList = SetVoiceList;
 function voiceUpdate(voice) {
     var voices = speechSynthesis.getVoices();
     var voiceBox = document.getElementById("voice");
@@ -30735,23 +30738,24 @@ var TextboxButtonsTTS = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TextboxButtonsTTS.prototype.render = function () {
-        return (React.createElement("body", { onpageshow: "SetVoiceList" },
+        return (React.createElement("body", { onPageShow: "SetVoiceList" },
             React.createElement("textarea", { rows: "10", cols: "60", name: "textbox", id: "texthere" }),
             React.createElement("p", null),
-            React.createElement("button", { id: "speak", onClick: Speech }, "Press to convert text to speech"),
+            React.createElement("button", { className: "button", id: "speak", onClick: function () { return Speech(); } }, "Press to convert text to speech"),
             React.createElement("p", null),
             React.createElement("table", { style: { marginLeft: "auto", marginRight: "auto" } },
-                React.createElement("tr", null,
-                    React.createElement("td", null,
-                        React.createElement("p", null, "Volume"),
-                        React.createElement("input", { id: "volslider", type: "range", defaultValue: "0.5", min: "0", max: "1", step: "0.1", onInput: Volume })),
-                    React.createElement("td", null,
-                        React.createElement("p", null, "Pitch"),
-                        React.createElement("input", { id: "pitchslider", type: "range", defaultValue: "1", min: "0", max: "2", step: "1", onInput: Pitch })),
-                    React.createElement("td", null,
-                        React.createElement("p", null, "Rate"),
-                        React.createElement("input", { id: "rateslider", type: "range", defaultValue: "1", min: "0.1", max: "3", step: "0.1", onInput: Rate })))),
-            React.createElement("p", null, "Voice"),
+                React.createElement("tbody", null,
+                    React.createElement("tr", null,
+                        React.createElement("td", null,
+                            React.createElement("p", { className: "bodyText" }, "Volume"),
+                            React.createElement("input", { id: "volslider", type: "range", defaultValue: "0.5", min: "0", max: "1", step: "0.1", onInput: Volume })),
+                        React.createElement("td", null,
+                            React.createElement("p", { className: "bodyText" }, "Pitch"),
+                            React.createElement("input", { id: "pitchslider", type: "range", defaultValue: "1", min: "0", max: "2", step: "1", onInput: Pitch })),
+                        React.createElement("td", null,
+                            React.createElement("p", { className: "bodyText" }, "Rate"),
+                            React.createElement("input", { id: "rateslider", type: "range", defaultValue: "1", min: "0.1", max: "3", step: "0.1", onInput: Rate }))))),
+            React.createElement("p", { className: "bodyText" }, "Voice"),
             React.createElement("select", { id: "voice", onClick: SetVoiceList, onChange: voiceUpdate })));
     };
     return TextboxButtonsTTS;
@@ -30801,13 +30805,14 @@ function Home() {
     return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab1 } },
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
         React.createElement("table", { style: { tableLayout: "fixed", width: "100%", marginTop: "15" } },
-            React.createElement("tr", null,
-                React.createElement("td", { style: { width: "50%", verticalAlign: "top", textAlign: "center" } },
-                    React.createElement("label", { className: "pageHeader" }, "Speech To Text"),
-                    React.createElement(SpeechToTextOutput_1.SpeechToTextOutput, null)),
-                React.createElement("td", { style: { width: "50%", verticalAlign: "middle", textAlign: "center" } },
-                    React.createElement("label", { className: "pageHeader" }, "Text To Speech"),
-                    React.createElement(TextboxButtonsTTS_1.TextboxButtonsTTS, null))))));
+            React.createElement("tbody", null,
+                React.createElement("tr", null,
+                    React.createElement("td", { style: { width: "50%", verticalAlign: "top", textAlign: "center" } },
+                        React.createElement("label", { className: "pageHeader" }, "Speech To Text"),
+                        React.createElement(SpeechToTextOutput_1.SpeechToTextOutput, null)),
+                    React.createElement("td", { style: { width: "50%", verticalAlign: "middle", textAlign: "center" } },
+                        React.createElement("label", { className: "pageHeader" }, "Text To Speech"),
+                        React.createElement(TextboxButtonsTTS_1.TextboxButtonsTTS, null)))))));
 }
 exports["default"] = Home;
 
@@ -30834,7 +30839,7 @@ function HowToConnect() {
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
         React.createElement("div", { className: "pageHeader" }, "How To Connect"),
         React.createElement("div", { style: { width: "100%", height: "10" } }),
-        React.createElement("div", { style: { width: "100%", textAlign: "center" } }, "What is your operating system?"),
+        React.createElement("div", { className: "applyFont", style: { width: "100%", textAlign: "center" } }, "What is your operating system?"),
         React.createElement("table", { style: { tableLayout: "fixed", width: "100%" } },
             React.createElement("tr", null,
                 React.createElement("td", null),
@@ -30931,7 +30936,7 @@ function HowToConnectLinux() {
     return (React.createElement("div", { className: "pageBackground", style: { backgroundColor: colors_js_1.colors.headertab3 } },
         React.createElement(Header_1.Header, { style: { width: "100%" } }),
         React.createElement("div", { className: "pageHeader" }, "Linux"),
-        React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back"),
+        React.createElement("button", { className: "buttonSmall", onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back"),
         React.createElement("div", { className: "pagePanel" })));
 }
 exports["default"] = HowToConnectLinux;
@@ -30988,7 +30993,7 @@ function HowToConnectWindows() {
         React.createElement("button", { onClick: function () { return navigate('/howtoconnect', { replace: true }); } }, "Back"),
         React.createElement("div", { className: "pagePanel" },
             React.createElement("p", { className: "subHeader" }, "Connect to the hearRING device on your computer"),
-            React.createElement("p", { style: { padding: "10, 10, 0, 0" } },
+            React.createElement("p", { className: "bodyText" },
                 "Locate the \"Settings\" application on your computer. You should be able to search for it on the left side of your taskbar. ",
                 React.createElement("br", null),
                 "Select the \"Devices\" option and click on \"Bluetooth and other devices\".",
