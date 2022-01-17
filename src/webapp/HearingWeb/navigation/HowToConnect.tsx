@@ -14,7 +14,7 @@ function HowToConnect() {
             <Header style={{ width: "100%" }} />
             <div className="pageHeader">How To Connect</div>
             <div style={{width:"100%", height:"10"}}/>
-            <div style={{ width: "100%", textAlign: "center" }}>What is your operating system?</div>
+            <div className="applyFont" style={{ width: "100%", textAlign: "center" }}>What is your operating system?</div>
             <table style={{tableLayout:"fixed", width:"100%"}}>
                 <tr>
                     <td />

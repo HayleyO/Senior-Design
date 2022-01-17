@@ -11,7 +11,8 @@ function Home() {
     return (
         <div className="pageBackground" style={{ backgroundColor: colors.headertab1}}>
             <Header style={{ width: "100%" }} />
-            <table style={{ tableLayout: "fixed", width: "100%", marginTop:"15"}}>
+            <table style={{ tableLayout: "fixed", width: "100%", marginTop: "15" }}>
+            <tbody>
                 <tr>
                     <td style={{ width: "50%", verticalAlign: "top", textAlign: "center" }}>
                         <label className="pageHeader">Speech To Text</label>
@@ -22,6 +23,7 @@ function Home() {
                         <TextboxButtonsTTS />
                     </td>
                 </tr>
+            </tbody>
             </table>
             </div>
     );
