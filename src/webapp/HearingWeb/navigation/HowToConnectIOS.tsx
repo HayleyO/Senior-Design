@@ -11,7 +11,7 @@ var ReactDOM = require('react-dom');
 function HowToConnectIOS() {
     const navigate = useNavigate();
     return (
-        <div className="pageBackground" style={{backgroundColor:colors.headertab1}}>
+        <div className="pageBackground" style={{backgroundColor:colors.headertab3}}>
             <Header style={{ width: "100%" }} />
             <div className="pageHeader">iOS</div>
             <button onClick={() => navigate('/howtoconnect', { replace: true })}>Back</button>

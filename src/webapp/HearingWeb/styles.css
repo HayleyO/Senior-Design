@@ -2,6 +2,9 @@
     width: 100%;
     background-color: white;
     table-layout:fixed;
+    border:none;
+    border-bottom:none;
+    border-collapse:collapse;
 }
 
 .headerTab {
@@ -12,6 +15,7 @@
     text-align:center;
     width:100%;
     font-size:x-large;
+    margin-top:25px;
 }
 
 .pagePanel{
