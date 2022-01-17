@@ -10,7 +10,7 @@ var ReactDOM = require('react-dom');
 function HowToConnect() {
     const navigate = useNavigate();
     return (
-        <div className="pageBackground" style = {{ backgroundColor: colors.headertab1 }}>
+        <div className="pageBackground" style = {{ backgroundColor: colors.headertab3 }}>
             <Header style={{ width: "100%" }} />
             <div className="pageHeader">How To Connect</div>
             <div style={{width:"100%", height:"10"}}/>

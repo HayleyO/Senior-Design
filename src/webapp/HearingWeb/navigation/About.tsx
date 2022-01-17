@@ -1,15 +1,16 @@
 import { Header } from "../components/Header";
 import "../styles.css"
+import { colors } from "../colors.js"
 
 declare var require: any
 var React = require('react');
 
 function About() {
     return (
-        <div>
+        <div className="pageBackground" style={{ backgroundColor: colors.headertab4 }}>
             <Header style={{ width: "100%" }} />
-            <div>about page</div>
-    </div>);
+            <div className="pageHeader">About hearRING</div>
+        </div>);
 }
 
 export default About;
