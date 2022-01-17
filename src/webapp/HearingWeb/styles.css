@@ -1,10 +1,10 @@
-.headerTable{
+.headerTable {
     width: 100%;
     background-color: white;
-    table-layout:fixed;
-    border:none;
-    border-bottom:none;
-    border-collapse:collapse;
+    table-layout: fixed;
+    border: none;
+    border-bottom: none;
+    border-collapse: collapse;
 }
 
 .headerTab {
