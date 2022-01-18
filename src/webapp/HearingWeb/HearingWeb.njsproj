@@ -38,6 +38,7 @@
     <Content Include="dist\app-bundle.js.map" />
     <Content Include="images\hearringtransparent.png" />
     <Content Include="images\logo.jpg" />
+    <Content Include="index.html" />
     <Content Include="server.js">
       <SubType>Code</SubType>
     </Content>
@@ -54,11 +55,35 @@
     <TypeScriptCompile Include="components\Header.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="components\SpeechToTextOutput.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="navigation\About.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="navigation\Home.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="navigation\HowToConnectLinux.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectIOS.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectMac.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectAndroid.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectWindows.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnect.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="navigation\Settings.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="components\TextboxButtonsTTS.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dist\" />
     <Folder Include="images\" />
     <Folder Include="components\" />
+    <Folder Include="navigation\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

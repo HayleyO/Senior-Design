@@ -1,13 +1,14 @@
 import { colors } from "../colors"
 import "../styles.css"
+import React from "react"
+import { useNavigate } from "react-router"
+
 declare var require: any
-
 var React = require('react');
-var ReactDOM = require('react-dom');
 
-export class Header extends React.Component {
-    render(){
-        return (
+export const Header = () => {
+    const navigate = useNavigate();
+    return (
             <div>
                 <table className="headerTable">
                     <tr>
@@ -15,15 +16,16 @@ export class Header extends React.Component {
                         <td >
                             <img src="images\hearringtransparent.png" alt="heaRING logo" style={{ width: "200"}}></img>
                         </td>
-                        <td>The Hearing Bracelet</td>
+                        <td className="applyFont">The Hearing Bracelet</td>
                     </tr>
-                    <tr style={{height: "40"}}>
-                        <td className="headerTab" style={{ backgroundColor: colors.headertab1 }}>Home</td>
-                        <td className="headerTab" style={{ backgroundColor: colors.headertab2 }}>Settings</td>
-                        <td className="headerTab" style={{ backgroundColor: colors.headertab3 }}>How To Connect</td>
-                        <td className="headerTab" style={{ backgroundColor: colors.headertab4 }}>About</td>
+                    <tr style={{ height: "40" }}>
+                        <td onClick={() => navigate('/', {replace: true})} className="headerTab" style={{ backgroundColor: colors.headertab1 }}>Home</td>
+                        <td onClick={() => navigate('/settings', { replace: true })} className="headerTab" style={{ backgroundColor: colors.headertab2 }}>Settings</td>
+                        <td onClick={() => navigate('/howtoconnect', { replace: true })} className="headerTab" style={{ backgroundColor: colors.headertab3 }}>How To Connect</td>
+                        <td onClick={() => navigate('/about', {replace:true})} className="headerTab" style={{ backgroundColor: colors.headertab4 }}>About</td>
                     </tr>
                 </table>
-            </div>);    
-    }
+                </div>
+       );    
+
 }
