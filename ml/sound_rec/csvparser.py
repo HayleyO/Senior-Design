@@ -1,14 +1,34 @@
-import pandas as pd
+import csv
+from random import random
 
-readPath = "../../../ESC50.csv"
+def readCSV(path):
+    csvlines = []
+    with open(path, mode='r') as infile:
+        csvFile = csv.reader(infile)
+        for line in csvFile:
+            csvlines.append(line)
+    return csvlines
 
-inputDF = pd.read_csv(readPath)
-
-#currentFile = open("../../../audio/audio/" + inputDF["filename"][0], "rb")
-#sound = currentFile.read()
+def generateRandomBiases(layerNodes, outfile):
+    biasMatrix = []
+    for i in range(layerNodes):
+        biasMatrix.append([random()])
     
-for i in range(len(inputDF["filename"])):
-    currentFile = open("../../../audio/audio/" + inputDF["filename"][i], "rb")
-    sound = currentFile.read()
-    #here, we need to be ready to process the information
-    currentFile.close()
+    with open(outfile, "w") as OUT:
+        csvwriter = csv.writer(OUT)
+        csvwriter.writerows(biasMatrix)
+    return biasMatrix
+
+def generateRandomWeights(length, height, outfile):
+    weightsMatrix = []
+    for i in range(length):
+        row = []
+        for j in range(height):
+            row.append(random())
+        weightsMatrix.append(row)
+        
+    with open(outfile, "w") as OUT:
+        csvwriter = csv.writer(OUT)
+        csvwriter.writerows(weightsMatrix)
+    return weightsMatrix
+        
