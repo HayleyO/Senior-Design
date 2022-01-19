@@ -350,3 +350,6 @@ ml/speech_rec/LAS/preprocessing/preprocessed_data/
 
 ## distribution build does not need to be in git
 dist/
+
+#data preprocessing 
+*.csv
