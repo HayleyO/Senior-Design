@@ -12,7 +12,7 @@ function About() {
             <Header style={{ width: "100%" }} />
             <div className="scrollableBody" style={{ width: "100%", textAlign: "center" }}>
                 <div className="pageHeader">About the Bracelet</div>
-                <div>
+                <div className="bodyText">
                     <p>Compatible with any Bluetooth-enabled device.</p>
                     <p>Customizable bands with a myriad of color selections.</p>
                     <table style={{ margin: "auto", width:"40%"}}>
@@ -40,7 +40,7 @@ function About() {
                     <p>Specs: blah blah blah placeholder add this later</p>
                 </div>
                 <div className="pageHeader">About Us</div>
-                <div>
+                <div className="bodyText">
                     <p>We're a group of six Computer Science seniors at Louisiana Tech University.</p>
                     <p>Hayley Owens is awesome, cool, and has worked at NASA. She intends to work in the field of artificial intelligence and will definitely succeed because she's ambitious and deeply motivated.</p>
                     <p>Hannah Folkertsma is awesome, cool, and has worked at IBM. She is an amazing frontend developer with a passion for web design and making things look pretty.</p>
