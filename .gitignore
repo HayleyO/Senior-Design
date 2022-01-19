@@ -345,6 +345,12 @@ healthchecksdb
 ml/speech_rec/LAS/preprocessing/data/
 ml/speech_rec/LAS/preprocessing/preprocessed_data/
 
+# Ignore the ESC-50 Dataset (also too big for git)
+ml/sound_rec/data
+
+# Ignore testing file for SVM Classifier
+ml/sound_rec/SVM/testrun.py
+
 # default Mac file
 **/.DS_Store
 
