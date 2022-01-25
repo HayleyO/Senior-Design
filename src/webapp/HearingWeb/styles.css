@@ -1,9 +1,82 @@
-.headerTable{
+@import url('https://fonts.googleapis.com/css?family=Montserrat:wgt@500,regular,bold,italic&subset=latin,latin-ext');
+
+.headerTable {
     width: 100%;
     background-color: white;
-    table-layout:fixed;
+    table-layout: fixed;
+    border: none;
+    border-bottom: none;
+    border-collapse: collapse;
 }
 
 .headerTab {
     text-align:center;
+    font-family: 'Montserrat';
+    font-weight:bold;
+}
+
+.pageHeader{
+    text-align:center;
+    width:100%;
+    font-size:x-large;
+    margin-top:25px;
+    font-family:'Montserrat';
+    font-weight:bold;
+}
+
+.pagePanel{
+    background-color:white;
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+    min-height:100px;
+}
+
+.pageBackground {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    left: 0;
+    top: 0; 
+}
+
+.scrollableBody {
+    overflow: scroll;
+}
+
+.subHeader {
+    text-align: left;
+    font-size: large;
+    font-family: 'Montserrat';
+    font-style:italic;
+    font-weight:500;
+}
+
+.bodyText {
+    font-family: 'Montserrat';
+    font-size:small;
+}
+
+.button {
+    font-size: medium;
+    font-family: 'Montserrat';
+    border: none;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 15px 10px 15px;
+}
+
+.buttonSmall {
+    font-size: small;
+    font-family: 'Montserrat';
+    border: none;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 15px 10px 15px;
+}
+
+.applyFont{
+    font-family:'Montserrat';
+}
+.bands{
+    height: 150px;
+    width: 30px;
+    margin: auto;
 }
