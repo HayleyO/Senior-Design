@@ -1,9 +1,4 @@
 import torch.nn as nn
-from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
-
-
-
-#Data now needs to be padded and one hot encoded
 
 class pBLSTMLayer(nn.Module):
     def __init__(self, input_feature_dim, hidden_dim, rnn_unit='LSTM',dropout_rate=0.0):
