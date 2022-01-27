@@ -30,13 +30,16 @@ class Speller(nn.Module):
         raw_pred = self.softmax(self.mlp(concat_feature))
         return raw_pred, hidden_state, context, attention_score
 
-    def forward(self, encouder_output):
+    def forward(self, encouder_output, ground_truth=None):
 
         batch_size = encouder_output.size()[0] # Because the batch size is the included in the x format
         output_word = CreateOnehotVariable(self.float_type(np.zeros((batch_size,1))),self.label_dim)
         rnn_input = torch.cat([output_word,encouder_output[:,0:1,:]],dim=-1)
 
-        max_step = self.max_label_len
+        if (ground_truth is None):
+            max_step = self.max_label_len
+        else:
+            max_step = ground_truth.size()[1]
 
         hidden_state = None
         raw_pred_seq = []
