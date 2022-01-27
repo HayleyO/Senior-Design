@@ -1,11 +1,11 @@
 import torch.nn as nn
 
 class pBLSTMLayer(nn.Module):
-    def __init__(self, input_feature_dim, hidden_dim, dropout_rate=0.0):
+    def __init__(self, input_feature_dim, hidden_dim):
         super(pBLSTMLayer, self).__init__()
 
         #Because we'll be reducing the time dimensions by 2, we'll need to increase feature dimensions by two
-        self.BLSTM =  nn.LSTM(input_feature_dim*2, hidden_dim,1, bidirectional=True, dropout=dropout_rate, batch_first=True)
+        self.BLSTM =  nn.LSTM(input_feature_dim*2, hidden_dim,1, bidirectional=True, batch_first=True)
     
     # Input shape should be [# of sample, timestep, features]
     def forward(self, input_x):
@@ -19,7 +19,7 @@ class pBLSTMLayer(nn.Module):
         return output, hidden
 
 class Listener(nn.Module):
-    def __init__(self, input_feature_dim=39, listener_hidden_dim=256, BLSTM_layers=3, dropout_rate=0.0, **kwargs):
+    def __init__(self, input_feature_dim=39, listener_hidden_dim=256, BLSTM_layers=3, **kwargs):
         super(Listener, self).__init__()
         """
         input_feature_dim: 39 (because of mfcc 39) [#num of sample, timestep, features]                     
@@ -31,10 +31,10 @@ class Listener(nn.Module):
         
         #List of listeners
         pBLSTM = []
-        pBLSTM.append(pBLSTMLayer(input_feature_dim,listener_hidden_dim, dropout_rate=dropout_rate))
+        pBLSTM.append(pBLSTMLayer(input_feature_dim,listener_hidden_dim))
 
         for i in range(1, self.BLSTM_layers):
-            pBLSTM.append(pBLSTMLayer(listener_hidden_dim*2,listener_hidden_dim, dropout_rate=dropout_rate))
+            pBLSTM.append(pBLSTMLayer(listener_hidden_dim*2,listener_hidden_dim))
 
     def forward(self,input_x):
         output, _  = self.pBLSTM[0](input_x)
