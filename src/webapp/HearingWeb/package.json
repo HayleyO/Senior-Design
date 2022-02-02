@@ -3,30 +3,33 @@
   "homepage": ".",
   "version": "0.0.0",
   "description": "HearingWeb",
-  "main": "server.js",
+  "main": "./server.js",
   "author": {
     "name": ""
   },
   "scripts": {
     "clean": "tsc --build --clean",
-    "build": "webpack-cli ./app.tsx --config webpack-config.js"
+    "build": "webpack-cli ./app.tsx --config webpack-config.js",
+    "dev": "webpack serve ./app.tsx --config webpack-config.js"
   },
   "devDependencies": {
     "@types/node": "^8.0.14",
     "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "path": "^0.12.7",
     "style-loader": "^3.3.1",
     "typescript": "^4.5.4",
-    "webpack": "^5.65.0"
+    "webpack": "^5.68.0",
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
     "express": "~4.17.1",
-    "path": "~0.12.7",
     "react": "~16.13.1",
     "react-dom": "~16.13.1",
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "ts-loader": "~7.0.1",
-    "webpack-cli": "~3.3.11"
+    "webpack-cli": "^4.9.2"
   },
   "emmet.includeLanguages": {
     "javascript": "jsx",

@@ -1,0 +1,22 @@
+ web:
+    container_name: web
+    build: .
+    env_file: .env
+    volumes:
+      - .:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    command: npm start
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "1337:1337"
+
+  webpack:
+    container_name: webpack
+    build: ./webpack/
+    depends_on:
+      - web
+    volumes_from:
+      - web
+    working_dir: /usr/src/app
+    command: webpack --watch

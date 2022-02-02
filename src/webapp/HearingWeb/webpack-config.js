@@ -1,3 +1,5 @@
+const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
+
 module.exports = {
     devtool: 'source-map',
     entry: "./app.tsx",
@@ -6,7 +8,8 @@ module.exports = {
         filename: "./app-bundle.js"
     },
     resolve: {
-        extensions: ['.Webpack.js', '.web.js', '.ts', '.js', '.jsx', '.tsx']
+        extensions: ['.Webpack.js', '.web.js', '.ts', '.js', '.jsx', '.tsx'],
+        modules: ['node_modules']
     },
     module: {
         rules: [
@@ -22,5 +25,9 @@ module.exports = {
                     use: ["style-loader", "css-loader"]
             }
         ]
-    }
+    },
+    devServer: {
+        static: "./dist"
+    },
+
 }
