@@ -16,15 +16,17 @@ function HowToConnectWindows() {
             <div className="pageHeader">Windows</div>
             <button className="buttonSmall" onClick={() => navigate('/howtoconnect', { replace: true })}>Back</button>
             <div className="pagePanel" >
+                <div>
                 <p className="subHeader">Connect to the hearRING device on your computer</p>
-                <p className="bodyText">
+                <p className="indentedBodyText">
                     Locate the "Settings" application on your computer. You should be able to search for it on the left side of your taskbar. <br />
                     Select the "Devices" option and click on "Bluetooth and other devices".<br />
                     Click "Add Bluetooth or other device".<br />
                     If prompted to choose a type of device, select bluetooth.<br />
                     Find the hearRING bracelet on the list.<br />
-                    Select the hearRING bracelet, and you should be connected!<br />
-                </p>
+                        Select the hearRING bracelet, and you should be connected!<br />
+                    </p>
+                </div>
             </div>
         </div>
     );

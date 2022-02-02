@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:wgt@500,regular,bold,italic&subset=latin,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600,regular,bold,italic&subset=latin,latin-ext');
 
 .headerTable {
     width: 100%;
@@ -26,9 +26,10 @@
 
 .pagePanel{
     background-color:white;
-    margin: 10px 10px 10px 10px;
-    width: 100%;
+    margin: 20px;
+    width: initial;
     min-height:100px;
+    padding:25px;
 }
 
 .pageBackground {
@@ -48,12 +49,19 @@
     font-size: large;
     font-family: 'Montserrat';
     font-style:italic;
-    font-weight:500;
+    font-weight:600;
 }
 
 .bodyText {
     font-family: 'Montserrat';
     font-size:small;
+}
+
+.indentedBodyText {
+    font-family: 'Montserrat';
+    font-size: small;
+    margin-left:25px;
+    line-height:20px;
 }
 
 .button {
