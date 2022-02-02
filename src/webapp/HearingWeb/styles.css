@@ -17,6 +17,7 @@
 
 .pageHeader{
     text-align:center;
+    vertical-align:central;
     width:100%;
     font-size:x-large;
     margin-top:25px;
@@ -25,7 +26,7 @@
 }
 
 .pagePanel{
-    background-color:white;
+    background-color:azure;
     margin: 20px;
     width: initial;
     min-height:100px;
@@ -78,6 +79,7 @@
     border: none;
     margin: 10px 10px 10px 10px;
     padding: 10px 15px 10px 15px;
+    background-color:orange;
 }
 
 .applyFont{
@@ -87,4 +89,18 @@
     height: 150px;
     width: 30px;
     margin: auto;
+}
+
+.slider{
+    accent-color:goldenrod;
+    border: none;
+    background-color:white;
+    background:white; 
+}
+
+.divider{
+    background-color:orange;
+    height:1px;
+    width:100%;
+    margin: 10px 10px 10px 10px;
 }

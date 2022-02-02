@@ -84,15 +84,15 @@ export class TextboxButtonsTTS extends React.Component {
                 <tr>
                     <td>
                         <p className="bodyText">Volume</p>
-                        <input id="volslider" type="range" defaultValue="0.5" min="0" max="1" step="0.1" onInput={Volume} />
+                        <input className = "slider" id="volslider" type="range" defaultValue="0.5" min="0" max="1" step="0.1" onInput={Volume} />
                     </td>
                     <td>
                             <p className="bodyText">Pitch</p>
-                        <input id="pitchslider" type="range" defaultValue="1" min="0" max="2" step="1" onInput={Pitch} />
+                                <input className="slider" id="pitchslider" type="range" defaultValue="1" min="0" max="2" step="1" onInput={Pitch} />
                     </td>
                     <td>
                         <p className="bodyText">Rate</p>
-                        <input id="rateslider" type="range" defaultValue="1" min="0.1" max="3" step="0.1" onInput={Rate}/> 
+                                <input className="slider" id="rateslider" type="range" defaultValue="1" min="0.1" max="3" step="0.1" onInput={Rate}/> 
                     </td>
                         </tr>
                         </tbody>

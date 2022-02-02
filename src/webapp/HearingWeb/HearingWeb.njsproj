@@ -55,6 +55,9 @@
     <TypeScriptCompile Include="components\Header.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="components\Slider.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="components\SpeechToTextOutput.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>

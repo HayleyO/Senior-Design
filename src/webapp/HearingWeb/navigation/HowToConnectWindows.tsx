@@ -13,9 +13,12 @@ function HowToConnectWindows() {
     return (
         <div className="pageBackground" style={{ backgroundColor: colors.headertab3 }}>
             <Header style={{ width: "100%" }} />
-            <div className="pageHeader">Windows</div>
-            <button className="buttonSmall" onClick={() => navigate('/howtoconnect', { replace: true })}>Back</button>
             <div className="pagePanel" >
+                <div style={{ width: "100%", display: "inline-block"}}>
+                    <label className="pageHeader">How To Connect on Windows</label>
+                    <button style={{ float: "right", position: "relative"}} className="buttonSmall" onClick={() => navigate('/howtoconnect', { replace: true })}>Back</button>
+                </div>
+                <div className="divider"/>
                 <div>
                 <p className="subHeader">Connect to the hearRING device on your computer</p>
                 <p className="indentedBodyText">
