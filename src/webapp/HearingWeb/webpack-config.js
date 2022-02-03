@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
+var path = require('path');
 
 module.exports = {
     devtool: 'source-map',
@@ -23,11 +24,25 @@ module.exports = {
             {
                     test: /\.css$/,
                     use: ["style-loader", "css-loader"]
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: {
+                  loader: 'file-loader',
+                  options: {
+                    name: 'images/[name].[ext]',
+                  },
+                }
             }
         ]
     },
+    plugins: [
+        new HtmlWebPackPlugin({
+          title: 'Output Management',
+          template: './index.html',
+        }),
+      ],
     devServer: {
         static: "./dist"
-    },
-
+    }
 }
