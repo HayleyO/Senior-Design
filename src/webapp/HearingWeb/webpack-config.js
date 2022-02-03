@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
     devtool: 'source-map',
-    entry: "./app.tsx",
+    entry: "./App.tsx",
     mode: "development",
     output: {
         filename: "./app-bundle.js"

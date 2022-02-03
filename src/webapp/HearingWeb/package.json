@@ -9,8 +9,8 @@
   },
   "scripts": {
     "clean": "tsc --build --clean",
-    "build": "webpack-cli ./app.tsx --config webpack-config.js",
-    "dev": "webpack serve ./app.tsx --config webpack-config.js"
+    "build": "webpack-cli ./App.tsx --config webpack-config.js",
+    "dev": "webpack serve ./App.tsx --config webpack-config.js"
   },
   "devDependencies": {
     "@types/node": "^8.0.14",
