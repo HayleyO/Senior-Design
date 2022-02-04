@@ -14,7 +14,7 @@ export const Header = () => {
                     <tr>
                         <td/>
                         <td >
-                            <img src="images\hearringtransparent.png" alt="heaRING logo" style={{ width: "200"}}></img>
+                            <img src={require('../images/hearringtransparent.png').default} alt="heaRING logo" style={{ width: "200"}}></img>
                         </td>
                         <td className="applyFont">The Hearing Bracelet</td>
                     </tr>
