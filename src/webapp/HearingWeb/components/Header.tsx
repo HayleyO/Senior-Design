@@ -16,7 +16,7 @@ export const Header = () => {
                         <td >
                             <img src="images\hearringtransparent.png" alt="heaRING logo" style={{ width: "200"}}></img>
                         </td>
-                        <td>The Hearing Bracelet</td>
+                        <td className="applyFont">The Hearing Bracelet</td>
                     </tr>
                     <tr style={{ height: "40" }}>
                         <td onClick={() => navigate('/', {replace: true})} className="headerTab" style={{ backgroundColor: colors.headertab1 }}>Home</td>

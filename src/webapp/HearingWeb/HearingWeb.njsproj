@@ -55,7 +55,7 @@
     <TypeScriptCompile Include="components\Header.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="components\HeaderTab.tsx">
+    <TypeScriptCompile Include="components\SpeechToTextOutput.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="navigation\About.tsx">
@@ -64,10 +64,18 @@
     <TypeScriptCompile Include="navigation\Home.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="navigation\HowToConnectLinux.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectIOS.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectMac.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectAndroid.tsx" />
+    <TypeScriptCompile Include="navigation\HowToConnectWindows.tsx" />
     <TypeScriptCompile Include="navigation\HowToConnect.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="navigation\Settings.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="components\TextboxButtonsTTS.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
