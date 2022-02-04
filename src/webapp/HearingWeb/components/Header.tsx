@@ -18,7 +18,7 @@ export const Header = () => {
                             <img src="images\hearringtransparent.png" alt="heaRING logo" style={{ width: "200"}}></img>
                         </td>
                     <td className="applyFont">The Hearing Bracelet</td>
-                    <td><button className="button" onClick={connectBluetoothDevices}>Connect to Bluetooth device</button></td>
+                    <td><button className="button" style={{backgroundColor:"orange"}} onClick={connectBluetoothDevices}>Connect to Bluetooth device</button></td>
                     </tr>
                     <tr style={{ height: "40" }}>
                         <td onClick={() => navigate('/', {replace: true})} className="headerTab" style={{ backgroundColor: colors.headertab1 }}>Home</td>
