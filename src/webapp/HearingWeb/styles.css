@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:wgt@500,regular,bold,italic&subset=latin,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600,regular,bold,italic&subset=latin,latin-ext');
 
 .headerTable {
     width: 100%;
@@ -17,6 +17,7 @@
 
 .pageHeader{
     text-align:center;
+    vertical-align:central;
     width:100%;
     font-size:x-large;
     margin-top:25px;
@@ -25,10 +26,11 @@
 }
 
 .pagePanel{
-    background-color:white;
-    margin: 10px 10px 10px 10px;
-    width: 100%;
+    background-color:azure;
+    margin: 20px;
+    width: initial;
     min-height:100px;
+    padding:25px;
 }
 
 .pageBackground {
@@ -48,12 +50,19 @@
     font-size: large;
     font-family: 'Montserrat';
     font-style:italic;
-    font-weight:500;
+    font-weight:600;
 }
 
 .bodyText {
     font-family: 'Montserrat';
     font-size:small;
+}
+
+.indentedBodyText {
+    font-family: 'Montserrat';
+    font-size: small;
+    margin-left:25px;
+    line-height:20px;
 }
 
 .button {
@@ -70,6 +79,7 @@
     border: none;
     margin: 10px 10px 10px 10px;
     padding: 10px 15px 10px 15px;
+    background-color:orange;
 }
 
 .applyFont{
@@ -79,4 +89,18 @@
     height: 150px;
     width: 30px;
     margin: auto;
+}
+
+.slider{
+    accent-color:goldenrod;
+    border: none;
+    background-color:white;
+    background:white; 
+}
+
+.divider{
+    background-color:orange;
+    height:1px;
+    width:100%;
+    margin: 10px 10px 10px 10px;
 }
