@@ -9,7 +9,7 @@ var React = require('react');
 export const Header = () => {
     const navigate = useNavigate();
     return (
-            <div>
+            <div style={{position: "sticky", top: 0}}>
                 <table className="headerTable">
                     <tr>
                         <td/>
@@ -25,7 +25,7 @@ export const Header = () => {
                         <td onClick={() => navigate('/about', {replace:true})} className="headerTab" style={{ backgroundColor: colors.headertab4 }}>About</td>
                     </tr>
                 </table>
-                </div>
+            </div>
        );    
 
 }

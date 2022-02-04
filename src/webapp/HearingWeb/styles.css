@@ -39,10 +39,6 @@
     top: 0; 
 }
 
-.scrollableBody {
-    overflow: scroll;
-}
-
 .subHeader {
     text-align: left;
     font-size: large;
