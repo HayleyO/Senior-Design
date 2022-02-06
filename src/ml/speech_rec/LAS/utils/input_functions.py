@@ -1,9 +1,6 @@
 import numpy as np
 
 
-
-
-
 ## TAKEN FROM: https://github.com/AzizCode92/Listen-Attend-and-Spell-Pytorch/blob/530f8ff2871c5b86294f06dbc6f3a61ad772d13f/util/timit_dataset.py#L67
 
 
