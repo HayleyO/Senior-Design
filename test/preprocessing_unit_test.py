@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 import sys, os
-sys.path.append('src//ml//speech_rec//LAS//preprocessing')
+sys.path.append('..//src//ml//speech_rec//LAS//preprocessing')
 
 from preprocessing_TIMIT import calc_norm_param, normalize, set_type, get_total_duration, create_mfcc
 
@@ -28,12 +28,12 @@ class TestPreprocessTIMIT(unittest.TestCase):
         self.assertEqual(type, output[0].dtype)
 
     def test_get_total_duration(self):
-        file = "test\\test_data\\SA1.PHN"
+        file = "test_data\\SA1.PHN"
         output = get_total_duration(file)
         self.assertEqual(output, 53520)
     
     def test_create_mfcc(self):
-        file = "test\\test_data\\SA1.WAV.wav"
+        file = "test_data\\SA1.WAV.wav"
         output = create_mfcc(file)
         #Way to large to try and assert, honestly, if it just opens it and uses the library there's likely no problem
 
