@@ -8,9 +8,9 @@ var React = require('react');
 
 function About() {
     return (
-        <div className="pageBackground" style={{ backgroundColor: colors.headertab4 }}>
+        <div className="pageBackground" style={{backgroundColor: colors.headertab4}}>
             <Header style={{ width: "100%" }} />
-            <div className="scrollableBody" style={{ width: "100%", textAlign: "center" }}>
+            <div style={{ width: "100%", textAlign: "center" }}>
                 <div className="pageHeader">About the Bracelet</div>
                 <div className="bodyText">
                     <p>Compatible with any Bluetooth-enabled device.</p>
