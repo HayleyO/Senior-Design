@@ -1,12 +1,16 @@
+const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
+var path = require('path');
+
 module.exports = {
     devtool: 'source-map',
-    entry: "./app.tsx",
+    entry: "./App.tsx",
     mode: "development",
     output: {
         filename: "./app-bundle.js"
     },
     resolve: {
-        extensions: ['.Webpack.js', '.web.js', '.ts', '.js', '.jsx', '.tsx']
+        extensions: ['.Webpack.js', '.web.js', '.ts', '.js', '.jsx', '.tsx'],
+        modules: ['node_modules']
     },
     module: {
         rules: [
@@ -20,7 +24,25 @@ module.exports = {
             {
                     test: /\.css$/,
                     use: ["style-loader", "css-loader"]
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: {
+                  loader: 'file-loader',
+                  options: {
+                    name: 'images/[name].[ext]',
+                  },
+                }
             }
         ]
+    },
+    plugins: [
+        new HtmlWebPackPlugin({
+          title: 'Output Management',
+          template: './index.html',
+        }),
+      ],
+    devServer: {
+        static: "./dist"
     }
 }
