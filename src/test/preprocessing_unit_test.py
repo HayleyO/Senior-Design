@@ -1,10 +1,11 @@
 import unittest
 import numpy as np
 import sys, os
-
+from os.path import dirname, abspath
 run_path = os.path.dirname(os.path.realpath(__file__))
-sys.path.append('src//ml//speech_rec//LAS//preprocessing')
-from preprocessing_TIMIT import calc_norm_param, normalize, set_type, get_total_duration, create_mfcc
+parent_directory = dirname(dirname(abspath(__file__)))
+sys.path.append(parent_directory)
+from ml.speech_rec.LAS.preprocessing.preprocessing_TIMIT import calc_norm_param, normalize, set_type, get_total_duration, create_mfcc
 
 class TestPreprocessTIMIT(unittest.TestCase):
 

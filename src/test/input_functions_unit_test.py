@@ -2,9 +2,11 @@ import unittest
 import numpy as np
 
 import sys, os
-sys.path.append('src//ml//speech_rec//LAS//utils')
-
-from input_functions import OneHotEncode, ZeroPadding
+from os.path import dirname, abspath
+file_path = os.path.dirname(os.path.realpath(__file__))
+parent_directory = dirname(dirname(abspath(__file__)))
+sys.path.append(parent_directory)
+from ml.speech_rec.LAS.utils.input_functions import OneHotEncode, ZeroPadding
 
 
 class TestInputFunctions(unittest.TestCase):

@@ -21,9 +21,10 @@ phonemes2index = {k:v for v,k in enumerate(phonemes)}
 
 def get_total_duration(file):
 	"""Get the length of the phoneme file, i.e. the 'time stamp' of the last phoneme"""
-	for line in reversed(list(open(file))):
-		[_, val, _] = line.split()
-		return int(val)
+	with open(file, 'rb') as f:
+		for line in reversed(list(f)):
+			[_, val, _] = line.split()
+			return int(val)
 
 def create_mfcc(filename):
 	"""Perform standard preprocessing, as described by Alex Graves (2012)
