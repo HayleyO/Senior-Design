@@ -16,48 +16,17 @@ def pull_from_csv(path):
             info.append(line)
     return info
 
-#WIP
-def pull_mfcc_from_csv(path, mfccnum):
-    info = []
-
-    with open(path, mode='r') as file:
-        read = csv.reader(file)
-        fill = []
-        j=0
-        for line in read:
-            if(j<mfccnum):
-                fill.append(line)
-                j+=1
-            else:
-                info.append(fill)
-                j=0
-                fill=[]
-
-                fill.append(line)
-                j+=1
-        if(fill!=[]):
-            info.append(fill)
-    return info
-
 def write_array_to_csv(path, content):
     with open(path, mode='w', newline='') as file:
         write = csv.writer(file)
         write.writerows(content)
-        
-#WIP
-def write_mfcc_to_csv(path, content, mfccnum):
-    print(len(content), "is this long going in...")
-    with open(path, mode='w', newline='') as file:
-        write = csv.writer(file)
-        for i in range(len(content)):
-            write.writerows(content[i])
 
 def train_test_split(data, label):
     data_train, data_test, label_train, label_test = sklearn.model_selection.train_test_split(data, label, train_size = 0.9)
     return data_train, data_test, label_train, label_test
 
 def normalize_data(dataset_data, mean, std):
-    print(len(dataset_data[1][1]), len(dataset_data[1]))
+    #print(len(dataset_data[1][1]), len(dataset_data[1]))
     normalized_data = []
     # z scoring for normalization
     for i in range(len(dataset_data)):
@@ -67,6 +36,19 @@ def normalize_data(dataset_data, mean, std):
             normal_section.append(normal)
         normalized_data.append(normal_section)
     return normalized_data
+
+def combineLabels(labels):
+    for i in range(len(labels)):
+        string = ""
+        labels[i] = string.join(labels[i])
+    return labels
+
+def three_to_2d(array):
+    combined = []
+    for listt in array:
+        for val in listt:
+            combined.append(val)
+    return combined
 
 def process_to_data(mfccnum):
     #gather file data, make dataset and label arrays
@@ -100,7 +82,7 @@ def process_to_data(mfccnum):
             mean += minimean
             std+=ministd
 
-        print(i)
+        #print(i)
         mean /= len(mfccList)
         std /= len(mfccList)
         grandStd += std
@@ -113,17 +95,20 @@ def process_to_data(mfccnum):
     grandMean /= escLen
     grandStd /= escLen
 
-    print(grandMean)
-    print(grandStd)
+    #print(grandMean)
+    #print(grandStd)
                      
     normalized_data = normalize_data(dataset_data, grandMean, grandStd)
+    for i in range(len(normalized_data)):
+        normalized_data[i] = three_to_2d(normalized_data[i])
+
     data_train, data_test, label_train, label_test = train_test_split(normalized_data, dataset_label)
 
-    print("Writing ", len(data_train))
-    write_mfcc_to_csv("../data/svm_trainingdata.csv",data_train,mfccnum)
+    #print("Writing ", len(data_train))
+    write_array_to_csv("../data/svm_trainingdata.csv",data_train)
     write_array_to_csv("../data/svm_traininglabels.csv",label_train)
-    print("Writing ", len(data_test))
-    write_mfcc_to_csv("../data/svm_testdata.csv",data_test, mfccnum)
+    #print("Writing ", len(data_test))
+    write_array_to_csv("../data/svm_testdata.csv",data_test)
     write_array_to_csv("../data/svm_testlabels.csv",label_test)
 
     return data_train, data_test, label_train, label_test
