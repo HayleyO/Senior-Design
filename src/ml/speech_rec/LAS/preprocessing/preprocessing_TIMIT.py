@@ -21,9 +21,10 @@ phonemes2index = {k:v for v,k in enumerate(phonemes)}
 
 def get_total_duration(file):
 	"""Get the length of the phoneme file, i.e. the 'time stamp' of the last phoneme"""
-	for line in reversed(list(open(file))):
-		[_, val, _] = line.split()
-		return int(val)
+	with open(file, 'rb') as f:
+		for line in reversed(list(f)):
+			[_, val, _] = line.split()
+			return int(val)
 
 def create_mfcc(filename):
 	"""Perform standard preprocessing, as described by Alex Graves (2012)
@@ -110,58 +111,57 @@ def preprocess_dataset(source_path):
 	return x_inputs, y_outputs
 
 ##### PREPROCESSING #####
+if __name__ == '__main__':
+	train_source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data\\data\\TRAIN\\")
+	test_source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data\\data\\TEST\\")
+	print('Preprocessing training data...')
+	X_train_all, y_train_all = preprocess_dataset(train_source_path)
+	print('Preprocessing testing data...')
+	X_test, y_test = preprocess_dataset(test_source_path)
+	print('Preprocessing completed.')
 
-train_source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data\\data\\TRAIN\\")
-test_source_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data\\data\\TEST\\")
-print('Preprocessing training data...')
-X_train_all, y_train_all = preprocess_dataset(train_source_path)
-print('Preprocessing testing data...')
-X_test, y_test = preprocess_dataset(test_source_path)
-print('Preprocessing completed.')
+	train_size = len(X_train_all)
+	print('Collected {} training instances from {} (should be 4620 in complete TIMIT )'.format(train_size,train_source_path))
+	print('Collected {} testing instances from {} (should be 1680 in complete TIMIT )'.format(len(X_test),test_source_path))
 
-train_size = len(X_train_all)
-print('Collected {} training instances from {} (should be 4620 in complete TIMIT )'.format(train_size,train_source_path))
-print('Collected {} testing instances from {} (should be 1680 in complete TIMIT )'.format(len(X_test),test_source_path))
+	# default using 5% of data as validation
+	val_split 	= 0.05 
 
-# default using 5% of data as validation
-val_split 	= 0.05 
+	print('Spliting {} out of {} ({}%) training data as validation set.'.format(int(train_size*val_split),train_size,val_split*100))
+	val_idx = [int(i) for i in random.sample(range(0, train_size), int(train_size*val_split))]
 
-print('Spliting {} out of {} ({}%) training data as validation set.'.format(int(train_size*val_split),train_size,val_split*100))
-val_idx = [int(i) for i in random.sample(range(0, train_size), int(train_size*val_split))]
+	X_train = []; X_val = []
+	y_train = []; y_val = []
+	for i in range(len(X_train_all)):
+		if i in val_idx:
+			X_val.append(X_train_all[i])
+			y_val.append(y_train_all[i])
+		else:
+			X_train.append(X_train_all[i])
+			y_train.append(y_train_all[i])
 
-X_train = []; X_val = []
-y_train = []; y_val = []
-for i in range(len(X_train_all)):
-    if i in val_idx:
-        X_val.append(X_train_all[i])
-        y_val.append(y_train_all[i])
-    else:
-        X_train.append(X_train_all[i])
-        y_train.append(y_train_all[i])
+	print()
+	print('Normalizing data to let mean=0, sd=1 for each channel.')
+	mean_val, std_val, _ = calc_norm_param(X_train)
 
-print()
-print('Normalizing data to let mean=0, sd=1 for each channel.')
+	X_train = normalize(X_train, mean_val, std_val)
+	X_val 	= normalize(X_val, mean_val, std_val)
+	X_test 	= normalize(X_test, mean_val, std_val)
 
-mean_val, std_val, _ = calc_norm_param(X_train)
+	data_type = 'float32'
 
-X_train = normalize(X_train, mean_val, std_val)
-X_val 	= normalize(X_val, mean_val, std_val)
-X_test 	= normalize(X_test, mean_val, std_val)
+	X_train = set_type(X_train, data_type)
+	X_val 	= set_type(X_val, data_type)
+	X_test 	= set_type(X_test, data_type)
 
-data_type = 'float32'
+	target_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "preprocessed_data\\processed_data")
+	print()
+	print('Saving data to ',target_path)
+	with open(target_path + '.pkl', 'wb') as cPickle_file:
+		cPickle.dump(
+			[X_train, y_train, X_val, y_val, X_test, y_test], 
+			cPickle_file, 
+			protocol=cPickle.HIGHEST_PROTOCOL)
 
-X_train = set_type(X_train, data_type)
-X_val 	= set_type(X_val, data_type)
-X_test 	= set_type(X_test, data_type)
-
-target_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "preprocessed_data\\processed_data")
-print()
-print('Saving data to ',target_path)
-with open(target_path + '.pkl', 'wb') as cPickle_file:
-    cPickle.dump(
-        [X_train, y_train, X_val, y_val, X_test, y_test], 
-        cPickle_file, 
-        protocol=cPickle.HIGHEST_PROTOCOL)
-
-print()
-print('Preprocessing completed in {:.3f} secs.'.format(timeit.default_timer() - program_start_time))
+	print()
+	print('Preprocessing completed in {:.3f} secs.'.format(timeit.default_timer() - program_start_time))

@@ -342,8 +342,14 @@ ASALocalRun/
 healthchecksdb
 
 # Ignore the TIMIT dataset (Way too big for git)
-ml/speech_rec/LAS/preprocessing/data/
-ml/speech_rec/LAS/preprocessing/preprocessed_data/
+src/ml/speech_rec/LAS/preprocessing/data
+src/ml/speech_rec/LAS/preprocessing/preprocessed_data/
+
+# Ignore the ESC-50 Dataset (also too big for git)
+src/ml/sound_rec/data
+
+# Ignore testing file for SVM Classifier
+src/ml/sound_rec/SVM/testrun.py
 
 # default Mac file
 **/.DS_Store
