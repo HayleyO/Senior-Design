@@ -4,7 +4,7 @@ from math import e
 
 HIDDEN_NODES_L2 = 500
 
-readPath = "../../../ESC50.csv"
+readPath = "../../../../../ESC50.csv"
 
 inputDF = readCSV(readPath)
 
