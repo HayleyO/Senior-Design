@@ -11,8 +11,8 @@ while True:
 
         ans = ans.lower()
         if ans == "train":
-            testFile = open("../../../audio/audio/16000/" + inputDF[1][0], "rb")
-            weightsMatrixLength = len(testFile.read())//64
+            testFile = open("../../../../../audio/audio/16000/" + inputDF[1][0], "rb")
+            weightsMatrixLength = len(testFile.read())//16
 
             y_vals = []
             
@@ -45,47 +45,72 @@ while True:
             dI = np.zeros(len(biases1[0]))
             wgI = np.zeros((len(weights1), len(weights1[0])))
             for j in range(15):
-                for i in range(1, len(train_set)):
+                for i in range(1, len(train_set)-1):
                     start = time()
-                    currentFile = open("../../../audio/audio/16000/" + inputDF[train_set[i]][0], "rb")
+                    currentFile = open("../../../../../audio/audio/16000/" + inputDF[train_set[i]][0], "rb")
                     sound = currentFile.read()
                     x_strings = []
                     currentWord = None
                     s = 0
-                    while (s+64) < len(sound):
-                        currentWord = sound[s:s+64]
+                    start = time()
+                    while (s+16) < len(sound):
+                        currentWord = sound[s:s+16]
                         currentWord = int.from_bytes(currentWord, "little")
-                        currentWord = float(currentWord)/13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095
+                        currentWord = float(currentWord)/18446744073709551615
                         x_strings.append(currentWord)
-                        s += 64
-                    
+                        s += 16
                     currentFile.close()
                     
                     soundRecNN.x_values = np.array(x_strings)
                     for k in range(len(y_vals)):
-                        if inputDF[i][3] == y_vals[k]:
+                        if inputDF[train_set[i]][3] == y_vals[k]:
                             soundRecNN.y_value = k
                             break
+                            
+                    gradients = soundRecNN.trainNetwork()                    
                     
-                    gradients = soundRecNN.trainNetwork()
-                    for g in range(len(dF)):
-                        dF[g] += gradients[0][g]
-                    for h in range(len(dI)):
-                        dI[h] += gradients[2][h]
-                        
-                    for a in range(len(wgF)):
-                        for b in range(len(wgF[a])):
-                            wgF[a][b] += gradients[1][a][b]
+                    dF = np.add(dF, gradients[0])
+                    dI = np.add(dI, gradients[2])
+                    wgF = np.add(wgF, gradients[1])
+                    wgI = np.add(wgI, gradients[3])
                     
-                    for c in range(len(wgI)):
-                        for d in range(len(wgI)):
-                            wgI[c][d] += gradients[3][c][d]
-                    
-                    stop = time()
-                    print(stop - start)
                     if ((i!=0) and (i%49==0)):
                         soundRecNN.updateBiases(dF, dI)
                         soundRecNN.updateWeights(wgF, wgI)
+                        
+                        dF = np.zeros(len(biases2[0]))
+                        wgF = np.zeros((len(weights2), len(weights2[0])))
+                        dI = np.zeros(len(biases1[0]))
+                        wgI = np.zeros((len(weights1), len(weights1[0])))
+                    stop = time()
+                    print(stop - start)
+                    print((i)*(j+1))
+            total = 0
+            correct = 0
+            for val in range(len(test_set)):
+                total += 1
+                currentFile = open("../../../../../audio/audio/16000/" + inputDF[test_set[val]][0], "rb")
+                sound = currentFile.read()
+                x_strings = []
+                currentWord = None
+                s = 0
+                start = time()
+                while (s+16) < len(sound):
+                    currentWord = sound[s:s+16]
+                    currentWord = int.from_bytes(currentWord, "little")
+                    currentWord = float(currentWord)/18446744073709551615
+                    x_strings.append(currentWord)
+                    s += 16
+                currentFile.close()
+                for kill in range(len(y_vals)):
+                    if inputDF[test_set[val]][3] == y_vals[kill]:
+                        soundRecNN.y_value = kill
+                        break
+                soundRecNN.x_values = x_strings
+                fire = soundRecNN.validate()
+                if fire == soundRecNN.y_value:
+                    correct += 1
+                print(str(correct)+"/"+str(total) + ":" + str(float(correct)/total))
         elif ans == "test":
             biases1 = readCSV(input("What is your file where your first bias matrix is stored? "))
             biases2 = readCSV(input("What is your file where your second bias matrix is stored? "))

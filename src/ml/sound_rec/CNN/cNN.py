@@ -1,6 +1,7 @@
 from csvparser import *
 import numpy as np
 from math import e
+from time import time
 
 HIDDEN_NODES_L2 = 500
 
@@ -46,27 +47,24 @@ class Neural_Network:
         wgF = self.wgFinals(activationsSet[0], dF)
         dI = self.deltaIntermediates(activationsSet[0], dF)
         wgI = self.wgIntermediates(self.x_values[:], dI)
-        
         return (dF, wgF, dI, wgI)
     
     def feedForwardPass(self):
-        activations = []
+        activations = np.zeros(len(self.weights_L1))
         for i in range(len(self.weights_L1)):
-            wx = 0
-            for j in range(len(self.x_values)):
-                wx += self.weights_L1[i][j] * self.x_values[j]
+            wx = np.sum(self.weights_L1[i] * self.x_values)
             z = wx + self.biases_L1[i]
             a = (1/((1+e)**(-z)))
-            activations.append(a)
+            activations[i] = a
         
-        activations2 = []
+        activations2 = np.zeros(len(self.weights_L2))
         for m in range(len(self.weights_L2)):
             wx = 0
             for n in range(len(activations)-1):
                 wx += self.weights_L2[m][n] * activations[n]
             z = wx + self.biases_L1[m]
             a = (1/((1+e)**(-z)))
-            activations2.append(a)
+            activations2[m] = a
             
         return activations, activations2
     
@@ -103,12 +101,9 @@ class Neural_Network:
             dI[i] = sumWeightsGradients * activations_L1[i] * (1-activations_L1[i])
         return dI
     
-    def wgIntermediates(self, activations_L1, deltaI):
-        wgI = np.zeros((len(deltaI), len(activations_L1)))
-        
-        for i in range(len(deltaI)):
-            for j in range(len(activations_L1)):
-                wgI[i][j] = deltaI[i] * activations_L1[j]
+    def wgIntermediates(self, activations_L1, deltaI):        
+        aL1 = [[j] for j in deltaI]
+        wgI = np.multiply(aL1, activations_L1)
         return wgI
     
     def updateBiases(self, dF, dI):
@@ -131,3 +126,13 @@ class Neural_Network:
             for n in range(len(wgI)):
                 self.weights_L1[m][n] -= (eta/miniBatches)*wgI[m][n]
     
+    def validate(self):
+        firings = self.feedForwardPass()
+        
+        fire = 0
+        threshold = 0
+        for val in range(len(firings[1])):
+            if firings[1][val] > threshold:
+                fire = val
+                
+        return fire
