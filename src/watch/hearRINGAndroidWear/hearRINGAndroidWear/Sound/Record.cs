@@ -1,16 +1,8 @@
-﻿using Android.App;
-using Android.Content;
-using Android.Media;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.Media;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace hearRINGAndroidWear.Sound
 {
@@ -53,6 +45,7 @@ namespace hearRINGAndroidWear.Sound
 					//Divide the sum of squares by the total length of the data to get the volume.
 					double mean = v / (double)numBytes;
 					double volume = 10 * Math.Log10(mean);
+                    MessagingCenter.Send(new Record(), "Volume", volume); //Kind of hacky to enter the subscription, but....
 					Console.WriteLine(volume);	
 				}
 				catch (Exception ex)
