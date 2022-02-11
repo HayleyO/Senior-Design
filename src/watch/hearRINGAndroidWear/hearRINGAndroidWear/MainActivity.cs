@@ -26,9 +26,9 @@ namespace hearRINGAndroidWear
             {
                 Android.Widget.ProgressBar soundBar = FindViewById<Android.Widget.ProgressBar>(Resource.Id.soundBar);
                 soundBar.SetProgress((int)arg, true);
-                if (arg < Chunking.SoundLevels["Green"])
+                if (arg <= Chunking.SoundLevels[SoundChunks.Green])
                     soundBar.ProgressDrawable.SetColorFilter(Android.Graphics.Color.Green, Android.Graphics.PorterDuff.Mode.Multiply);        
-                else if(arg < Chunking.SoundLevels["Yellow"])
+                else if(arg <= Chunking.SoundLevels[SoundChunks.Yellow])
                     soundBar.ProgressDrawable.SetColorFilter(Android.Graphics.Color.Yellow, Android.Graphics.PorterDuff.Mode.Multiply);
                 else
                     soundBar.ProgressDrawable.SetColorFilter(Android.Graphics.Color.Red, Android.Graphics.PorterDuff.Mode.Multiply);
