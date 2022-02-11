@@ -55,6 +55,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sound\Chunking.cs" />
     <Compile Include="Sound\Record.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +97,9 @@
     <PackageReference Include="Xamarin.Android.Support.Fragment" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.Media.Compat" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Wear" Version="2.2.0" />
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.2.0.709249</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
