@@ -12,6 +12,7 @@ using Android.Support.V4.View;
 using Android.Support.Wearable.Activity;
 using Java.Interop;
 using Android.Views.Animations;
+using hearRINGAndroidWear.Sound;
 
 namespace hearRINGAndroidWear
 {
@@ -20,13 +21,18 @@ namespace hearRINGAndroidWear
     {
         TextView textView;
 
-        protected override void OnCreate(Bundle bundle)
+        protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.activity_main);
 
             textView = FindViewById<TextView>(Resource.Id.text);
             SetAmbientEnabled();
+
+            while(true)
+            {
+                await Record.StartAsync();
+            }
         }
     }
 }

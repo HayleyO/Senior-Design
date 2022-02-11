@@ -128,7 +128,8 @@
     <ProjectReference Include="..\hearRINGWatchOS.WatchOSExtension\hearRINGWatchOS.WatchOSExtension.csproj">
       <Name>hearRINGWatchOS.WatchOSExtension</Name>
       <Project>{9F743938-8AFB-432F-A974-861B6F14EE7D}</Project>
-      <IsAppExtension>True</IsAppExtension>
+      <IsAppExtension>true</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\WatchOS\Xamarin.WatchOS.App.CSharp.targets" />
