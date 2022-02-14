@@ -19,7 +19,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
         </NavigationPage>
-        
+
         <NavigationPage Title="About">
             <x:Arguments>
                 <views:AboutPage />
@@ -34,14 +34,8 @@
 
         <NavigationPage Title="Settings">
             <x:Arguments>
-                <views:ItemDetailPage />
+                <views:SettingsPage/>
             </x:Arguments>
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_settings.png"/>
-                    <On Platform="Android" Value="tab_settings.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
         </NavigationPage>
     </TabbedPage.Children>
     
