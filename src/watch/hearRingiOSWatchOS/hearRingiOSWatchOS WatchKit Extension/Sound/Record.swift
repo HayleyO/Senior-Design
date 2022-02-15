@@ -13,6 +13,12 @@ class Record : NSObject, AVAudioRecorderDelegate{
     var soundURL: String!
     var audioRecorder:AVAudioRecorder?
     var levelTimer = Timer()
+    var chunking: Chunking
+    
+    init(chunker: Chunking)
+    {
+        chunking = chunker
+    }
     
     func setup(){
         let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
@@ -72,8 +78,10 @@ class Record : NSObject, AVAudioRecorderDelegate{
         let recorder = audioRecorder
         recorder?.updateMeters()
         
-        let SPL = 20 * log10(5 * powf(10, ((recorder?.averagePower(forChannel: 0))!/20)) * 160) + 30
+        let SPL = 20 * log10(5 * powf(10, ((recorder?.averagePower(forChannel: 0))!/20)) * 160) + 25
         print(SPL)
+        chunking.decibel = SPL
+        chunking.tintColor = chunking.getColorFromDecibel()
         self.stop()
         self.start()
     }
