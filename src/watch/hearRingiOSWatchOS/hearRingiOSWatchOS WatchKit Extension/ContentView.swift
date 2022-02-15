@@ -9,8 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
         Text("Hello, World!")
             .padding()
+        
+            .onAppear() {
+                let recorder = Record()
+                recorder.setup()
+                recorder.start()
+            }
     }
 }
 
