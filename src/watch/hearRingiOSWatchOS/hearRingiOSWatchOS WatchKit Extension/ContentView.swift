@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var dataModel = Chunking()
+    
     var body: some View {
         
-        Text("Hello, World!")
-            .padding()
+        ProgressView("Recording...", value: dataModel.decibel, total: 160).progressViewStyle(LinearProgressViewStyle(tint: dataModel.tintColor))
         
             .onAppear() {
-                let recorder = Record()
-                recorder.setup()
-                recorder.start()
+                let recordModel = Record(chunker: dataModel)
+                recordModel.setup()
+                recordModel.start()
             }
     }
 }
