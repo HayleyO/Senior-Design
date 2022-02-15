@@ -31,6 +31,7 @@
 		86AF8EFA27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EF927BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITests.swift */; };
 		86AF8EFC27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EFB27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift */; };
 		86AF8F1D27BAEFBE00EF0362 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8F1C27BAEFBE00EF0362 /* Record.swift */; };
+		86AF8F2727BC353300EF0362 /* Chunking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8F2627BC353300EF0362 /* Chunking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		86AF8EF927BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOS_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
 		86AF8EFB27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86AF8F1C27BAEFBE00EF0362 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		86AF8F2627BC353300EF0362 /* Chunking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chunking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				86AF8F1C27BAEFBE00EF0362 /* Record.swift */,
+				86AF8F2627BC353300EF0362 /* Chunking.swift */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86AF8EDB27BAB9E200EF0362 /* NotificationController.swift in Sources */,
+				86AF8F2727BC353300EF0362 /* Chunking.swift in Sources */,
 				86AF8ED927BAB9E200EF0362 /* ContentView.swift in Sources */,
 				86AF8F1D27BAEFBE00EF0362 /* Record.swift in Sources */,
 				86AF8EDF27BAB9E200EF0362 /* ComplicationController.swift in Sources */,
