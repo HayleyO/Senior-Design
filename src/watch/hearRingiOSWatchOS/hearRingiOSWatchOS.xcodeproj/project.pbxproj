@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0F128D27BB199B003D2938 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F128C27BB199B003D2938 /* MainView.swift */; };
+		7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F128E27BB1A63003D2938 /* SettingsView.swift */; };
+		7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F129027BB1BE3003D2938 /* AlarmView.swift */; };
 		86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */; };
 		86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA727BAB9DF00EF0362 /* ContentView.swift */; };
 		86AF8EAA27BAB9E100EF0362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86AF8EA927BAB9E100EF0362 /* Assets.xcassets */; };
@@ -100,6 +103,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A0F128C27BB199B003D2938 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7A0F128E27BB1A63003D2938 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		86AF8EA227BAB9DF00EF0362 /* hearRingiOSWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearRingiOSWatchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSApp.swift; sourceTree = "<group>"; };
 		86AF8EA727BAB9DF00EF0362 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -208,6 +214,9 @@
 			children = (
 				86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */,
 				86AF8EA727BAB9DF00EF0362 /* ContentView.swift */,
+				7A0F128C27BB199B003D2938 /* MainView.swift */,
+				7A0F129027BB1BE3003D2938 /* AlarmView.swift */,
+				7A0F128E27BB1A63003D2938 /* SettingsView.swift */,
 				86AF8EA927BAB9E100EF0362 /* Assets.xcassets */,
 				86AF8EAB27BAB9E100EF0362 /* Preview Content */,
 			);
@@ -540,6 +549,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */,
+				7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */,
+				7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */,
+				7A0F128D27BB199B003D2938 /* MainView.swift in Sources */,
 				86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
