@@ -14,6 +14,7 @@ class Record : NSObject, AVAudioRecorderDelegate{
     var audioRecorder:AVAudioRecorder?
     var levelTimer = Timer()
     var chunking: Chunking
+    let vibration = Vibration()
     
     init(chunker: Chunking)
     {
@@ -80,6 +81,7 @@ class Record : NSObject, AVAudioRecorderDelegate{
         
         let SPL = 20 * log10(5 * powf(10, ((recorder?.averagePower(forChannel: 0))!/20)) * 160) + 25
         print(SPL)
+        vibration.vibrateOnSound(volume: SPL)
         chunking.decibel = SPL
         chunking.tintColor = chunking.getColorFromDecibel()
         self.stop()
