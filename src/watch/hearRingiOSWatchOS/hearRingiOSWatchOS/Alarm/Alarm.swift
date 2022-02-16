@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class Alarm: Identifiable {
+/*class Alarm: Identifiable {
   var id = UUID()
   var name: String = ""
   var alarmTime: String = ""
@@ -35,3 +35,4 @@ let alarms = [
     Alarm(name_init: "Don't Forget to Eat Dinner", alarmTime_init: "5:30 PM"),
     Alarm(name_init: "Take Medicine", alarmTime_init: "12:00 PM")
 ]
+*/

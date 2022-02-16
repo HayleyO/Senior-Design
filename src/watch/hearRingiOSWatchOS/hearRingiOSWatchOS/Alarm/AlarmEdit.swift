@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AlarmEdit: View {
-    var alarm: Alarm
+    var alarm: AlarmEntity 
     @State private var isEnabled = false
     var body: some View {
         VStack{
-            Text(alarm.name)
+            Text(alarm.name ?? "NameUnknown")
                 .font(.title)
             
-            Text(alarm.alarmTime)
+            Text(alarm.alarmTime ?? "TimeUnknown")
                 .font(.title2)
             
             Toggle("Turn Alarm On/Off", isOn: $isEnabled)
@@ -34,6 +34,6 @@ struct AlarmEdit: View {
 struct AlarmEdit_Previews: PreviewProvider {
     static var previews: some View {
         //AlarmEdit(alarm: Alarm.samples[0])
-        AlarmEdit(alarm: alarms[0])
+        AlarmEdit(alarm: AlarmEntity())
     }
 }
