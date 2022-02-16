@@ -6,14 +6,17 @@
 //
 
 import Foundation
+import WatchKit
 
 class Vibration: NSObject{
-    func vibrate(volume: Float) {
+    func vibrateOnSound(volume: Float) {
         if volume > 90.0 {
-            //big vibration
+            WKInterfaceDevice.current().play(.notification)
+            print("big vibrate")
         }
         else if volume > 50.0 {
-            //small vibration
+            WKInterfaceDevice.current().play(.click)
+            print("small vibrate")
         }
     }
 }
