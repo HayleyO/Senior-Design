@@ -11,7 +11,6 @@
 		7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F128E27BB1A63003D2938 /* SettingsView.swift */; };
 		7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F129027BB1BE3003D2938 /* AlarmView.swift */; };
 		7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */; };
-		7A21A31C27BC4E2100DDC3A6 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21A31B27BC4E2100DDC3A6 /* Alarm.swift */; };
 		7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F994827BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F994927BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
@@ -122,7 +121,6 @@
 		7A0F128E27BB1A63003D2938 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
-		7A21A31B27BC4E2100DDC3A6 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		86AF8EA227BAB9DF00EF0362 /* hearRingiOSWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearRingiOSWatchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,7 +204,6 @@
 			children = (
 				7A0F129027BB1BE3003D2938 /* AlarmView.swift */,
 				7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */,
-				7A21A31B27BC4E2100DDC3A6 /* Alarm.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -597,7 +594,6 @@
 				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
 				7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */,
 				7A0F128D27BB199B003D2938 /* MainView.swift in Sources */,
-				7A21A31C27BC4E2100DDC3A6 /* Alarm.swift in Sources */,
 				86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

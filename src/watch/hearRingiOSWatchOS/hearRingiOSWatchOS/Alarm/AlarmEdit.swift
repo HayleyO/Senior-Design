@@ -33,7 +33,6 @@ struct AlarmEdit: View {
 
 struct AlarmEdit_Previews: PreviewProvider {
     static var previews: some View {
-        //AlarmEdit(alarm: Alarm.samples[0])
         AlarmEdit(alarm: AlarmEntity())
     }
 }
