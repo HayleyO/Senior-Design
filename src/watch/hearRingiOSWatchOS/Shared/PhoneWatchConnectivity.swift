@@ -26,19 +26,10 @@ final class Connectivity : NSObject, ObservableObject {
         WCSession.default.activate()
     }
     
-    public func send(Alarms: [String], Settings: [String], delivery: DeliveryPriority, errorHandler: ((Error) -> Void)? = nil) {
+    public func send(Alarms: [String], Settings: [String], delivery: DeliveryPriority,
+                     replyHandler: (([String: Any]) -> Void)? = nil, errorHandler: ((Error) -> Void)? = nil) {
         //If not activated or watch/app not present, do not run function
-        guard WCSession.default.activationState == .activated else {return}
-        
-        #if os(watchOS)
-        guard WCSession.default.isCompanionAppInstalled else {
-            return
-        }
-        #else
-        guard WCSession.default.isWatchAppInstalled else {
-            return
-        }
-        #endif
+        guard canSendToPeer() else {return}
           
         let userInfo: [String: [String]] = [
             "alarmGroup" : Alarms,
@@ -47,7 +38,10 @@ final class Connectivity : NSObject, ObservableObject {
         
         switch delivery {
             case .failable:
-                break
+            WCSession.default.sendMessage(userInfo,
+                replyHandler: optionalMainQueueDispatch(handler: replyHandler),
+                errorHandler: optionalMainQueueDispatch(handler: errorHandler)
+            )
 
             case .guaranteed:
                 WCSession.default.transferUserInfo(userInfo)
@@ -57,6 +51,29 @@ final class Connectivity : NSObject, ObservableObject {
                     try WCSession.default.updateApplicationContext(userInfo)
                 } catch { errorHandler?(error) }
         }
+    }
+    
+    //for making code slightly cleaner
+    typealias OptionalHandler<T> = ((T) -> Void)?
+    private func optionalMainQueueDispatch<T>(handler: OptionalHandler<T>) -> OptionalHandler<T> {
+        guard let handler = handler else {
+            return nil
+        }
+        return {
+            item in DispatchQueue.main.async { handler(item) }
+        }
+    }
+    
+    private func canSendToPeer() -> Bool {
+        guard WCSession.default.activationState == .activated else {return false}
+        
+        #if os(watchOS)
+        guard WCSession.default.isCompanionAppInstalled else {return false}
+        #else
+        guard WCSession.default.isWatchAppInstalled else {return false}
+        #endif
+        
+        return true
     }
 }
 
