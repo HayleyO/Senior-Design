@@ -6,18 +6,14 @@
 //
 
 import SwiftUI
-
-/*private class AlarmsViewModel: ObservableObject {
-  @Published var alarms: [Alarm] = Alarm.samples
-}*/
+import CoreData
 
 struct AlarmView: View {
-  //@StateObject fileprivate var viewModel = AlarmsViewModel()
-  @State private var alarmsState = alarms
+  @FetchRequest(sortDescriptors: []) var alarms: FetchedResults<AlarmEntity>
+  @Environment(\.managedObjectContext) var moc
   var body: some View {
       NavigationView{
-          //List(viewModel.alarms) { alarm in
-          List(alarmsState) { alarm in
+          List(alarms) { alarm in
             NavigationLink{
                 AlarmEdit(alarm: alarm)
             } label: {
@@ -25,9 +21,9 @@ struct AlarmView: View {
                 {
                     HStack(alignment: .top) {
                       VStack(alignment: .leading) {
-                        Text(alarm.alarmTime)
+                        Text(alarm.alarmTime ?? "TimeUnknown")
                           .font(.headline)
-                        Text(alarm.name)
+                        Text(alarm.name ?? "NameUnknown")
                           .font(.subheadline)
                       }
                       Spacer()
@@ -36,10 +32,10 @@ struct AlarmView: View {
                 else {
                     HStack(alignment: .top) {
                       VStack(alignment: .leading) {
-                        Text(alarm.alarmTime)
+                        Text(alarm.alarmTime ?? "TimeUnknown")
                           .font(.headline)
                           .foregroundColor(.secondary)
-                        Text(alarm.name)
+                        Text(alarm.name ?? "NameUnknown")
                           .font(.subheadline)
                           .foregroundColor(.secondary)
                       }
