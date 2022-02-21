@@ -11,6 +11,7 @@ import UserNotifications
 
 class NotificationController: WKUserNotificationHostingController<NotificationView> {
 
+    let alarms = Alarm()
     override var body: NotificationView {
         return NotificationView()
     }
@@ -18,6 +19,7 @@ class NotificationController: WKUserNotificationHostingController<NotificationVi
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        alarms.getAlarms()
     }
 
     override func didDeactivate() {
