@@ -16,7 +16,7 @@ class Vibration: NSObject{
             WKInterfaceDevice.current().play(.notification)
         }
         else if volume > 50.0 {
-            WKInterfaceDevice.current().play(.navigationGenericManeuver)
+            WKInterfaceDevice.current().play(.notification)
         }
     }
     
