@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct AlarmEdit: View {
+    var dateFormatter : DateFormatter{
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        return dateFormatter
+    }
+    
     var alarm: AlarmEntity 
     @State private var isEnabled = false
     var body: some View {
@@ -15,7 +21,7 @@ struct AlarmEdit: View {
             Text(alarm.name ?? "NameUnknown")
                 .font(.title)
             
-            Text(alarm.alarmTime ?? "TimeUnknown")
+            Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
                 .font(.title2)
             
             Toggle("Turn Alarm On/Off", isOn: $isEnabled)

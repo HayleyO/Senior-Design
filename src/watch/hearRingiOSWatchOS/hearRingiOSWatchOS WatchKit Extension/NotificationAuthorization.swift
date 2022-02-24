@@ -15,7 +15,7 @@ class NotificationAuthorization {
         center.requestAuthorization(options: options) { (success, error) in
             if let error = error
             {
-                print("error")
+                print("Error: ", error)
             }
         }
     }

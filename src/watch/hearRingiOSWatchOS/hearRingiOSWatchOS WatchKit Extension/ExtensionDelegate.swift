@@ -13,9 +13,18 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
     
     func applicationDidBecomeActive() {
         let authorization = NotificationAuthorization()
-        print("active")
+        let alarm = Alarm()
         authorization.requestAuthorization()
+        
+        //deploying alarm here for testing 
+        UNUserNotificationCenter.current().delegate = self
+        alarm.deployAlarm()
     }
-  
+}
+
+extension ExtensionDelegate : UNUserNotificationCenterDelegate{
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.banner)
+    }
 }
 
