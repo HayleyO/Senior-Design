@@ -23,6 +23,7 @@
 		7A9F995F27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
 		7A9F996027BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
 		7A9F996127BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
+		869F833F27C575FC00B66A55 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F833E27C575FC00B66A55 /* Speech.swift */; };
 		86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */; };
 		86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA727BAB9DF00EF0362 /* ContentView.swift */; };
 		86AF8EAA27BAB9E100EF0362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86AF8EA927BAB9E100EF0362 /* Assets.xcassets */; };
@@ -119,12 +120,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0790746227C057F70070E105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7A0F128C27BB199B003D2938 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7A0F128E27BB1A63003D2938 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		869F833E27C575FC00B66A55 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		86AF8EA227BAB9DF00EF0362 /* hearRingiOSWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearRingiOSWatchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSApp.swift; sourceTree = "<group>"; };
 		86AF8EA727BAB9DF00EF0362 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -212,6 +215,14 @@
 			path = Alarm;
 			sourceTree = "<group>";
 		};
+		869F833D27C575E800B66A55 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				869F833E27C575FC00B66A55 /* Speech.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		86AF8E9927BAB9DF00EF0362 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +254,8 @@
 		86AF8EA427BAB9DF00EF0362 /* hearRingiOSWatchOS */ = {
 			isa = PBXGroup;
 			children = (
+				869F833D27C575E800B66A55 /* Sound */,
+				0790746227C057F70070E105 /* Info.plist */,
 				7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */,
 				86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */,
 				7A9F995B27BDBDE500EC1DB0 /* DataController.swift */,
@@ -601,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869F833F27C575FC00B66A55 /* Speech.swift in Sources */,
 				86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */,
 				7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */,
 				7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */,
@@ -962,9 +976,9 @@
 				DEVELOPMENT_TEAM = 76TL7FCR92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hearRingiOSWatchOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -993,9 +1007,9 @@
 				DEVELOPMENT_TEAM = 76TL7FCR92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hearRingiOSWatchOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
