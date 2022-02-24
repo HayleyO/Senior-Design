@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AlarmEdit: View {
-    var alarm: AlarmEntity 
+    var alarm: AlarmEntity
     @State private var isEnabled = false
     var body: some View {
         VStack{
@@ -22,6 +23,7 @@ struct AlarmEdit: View {
                 .padding()
                 .onChange(of: isEnabled){ value in
                     alarm.isEnabled = value
+                    Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, delivery: .highPriority)
                     print(alarm.isEnabled)
                 }
         }
