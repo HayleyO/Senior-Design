@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 import UserNotifications
+import SwiftUI
 
 class Alarm {
     
@@ -29,15 +30,25 @@ class Alarm {
         let content = UNMutableNotificationContent()
         content.title = "test alarm"
         content.body = "alarm is going off!"
+        content.categoryIdentifier = "snoozeCategory"
         
+        setActions()
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30.0, repeats: false)
         let request  = UNNotificationRequest(identifier: "alarm", content: content, trigger: trigger)
-        print("requesting")
         UNUserNotificationCenter.current().add(request)
         //vibrate for alarm
     }
     
-    func snooze(){
-        //add 9 minutes to alarm time
+    func setActions(){
+        // stackoverflow.com/questions/48475186
+        // add snooze action
+        let snoozeAction = UNNotificationAction(
+            identifier: "snoozeAction", title: "Snooze", options: [.foreground]
+            )
+        
+        let snoozeCategory = UNNotificationCategory(identifier: "snoozeCategory", actions: [snoozeAction], intentIdentifiers: [], options: [])
+        
+        UNUserNotificationCenter.current().setNotificationCategories([snoozeCategory])
+        }
     }
-}
+

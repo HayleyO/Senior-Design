@@ -11,17 +11,33 @@ import UserNotifications
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate{
     
-    func applicationDidBecomeActive() {
+    func applicationDidFinishLaunching() {
+        // authorization to allow notifications
         let authorization = NotificationAuthorization()
-        let alarm = Alarm()
         authorization.requestAuthorization()
         
-        //deploying alarm here for testing 
+        //deploying alarm here for testing
         UNUserNotificationCenter.current().delegate = self
+        let alarm = Alarm()
         alarm.deployAlarm()
+    }
+    
+    // what happens when the notification center recieves certain responses for notifications
+    // just using this for snooze at the moment
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if(response.actionIdentifier == "snoozeAction"){
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300.0, repeats: false)
+            let newRequest = UNNotificationRequest(identifier: "snoozeAlarm", content: response.notification.request.content, trigger: trigger)
+            UNUserNotificationCenter.current().add(newRequest)
+        }
+        completionHandler()
+        
     }
 }
 
+// this makes the notifications show up when the app is in the foreground
+// stackoverflow.com/questions/14872088
 extension ExtensionDelegate : UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(.banner)
