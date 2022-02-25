@@ -16,7 +16,6 @@ struct AlarmEdit: View {
         return dateFormatter
     }
     
-    var alarm: AlarmEntity 
     @State private var isEnabled = false
     @Environment(\.managedObjectContext) var moc
     var body: some View {
