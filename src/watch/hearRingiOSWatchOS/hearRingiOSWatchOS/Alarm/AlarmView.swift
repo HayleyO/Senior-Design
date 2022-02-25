@@ -11,6 +11,13 @@ import CoreData
 struct AlarmView: View {
   @FetchRequest(sortDescriptors: []) var alarms: FetchedResults<AlarmEntity>
   @Environment(\.managedObjectContext) var moc
+    
+    var dateFormatter : DateFormatter{
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        return dateFormatter
+    }
+    
   var body: some View {
       NavigationView{
           List(alarms) { alarm in
@@ -21,7 +28,7 @@ struct AlarmView: View {
                 {
                     HStack(alignment: .top) {
                       VStack(alignment: .leading) {
-                        Text(alarm.alarmTime ?? "TimeUnknown")
+                          Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
                           .font(.headline)
                         Text(alarm.name ?? "NameUnknown")
                           .font(.subheadline)
@@ -32,7 +39,7 @@ struct AlarmView: View {
                 else {
                     HStack(alignment: .top) {
                       VStack(alignment: .leading) {
-                        Text(alarm.alarmTime ?? "TimeUnknown")
+                        Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
                           .font(.headline)
                           .foregroundColor(.secondary)
                         Text(alarm.name ?? "NameUnknown")
