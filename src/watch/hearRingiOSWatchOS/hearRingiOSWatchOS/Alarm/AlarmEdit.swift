@@ -10,6 +10,7 @@ import SwiftUI
 struct AlarmEdit: View {
     var alarm: AlarmEntity 
     @State private var isEnabled = false
+    @Environment(\.managedObjectContext) var moc
     var body: some View {
         VStack{
             Text(alarm.name ?? "NameUnknown")
@@ -22,7 +23,7 @@ struct AlarmEdit: View {
                 .padding()
                 .onChange(of: isEnabled){ value in
                     alarm.isEnabled = value
-                    print(alarm.isEnabled)
+                    try? moc.save()
                 }
         }
         .onAppear {
