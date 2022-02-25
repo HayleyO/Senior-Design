@@ -10,6 +10,13 @@ import CoreData
 
 struct AlarmEdit: View {
     var alarm: AlarmEntity
+    var dateFormatter : DateFormatter{
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        return dateFormatter
+    }
+    
+    var alarm: AlarmEntity 
     @State private var isEnabled = false
     @Environment(\.managedObjectContext) var moc
     var body: some View {
@@ -17,7 +24,7 @@ struct AlarmEdit: View {
             Text(alarm.name ?? "NameUnknown")
                 .font(.title)
             
-            Text(alarm.alarmTime ?? "TimeUnknown")
+            Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
                 .font(.title2)
             
             Toggle("Turn Alarm On/Off", isOn: $isEnabled)
