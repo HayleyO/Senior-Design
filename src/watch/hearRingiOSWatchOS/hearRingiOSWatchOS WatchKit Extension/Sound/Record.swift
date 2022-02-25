@@ -15,7 +15,6 @@ class Record : NSObject, AVAudioRecorderDelegate{
     var levelTimer = Timer()
     var chunking: Chunking
     let vibration = Vibration()
-    let alarms = Alarm()
     
     init(chunker: Chunking)
     {
@@ -77,7 +76,6 @@ class Record : NSObject, AVAudioRecorderDelegate{
     }
     
     @objc func timerCallback() {
-        alarms.getAlarms()
         let recorder = audioRecorder
         recorder?.updateMeters()
         
