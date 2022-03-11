@@ -9,16 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var dataModel = Chunking()
+    @StateObject var sharedData = Connectivity.shared
     
     var body: some View {
-        
-        ProgressView("Recording...", value: dataModel.decibel, total: 160).progressViewStyle(LinearProgressViewStyle(tint: dataModel.tintColor))
-        
-            .onAppear() {
-                let recordModel = Record(chunker: dataModel)
-                recordModel.setup()
-                recordModel.start()
-            }
+        VStack {
+            ProgressView("Recording...", value: dataModel.decibel, total: 160).progressViewStyle(LinearProgressViewStyle(tint: dataModel.tintColor))
+            
+                .onAppear() {
+                    let recordModel = Record(chunker: dataModel)
+                    recordModel.setup()
+                    recordModel.start()
+                }
+            Text(sharedData.strr)
+        }
     }
 }
 

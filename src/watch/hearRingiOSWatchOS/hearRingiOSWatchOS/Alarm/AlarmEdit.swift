@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AlarmEdit: View {
+    var alarm: AlarmEntity
     var dateFormatter : DateFormatter{
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
         return dateFormatter
     }
     
-    var alarm: AlarmEntity 
     @State private var isEnabled = false
     @Environment(\.managedObjectContext) var moc
     var body: some View {
@@ -29,7 +30,12 @@ struct AlarmEdit: View {
                 .padding()
                 .onChange(of: isEnabled){ value in
                     alarm.isEnabled = value
+
+                    Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, delivery: .highPriority)
+                    print(alarm.isEnabled)
+
                     try? moc.save()
+
                 }
         }
         .onAppear {
