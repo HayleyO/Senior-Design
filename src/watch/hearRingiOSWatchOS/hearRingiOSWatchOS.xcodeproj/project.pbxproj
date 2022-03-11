@@ -890,7 +890,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For using microphone";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -898,7 +898,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -925,7 +925,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For using microphone";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -933,7 +933,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -960,15 +960,15 @@
 				INFOPLIST_FILE = "hearRingiOSWatchOS-WatchKit-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "hearRingiOSWatchOS WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS;
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS2;
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_App.ExtensionDelegate;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -996,15 +996,15 @@
 				INFOPLIST_FILE = "hearRingiOSWatchOS-WatchKit-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "hearRingiOSWatchOS WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS;
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS2;
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_App.ExtensionDelegate;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1041,7 +1041,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1075,7 +1075,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
