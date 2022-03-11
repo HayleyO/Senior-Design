@@ -10,36 +10,36 @@ import WatchKit
 
 class Vibration: NSObject{
     
-    //tracks whether the change in decibel level is significant enough for a vibration
-    var storedDecibel: Float = 0.0
+    // use core data to update these!
+    var thresholdHigh: Float = 90.0 // high threshold
+    var thresholdLow: Float = 50.0  // low threshold
+    var decibelFrequency: Float = 20.0 // determines the amount of vibration, and when the watch vibrates. For example, a value of 10.0 means the
+                                // vibration will occur when there is a change of 10 decibels
+    //tracks previous volume value to determine whether the change in decibel level is significant enough for a vibration
+    var storedVolume: Float = 0.0
+    
     
     // vibrate according to decibel level
     // if a threshold is hit, vibrate
-    // if the decibel level changes by 10 within the threshold, vibrate
+    // if the decibel level changes by value of decibelFrequency within the threshold, vibrate
     func vibrateOnSound(volume: Float) {
-            if volume > 90.0 {
-                if(storedDecibel < 90.0 || abs(storedDecibel - volume) > 10.0){
+        
+            if volume > thresholdHigh {
+                if(storedVolume < thresholdHigh || abs(volume - storedVolume) > decibelFrequency){
                     WKInterfaceDevice.current().play(.notification)
                 }
             }
-            else if volume > 50.0 {
-                if(storedDecibel < 50.0 || abs(storedDecibel - volume) > 10.0){
+            else if volume > thresholdLow {
+                if(storedVolume < thresholdLow || abs(volume - storedVolume) > decibelFrequency){
                     WKInterfaceDevice.current().play(.directionUp)
                 }
         }
-        storedDecibel = volume
+        storedVolume = volume
     }
     
     // vibrate for alarms 
     func vibrateAlarm(){
         WKInterfaceDevice.current().play(.notification)
     }
-    
-    func vibrateLow(){
-        
-    }
-    
-    func vibrateHigh(){
-        
-    }
+
 }
