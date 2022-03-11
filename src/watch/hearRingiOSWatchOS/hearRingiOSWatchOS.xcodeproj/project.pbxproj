@@ -1,0 +1,1346 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0790746527C05D370070E105 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746427C05D370070E105 /* Alarm.swift */; };
+		0790746727C499EC0070E105 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746627C499EC0070E105 /* ExtensionDelegate.swift */; };
+		0790746C27C4AD300070E105 /* NotificationAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746B27C4AD300070E105 /* NotificationAuthorization.swift */; };
+		7A0F128D27BB199B003D2938 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F128C27BB199B003D2938 /* MainView.swift */; };
+		7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F128E27BB1A63003D2938 /* SettingsView.swift */; };
+		7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F129027BB1BE3003D2938 /* AlarmView.swift */; };
+		7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */; };
+		7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
+		7A9F994827BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
+		7A9F994927BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
+		7A9F994A27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
+		7A9F994B27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
+		7A9F994C27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
+		7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
+		7A9F995D27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
+		7A9F995E27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
+		7A9F995F27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
+		7A9F996027BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
+		7A9F996127BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
+		869F833F27C575FC00B66A55 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F833E27C575FC00B66A55 /* Speech.swift */; };
+		86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */; };
+		86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA727BAB9DF00EF0362 /* ContentView.swift */; };
+		86AF8EAA27BAB9E100EF0362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86AF8EA927BAB9E100EF0362 /* Assets.xcassets */; };
+		86AF8EAD27BAB9E100EF0362 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86AF8EAC27BAB9E100EF0362 /* Preview Assets.xcassets */; };
+		86AF8EB727BAB9E100EF0362 /* hearRingiOSWatchOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EB627BAB9E100EF0362 /* hearRingiOSWatchOSTests.swift */; };
+		86AF8EC127BAB9E100EF0362 /* hearRingiOSWatchOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EC027BAB9E100EF0362 /* hearRingiOSWatchOSUITests.swift */; };
+		86AF8EC327BAB9E100EF0362 /* hearRingiOSWatchOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EC227BAB9E100EF0362 /* hearRingiOSWatchOSUITestsLaunchTests.swift */; };
+		86AF8EC727BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 86AF8EC627BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		86AF8ECC27BAB9E200EF0362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86AF8ECB27BAB9E200EF0362 /* Assets.xcassets */; };
+		86AF8ED227BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 86AF8ED127BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		86AF8ED727BAB9E200EF0362 /* hearRingiOSWatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8ED627BAB9E200EF0362 /* hearRingiOSWatchOSApp.swift */; };
+		86AF8ED927BAB9E200EF0362 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8ED827BAB9E200EF0362 /* ContentView.swift */; };
+		86AF8EDB27BAB9E200EF0362 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EDA27BAB9E200EF0362 /* NotificationController.swift */; };
+		86AF8EDD27BAB9E200EF0362 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EDC27BAB9E200EF0362 /* NotificationView.swift */; };
+		86AF8EDF27BAB9E200EF0362 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EDE27BAB9E200EF0362 /* ComplicationController.swift */; };
+		86AF8EE127BAB9E300EF0362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86AF8EE027BAB9E300EF0362 /* Assets.xcassets */; };
+		86AF8EE427BAB9E300EF0362 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86AF8EE327BAB9E300EF0362 /* Preview Assets.xcassets */; };
+		86AF8EF027BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EEF27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppTests.swift */; };
+		86AF8EFA27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EF927BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITests.swift */; };
+		86AF8EFC27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EFB27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift */; };
+		86AF8F1D27BAEFBE00EF0362 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8F1C27BAEFBE00EF0362 /* Record.swift */; };
+		86AF8F2727BC353300EF0362 /* Chunking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8F2627BC353300EF0362 /* Chunking.swift */; };
+		86AF8F2A27BC778100EF0362 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8F2927BC778100EF0362 /* Vibration.swift */; };
+		966237F027C05FA800D91EBA /* DeliveryPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EE27C05FA800D91EBA /* DeliveryPriority.swift */; };
+		966237F127C05FA800D91EBA /* DeliveryPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EE27C05FA800D91EBA /* DeliveryPriority.swift */; };
+		966237F227C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */; };
+		966237F327C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86AF8EB327BAB9E100EF0362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86AF8E9A27BAB9DF00EF0362 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86AF8EA127BAB9DF00EF0362;
+			remoteInfo = hearRingiOSWatchOS;
+		};
+		86AF8EBD27BAB9E100EF0362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86AF8E9A27BAB9DF00EF0362 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86AF8EA127BAB9DF00EF0362;
+			remoteInfo = hearRingiOSWatchOS;
+		};
+		86AF8EC827BAB9E100EF0362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86AF8E9A27BAB9DF00EF0362 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86AF8EC527BAB9E100EF0362;
+			remoteInfo = "hearRingiOSWatchOS WatchKit App";
+		};
+		86AF8ED327BAB9E200EF0362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86AF8E9A27BAB9DF00EF0362 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86AF8ED027BAB9E200EF0362;
+			remoteInfo = "hearRingiOSWatchOS WatchKit Extension";
+		};
+		86AF8EEC27BAB9E300EF0362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86AF8E9A27BAB9DF00EF0362 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86AF8ED027BAB9E200EF0362;
+			remoteInfo = "hearRingiOSWatchOS WatchKit Extension";
+		};
+		86AF8EF627BAB9E300EF0362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86AF8E9A27BAB9DF00EF0362 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86AF8EC527BAB9E100EF0362;
+			remoteInfo = "hearRingiOSWatchOS WatchKit App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		86AF8F0227BAB9E300EF0362 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				86AF8ED227BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8F0627BAB9E300EF0362 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				86AF8EC727BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0790746227C057F70070E105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0790746427C05D370070E105 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		0790746627C499EC0070E105 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		0790746827C49BD60070E105 /* hearRingiOSWatchOS-WatchKit-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "hearRingiOSWatchOS-WatchKit-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		0790746B27C4AD300070E105 /* NotificationAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAuthorization.swift; sourceTree = "<group>"; };
+		7A0F128C27BB199B003D2938 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7A0F128E27BB1A63003D2938 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
+		7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
+		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		869F833E27C575FC00B66A55 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
+		86AF8EA227BAB9DF00EF0362 /* hearRingiOSWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearRingiOSWatchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSApp.swift; sourceTree = "<group>"; };
+		86AF8EA727BAB9DF00EF0362 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86AF8EA927BAB9E100EF0362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86AF8EAC27BAB9E100EF0362 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		86AF8EB227BAB9E100EF0362 /* hearRingiOSWatchOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearRingiOSWatchOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86AF8EB627BAB9E100EF0362 /* hearRingiOSWatchOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSTests.swift; sourceTree = "<group>"; };
+		86AF8EBC27BAB9E100EF0362 /* hearRingiOSWatchOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hearRingiOSWatchOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86AF8EC027BAB9E100EF0362 /* hearRingiOSWatchOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSUITests.swift; sourceTree = "<group>"; };
+		86AF8EC227BAB9E100EF0362 /* hearRingiOSWatchOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86AF8EC627BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hearRingiOSWatchOS WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86AF8ECB27BAB9E200EF0362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86AF8ED127BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "hearRingiOSWatchOS WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86AF8ED627BAB9E200EF0362 /* hearRingiOSWatchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSApp.swift; sourceTree = "<group>"; };
+		86AF8ED827BAB9E200EF0362 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86AF8EDA27BAB9E200EF0362 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		86AF8EDC27BAB9E200EF0362 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		86AF8EDE27BAB9E200EF0362 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		86AF8EE027BAB9E300EF0362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86AF8EE327BAB9E300EF0362 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		86AF8EE527BAB9E300EF0362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86AF8EE627BAB9E300EF0362 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		86AF8EEB27BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hearRingiOSWatchOS WatchKit AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86AF8EEF27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOS_WatchKit_AppTests.swift; sourceTree = "<group>"; };
+		86AF8EF527BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hearRingiOSWatchOS WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86AF8EF927BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOS_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
+		86AF8EFB27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86AF8F1C27BAEFBE00EF0362 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		86AF8F2627BC353300EF0362 /* Chunking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chunking.swift; sourceTree = "<group>"; };
+		86AF8F2927BC778100EF0362 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		966237EE27C05FA800D91EBA /* DeliveryPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryPriority.swift; sourceTree = "<group>"; };
+		966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneWatchConnectivity.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86AF8E9F27BAB9DF00EF0362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EAF27BAB9E100EF0362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EB927BAB9E100EF0362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8ECE27BAB9E200EF0362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EE827BAB9E300EF0362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EF227BAB9E300EF0362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0790746327C05CC90070E105 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				0790746427C05D370070E105 /* Alarm.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		7A21A31A27BC4DF600DDC3A6 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				7A0F129027BB1BE3003D2938 /* AlarmView.swift */,
+				7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		869F833D27C575E800B66A55 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				869F833E27C575FC00B66A55 /* Speech.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		86AF8E9927BAB9DF00EF0362 = {
+			isa = PBXGroup;
+			children = (
+				966237DB27C05ECA00D91EBA /* Shared */,
+				86AF8EA427BAB9DF00EF0362 /* hearRingiOSWatchOS */,
+				86AF8EB527BAB9E100EF0362 /* hearRingiOSWatchOSTests */,
+				86AF8EBF27BAB9E100EF0362 /* hearRingiOSWatchOSUITests */,
+				86AF8ECA27BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App */,
+				86AF8ED527BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension */,
+				86AF8EEE27BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppTests */,
+				86AF8EF827BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppUITests */,
+				86AF8EA327BAB9DF00EF0362 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		86AF8EA327BAB9DF00EF0362 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86AF8EA227BAB9DF00EF0362 /* hearRingiOSWatchOS.app */,
+				86AF8EB227BAB9E100EF0362 /* hearRingiOSWatchOSTests.xctest */,
+				86AF8EBC27BAB9E100EF0362 /* hearRingiOSWatchOSUITests.xctest */,
+				86AF8EC627BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App.app */,
+				86AF8ED127BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension.appex */,
+				86AF8EEB27BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppTests.xctest */,
+				86AF8EF527BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86AF8EA427BAB9DF00EF0362 /* hearRingiOSWatchOS */ = {
+			isa = PBXGroup;
+			children = (
+				869F833D27C575E800B66A55 /* Sound */,
+				0790746227C057F70070E105 /* Info.plist */,
+				7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */,
+				86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */,
+				7A9F995B27BDBDE500EC1DB0 /* DataController.swift */,
+				86AF8EA727BAB9DF00EF0362 /* ContentView.swift */,
+				7A0F128C27BB199B003D2938 /* MainView.swift */,
+				7A21A31A27BC4DF600DDC3A6 /* Alarm */,
+				7A0F128E27BB1A63003D2938 /* SettingsView.swift */,
+				86AF8EA927BAB9E100EF0362 /* Assets.xcassets */,
+				86AF8EAB27BAB9E100EF0362 /* Preview Content */,
+			);
+			path = hearRingiOSWatchOS;
+			sourceTree = "<group>";
+		};
+		86AF8EAB27BAB9E100EF0362 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				86AF8EAC27BAB9E100EF0362 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		86AF8EB527BAB9E100EF0362 /* hearRingiOSWatchOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				86AF8EB627BAB9E100EF0362 /* hearRingiOSWatchOSTests.swift */,
+			);
+			path = hearRingiOSWatchOSTests;
+			sourceTree = "<group>";
+		};
+		86AF8EBF27BAB9E100EF0362 /* hearRingiOSWatchOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				86AF8EC027BAB9E100EF0362 /* hearRingiOSWatchOSUITests.swift */,
+				86AF8EC227BAB9E100EF0362 /* hearRingiOSWatchOSUITestsLaunchTests.swift */,
+			);
+			path = hearRingiOSWatchOSUITests;
+			sourceTree = "<group>";
+		};
+		86AF8ECA27BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				0790746827C49BD60070E105 /* hearRingiOSWatchOS-WatchKit-App-Info.plist */,
+				86AF8ECB27BAB9E200EF0362 /* Assets.xcassets */,
+			);
+			path = "hearRingiOSWatchOS WatchKit App";
+			sourceTree = "<group>";
+		};
+		86AF8ED527BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0790746327C05CC90070E105 /* Alarm */,
+				86AF8F2827BC773E00EF0362 /* Vibration */,
+				86AF8F1627BAEE7B00EF0362 /* Sound */,
+				86AF8ED627BAB9E200EF0362 /* hearRingiOSWatchOSApp.swift */,
+				86AF8ED827BAB9E200EF0362 /* ContentView.swift */,
+				86AF8EDA27BAB9E200EF0362 /* NotificationController.swift */,
+				86AF8EDC27BAB9E200EF0362 /* NotificationView.swift */,
+				86AF8EDE27BAB9E200EF0362 /* ComplicationController.swift */,
+				86AF8EE027BAB9E300EF0362 /* Assets.xcassets */,
+				86AF8EE527BAB9E300EF0362 /* Info.plist */,
+				86AF8EE627BAB9E300EF0362 /* PushNotificationPayload.apns */,
+				86AF8EE227BAB9E300EF0362 /* Preview Content */,
+				0790746627C499EC0070E105 /* ExtensionDelegate.swift */,
+				0790746B27C4AD300070E105 /* NotificationAuthorization.swift */,
+			);
+			path = "hearRingiOSWatchOS WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		86AF8EE227BAB9E300EF0362 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				86AF8EE327BAB9E300EF0362 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		86AF8EEE27BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				86AF8EEF27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppTests.swift */,
+			);
+			path = "hearRingiOSWatchOS WatchKit AppTests";
+			sourceTree = "<group>";
+		};
+		86AF8EF827BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				86AF8EF927BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITests.swift */,
+				86AF8EFB27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift */,
+			);
+			path = "hearRingiOSWatchOS WatchKit AppUITests";
+			sourceTree = "<group>";
+		};
+		86AF8F1627BAEE7B00EF0362 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				86AF8F1C27BAEFBE00EF0362 /* Record.swift */,
+				86AF8F2627BC353300EF0362 /* Chunking.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		86AF8F2827BC773E00EF0362 /* Vibration */ = {
+			isa = PBXGroup;
+			children = (
+				86AF8F2927BC778100EF0362 /* Vibration.swift */,
+			);
+			path = Vibration;
+			sourceTree = "<group>";
+		};
+		966237DB27C05ECA00D91EBA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				966237EE27C05FA800D91EBA /* DeliveryPriority.swift */,
+				966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86AF8EA127BAB9DF00EF0362 /* hearRingiOSWatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86AF8F0727BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS" */;
+			buildPhases = (
+				86AF8E9E27BAB9DF00EF0362 /* Sources */,
+				86AF8E9F27BAB9DF00EF0362 /* Frameworks */,
+				86AF8EA027BAB9DF00EF0362 /* Resources */,
+				86AF8F0627BAB9E300EF0362 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86AF8EC927BAB9E100EF0362 /* PBXTargetDependency */,
+			);
+			name = hearRingiOSWatchOS;
+			productName = hearRingiOSWatchOS;
+			productReference = 86AF8EA227BAB9DF00EF0362 /* hearRingiOSWatchOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		86AF8EB127BAB9E100EF0362 /* hearRingiOSWatchOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86AF8F0A27BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOSTests" */;
+			buildPhases = (
+				86AF8EAE27BAB9E100EF0362 /* Sources */,
+				86AF8EAF27BAB9E100EF0362 /* Frameworks */,
+				86AF8EB027BAB9E100EF0362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86AF8EB427BAB9E100EF0362 /* PBXTargetDependency */,
+			);
+			name = hearRingiOSWatchOSTests;
+			productName = hearRingiOSWatchOSTests;
+			productReference = 86AF8EB227BAB9E100EF0362 /* hearRingiOSWatchOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		86AF8EBB27BAB9E100EF0362 /* hearRingiOSWatchOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86AF8F0D27BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOSUITests" */;
+			buildPhases = (
+				86AF8EB827BAB9E100EF0362 /* Sources */,
+				86AF8EB927BAB9E100EF0362 /* Frameworks */,
+				86AF8EBA27BAB9E100EF0362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86AF8EBE27BAB9E100EF0362 /* PBXTargetDependency */,
+			);
+			name = hearRingiOSWatchOSUITests;
+			productName = hearRingiOSWatchOSUITests;
+			productReference = 86AF8EBC27BAB9E100EF0362 /* hearRingiOSWatchOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		86AF8EC527BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86AF8F0327BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS WatchKit App" */;
+			buildPhases = (
+				86AF8EC427BAB9E100EF0362 /* Resources */,
+				86AF8F0227BAB9E300EF0362 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86AF8ED427BAB9E200EF0362 /* PBXTargetDependency */,
+			);
+			name = "hearRingiOSWatchOS WatchKit App";
+			productName = "hearRingiOSWatchOS WatchKit App";
+			productReference = 86AF8EC627BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		86AF8ED027BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86AF8EFF27BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS WatchKit Extension" */;
+			buildPhases = (
+				86AF8ECD27BAB9E200EF0362 /* Sources */,
+				86AF8ECE27BAB9E200EF0362 /* Frameworks */,
+				86AF8ECF27BAB9E200EF0362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hearRingiOSWatchOS WatchKit Extension";
+			productName = "hearRingiOSWatchOS WatchKit Extension";
+			productReference = 86AF8ED127BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		86AF8EEA27BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86AF8F1027BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS WatchKit AppTests" */;
+			buildPhases = (
+				86AF8EE727BAB9E300EF0362 /* Sources */,
+				86AF8EE827BAB9E300EF0362 /* Frameworks */,
+				86AF8EE927BAB9E300EF0362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86AF8EED27BAB9E300EF0362 /* PBXTargetDependency */,
+			);
+			name = "hearRingiOSWatchOS WatchKit AppTests";
+			productName = "hearRingiOSWatchOS WatchKit AppTests";
+			productReference = 86AF8EEB27BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		86AF8EF427BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86AF8F1327BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS WatchKit AppUITests" */;
+			buildPhases = (
+				86AF8EF127BAB9E300EF0362 /* Sources */,
+				86AF8EF227BAB9E300EF0362 /* Frameworks */,
+				86AF8EF327BAB9E300EF0362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86AF8EF727BAB9E300EF0362 /* PBXTargetDependency */,
+			);
+			name = "hearRingiOSWatchOS WatchKit AppUITests";
+			productName = "hearRingiOSWatchOS WatchKit AppUITests";
+			productReference = 86AF8EF527BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86AF8E9A27BAB9DF00EF0362 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					86AF8EA127BAB9DF00EF0362 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					86AF8EB127BAB9E100EF0362 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 86AF8EA127BAB9DF00EF0362;
+					};
+					86AF8EBB27BAB9E100EF0362 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 86AF8EA127BAB9DF00EF0362;
+					};
+					86AF8EC527BAB9E100EF0362 = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
+					};
+					86AF8ED027BAB9E200EF0362 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					86AF8EEA27BAB9E300EF0362 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 86AF8ED027BAB9E200EF0362;
+					};
+					86AF8EF427BAB9E300EF0362 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 86AF8EC527BAB9E100EF0362;
+					};
+				};
+			};
+			buildConfigurationList = 86AF8E9D27BAB9DF00EF0362 /* Build configuration list for PBXProject "hearRingiOSWatchOS" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 86AF8E9927BAB9DF00EF0362;
+			productRefGroup = 86AF8EA327BAB9DF00EF0362 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86AF8EA127BAB9DF00EF0362 /* hearRingiOSWatchOS */,
+				86AF8EB127BAB9E100EF0362 /* hearRingiOSWatchOSTests */,
+				86AF8EBB27BAB9E100EF0362 /* hearRingiOSWatchOSUITests */,
+				86AF8EC527BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App */,
+				86AF8ED027BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension */,
+				86AF8EEA27BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppTests */,
+				86AF8EF427BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86AF8EA027BAB9DF00EF0362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86AF8EAD27BAB9E100EF0362 /* Preview Assets.xcassets in Resources */,
+				86AF8EAA27BAB9E100EF0362 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EB027BAB9E100EF0362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EBA27BAB9E100EF0362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EC427BAB9E100EF0362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86AF8ECC27BAB9E200EF0362 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8ECF27BAB9E200EF0362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86AF8EE427BAB9E300EF0362 /* Preview Assets.xcassets in Resources */,
+				86AF8EE127BAB9E300EF0362 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EE927BAB9E300EF0362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EF327BAB9E300EF0362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86AF8E9E27BAB9DF00EF0362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869F833F27C575FC00B66A55 /* Speech.swift in Sources */,
+				86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */,
+				7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */,
+				7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */,
+				7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
+				7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */,
+				966237F027C05FA800D91EBA /* DeliveryPriority.swift in Sources */,
+				7A0F128D27BB199B003D2938 /* MainView.swift in Sources */,
+				86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,
+				966237F227C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EAE27BAB9E100EF0362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86AF8EB727BAB9E100EF0362 /* hearRingiOSWatchOSTests.swift in Sources */,
+				7A9F995D27BDBDE500EC1DB0 /* DataController.swift in Sources */,
+				7A9F994827BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EB827BAB9E100EF0362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86AF8EC327BAB9E100EF0362 /* hearRingiOSWatchOSUITestsLaunchTests.swift in Sources */,
+				7A9F995E27BDBDE500EC1DB0 /* DataController.swift in Sources */,
+				86AF8EC127BAB9E100EF0362 /* hearRingiOSWatchOSUITests.swift in Sources */,
+				7A9F994927BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8ECD27BAB9E200EF0362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86AF8F2A27BC778100EF0362 /* Vibration.swift in Sources */,
+				86AF8EDB27BAB9E200EF0362 /* NotificationController.swift in Sources */,
+				0790746727C499EC0070E105 /* ExtensionDelegate.swift in Sources */,
+				86AF8F2727BC353300EF0362 /* Chunking.swift in Sources */,
+				86AF8ED927BAB9E200EF0362 /* ContentView.swift in Sources */,
+				86AF8F1D27BAEFBE00EF0362 /* Record.swift in Sources */,
+				7A9F994A27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+				966237F127C05FA800D91EBA /* DeliveryPriority.swift in Sources */,
+				86AF8EDF27BAB9E200EF0362 /* ComplicationController.swift in Sources */,
+				7A9F995F27BDBDE500EC1DB0 /* DataController.swift in Sources */,
+				86AF8ED727BAB9E200EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,
+				86AF8EDD27BAB9E200EF0362 /* NotificationView.swift in Sources */,
+				966237F327C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */,
+				0790746C27C4AD300070E105 /* NotificationAuthorization.swift in Sources */,
+				0790746527C05D370070E105 /* Alarm.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EE727BAB9E300EF0362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86AF8EF027BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppTests.swift in Sources */,
+				7A9F996027BDBDE500EC1DB0 /* DataController.swift in Sources */,
+				7A9F994B27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86AF8EF127BAB9E300EF0362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86AF8EFA27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITests.swift in Sources */,
+				7A9F996127BDBDE500EC1DB0 /* DataController.swift in Sources */,
+				86AF8EFC27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift in Sources */,
+				7A9F994C27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86AF8EB427BAB9E100EF0362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86AF8EA127BAB9DF00EF0362 /* hearRingiOSWatchOS */;
+			targetProxy = 86AF8EB327BAB9E100EF0362 /* PBXContainerItemProxy */;
+		};
+		86AF8EBE27BAB9E100EF0362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86AF8EA127BAB9DF00EF0362 /* hearRingiOSWatchOS */;
+			targetProxy = 86AF8EBD27BAB9E100EF0362 /* PBXContainerItemProxy */;
+		};
+		86AF8EC927BAB9E100EF0362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86AF8EC527BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App */;
+			targetProxy = 86AF8EC827BAB9E100EF0362 /* PBXContainerItemProxy */;
+		};
+		86AF8ED427BAB9E200EF0362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86AF8ED027BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension */;
+			targetProxy = 86AF8ED327BAB9E200EF0362 /* PBXContainerItemProxy */;
+		};
+		86AF8EED27BAB9E300EF0362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86AF8ED027BAB9E200EF0362 /* hearRingiOSWatchOS WatchKit Extension */;
+			targetProxy = 86AF8EEC27BAB9E300EF0362 /* PBXContainerItemProxy */;
+		};
+		86AF8EF727BAB9E300EF0362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86AF8EC527BAB9E100EF0362 /* hearRingiOSWatchOS WatchKit App */;
+			targetProxy = 86AF8EF627BAB9E300EF0362 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		86AF8EFD27BAB9E300EF0362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		86AF8EFE27BAB9E300EF0362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		86AF8F0027BAB9E300EF0362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"hearRingiOSWatchOS WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "hearRingiOSWatchOS WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "hearRingiOSWatchOS WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = hearRingiOSWatchOS_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For using microphone";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_Extension.ExtensionDelegate;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		86AF8F0127BAB9E300EF0362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"hearRingiOSWatchOS WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "hearRingiOSWatchOS WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "hearRingiOSWatchOS WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = hearRingiOSWatchOS_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For using microphone";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_Extension.ExtensionDelegate;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		86AF8F0427BAB9E300EF0362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = hearRingiOSWatchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "hearRingiOSWatchOS-WatchKit-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "hearRingiOSWatchOS WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS2;
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_App.ExtensionDelegate;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "hearRingiOSWatchOS WatchKit Extension/Sound/hearRingiOSWatchOS WatchKit App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		86AF8F0527BAB9E300EF0362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = hearRingiOSWatchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "hearRingiOSWatchOS-WatchKit-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "hearRingiOSWatchOS WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS2;
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_App.ExtensionDelegate;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "hearRingiOSWatchOS WatchKit Extension/Sound/hearRingiOSWatchOS WatchKit App-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		86AF8F0827BAB9E300EF0362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"hearRingiOSWatchOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hearRingiOSWatchOS/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record audio for speech transcription";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Speech transcription ";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86AF8F0927BAB9E300EF0362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"hearRingiOSWatchOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hearRingiOSWatchOS/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record audio for speech transcription";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Speech transcription ";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86AF8F0B27BAB9E300EF0362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hearRingiOSWatchOS.app/hearRingiOSWatchOS";
+			};
+			name = Debug;
+		};
+		86AF8F0C27BAB9E300EF0362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hearRingiOSWatchOS.app/hearRingiOSWatchOS";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86AF8F0E27BAB9E300EF0362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hearRingiOSWatchOS;
+			};
+			name = Debug;
+		};
+		86AF8F0F27BAB9E300EF0362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hearRingiOSWatchOS;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86AF8F1127BAB9E300EF0362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearRing.hearRingiOSWatchOS-WatchKit-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hearRingiOSWatchOS WatchKit Extension.appex/hearRingiOSWatchOS WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		86AF8F1227BAB9E300EF0362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearRing.hearRingiOSWatchOS-WatchKit-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hearRingiOSWatchOS WatchKit Extension.appex/hearRingiOSWatchOS WatchKit Extension";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		86AF8F1427BAB9E300EF0362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearRing.hearRingiOSWatchOS-WatchKit-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "hearRingiOSWatchOS WatchKit App";
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		86AF8F1527BAB9E300EF0362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearRing.hearRingiOSWatchOS-WatchKit-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "hearRingiOSWatchOS WatchKit App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		86AF8E9D27BAB9DF00EF0362 /* Build configuration list for PBXProject "hearRingiOSWatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86AF8EFD27BAB9E300EF0362 /* Debug */,
+				86AF8EFE27BAB9E300EF0362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86AF8EFF27BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86AF8F0027BAB9E300EF0362 /* Debug */,
+				86AF8F0127BAB9E300EF0362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86AF8F0327BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86AF8F0427BAB9E300EF0362 /* Debug */,
+				86AF8F0527BAB9E300EF0362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86AF8F0727BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86AF8F0827BAB9E300EF0362 /* Debug */,
+				86AF8F0927BAB9E300EF0362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86AF8F0A27BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86AF8F0B27BAB9E300EF0362 /* Debug */,
+				86AF8F0C27BAB9E300EF0362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86AF8F0D27BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86AF8F0E27BAB9E300EF0362 /* Debug */,
+				86AF8F0F27BAB9E300EF0362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86AF8F1027BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS WatchKit AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86AF8F1127BAB9E300EF0362 /* Debug */,
+				86AF8F1227BAB9E300EF0362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86AF8F1327BAB9E300EF0362 /* Build configuration list for PBXNativeTarget "hearRingiOSWatchOS WatchKit AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86AF8F1427BAB9E300EF0362 /* Debug */,
+				86AF8F1527BAB9E300EF0362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */,
+			);
+			currentVersion = 7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 86AF8E9A27BAB9DF00EF0362 /* Project object */;
+}
