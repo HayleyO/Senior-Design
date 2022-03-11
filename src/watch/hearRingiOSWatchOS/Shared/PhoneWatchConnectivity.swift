@@ -32,7 +32,7 @@ final class Connectivity : NSObject, ObservableObject
         print("Activated connectivity")
     }
     
-    public func send(AlarmTime: String, alarmEnabled: Bool, alarmID: UUID, alarmName: String, Settings: String = "", delivery: DeliveryPriority,
+    public func send(AlarmTime: Date, alarmEnabled: Bool, alarmID: UUID, alarmName: String, Settings: String = "", delivery: DeliveryPriority,
                      replyHandler: (([String: Any]) -> Void)? = nil, errorHandler: ((Error) -> Void)? = nil) {
         //If not activated or watch/app not present, do not run function
         guard canSendToPeer() else {return}
