@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class Record : NSObject, AVAudioRecorderDelegate{
+class Record : NSObject, ObservableObject,  AVAudioRecorderDelegate{
     
     var soundURL: String!
     var audioRecorder:AVAudioRecorder?

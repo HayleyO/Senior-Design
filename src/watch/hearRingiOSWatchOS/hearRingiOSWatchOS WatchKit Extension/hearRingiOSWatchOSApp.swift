@@ -12,9 +12,11 @@ struct hearRingiOSWatchOSApp: App {
     
     @SceneBuilder var body: some Scene {
         WindowGroup {
-            NavigationView {
+            TabView {
                 ContentView()
+                SettingsView()
             }
+            .tabViewStyle(PageTabViewStyle())
         }
        
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
