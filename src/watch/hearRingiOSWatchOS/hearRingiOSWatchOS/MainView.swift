@@ -10,20 +10,27 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            ContentView()
-                .tabItem {
-                    Label("Listen", systemImage: "ear.and.waveform")
-                }
+            var sttQueue = DispatchQueue(label: "Hearring.SerialQueue")
+            var mainAppQueue = DispatchQueue(label: "Hearring.SerialQueue")
             
-            AlarmView()
-                .tabItem {
-                    Label("Alarm", systemImage: "alarm")
-                }
+            sttQueue.async {
+                ContentView()
+                    .tabItem {
+                        Label("Listen", systemImage: "ear.and.waveform")
+                    }
+            }
+            
+            mainAppQueue.async {
+                AlarmView()
+                    .tabItem {
+                        Label("Alarm", systemImage: "alarm")
+                    }
 
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "slider.horizontal.3")
-                }
+                SettingsView()
+                    .tabItem {
+                        Label("Settings", systemImage: "slider.horizontal.3")
+                    }
+            }
         }
     }
 }
