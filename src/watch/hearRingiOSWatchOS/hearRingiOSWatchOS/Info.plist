@@ -6,7 +6,7 @@
     <string>Record audio for speech transcription</string>
     <key>NSSpeechRecognitionUsageDescription</key>
     <string>Speech transcription </string>
-	<key>UILaunchScreen</key>
+    <key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>
 		<string>splashscreen</string>
