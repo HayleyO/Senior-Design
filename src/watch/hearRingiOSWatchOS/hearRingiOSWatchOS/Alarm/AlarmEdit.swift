@@ -26,6 +26,9 @@ struct AlarmEdit: View {
             Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
                 .font(.title2)
             
+            Text(alarm.desc ?? "DescriptionUnknown")
+                .padding()
+            
             Toggle("Turn Alarm On/Off", isOn: $isEnabled)
                 .padding()
                 .onChange(of: isEnabled){ value in
