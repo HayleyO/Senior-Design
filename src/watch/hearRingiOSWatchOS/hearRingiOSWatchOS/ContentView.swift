@@ -12,10 +12,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             HStack(alignment: .top){
-                VStack(alignment: .center){
+                VStack(alignment: .leading){
                     Text(speechRecognizer.transcript)
                         .padding()
+                        
+                    Spacer()
                 }
+                
             }
             .navigationTitle("Listening...")
         }
