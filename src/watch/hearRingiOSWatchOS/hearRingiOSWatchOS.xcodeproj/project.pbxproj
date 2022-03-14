@@ -276,8 +276,8 @@
 				7A9F995B27BDBDE500EC1DB0 /* DataController.swift */,
 				86AF8EA727BAB9DF00EF0362 /* ContentView.swift */,
 				7A0F128C27BB199B003D2938 /* MainView.swift */,
-				7A21A31A27BC4DF600DDC3A6 /* Alarm */,
 				7A0F128E27BB1A63003D2938 /* SettingsView.swift */,
+				7A21A31A27BC4DF600DDC3A6 /* Alarm */,
 				86AF8EA927BAB9E100EF0362 /* Assets.xcassets */,
 				86AF8EAB27BAB9E100EF0362 /* Preview Content */,
 			);

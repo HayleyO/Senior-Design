@@ -7,22 +7,27 @@
 //  Written by Tyler Lane
 
 import SwiftUI
+import CoreData
 
 struct SettingsView: View {
-    @State private var weakDecibelLevel: Double = 50
-    @State private var strongDecibelLevel: Double = 90
+    @FetchRequest(sortDescriptors: []) var decibelLevels: FetchedResults<SliderThresholdEntity>
+    @Environment(\.managedObjectContext) var moc
+    
+    @State private var weakerValue: Double
+    @State private var strongerValue: Double
     
     var body: some View {
         NavigationView {
+            let sliderThreshold = SliderThresholdEntity(context: moc)
             HStack (alignment: .center) {
                 VStack (alignment: .center) {
                     // Weak Vibration Slider
                     Text("Weak Vibration Threshold")
                         .font(.body)
-                    Slider(value: $weakDecibelLevel, in: 0...strongDecibelLevel-0.1)
+                    Slider(value: $weakerValue, in: 0.0...sliderThreshold.strongValue-sliderThreshold.thresholdBuffer)
                         .accentColor(.yellow)
                         .padding()
-                    Text("\(weakDecibelLevel, specifier: "%.1f") Decibels")
+                    Text("\(weakerValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
                     
                     Divider()
@@ -31,12 +36,13 @@ struct SettingsView: View {
                     // Strong Vibration Slider
                     Text("Strong Vibration Threshold")
                         .font(.body)
-                    Slider(value: $strongDecibelLevel, in: weakDecibelLevel+0.1...120)
+                    Slider(value: $strongerValue, in: sliderThreshold.weakValue+sliderThreshold.thresholdBuffer...120.0)
                         .accentColor(.red)
                         .padding()
-                    Text("\(strongDecibelLevel, specifier: "%.1f") Decibels")
+                    Text("\(strongerValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
                 }
+                
             }
             .navigationTitle("Settings")
         }
