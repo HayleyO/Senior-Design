@@ -40,6 +40,8 @@ struct AlarmEdit: View {
                     try? moc.save()
 
                 }
+            
+            Spacer()
         }
         .onAppear {
             isEnabled = alarm.isEnabled
