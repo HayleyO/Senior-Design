@@ -21,10 +21,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
         let alarm = Alarm()
         alarm.deployAlarm()
     }
-    func applicationWillResignActive() {
-        // when app is closing display pop up
-        // "once app has closed, sound notifications will not occur"
-    }
+    
     
     // what happens when the notification center recieves certain responses for notifications
     // just using this for snooze at the moment
