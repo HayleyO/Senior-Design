@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
@@ -29,8 +30,29 @@ struct ContentView: View {
     }
 }
 
+class ViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+      
+    let refreshControl = UIRefreshControl()
+      
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        DispatchQueue.main.async {
+            struct ContentView_Previews: PreviewProvider {
+                static var previews: some View {
+                    ContentView()
+                }
+            }
+        }
+    }
+}
+
+/*
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+*/
