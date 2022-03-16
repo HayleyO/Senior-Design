@@ -30,22 +30,16 @@ struct ContentView: View {
     }
 }
 
+
 class ViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-      
-    let refreshControl = UIRefreshControl()
-      
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+    let workItem = DispatchWorkItem {
         DispatchQueue.main.async {
-            struct ContentView_Previews: PreviewProvider {
-                static var previews: some View {
-                    ContentView()
-                }
-            }
-        }
+           struct ContentView_Previews: PreviewProvider {
+               static var previews: some View {
+                   ContentView()
+               }
+           }
+       }
     }
 }
 
