@@ -9,12 +9,12 @@
 import SwiftUI
 import CoreData
 
+
 struct SettingsView: View {
-    @FetchRequest(sortDescriptors: []) var decibelLevels: FetchedResults<SliderThresholdEntity>
     @Environment(\.managedObjectContext) var moc
     
-    @State private var weakerValue: Double
-    @State private var strongerValue: Double
+    @State private var weakerValue: Double = 50
+    @State private var strongerValue: Double = 90
     
     var body: some View {
         NavigationView {
@@ -25,6 +25,15 @@ struct SettingsView: View {
                     Text("Weak Vibration Threshold")
                         .font(.body)
                     Slider(value: $weakerValue, in: 0.0...sliderThreshold.strongValue-sliderThreshold.thresholdBuffer)
+                    /*
+                        .onChange(of:){
+                            do {
+                                try managedObjectContext.save()
+                            } catch {
+                                // handle the Core Data error
+                            }
+                        }
+                     */
                         .accentColor(.yellow)
                         .padding()
                     Text("\(weakerValue, specifier: "%.1f") Decibels")
@@ -42,9 +51,10 @@ struct SettingsView: View {
                     Text("\(strongerValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
                 }
-                
-            }
+            
             .navigationTitle("Settings")
+            }
         }
     }
 }
+
