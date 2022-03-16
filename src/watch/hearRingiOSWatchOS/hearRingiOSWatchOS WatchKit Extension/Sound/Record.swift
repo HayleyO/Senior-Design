@@ -13,12 +13,12 @@ class Record : NSObject, AVAudioRecorderDelegate{
     var soundURL: String!
     var audioRecorder:AVAudioRecorder?
     var levelTimer = Timer()
-    var chunking: Chunking
+    var chunking: Chunking? = nil
     let vibration = Vibration()
     
-    init(chunker: Chunking)
+    init(chunker: Chunking? = nil)
     {
-        chunking = chunker
+        chunking = chunker!
     }
     
     func setup(){
@@ -29,7 +29,7 @@ class Record : NSObject, AVAudioRecorderDelegate{
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord)), mode: .default)
+            try audioSession.setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.record)), mode: .default)
         } catch _ {
             
         }
@@ -46,17 +46,28 @@ class Record : NSObject, AVAudioRecorderDelegate{
         if let recorder = audioRecorder{
             if !recorder.isRecording{
                 let audioSession = AVAudioSession.sharedInstance()
+                audioSession.activate(options: []){(success, error) in guard error == nil else{
+                    print("Error: \(error!.localizedDescription)")
+                    return
+                    }
+                }
                 do {
                     try audioSession.setActive(true)
+                    
                 } catch _ {
                     
                 }
             }
             recorder.isMeteringEnabled = true
             recorder.record()
-            self.levelTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false){_ in
-                self.timerCallback()
-            }
+            interrupts()
+        }
+    }
+    
+    func interrupts()
+    {
+        self.levelTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false){_ in
+            self.timerCallback()
         }
     }
     
@@ -78,14 +89,12 @@ class Record : NSObject, AVAudioRecorderDelegate{
     @objc func timerCallback() {
         let recorder = audioRecorder
         recorder?.updateMeters()
-        
         let SPL = 20 * log10(5 * powf(10, ((recorder?.averagePower(forChannel: 0))!/20)) * 160) + 25
         print(SPL)
         vibration.vibrateOnSound(volume: SPL)
-        chunking.decibel = SPL
-        chunking.tintColor = chunking.getColorFromDecibel()
-        self.stop()
-        self.start()
+        chunking?.decibel = SPL
+        chunking?.tintColor = (chunking?.getColorFromDecibel())!
+        self.interrupts()
     }
     
     fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
