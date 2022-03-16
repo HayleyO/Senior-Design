@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AlarmEntity" representedClassName="AlarmEntity" syncable="YES" codeGenerationType="class">
         <attribute name="alarmTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
+    <entity name="ThresholdEntity" representedClassName="ThresholdEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="bufferValue" optional="YES" attributeType="Double" defaultValueString="0.1" usesScalarValueType="YES"/>
+        <attribute name="strongValue" optional="YES" attributeType="Double" maxValueString="120" defaultValueString="90" usesScalarValueType="YES"/>
+        <attribute name="weakValue" optional="YES" attributeType="Double" minValueString="0" defaultValueString="50" usesScalarValueType="YES"/>
+    </entity>
     <elements>
-        <element name="AlarmEntity" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="Entity" positionX="-54" positionY="27" width="128" height="14"/>
+        <element name="AlarmEntity" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="ThresholdEntity" positionX="-54" positionY="27" width="128" height="74"/>
     </elements>
 </model>
