@@ -19,7 +19,7 @@ struct AlarmView: View {
     }
     
   var body: some View {
-      NavigationView{
+      NavigationView {
           List(alarms) { alarm in
             NavigationLink{
                 AlarmEdit(alarm: alarm)
@@ -52,6 +52,11 @@ struct AlarmView: View {
             }
         }
         .navigationTitle("Alarms")
+        .toolbar {
+            NavigationLink(destination: AlarmCreate()) {
+                Image(systemName: "plus")
+            }
+        }
       }
   }
 }
