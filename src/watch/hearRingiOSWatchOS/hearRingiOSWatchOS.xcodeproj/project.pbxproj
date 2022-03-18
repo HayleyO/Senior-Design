@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		075EE14C27DE8CAB00E98695 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075EE14B27DE8CAB00E98695 /* SettingsView.swift */; };
-		075EE14E27DE942500E98695 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075EE14D27DE942500E98695 /* SettingsModel.swift */; };
 		0790746527C05D370070E105 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746427C05D370070E105 /* Alarm.swift */; };
 		0790746727C499EC0070E105 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746627C499EC0070E105 /* ExtensionDelegate.swift */; };
 		0790746C27C4AD300070E105 /* NotificationAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746B27C4AD300070E105 /* NotificationAuthorization.swift */; };
@@ -130,7 +129,6 @@
 
 /* Begin PBXFileReference section */
 		075EE14B27DE8CAB00E98695 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		075EE14D27DE942500E98695 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		0790746227C057F70070E105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0790746427C05D370070E105 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		0790746627C499EC0070E105 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				075EE14B27DE8CAB00E98695 /* SettingsView.swift */,
-				075EE14D27DE942500E98695 /* SettingsModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -711,7 +708,6 @@
 				7A9F994A27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
 				966237F127C05FA800D91EBA /* DeliveryPriority.swift in Sources */,
 				86AF8EDF27BAB9E200EF0362 /* ComplicationController.swift in Sources */,
-				075EE14E27DE942500E98695 /* SettingsModel.swift in Sources */,
 				075EE14C27DE8CAB00E98695 /* SettingsView.swift in Sources */,
 				7A9F995F27BDBDE500EC1DB0 /* DataController.swift in Sources */,
 				86AF8ED727BAB9E200EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,
