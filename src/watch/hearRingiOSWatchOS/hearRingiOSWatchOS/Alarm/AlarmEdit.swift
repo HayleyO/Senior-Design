@@ -42,6 +42,15 @@ struct AlarmEdit: View {
                 }
             
             Spacer()
+            Button(action: {
+                moc.delete(alarm)
+                try? moc.save()
+            }, label: {
+                Text("Delete")
+                    .foregroundColor(Color.red)
+            }
+            )
+                .padding()
         }
         .onAppear {
             isEnabled = alarm.isEnabled
