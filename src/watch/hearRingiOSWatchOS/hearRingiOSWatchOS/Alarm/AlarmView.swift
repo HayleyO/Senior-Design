@@ -60,6 +60,8 @@ struct AlarmView: View {
                     Image(systemName: "plus")
                 }
             }
+      }.onAppear() {
+          Connectivity.shared.SendFirst()
       }
     }
     func delete(at offsets: IndexSet) {

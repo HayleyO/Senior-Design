@@ -55,8 +55,6 @@ final class Connectivity : NSObject, ObservableObject
     public func send(AlarmTime: Date, alarmEnabled: Bool, alarmID: UUID, alarmName: String, alarmDescription: String, delivery: DeliveryPriority) {
         //If not activated or watch/app not present, do not run function
         guard canSendToPeer() else {return}
-        
-        print("I got past here!")
           
         let AlarmInfoObj = AlarmInfo(alarmID: alarmID, alarmName: alarmName, alarmTime: AlarmTime, alarmEnabled: alarmEnabled, alarmDescription: alarmDescription)
         
@@ -96,6 +94,13 @@ final class Connectivity : NSObject, ObservableObject
             deliver(SendingDict: SendingDict, delivery: delivery)
         }
         catch{}
+    }
+    
+    //Gets around the issue of not being able to connect to watch to send first alarm
+    public func SendFirst() {
+        let useless = try? JSONEncoder().encode(1)
+        let garbage = try? JSONEncoder().encode("not useful")
+        deliver(SendingDict: ["Useless":useless!, "SettingsOrAlarm":garbage!], delivery: .guaranteed)
     }
     
     //delivers, based on priority, encoded JSON string to companion device
@@ -190,7 +195,7 @@ extension Connectivity: WCSessionDelegate {
                 print("threshold val set to: \(decodedSettings.bufferValue)")
                 
             //decode and set received alarm
-            } else {
+            } else if(SettingsOrAlarm == "Alarm") {
                 let decodedAlarm = try JSONDecoder().decode(AlarmInfo.self, from: dictionary["JSON"] as! Data)
                 AlarmChanged = decodedAlarm
                 #if os(watchOS)
@@ -210,6 +215,9 @@ extension Connectivity: WCSessionDelegate {
                 print(decodedAlarm.alarmName)
                 print(decodedAlarm.alarmDescription)
                 print("\n")
+                //only happens on first send to watch
+            } else {
+                return
             }
         } catch {}
         print("Transferred data successfully")
