@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
-            <string>For using microphone</string>
-        <key>WKExtensionDelegateClassName</key>
-            <string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
+        	<string>For using microphone</string>
+        	<key>WKExtensionDelegateClassName</key>
+        	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
