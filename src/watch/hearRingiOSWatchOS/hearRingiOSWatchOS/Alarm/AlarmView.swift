@@ -20,45 +20,55 @@ struct AlarmView: View {
     
   var body: some View {
       NavigationView {
-          List(alarms) { alarm in
-            NavigationLink{
-                AlarmEdit(alarm: alarm)
-            } label: {
-                if (alarm.isEnabled)
-                {
-                    HStack(alignment: .top) {
-                      VStack(alignment: .leading) {
-                          Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
-                          .font(.headline)
-                        Text(alarm.name ?? "NameUnknown")
-                          .font(.subheadline)
-                      }
-                      Spacer()
+          List {
+              ForEach(alarms, id: \.self) { alarm in
+                NavigationLink {
+                    AlarmEdit(alarm: alarm)
+                } label: {
+                    if (alarm.isEnabled)
+                    {
+                        HStack(alignment: .top) {
+                          VStack(alignment: .leading) {
+                              Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
+                              .font(.headline)
+                            Text(alarm.name ?? "NameUnknown")
+                              .font(.subheadline)
+                          }
+                          Spacer()
+                        }
+                    }
+                    else {
+                        HStack(alignment: .top) {
+                          VStack(alignment: .leading) {
+                            Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
+                              .font(.headline)
+                              .foregroundColor(.secondary)
+                            Text(alarm.name ?? "NameUnknown")
+                              .font(.subheadline)
+                              .foregroundColor(.secondary)
+                          }
+                          Spacer()
+                        }
                     }
                 }
-                else {
-                    HStack(alignment: .top) {
-                      VStack(alignment: .leading) {
-                        Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
-                          .font(.headline)
-                          .foregroundColor(.secondary)
-                        Text(alarm.name ?? "NameUnknown")
-                          .font(.subheadline)
-                          .foregroundColor(.secondary)
-                      }
-                      Spacer()
-                    }
+              }
+              .onDelete(perform: delete)
+            }
+            .navigationTitle("Alarms")
+            .toolbar {
+                NavigationLink(destination: AlarmCreate()) {
+                    Image(systemName: "plus")
                 }
             }
-        }
-        .navigationTitle("Alarms")
-        .toolbar {
-            NavigationLink(destination: AlarmCreate()) {
-                Image(systemName: "plus")
-            }
-        }
       }
-  }
+    }
+    func delete(at offsets: IndexSet) {
+        for index in offsets {
+                let alarm = alarms[index]
+                moc.delete(alarm)
+            }
+        try? moc.save()
+    }
 }
 
 struct AlarmView_Previews: PreviewProvider {
