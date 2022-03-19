@@ -14,10 +14,27 @@ final class Connectivity : NSObject, ObservableObject
 {
     @StateObject private var data_controller = DataController()
     @Environment(\.managedObjectContext) var moc
-    @Published var strr: String = "disabled"
     
+    //published variables for use elsewhere
+    @Published var strr: String = "disabled"
+    @Published var AlarmChanged: AlarmInfo = AlarmInfo(alarmID: UUID(), alarmName: "NameUnknown", alarmTime: Date.now, alarmEnabled: false, alarmDescription: "DescriptionUnknown")
+    @Published var SettingsChanged: SettingsInfo = SettingsInfo(bufferValue: 0.0, weakValue: 0.0, strongValue: 0.0)
     
     static let shared = Connectivity()
+    
+    struct AlarmInfo: Codable {
+        let alarmID: UUID
+        let alarmName: String
+        let alarmTime: Date
+        let alarmEnabled: Bool
+        let alarmDescription: String
+    }
+    
+    struct SettingsInfo: Codable {
+        let bufferValue: Double
+        let weakValue: Double
+        let strongValue: Double
+    }
 
     override private init() {
         super.init()
@@ -30,36 +47,76 @@ final class Connectivity : NSObject, ObservableObject
         WCSession.default.delegate = self
         WCSession.default.activate()
         print("Activated connectivity")
+        print(WCSession.default.activationState == .notActivated)
+        WCSession.default.activate()
     }
     
-    public func send(AlarmTime: Date, alarmEnabled: Bool, alarmID: UUID, alarmName: String, Settings: String = "", delivery: DeliveryPriority,
-                     replyHandler: (([String: Any]) -> Void)? = nil, errorHandler: ((Error) -> Void)? = nil) {
+    //sends an alarm whenever alarm arguments are supplied
+    public func send(AlarmTime: Date, alarmEnabled: Bool, alarmID: UUID, alarmName: String, alarmDescription: String, delivery: DeliveryPriority) {
+        //If not activated or watch/app not present, do not run function
+        guard canSendToPeer() else {return}
+        
+        print("I got past here!")
+          
+        let AlarmInfoObj = AlarmInfo(alarmID: alarmID, alarmName: alarmName, alarmTime: AlarmTime, alarmEnabled: alarmEnabled, alarmDescription: alarmDescription)
+        
+        do{
+            let EncodeAlarmInfoObj = try JSONEncoder().encode(AlarmInfoObj)
+            let AlarmToData = try JSONEncoder().encode("Alarm")
+            
+            if let jsonString = String(data: EncodeAlarmInfoObj, encoding: .utf8) {
+                print("JSON \(jsonString)")
+            }
+            let SendingDict = ["JSON":EncodeAlarmInfoObj, "SettingsOrAlarm":AlarmToData]
+            
+            deliver(SendingDict: SendingDict, delivery: delivery)
+            
+        }
+        catch{}
+    }
+    
+    //sends Settings whenever settings are changed
+    public func send(bufferValue: Double, strongValue: Double, weakValue: Double, delivery: DeliveryPriority) {
         //If not activated or watch/app not present, do not run function
         guard canSendToPeer() else {return}
           
-        let AlarmSettingsInfo: [String: Any] = [
-            "alarmEnabled" : alarmEnabled,
-            "alarmTime": 4,
-            "alarmID": 4,
-            "alarmName": 4,
-            
-            "SettingsPlaceholder": Settings
-        ]
+        let SettingsInfoObj = SettingsInfo(bufferValue: bufferValue, weakValue: weakValue, strongValue: strongValue)
         
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        do{
+            let EncodeAlarmInfoObj = try encoder.encode(SettingsInfoObj)
+            let SettingsToData = try JSONEncoder().encode("Settings")
+            
+            if let jsonString = String(data: EncodeAlarmInfoObj, encoding: .utf8) {
+                print("JSON \(jsonString)")
+            }
+            let SendingDict = ["JSON":EncodeAlarmInfoObj, "SettingsOrAlarm":SettingsToData]
+            
+            deliver(SendingDict: SendingDict, delivery: delivery)
+        }
+        catch{}
+    }
+    
+    //delivers, based on priority, encoded JSON string to companion device
+    public func deliver(SendingDict: [String: Data], delivery: DeliveryPriority, replyHandler: (([String: Any]) -> Void)? = nil, errorHandler: ((Error) -> Void)? = nil) {
         print("Sending info to watch now")
+        
         switch delivery {
+            //will attempt to immediately send once, returns error on failure
             case .failable:
-            WCSession.default.sendMessage(AlarmSettingsInfo,
+            WCSession.default.sendMessage(SendingDict,
                 replyHandler: optionalMainQueueDispatch(handler: replyHandler),
                 errorHandler: optionalMainQueueDispatch(handler: errorHandler)
             )
-
+            //will try to send no matter what when connection is available
             case .guaranteed:
-                WCSession.default.transferUserInfo(AlarmSettingsInfo)
+                WCSession.default.transferUserInfo(SendingDict)
 
+            //will try to send most recent message with highest priority on connection availability
             case .highPriority:
                 do {
-                    try WCSession.default.updateApplicationContext(AlarmSettingsInfo)
+                    try WCSession.default.updateApplicationContext(SendingDict)
                 } catch { errorHandler?(error) }
         }
     }
@@ -112,7 +169,6 @@ extension Connectivity: WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        print("Watch has context")
         update(from: userInfo)
     }
     
@@ -123,17 +179,40 @@ extension Connectivity: WCSessionDelegate {
     private func update(from dictionary: [String : Any]) {
         print("Updating info now")
         
-        var alarmEnabled = dictionary["alarmEnabled"] as? Bool
-        
-        print("Transferred Settings and Alarm data")
-            
-        #if os(watchOS)
-        if(alarmEnabled == true) {
-            self.strr = "enabled"
-        } else {
-            self.strr = "disabled"
-        }
-        #endif
+        do {
+            //decode and set received settings
+            let SettingsOrAlarm = try? JSONDecoder().decode(String.self, from: dictionary["SettingsOrAlarm"] as! Data)
+            if(SettingsOrAlarm == "Settings") {
+                let decodedSettings = try JSONDecoder().decode(SettingsInfo.self, from: dictionary["JSON"] as! Data)
+                print("Debug settings received")
+                print("weak val set to: \(decodedSettings.weakValue)")
+                print("strong val set to: \(decodedSettings.strongValue)")
+                print("threshold val set to: \(decodedSettings.bufferValue)")
+                
+            //decode and set received alarm
+            } else {
+                let decodedAlarm = try JSONDecoder().decode(AlarmInfo.self, from: dictionary["JSON"] as! Data)
+                AlarmChanged = decodedAlarm
+                #if os(watchOS)
+                let AlarmEnabled = decodedAlarm.alarmEnabled
+                if(AlarmEnabled == true) {
+                    self.strr = "enabled"
+                    print(decodedAlarm.alarmEnabled)
+                } else {
+                    self.strr = "disabled"
+                    print(decodedAlarm.alarmEnabled)
+                }
+                #endif
+                print("Alarm Infodump below")
+                print(decodedAlarm.alarmEnabled)
+                print(decodedAlarm.alarmID)
+                print(decodedAlarm.alarmTime)
+                print(decodedAlarm.alarmName)
+                print(decodedAlarm.alarmDescription)
+                print("\n")
+            }
+        } catch {}
+        print("Transferred data successfully")
     }
 
     #if os(iOS)

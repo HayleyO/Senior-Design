@@ -20,7 +20,8 @@ struct ContentView: View {
                     recordModel.setup()
                     recordModel.start()
                 }
-            Text(sharedData.strr)
+            Text(sharedData.AlarmChanged.alarmName)
+            Text(String(sharedData.AlarmChanged.alarmEnabled))
         }
     }
 }
