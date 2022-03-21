@@ -16,7 +16,6 @@ class Record : NSObject, AVAudioRecorderDelegate{
     var chunking: Chunking? = nil
     let vibration = Vibration()
     
-    DispatchQueue.global.aync {
         DispatchQueue.main.async {
             init(chunker: Chunking? = nil)
             {
