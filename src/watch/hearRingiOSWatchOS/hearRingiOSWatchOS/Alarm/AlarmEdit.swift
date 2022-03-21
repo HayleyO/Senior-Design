@@ -34,7 +34,8 @@ struct AlarmEdit: View {
                 .onChange(of: isEnabled){ value in
                     alarm.isEnabled = value
 
-                    Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, delivery: .highPriority)
+                    Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .failable)
+                    
                     print(alarm.isEnabled)
 
                     try? moc.save()
@@ -42,6 +43,15 @@ struct AlarmEdit: View {
                 }
             
             Spacer()
+            Button(action: {
+                moc.delete(alarm)
+                try? moc.save()
+            }, label: {
+                Text("Delete")
+                    .foregroundColor(Color.red)
+            }
+            )
+                .padding()
         }
         .onAppear {
             isEnabled = alarm.isEnabled

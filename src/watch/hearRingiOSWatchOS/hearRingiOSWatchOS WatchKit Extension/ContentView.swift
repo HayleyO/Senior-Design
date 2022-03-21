@@ -23,7 +23,8 @@ struct ContentView: View {
                         }
                     }
                 }
-            Text(sharedData.strr)
+            Text(sharedData.AlarmChanged.alarmName)
+            Text(String(sharedData.AlarmChanged.alarmEnabled))
         }
     }
 }
