@@ -14,11 +14,14 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ProgressView("Recording...", value: dataModel.decibel, total: 160).progressViewStyle(LinearProgressViewStyle(tint: dataModel.tintColor))
-            
                 .onAppear() {
-                    let recordModel = Record(chunker: dataModel)
-                    recordModel.setup()
-                    recordModel.start()
+                    DispatchQueue.global().async {
+                        DispatchQueue.main.async {
+                            let recordModel = Record(chunker: dataModel)
+                            recordModel.setup()
+                            recordModel.start()
+                        }
+                    }
                 }
             Text(sharedData.strr)
         }

@@ -16,11 +16,15 @@ class Record : NSObject, AVAudioRecorderDelegate{
     var chunking: Chunking? = nil
     let vibration = Vibration()
     
-    init(chunker: Chunking? = nil)
-    {
-        chunking = chunker!
+    DispatchQueue.global().async {
+        
+        DispatchQueue.main.async {
+            init(chunker: Chunking? = nil)
+            {
+                chunking = chunker!
+            }
+        }
     }
-    
     func setup(){
         let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
         let audioFileName = UUID().uuidString + ".m4a"
