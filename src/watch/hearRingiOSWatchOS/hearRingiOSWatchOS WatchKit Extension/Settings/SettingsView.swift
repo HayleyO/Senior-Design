@@ -12,36 +12,37 @@ struct SettingsView: View{
     @Environment(\.managedObjectContext) var moc
     @State var lowThreshold: Double = 50.0
     @State var highThreshold: Double = 90.0
+    @StateObject var shared = Connectivity.shared
     
     var body: some View {
-        let sliderThreshold = ThresholdEntity(context: moc)
         VStack{
-            Text("Low Threshold: \(Int(round(sliderThreshold.weakValue)))")
+            Text("Low Threshold: \(Int(round(lowThreshold)))")
             Slider(value: $lowThreshold,
-                   in: 0.0...sliderThreshold.weakValue, step:10)
+                   in: 0.0...highThreshold, step:10)
                 .accentColor(.yellow)
                 .onChange(of: lowThreshold){
-                    newThreshold in sliderChanged(progress: newThreshold, slider: sliders.low)
+                    newThreshold in sliderChanged(value: newThreshold, slider: sliders.low)
                 }
-            Text("High Threshold: \(Int(round(sliderThreshold.strongValue)))")
-        Slider(value: $highThreshold,
-               in: sliderThreshold.weakValue...120.0, step: 10)
+            Text("High Threshold: \(Int(round(highThreshold)))")
+            Slider(value: $highThreshold,
+               in: lowThreshold...120.0, step: 10)
                 .accentColor(.red)
                 .onChange(of: highThreshold){
-                    newThreshold in sliderChanged(progress: newThreshold, slider: sliders.high)
+                    newThreshold in sliderChanged(value: newThreshold, slider: sliders.high)
                 }
         }
     }
     
-    func sliderChanged(progress: Double, slider: sliders){
-        print("slider value changed to \(progress)")
+    func sliderChanged(value: Double, slider: sliders){
+        print("slider value changed to \(value)")
         let sliderThreshold = ThresholdEntity(context: moc)
         if(slider == sliders.low){
-            sliderThreshold.setValue(progress, forKey: "weakValue")
+            shared.send(bufferValue: sliderThreshold.bufferValue, strongValue: sliderThreshold.strongValue, weakValue: value, delivery: .highPriority)
             try? moc.save()
         }
         else if(slider == sliders.high){
-            sliderThreshold.setValue(progress, forKey: "strongValue")
+            shared.send(bufferValue: sliderThreshold.bufferValue, strongValue: value, weakValue: sliderThreshold.weakValue, delivery: .highPriority)
+            try? moc.save()
         }
     }
         

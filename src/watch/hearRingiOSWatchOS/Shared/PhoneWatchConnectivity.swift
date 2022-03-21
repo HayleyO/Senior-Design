@@ -18,7 +18,7 @@ final class Connectivity : NSObject, ObservableObject
     //published variables for use elsewhere
     @Published var strr: String = "disabled"
     @Published var AlarmChanged: AlarmInfo = AlarmInfo(alarmID: UUID(), alarmName: "NameUnknown", alarmTime: Date.now, alarmEnabled: false, alarmDescription: "DescriptionUnknown")
-    @Published var SettingsChanged: SettingsInfo = SettingsInfo(bufferValue: 0.0, weakValue: 0.0, strongValue: 0.0)
+    @Published var SettingsChanged: SettingsInfo = SettingsInfo(bufferValue: 0.0, weakValue: 50.0, strongValue: 90.0)
     
     static let shared = Connectivity()
     
@@ -189,6 +189,7 @@ extension Connectivity: WCSessionDelegate {
             let SettingsOrAlarm = try? JSONDecoder().decode(String.self, from: dictionary["SettingsOrAlarm"] as! Data)
             if(SettingsOrAlarm == "Settings") {
                 let decodedSettings = try JSONDecoder().decode(SettingsInfo.self, from: dictionary["JSON"] as! Data)
+                SettingsChanged = decodedSettings
                 print("Debug settings received")
                 print("weak val set to: \(decodedSettings.weakValue)")
                 print("strong val set to: \(decodedSettings.strongValue)")
