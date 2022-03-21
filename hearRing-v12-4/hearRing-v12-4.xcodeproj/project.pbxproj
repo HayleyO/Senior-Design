@@ -1,0 +1,716 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DAE4C6B927E2902C00CA2E4B /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C6B827E2902C00CA2E4B /* Tests_iOS.swift */; };
+		DAE4C6C427E2902C00CA2E4B /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C6C327E2902C00CA2E4B /* Tests_macOS.swift */; };
+		DAE4C6C627E2902C00CA2E4B /* hearRing_v12_4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C69A27E2902900CA2E4B /* hearRing_v12_4.xcdatamodeld */; };
+		DAE4C6C727E2902C00CA2E4B /* hearRing_v12_4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C69A27E2902900CA2E4B /* hearRing_v12_4.xcdatamodeld */; };
+		DAE4C6C827E2902C00CA2E4B /* hearRing_v12_4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C69C27E2902900CA2E4B /* hearRing_v12_4App.swift */; };
+		DAE4C6C927E2902C00CA2E4B /* hearRing_v12_4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C69C27E2902900CA2E4B /* hearRing_v12_4App.swift */; };
+		DAE4C6CA27E2902C00CA2E4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C69D27E2902900CA2E4B /* ContentView.swift */; };
+		DAE4C6CB27E2902C00CA2E4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C69D27E2902900CA2E4B /* ContentView.swift */; };
+		DAE4C6CC27E2902C00CA2E4B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C69E27E2902900CA2E4B /* Persistence.swift */; };
+		DAE4C6CD27E2902C00CA2E4B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4C69E27E2902900CA2E4B /* Persistence.swift */; };
+		DAE4C6CE27E2902C00CA2E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE4C69F27E2902B00CA2E4B /* Assets.xcassets */; };
+		DAE4C6CF27E2902C00CA2E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE4C69F27E2902B00CA2E4B /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DAE4C6B527E2902C00CA2E4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAE4C69527E2902900CA2E4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAE4C6A327E2902C00CA2E4B;
+			remoteInfo = "hearRing-v12-4 (iOS)";
+		};
+		DAE4C6C027E2902C00CA2E4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAE4C69527E2902900CA2E4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAE4C6AB27E2902C00CA2E4B;
+			remoteInfo = "hearRing-v12-4 (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DAE4C69B27E2902900CA2E4B /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		DAE4C69C27E2902900CA2E4B /* hearRing_v12_4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRing_v12_4App.swift; sourceTree = "<group>"; };
+		DAE4C69D27E2902900CA2E4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DAE4C69E27E2902900CA2E4B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DAE4C69F27E2902B00CA2E4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DAE4C6A427E2902C00CA2E4B /* hearRing-v12-4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hearRing-v12-4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE4C6A727E2902C00CA2E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAE4C6AC27E2902C00CA2E4B /* hearRing-v12-4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hearRing-v12-4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE4C6AE27E2902C00CA2E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAE4C6AF27E2902C00CA2E4B /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		DAE4C6B427E2902C00CA2E4B /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE4C6B827E2902C00CA2E4B /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		DAE4C6BA27E2902C00CA2E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAE4C6BF27E2902C00CA2E4B /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE4C6C327E2902C00CA2E4B /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		DAE4C6C527E2902C00CA2E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAE4C6A127E2902C00CA2E4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE4C6A927E2902C00CA2E4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE4C6B127E2902C00CA2E4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE4C6BC27E2902C00CA2E4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DAE4C69427E2902900CA2E4B = {
+			isa = PBXGroup;
+			children = (
+				DAE4C69927E2902900CA2E4B /* Shared */,
+				DAE4C6A627E2902C00CA2E4B /* iOS */,
+				DAE4C6AD27E2902C00CA2E4B /* macOS */,
+				DAE4C6B727E2902C00CA2E4B /* Tests iOS */,
+				DAE4C6C227E2902C00CA2E4B /* Tests macOS */,
+				DAE4C6A527E2902C00CA2E4B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAE4C69927E2902900CA2E4B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DAE4C69C27E2902900CA2E4B /* hearRing_v12_4App.swift */,
+				DAE4C69D27E2902900CA2E4B /* ContentView.swift */,
+				DAE4C69E27E2902900CA2E4B /* Persistence.swift */,
+				DAE4C69F27E2902B00CA2E4B /* Assets.xcassets */,
+				DAE4C69A27E2902900CA2E4B /* hearRing_v12_4.xcdatamodeld */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DAE4C6A527E2902C00CA2E4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAE4C6A427E2902C00CA2E4B /* hearRing-v12-4.app */,
+				DAE4C6AC27E2902C00CA2E4B /* hearRing-v12-4.app */,
+				DAE4C6B427E2902C00CA2E4B /* Tests iOS.xctest */,
+				DAE4C6BF27E2902C00CA2E4B /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAE4C6A627E2902C00CA2E4B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DAE4C6A727E2902C00CA2E4B /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		DAE4C6AD27E2902C00CA2E4B /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				DAE4C6AE27E2902C00CA2E4B /* Info.plist */,
+				DAE4C6AF27E2902C00CA2E4B /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		DAE4C6B727E2902C00CA2E4B /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DAE4C6B827E2902C00CA2E4B /* Tests_iOS.swift */,
+				DAE4C6BA27E2902C00CA2E4B /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		DAE4C6C227E2902C00CA2E4B /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				DAE4C6C327E2902C00CA2E4B /* Tests_macOS.swift */,
+				DAE4C6C527E2902C00CA2E4B /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAE4C6A327E2902C00CA2E4B /* hearRing-v12-4 (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE4C6D227E2902C00CA2E4B /* Build configuration list for PBXNativeTarget "hearRing-v12-4 (iOS)" */;
+			buildPhases = (
+				DAE4C6A027E2902C00CA2E4B /* Sources */,
+				DAE4C6A127E2902C00CA2E4B /* Frameworks */,
+				DAE4C6A227E2902C00CA2E4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hearRing-v12-4 (iOS)";
+			productName = "hearRing-v12-4 (iOS)";
+			productReference = DAE4C6A427E2902C00CA2E4B /* hearRing-v12-4.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DAE4C6AB27E2902C00CA2E4B /* hearRing-v12-4 (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE4C6D527E2902C00CA2E4B /* Build configuration list for PBXNativeTarget "hearRing-v12-4 (macOS)" */;
+			buildPhases = (
+				DAE4C6A827E2902C00CA2E4B /* Sources */,
+				DAE4C6A927E2902C00CA2E4B /* Frameworks */,
+				DAE4C6AA27E2902C00CA2E4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hearRing-v12-4 (macOS)";
+			productName = "hearRing-v12-4 (macOS)";
+			productReference = DAE4C6AC27E2902C00CA2E4B /* hearRing-v12-4.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DAE4C6B327E2902C00CA2E4B /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE4C6D827E2902C00CA2E4B /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				DAE4C6B027E2902C00CA2E4B /* Sources */,
+				DAE4C6B127E2902C00CA2E4B /* Frameworks */,
+				DAE4C6B227E2902C00CA2E4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAE4C6B627E2902C00CA2E4B /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = DAE4C6B427E2902C00CA2E4B /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		DAE4C6BE27E2902C00CA2E4B /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE4C6DB27E2902C00CA2E4B /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				DAE4C6BB27E2902C00CA2E4B /* Sources */,
+				DAE4C6BC27E2902C00CA2E4B /* Frameworks */,
+				DAE4C6BD27E2902C00CA2E4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAE4C6C127E2902C00CA2E4B /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = DAE4C6BF27E2902C00CA2E4B /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAE4C69527E2902900CA2E4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					DAE4C6A327E2902C00CA2E4B = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					DAE4C6AB27E2902C00CA2E4B = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					DAE4C6B327E2902C00CA2E4B = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = DAE4C6A327E2902C00CA2E4B;
+					};
+					DAE4C6BE27E2902C00CA2E4B = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = DAE4C6AB27E2902C00CA2E4B;
+					};
+				};
+			};
+			buildConfigurationList = DAE4C69827E2902900CA2E4B /* Build configuration list for PBXProject "hearRing-v12-4" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DAE4C69427E2902900CA2E4B;
+			productRefGroup = DAE4C6A527E2902C00CA2E4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAE4C6A327E2902C00CA2E4B /* hearRing-v12-4 (iOS) */,
+				DAE4C6AB27E2902C00CA2E4B /* hearRing-v12-4 (macOS) */,
+				DAE4C6B327E2902C00CA2E4B /* Tests iOS */,
+				DAE4C6BE27E2902C00CA2E4B /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAE4C6A227E2902C00CA2E4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE4C6CE27E2902C00CA2E4B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE4C6AA27E2902C00CA2E4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE4C6CF27E2902C00CA2E4B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE4C6B227E2902C00CA2E4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE4C6BD27E2902C00CA2E4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAE4C6A027E2902C00CA2E4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE4C6C827E2902C00CA2E4B /* hearRing_v12_4App.swift in Sources */,
+				DAE4C6CC27E2902C00CA2E4B /* Persistence.swift in Sources */,
+				DAE4C6C627E2902C00CA2E4B /* hearRing_v12_4.xcdatamodeld in Sources */,
+				DAE4C6CA27E2902C00CA2E4B /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE4C6A827E2902C00CA2E4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE4C6C927E2902C00CA2E4B /* hearRing_v12_4App.swift in Sources */,
+				DAE4C6CD27E2902C00CA2E4B /* Persistence.swift in Sources */,
+				DAE4C6C727E2902C00CA2E4B /* hearRing_v12_4.xcdatamodeld in Sources */,
+				DAE4C6CB27E2902C00CA2E4B /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE4C6B027E2902C00CA2E4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE4C6B927E2902C00CA2E4B /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAE4C6BB27E2902C00CA2E4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE4C6C427E2902C00CA2E4B /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DAE4C6B627E2902C00CA2E4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAE4C6A327E2902C00CA2E4B /* hearRing-v12-4 (iOS) */;
+			targetProxy = DAE4C6B527E2902C00CA2E4B /* PBXContainerItemProxy */;
+		};
+		DAE4C6C127E2902C00CA2E4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAE4C6AB27E2902C00CA2E4B /* hearRing-v12-4 (macOS) */;
+			targetProxy = DAE4C6C027E2902C00CA2E4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DAE4C6D027E2902C00CA2E4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DAE4C6D127E2902C00CA2E4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		DAE4C6D327E2902C00CA2E4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hearring.hearRing-v12-4";
+				PRODUCT_NAME = "hearRing-v12-4";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DAE4C6D427E2902C00CA2E4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hearring.hearRing-v12-4";
+				PRODUCT_NAME = "hearRing-v12-4";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAE4C6D627E2902C00CA2E4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hearring.hearRing-v12-4";
+				PRODUCT_NAME = "hearRing-v12-4";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DAE4C6D727E2902C00CA2E4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hearring.hearRing-v12-4";
+				PRODUCT_NAME = "hearRing-v12-4";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DAE4C6D927E2902C00CA2E4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hearring.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "hearRing-v12-4 (iOS)";
+			};
+			name = Debug;
+		};
+		DAE4C6DA27E2902C00CA2E4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hearring.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "hearRing-v12-4 (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAE4C6DC27E2902C00CA2E4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "hearring.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "hearRing-v12-4 (macOS)";
+			};
+			name = Debug;
+		};
+		DAE4C6DD27E2902C00CA2E4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "hearring.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "hearRing-v12-4 (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAE4C69827E2902900CA2E4B /* Build configuration list for PBXProject "hearRing-v12-4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE4C6D027E2902C00CA2E4B /* Debug */,
+				DAE4C6D127E2902C00CA2E4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAE4C6D227E2902C00CA2E4B /* Build configuration list for PBXNativeTarget "hearRing-v12-4 (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE4C6D327E2902C00CA2E4B /* Debug */,
+				DAE4C6D427E2902C00CA2E4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAE4C6D527E2902C00CA2E4B /* Build configuration list for PBXNativeTarget "hearRing-v12-4 (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE4C6D627E2902C00CA2E4B /* Debug */,
+				DAE4C6D727E2902C00CA2E4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAE4C6D827E2902C00CA2E4B /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE4C6D927E2902C00CA2E4B /* Debug */,
+				DAE4C6DA27E2902C00CA2E4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAE4C6DB27E2902C00CA2E4B /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE4C6DC27E2902C00CA2E4B /* Debug */,
+				DAE4C6DD27E2902C00CA2E4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DAE4C69A27E2902900CA2E4B /* hearRing_v12_4.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DAE4C69B27E2902900CA2E4B /* Shared.xcdatamodel */,
+			);
+			currentVersion = DAE4C69B27E2902900CA2E4B /* Shared.xcdatamodel */;
+			path = hearRing_v12_4.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DAE4C69527E2902900CA2E4B /* Project object */;
+}
