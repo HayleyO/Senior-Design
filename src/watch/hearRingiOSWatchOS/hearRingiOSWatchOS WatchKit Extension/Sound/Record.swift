@@ -20,6 +20,7 @@ class Record : NSObject, AVAudioRecorderDelegate{
     {
         chunking = chunker!
     }
+
     
     func setup(){
         let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first

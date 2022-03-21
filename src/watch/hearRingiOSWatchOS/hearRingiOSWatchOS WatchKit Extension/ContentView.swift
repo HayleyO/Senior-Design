@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ContentView: View {
     @StateObject var dataModel = Chunking()
@@ -14,12 +15,15 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ProgressView("Recording...", value: dataModel.decibel, total: 160).progressViewStyle(LinearProgressViewStyle(tint: dataModel.tintColor))
-            
+                
                 .onAppear() {
-                    let recordModel = Record(chunker: dataModel)
-                    recordModel.setup()
-                    recordModel.start()
+                    DispatchQueue.main.async {
+                        let recordModel = Record(chunker: dataModel)
+                        recordModel.setup()
+                        recordModel.start()
+                    }
                 }
+            
             Text(sharedData.AlarmChanged.alarmName)
             Text(String(sharedData.AlarmChanged.alarmEnabled))
         }
