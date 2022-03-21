@@ -78,7 +78,7 @@ struct AlarmEdit: View {
             alarm.alarmTime = newTime
             alarm.desc = newDesc
             
-            Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .failable)
+            Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .guaranteed)
         }
     }
 }
