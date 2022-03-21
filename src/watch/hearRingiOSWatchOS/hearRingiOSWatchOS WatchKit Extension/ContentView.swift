@@ -16,7 +16,6 @@ struct ContentView: View {
         VStack {
             ProgressView("Recording...", value: dataModel.decibel, total: 160).progressViewStyle(LinearProgressViewStyle(tint: dataModel.tintColor))
                 
-            DispatchQueue.global().async {
                 .onAppear() {
                     DispatchQueue.main.async {
                         let recordModel = Record(chunker: dataModel)
@@ -24,7 +23,7 @@ struct ContentView: View {
                         recordModel.start()
                     }
                 }
-            }
+            
             Text(sharedData.AlarmChanged.alarmName)
             Text(String(sharedData.AlarmChanged.alarmEnabled))
         }
