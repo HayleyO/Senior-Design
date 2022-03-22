@@ -90,7 +90,7 @@ class Record : NSObject, ObservableObject,  AVAudioRecorderDelegate{
     @objc func timerCallback() {
         let recorder = audioRecorder
         recorder?.updateMeters()
-        let SPL = 20 * log10(5 * powf(10, ((recorder?.averagePower(forChannel: 0))!/20)) * 160) + 25
+        let SPL = 20 * log10(20 * powf(10, ((recorder?.averagePower(forChannel: 0))!/20)) * 160) + 17
         print(SPL)
         vibration.vibrateOnSound(volume: Double(SPL))
         chunking?.decibel = Double(SPL)
