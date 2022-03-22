@@ -9,12 +9,14 @@ import SwiftUI
 @main
 struct hearRingiOSWatchOSApp: App {
     @WKExtensionDelegateAdaptor(ExtensionDelegate.self) var extensionDelegate
+    @StateObject var controller = DataController()
     
     @SceneBuilder var body: some Scene {
         WindowGroup {
             TabView {
                 ContentView()
                 SettingsView()
+                    .environment(\.managedObjectContext, controller.container.viewContext)
             }
             .tabViewStyle(PageTabViewStyle())
         }

@@ -13,6 +13,7 @@ struct SettingsView: View{
     @State var lowThreshold: Double = 50.0
     @State var highThreshold: Double = 90.0
     @StateObject var shared = Connectivity.shared
+    @StateObject var controller = DataController()
     
     var body: some View {
         VStack{
@@ -31,18 +32,20 @@ struct SettingsView: View{
                     newThreshold in sliderChanged(value: newThreshold, slider: sliders.high)
                 }
         }
+        .onAppear{
+            print(controller.getSettings())
+        }
     }
     
     func sliderChanged(value: Double, slider: sliders){
         print("slider value changed to \(value)")
-        let sliderThreshold = ThresholdEntity(context: moc)
         if(slider == sliders.low){
-            shared.send(bufferValue: sliderThreshold.bufferValue, strongValue: sliderThreshold.strongValue, weakValue: value, delivery: .highPriority)
-            try? moc.save()
+            controller.saveSettings(buffer: 0.1, weak: value, strong: highThreshold)
+            shared.send(bufferValue: 0.1, strongValue: highThreshold, weakValue: value, delivery: .highPriority)
         }
         else if(slider == sliders.high){
-            shared.send(bufferValue: sliderThreshold.bufferValue, strongValue: value, weakValue: sliderThreshold.weakValue, delivery: .highPriority)
-            try? moc.save()
+            controller.saveSettings(buffer: 0.1, weak: lowThreshold, strong: value)
+            shared.send(bufferValue: 0.1, strongValue: value, weakValue: lowThreshold, delivery: .highPriority)
         }
     }
         
