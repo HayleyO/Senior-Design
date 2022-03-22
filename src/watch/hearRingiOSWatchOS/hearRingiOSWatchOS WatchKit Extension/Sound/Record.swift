@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class Record : NSObject, AVAudioRecorderDelegate{
+class Record : NSObject, ObservableObject,  AVAudioRecorderDelegate{
     
     var soundURL: String!
     var audioRecorder:AVAudioRecorder?
@@ -92,8 +92,8 @@ class Record : NSObject, AVAudioRecorderDelegate{
         recorder?.updateMeters()
         let SPL = 20 * log10(5 * powf(10, ((recorder?.averagePower(forChannel: 0))!/20)) * 160) + 25
         print(SPL)
-        vibration.vibrateOnSound(volume: SPL)
-        chunking?.decibel = SPL
+        vibration.vibrateOnSound(volume: Double(SPL))
+        chunking?.decibel = Double(SPL)
         chunking?.tintColor = (chunking?.getColorFromDecibel())!
         self.interrupts()
     }

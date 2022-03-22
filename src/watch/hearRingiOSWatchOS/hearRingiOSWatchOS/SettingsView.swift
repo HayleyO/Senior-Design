@@ -40,5 +40,8 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
         }
+        .onAppear() {
+            Connectivity.shared.SendFirst()
+        }
     }
 }

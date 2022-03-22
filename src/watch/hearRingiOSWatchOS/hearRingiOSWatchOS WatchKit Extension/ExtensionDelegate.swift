@@ -8,8 +8,11 @@
 import Foundation
 import WatchKit
 import UserNotifications
+import CoreData
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate{
+    
+    let container = NSPersistentContainer(name: "Model")
     
     func applicationDidFinishLaunching() {
         // authorization to allow notifications
