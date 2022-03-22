@@ -40,12 +40,14 @@ class DataController: ObservableObject {
     // fetch one ThresholdEntity from core data
     func getSettings() -> ThresholdEntity{
         let request: NSFetchRequest<ThresholdEntity> = ThresholdEntity.fetchRequest()
+        var result: [ThresholdEntity]
         do{
-            return try container.viewContext.fetch(request).first!
+            try result = container.viewContext.fetch(request)
         } catch {
             print ("Error getting settings \(error)")
             return ThresholdEntity(context: container.viewContext)
         }
+        return result.first ?? ThresholdEntity(context: container.viewContext)
     }
     
     // fetch all ThresholdEntities in core data
@@ -72,7 +74,7 @@ class DataController: ObservableObject {
         }
     }
     
-    // update settings and ensure there is only ever one object 
+    // update settings and ensure there is only ever one object
    func updateSettings(buffer: Double, weak: Double, strong: Double){
         let results = getAllSettings()
 
