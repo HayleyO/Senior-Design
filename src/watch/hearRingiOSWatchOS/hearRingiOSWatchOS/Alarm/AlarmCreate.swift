@@ -46,6 +46,7 @@ struct AlarmCreate: View {
                           newalarm.desc = newDesc
                           newalarm.isEnabled = true
                 try? moc.save()
+                Connectivity.shared.send(AlarmTime: newalarm.alarmTime!, alarmEnabled: newalarm.isEnabled, alarmID: newalarm.id!, alarmName: newalarm.name!, alarmDescription: newalarm.desc!, delivery: .guaranteed)
                 }
             )
                 .padding()

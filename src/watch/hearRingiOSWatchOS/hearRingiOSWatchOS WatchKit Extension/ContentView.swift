@@ -9,8 +9,8 @@ import SwiftUI
 import Foundation
 
 struct ContentView: View {
-    @StateObject var dataModel = Chunking()
     @StateObject var sharedData = Connectivity.shared
+    @ObservedObject var dataModel = Chunking()
     
     var body: some View {
         VStack {

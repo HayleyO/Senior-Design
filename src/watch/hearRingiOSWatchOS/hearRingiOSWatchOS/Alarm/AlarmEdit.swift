@@ -16,18 +16,32 @@ struct AlarmEdit: View {
         return dateFormatter
     }
     
+    @State private var newName = ""
+    @State private var newTime = Date.now
+    @State private var newDesc = ""
     @State private var isEnabled = false
     @Environment(\.managedObjectContext) var moc
     var body: some View {
         VStack{
-            Text(alarm.name ?? "NameUnknown")
+            TextField("Please enter a name", text: $newName,
+                prompt: Text(alarm.name ?? "Provide a name")
+                )
                 .font(.title)
+                .padding()
+                .textFieldStyle(.roundedBorder)
+                .multilineTextAlignment(.center)
             
-            Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
+            DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
+                .labelsHidden()
+                .padding()
                 .font(.title2)
             
-            Text(alarm.desc ?? "DescriptionUnknown")
+            TextField("Please enter a description", text: $newDesc,
+                prompt: Text(alarm.desc ?? "Provide a description")
+            )
                 .padding()
+                .textFieldStyle(.roundedBorder)
+                .multilineTextAlignment(.center)
             
             Toggle("Turn Alarm On/Off", isOn: $isEnabled)
                 .padding()
@@ -54,7 +68,17 @@ struct AlarmEdit: View {
                 .padding()
         }
         .onAppear {
+            newName = alarm.name ?? ""
+            newTime = alarm.alarmTime ?? Date.now
+            newDesc = alarm.desc ?? ""
             isEnabled = alarm.isEnabled
+        }
+        .onDisappear {
+            alarm.name = newName
+            alarm.alarmTime = newTime
+            alarm.desc = newDesc
+            
+            Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .guaranteed)
         }
     }
 }
