@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0756864427E90F8000EBC9B7 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0756864327E90F8000EBC9B7 /* SettingsController.swift */; };
 		075EE14C27DE8CAB00E98695 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075EE14B27DE8CAB00E98695 /* SettingsView.swift */; };
 		0790746527C05D370070E105 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746427C05D370070E105 /* Alarm.swift */; };
 		0790746727C499EC0070E105 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746627C499EC0070E105 /* ExtensionDelegate.swift */; };
@@ -126,7 +125,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0756864327E90F8000EBC9B7 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		075EE14B27DE8CAB00E98695 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0790746227C057F70070E105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0790746427C05D370070E105 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				075EE14B27DE8CAB00E98695 /* SettingsView.swift */,
-				0756864327E90F8000EBC9B7 /* SettingsController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -703,7 +700,6 @@
 				86AF8F2A27BC778100EF0362 /* Vibration.swift in Sources */,
 				86AF8EDB27BAB9E200EF0362 /* NotificationController.swift in Sources */,
 				0790746727C499EC0070E105 /* ExtensionDelegate.swift in Sources */,
-				0756864427E90F8000EBC9B7 /* SettingsController.swift in Sources */,
 				86AF8F2727BC353300EF0362 /* Chunking.swift in Sources */,
 				86AF8ED927BAB9E200EF0362 /* ContentView.swift in Sources */,
 				86AF8F1D27BAEFBE00EF0362 /* Record.swift in Sources */,

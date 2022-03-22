@@ -40,11 +40,11 @@ struct SettingsView: View{
     func sliderChanged(value: Double, slider: sliders){
         print("slider value changed to \(value)")
         if(slider == sliders.low){
-            controller.saveSettings(buffer: 0.1, weak: value, strong: highThreshold)
+            controller.updateSettings(buffer: 0.1, weak: value, strong: highThreshold)
             shared.send(bufferValue: 0.1, strongValue: highThreshold, weakValue: value, delivery: .highPriority)
         }
         else if(slider == sliders.high){
-            controller.saveSettings(buffer: 0.1, weak: lowThreshold, strong: value)
+            controller.updateSettings(buffer: 0.1, weak: lowThreshold, strong: value)
             shared.send(bufferValue: 0.1, strongValue: value, weakValue: lowThreshold, delivery: .highPriority)
         }
     }

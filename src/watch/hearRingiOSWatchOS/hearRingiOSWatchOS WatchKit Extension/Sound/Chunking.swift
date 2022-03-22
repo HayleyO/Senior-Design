@@ -9,18 +9,16 @@ import Foundation
 import SwiftUI
 
 class Chunking: NSObject, ObservableObject{
-    @Environment(\.managedObjectContext) var moc
+    var controller = DataController()
     @Published var decibel: Double = 0
     @Published var tintColor: Color = .green
     
     func getColorFromDecibel() -> Color {
-       // let thresholds = ThresholdEntity(context: moc)
-        if decibel <=  50.0{
-            print("threshold")
+        let thresholds = controller.getSettings()
+        if decibel <=  thresholds.weakValue{
             return Color.green
         }
-        else if decibel < 90.0{
-            print("threshold ")
+        else if decibel < thresholds.strongValue{
             return Color.yellow
         }
         else{

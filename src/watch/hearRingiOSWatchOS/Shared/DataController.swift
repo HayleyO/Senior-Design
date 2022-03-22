@@ -3,6 +3,7 @@
 //  hearRingiOSWatchOS
 //
 //  Created by Ashley Palmer on 2/16/22.
+//  Edited by Hannah Folkertsma on 3/22/22.
 //
 
 import SwiftUI
@@ -19,6 +20,7 @@ class DataController: ObservableObject {
         }
     }
     
+    // save a new ThresholdEntity object to core data
     func saveSettings(buffer: Double, weak: Double, strong: Double){
         let thresholds = ThresholdEntity(context: container.viewContext)
         thresholds.bufferValue = buffer
@@ -35,47 +37,51 @@ class DataController: ObservableObject {
         }
     }
     
-    func getSettings() -> [ThresholdEntity]{
+    // fetch one ThresholdEntity from core data
+    func getSettings() -> ThresholdEntity{
         let request: NSFetchRequest<ThresholdEntity> = ThresholdEntity.fetchRequest()
         do{
-            print("getting values")
-            return try container.viewContext.fetch(request)
+            return try container.viewContext.fetch(request).first!
         } catch {
             print ("Error getting settings \(error)")
-            return []
+            return ThresholdEntity(context: container.viewContext)
         }
     }
     
+    // fetch all ThresholdEntities in core data
+    func getAllSettings() -> [ThresholdEntity]{
+        let request: NSFetchRequest<ThresholdEntity> = ThresholdEntity.fetchRequest()
+        do{
+            return try container.viewContext.fetch(request)
+        } catch {
+            print("Error getting all settings \(error)")
+            return []
+        }
+        
+    }
+    
+    // delete the specified ThresholdEntity
     func deleteSettings(settings: ThresholdEntity){
         container.viewContext.delete(settings)
         
         do{
             try container.viewContext.save()
-            print("Successfully deleted settings object")
         } catch {
             container.viewContext.rollback()
             print("Error deleting settings")
         }
     }
     
-   /* func updateSettings(buffer: Double, strong: Double, weak: Double){
-        let threshold: ThresholdEntity!
-        
-        let fetch: NSFetchRequest<ThresholdEntity> = ThresholdEntity.fetchRequest()
-        let results = try? container.viewContext.fetch(fetch)
+    // update settings and ensure there is only ever one object 
+   func updateSettings(buffer: Double, weak: Double, strong: Double){
+        let results = getAllSettings()
 
-         if results?.count == 0 {
-             threshold = ThresholdEntity(context: container.viewContext)
-         } else {
-            threshold = results?.first
-         }
-
-        threshold.bufferValue = buffer
-        threshold.weakValue = weak
-        threshold.strongValue = strong
+       if results.count > 0{
+           for setting in results{
+           deleteSettings(settings: setting)
+           }
+       }
+       saveSettings(buffer: buffer, weak: weak, strong: strong)
         
-        try? container.viewContext.save()
-        
-        
-    } */
+    }
 }

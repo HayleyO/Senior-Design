@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var dataModel = Chunking()
     @StateObject var sharedData = Connectivity.shared
+    @ObservedObject var dataModel = Chunking()
     
     var body: some View {
         VStack {
@@ -19,6 +19,7 @@ struct ContentView: View {
                     let recordModel = Record(chunker: dataModel)
                     recordModel.setup()
                     recordModel.start()
+                    
                 }
             Text(sharedData.AlarmChanged.alarmName)
             Text(String(sharedData.AlarmChanged.alarmEnabled))
