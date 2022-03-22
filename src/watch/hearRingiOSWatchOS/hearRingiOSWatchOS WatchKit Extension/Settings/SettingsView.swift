@@ -14,6 +14,7 @@ struct SettingsView: View{
     @State var highThreshold: Double = 90.0
     @StateObject var shared = Connectivity.shared
     @StateObject var controller = DataController()
+    @State var settings: ThresholdEntity = ThresholdEntity()
     
     var body: some View {
         VStack{
@@ -33,7 +34,9 @@ struct SettingsView: View{
                 }
         }
         .onAppear{
-            print(controller.getSettings())
+            settings = controller.getSettings()
+            lowThreshold = settings.weakValue
+            highThreshold = settings.strongValue
         }
     }
     
