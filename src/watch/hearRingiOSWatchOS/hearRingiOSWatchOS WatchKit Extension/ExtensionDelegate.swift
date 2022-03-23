@@ -20,9 +20,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
         authorization.requestAuthorization()
         
         //deploying alarm here for testing
-        UNUserNotificationCenter.current().delegate = self
         let alarm = Alarm()
-        alarm.deployAlarm()
+        alarm.getAlarms()
     }
     
    

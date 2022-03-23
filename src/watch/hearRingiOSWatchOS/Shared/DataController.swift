@@ -86,4 +86,17 @@ class DataController: ObservableObject {
        saveSettings(buffer: buffer, weak: weak, strong: strong)
         
     }
+    
+    // Get all alarms from core data
+    func getAlarms() -> [AlarmEntity]{
+        let alarmRequest: NSFetchRequest<AlarmEntity> = AlarmEntity.fetchRequest()
+      do{
+          return try container.viewContext.fetch(alarmRequest)
+        }
+            catch
+        {
+                print("Error fetching alarms")
+                return []
+            }
+    }
 }
