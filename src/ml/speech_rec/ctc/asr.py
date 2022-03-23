@@ -1,3 +1,5 @@
+### FROM KERAS EXAMPLES: https://keras.io/examples/audio/ctc_asr/
+
 import pandas as pd
 import numpy as np
 import tensorflow as tf
