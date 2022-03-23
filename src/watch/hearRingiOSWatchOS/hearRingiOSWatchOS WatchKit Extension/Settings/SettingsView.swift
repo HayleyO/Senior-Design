@@ -35,8 +35,8 @@ struct SettingsView: View{
         }
         .onAppear{
             settings = controller.getSettings()
-            lowThreshold = settings.weakValue
-            highThreshold = settings.strongValue
+            lowThreshold = shared.SettingsChanged.weakValue
+            highThreshold = shared.SettingsChanged.strongValue
         }
     }
     
