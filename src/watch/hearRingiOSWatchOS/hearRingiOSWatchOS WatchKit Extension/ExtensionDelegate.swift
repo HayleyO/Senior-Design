@@ -8,8 +8,11 @@
 import Foundation
 import WatchKit
 import UserNotifications
+import CoreData
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate{
+    
+    let container = NSPersistentContainer(name: "Model")
     
     func applicationDidFinishLaunching() {
         // authorization to allow notifications
@@ -21,6 +24,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
         let alarm = Alarm()
         alarm.deployAlarm()
     }
+    
+   
     
     // what happens when the notification center recieves certain responses for notifications
     // just using this for snooze at the moment

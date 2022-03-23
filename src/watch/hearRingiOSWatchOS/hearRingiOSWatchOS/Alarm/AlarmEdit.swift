@@ -16,30 +16,69 @@ struct AlarmEdit: View {
         return dateFormatter
     }
     
+    @State private var newName = ""
+    @State private var newTime = Date.now
+    @State private var newDesc = ""
     @State private var isEnabled = false
     @Environment(\.managedObjectContext) var moc
     var body: some View {
         VStack{
-            Text(alarm.name ?? "NameUnknown")
+            TextField("Please enter a name", text: $newName,
+                prompt: Text(alarm.name ?? "Provide a name")
+                )
                 .font(.title)
+                .padding()
+                .textFieldStyle(.roundedBorder)
+                .multilineTextAlignment(.center)
             
-            Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
+            DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
+                .labelsHidden()
+                .padding()
                 .font(.title2)
+            
+            TextField("Please enter a description", text: $newDesc,
+                prompt: Text(alarm.desc ?? "Provide a description")
+            )
+                .padding()
+                .textFieldStyle(.roundedBorder)
+                .multilineTextAlignment(.center)
             
             Toggle("Turn Alarm On/Off", isOn: $isEnabled)
                 .padding()
                 .onChange(of: isEnabled){ value in
                     alarm.isEnabled = value
 
-                    Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, delivery: .highPriority)
+                    Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .failable)
+                    
                     print(alarm.isEnabled)
 
                     try? moc.save()
 
                 }
+            
+            Spacer()
+            Button(action: {
+                moc.delete(alarm)
+                try? moc.save()
+            }, label: {
+                Text("Delete")
+                    .foregroundColor(Color.red)
+            }
+            )
+                .padding()
         }
         .onAppear {
+            newName = alarm.name ?? ""
+            newTime = alarm.alarmTime ?? Date.now
+            newDesc = alarm.desc ?? ""
             isEnabled = alarm.isEnabled
+        }
+        .onDisappear {
+            alarm.name = newName
+            alarm.alarmTime = newTime
+            alarm.desc = newDesc
+            
+            Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .guaranteed)
         }
     }
 }
