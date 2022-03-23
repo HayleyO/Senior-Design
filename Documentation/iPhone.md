@@ -1,7 +1,7 @@
-# Listening Page
+# Listen Page
 This page contains a transcript of what is being said in the area surrounding the user's iPhone. This is accomplished via speech-to-text. After one minute the iPhone will clear the screen and beginning printing the transcript at the top of the screen again.
 
-# Speaking Page
+# Speak Page
 This page features a text field the allows user input. There is a button that when pushed will read out what the user has typed. This will better allow the user to communicate with someone who does not comprehend sign language.
 
 # Alarm List Page
