@@ -55,6 +55,8 @@
 		966237F127C05FA800D91EBA /* DeliveryPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EE27C05FA800D91EBA /* DeliveryPriority.swift */; };
 		966237F227C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */; };
 		966237F327C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */; };
+		969324E027E917AF00D1A515 /* TtsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969324DF27E917AF00D1A515 /* TtsView.swift */; };
+		969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969324E227E91FCF00D1A515 /* TTSViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +175,8 @@
 		86AF8F2927BC778100EF0362 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		966237EE27C05FA800D91EBA /* DeliveryPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryPriority.swift; sourceTree = "<group>"; };
 		966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneWatchConnectivity.swift; sourceTree = "<group>"; };
+		969324DF27E917AF00D1A515 /* TtsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsView.swift; sourceTree = "<group>"; };
+		969324E227E91FCF00D1A515 /* TTSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +283,7 @@
 		86AF8EA427BAB9DF00EF0362 /* hearRingiOSWatchOS */ = {
 			isa = PBXGroup;
 			children = (
+				969324E127E91FAD00D1A515 /* TTS */,
 				869F833D27C575E800B66A55 /* Sound */,
 				0790746227C057F70070E105 /* Info.plist */,
 				7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */,
@@ -398,6 +403,15 @@
 				966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		969324E127E91FAD00D1A515 /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				969324DF27E917AF00D1A515 /* TtsView.swift */,
+				969324E227E91FCF00D1A515 /* TTSViewModel.swift */,
+			);
+			path = TTS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -658,9 +672,11 @@
 				7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */,
 				7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */,
 				7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+				969324E027E917AF00D1A515 /* TtsView.swift in Sources */,
 				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
 				7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */,
 				966237F027C05FA800D91EBA /* DeliveryPriority.swift in Sources */,
+				969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */,
 				7A0F128D27BB199B003D2938 /* MainView.swift in Sources */,
 				86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,
 				966237F227C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */,
