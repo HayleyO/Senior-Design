@@ -163,7 +163,7 @@ extension Connectivity: WCSessionDelegate {
     ) {
         update(from: message)
 
-        let key = "AlarmEnabled"
+        let key = "alarmEnabled"
         replyHandler([key: true])
     }
 
