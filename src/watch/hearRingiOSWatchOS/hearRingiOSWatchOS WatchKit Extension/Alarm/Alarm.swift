@@ -13,13 +13,33 @@ import SwiftUI
 class Alarm {
     let controller = DataController()
     let vibration = Vibration()
+    var alarmChanged = Connectivity.shared.AlarmChanged{
+        didSet{
+          //  DispatchQueue.main.async {
+                print("changed")
+                self.processAlarmFromPhone()
+           // }
+        }
+    }
+    
+    
+    func processAlarmFromPhone(){
+        let newAlarm = AlarmEntity(context: controller.container.viewContext)
+        let recieved = Connectivity.shared.AlarmChanged
+        newAlarm.name = recieved.alarmName
+        newAlarm.desc = recieved.alarmDescription
+        newAlarm.alarmTime = recieved.alarmTime
+        newAlarm.id = recieved.alarmID
+        print("processing")
+        controller.saveAlarm(alarm: newAlarm)
+    }
     
     func prepareAlarms(){
         let results = controller.getAlarms()
-        for alarm in results{
-            deployAlarm(alarm: alarm)
-        }
+        print(results)
+        print("alarms are here")
     }
+    
     
     func deployAlarm(alarm: AlarmEntity){
         //notification
@@ -30,7 +50,7 @@ class Alarm {
         
         //determine time interval
         if(alarm.alarmTime != nil){
-            var interval = abs(Date.now.timeIntervalSince1970 - alarm.alarmTime!.timeIntervalSince1970)
+            let interval = abs(Date.now.timeIntervalSince1970 - alarm.alarmTime!.timeIntervalSince1970)
             print (interval)
         
             setActions()

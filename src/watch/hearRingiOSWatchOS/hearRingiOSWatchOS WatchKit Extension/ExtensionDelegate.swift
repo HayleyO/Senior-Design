@@ -21,7 +21,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
         
         //deploying alarm here for testing
         let alarm = Alarm()
-        alarm.getAlarms()
+        //alarm.processAlarmFromPhone()
     }
     
    

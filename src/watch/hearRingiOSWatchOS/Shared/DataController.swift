@@ -92,11 +92,23 @@ class DataController: ObservableObject {
         let alarmRequest: NSFetchRequest<AlarmEntity> = AlarmEntity.fetchRequest()
       do{
           return try container.viewContext.fetch(alarmRequest)
+      } catch {
+          print("Error getting alarms \(error)")
+          return []
+      }
+    }
+    
+    // save alarms to core data
+    func saveAlarm(alarm: AlarmEntity){
+        //var toSave = AlarmEntity(context: container.viewContext)
+        //toSave = alarm
+        do{
+            try
+          //  container.viewContext.save()
+            print("Alarm saved successfully")
+            
+        } catch {
+            print("Failed to save alarm: \(error)")
         }
-            catch
-        {
-                print("Error fetching alarms")
-                return []
-            }
     }
 }
