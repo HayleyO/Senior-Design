@@ -1,0 +1,3 @@
+Note!
+
+After fully training this model, the results aren't... great. 

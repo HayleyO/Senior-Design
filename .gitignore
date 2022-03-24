@@ -345,6 +345,8 @@ healthchecksdb
 src/ml/speech_rec/LAS/preprocessing/data
 src/ml/speech_rec/LAS/preprocessing/preprocessed_data/
 
+src/ml/speech_rec/ctc/testing/
+
 # Ignore the ESC-50 Dataset (also too big for git)
 src/ml/sound_rec/data
 
