@@ -65,6 +65,7 @@ struct AlarmEdit: View {
                     .foregroundColor(Color.red)
             }
             )
+                .accessibilityLabel("Delete")
                 .padding()
         }
         .onAppear {
