@@ -59,6 +59,7 @@ struct AlarmView: View {
                 NavigationLink(destination: AlarmCreate()) {
                     Image(systemName: "plus")
                 }
+                .accessibilityIdentifier("Create New Alarm")
             }
       }.onAppear() {
           Connectivity.shared.SendFirst()
