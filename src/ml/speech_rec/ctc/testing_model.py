@@ -14,6 +14,8 @@ fft_length = 384
 
 # The set of characters accepted in the transcription.
 characters = [x for x in "abcdefghijklmnopqrstuvwxyz'?! "]
+character_num_dict = {x+1 : characters[x] for x in range(len(characters))}
+character_num_dict[31] = ""
 # Mapping characters to integers
 char_to_num = keras.layers.StringLookup(vocabulary=characters, oov_token="")
 # Mapping integers back to original characters
@@ -68,12 +70,15 @@ def CTCLoss(y_true, y_pred):
     return loss
 
 def CTC_decode(inputs, input_length):
-    print(char_to_num)
-    print(num_to_char)
+    pred_string = []
     prev_class_ix = -1
-    for t in range(int(input_length[0])):
+    for t in range(int(input_length)):
         row = inputs[0][t]
-        print(row)
+        max_index = max(range(len(row)), key=row.__getitem__)
+        if (max_index != prev_class_ix and max_index != 31):
+            pred_string.append(character_num_dict[max_index])
+        prev_class_ix = max_index
+    return "".join(pred_string)
     
 
 # A utility function to decode the output of the network
@@ -81,7 +86,6 @@ def decode_batch_predictions(pred):
     input_len = np.ones(pred.shape[0]) * pred.shape[1]
     # Use greedy search. For complex tasks, you can use beam search
     results = keras.backend.ctc_decode(pred, input_length=input_len, greedy=True)[0][0]
-    CTC_decode(pred, input_len)
     # Iterate over the results and get back the text
     output_text = []
     for result in results:
@@ -96,6 +100,6 @@ train_dataset = (train_dataset.map(encode_single_sample, num_parallel_calls=tf.d
 for data in train_dataset:
     x, y = data
     prediction = model.predict(x)
-    decoded_prediction = decode_batch_predictions(prediction)
     print("Target: to improve the letter in form.")
-    print("Prediction: " + str(decoded_prediction))
+    print("Prediction: " + str(decode_batch_predictions(prediction)[0]))
+    print("Hayley Programmed CTC Decoding: " + CTC_decode(prediction, prediction.shape[1]))
