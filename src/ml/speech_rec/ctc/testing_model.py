@@ -67,11 +67,21 @@ def CTCLoss(y_true, y_pred):
     loss = keras.backend.ctc_batch_cost(y_true, y_pred, input_length, label_length)
     return loss
 
+def CTC_decode(inputs, input_length):
+    print(char_to_num)
+    print(num_to_char)
+    prev_class_ix = -1
+    for t in range(int(input_length[0])):
+        row = inputs[0][t]
+        print(row)
+    
+
 # A utility function to decode the output of the network
 def decode_batch_predictions(pred):
     input_len = np.ones(pred.shape[0]) * pred.shape[1]
     # Use greedy search. For complex tasks, you can use beam search
     results = keras.backend.ctc_decode(pred, input_length=input_len, greedy=True)[0][0]
+    CTC_decode(pred, input_len)
     # Iterate over the results and get back the text
     output_text = []
     for result in results:
