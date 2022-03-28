@@ -18,6 +18,7 @@ struct SettingsView: View {
     @State var separatorValue: Double = 10
     @StateObject var shared = Connectivity.shared
     @StateObject var controller = DataController()
+    @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
     
     var body: some View {
@@ -31,7 +32,7 @@ struct SettingsView: View {
                         .accentColor(.yellow)
                         .padding()
                         .onChange(of: weakerValue){
-                            newThreshold in sliderChanged(value: newThreshold, slider: sliders.low)
+                            newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.low, highThreshold: strongerValue)
                         }
                     Text("\(weakerValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
@@ -46,7 +47,7 @@ struct SettingsView: View {
                         .accentColor(.red)
                         .padding()
                         .onChange(of: strongerValue){
-                            newThreshold in sliderChanged(value: newThreshold, slider: sliders.high)
+                            newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.high, lowThreshold: weakerValue)
                         }
                     Text("\(strongerValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
@@ -62,19 +63,4 @@ struct SettingsView: View {
             separatorValue = shared.SettingsChanged.bufferValue
         }
     }
-    func sliderChanged(value: Double, slider: sliders){
-        print("slider value changed to \(value)")
-        if(slider == sliders.low){
-            controller.updateSettings(buffer: 10, weak: value, strong: strongerValue)
-            shared.send(bufferValue: 10, strongValue: strongerValue, weakValue: value, delivery: .highPriority)
-        } else if (slider == sliders.high){
-            controller.updateSettings(buffer: 10, weak: weakerValue, strong: value)
-            shared.send(bufferValue: 10, strongValue: value, weakValue: weakerValue, delivery: .highPriority)
-        }
-    }
-}
-
-enum sliders{
-    case low
-    case high
 }
