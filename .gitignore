@@ -452,4 +452,4 @@ fastlane/test_output
 iOSInjectionProject/
 
 #Ignore VS Code
-.vscode/*
+.vscode/
