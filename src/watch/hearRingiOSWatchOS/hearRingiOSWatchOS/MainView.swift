@@ -14,7 +14,10 @@ struct MainView: View {
                 .tabItem {
                     Label("Listen", systemImage: "ear.and.waveform")
                 }
-            
+            TtsView()
+                .tabItem {
+                    Label("Speak", systemImage: "message.and.waveform")
+                }
             AlarmView()
                 .tabItem {
                     Label("Alarm", systemImage: "alarm")
