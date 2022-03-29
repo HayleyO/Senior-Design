@@ -14,8 +14,8 @@
     </entity>
     <entity name="ThresholdEntity" representedClassName="ThresholdEntity" syncable="YES" codeGenerationType="class">
         <attribute name="bufferValue" optional="YES" attributeType="Double" defaultValueString="10" usesScalarValueType="YES"/>
-        <attribute name="strongValue" optional="YES" attributeType="Double" minValueString="10" maxValueString="120" defaultValueString="90" usesScalarValueType="YES"/>
-        <attribute name="weakValue" optional="YES" attributeType="Double" minValueString="0" maxValueString="110" defaultValueString="50" usesScalarValueType="YES"/>
+        <attribute name="strongValue" optional="YES" attributeType="Double" maxValueString="120" defaultValueString="90" usesScalarValueType="YES"/>
+        <attribute name="weakValue" optional="YES" attributeType="Double" minValueString="0" defaultValueString="50" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="AlarmEntity" positionX="-63" positionY="-18" width="128" height="104"/>
