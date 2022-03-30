@@ -218,17 +218,10 @@ extension Connectivity: WCSessionDelegate {
                 print("\n")
                 //only happens on first send to watch
                 
-                /*#if os(watchOS)
-                let controller = DataController()
-                let sendAlarm = AlarmEntity(context: controller.container.viewContext)
-                sendAlarm.id = decodedAlarm.alarmID
-                sendAlarm.alarmTime = decodedAlarm.alarmTime
-                sendAlarm.desc = decodedAlarm.alarmDescription
-                sendAlarm.name = decodedAlarm.alarmName
-                sendAlarm.isEnabled = decodedAlarm.alarmEnabled
-                controller.saveAlarm(alarm: sendAlarm)
-                print("here")
-                #endif*/
+                #if os(watchOS)
+                let alarm = Alarm()
+                alarm.testSave(decodedAlarm: decodedAlarm)
+                #endif
             } else {
                 return
             }

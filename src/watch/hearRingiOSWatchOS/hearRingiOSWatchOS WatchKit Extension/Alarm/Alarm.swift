@@ -13,15 +13,23 @@ import SwiftUI
 class Alarm {
     let controller = DataController()
     let vibration = Vibration()
-    var alarmChanged = Connectivity.shared.AlarmChanged{
+    var alarmChanged: Connectivity.AlarmInfo = Connectivity.shared.AlarmChanged {
         didSet{
-          //  DispatchQueue.main.async {
-                print("changed")
-                self.processAlarmFromPhone()
-           // }
+            print("changed")
         }
     }
     
+    func testSave(decodedAlarm: Connectivity.AlarmInfo){
+        let controller = DataController()
+        let sendAlarm = AlarmEntity(context: controller.container.viewContext)
+        sendAlarm.id = decodedAlarm.alarmID
+        sendAlarm.alarmTime = decodedAlarm.alarmTime
+        sendAlarm.desc = decodedAlarm.alarmDescription
+        sendAlarm.name = decodedAlarm.alarmName
+        sendAlarm.isEnabled = decodedAlarm.alarmEnabled
+        controller.saveAlarm(alarm: sendAlarm)
+        print("here")
+    }
     
     func processAlarmFromPhone(){
         let newAlarm = AlarmEntity(context: controller.container.viewContext)
