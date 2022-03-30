@@ -216,11 +216,10 @@ extension Connectivity: WCSessionDelegate {
                 print(decodedAlarm.alarmName)
                 print(decodedAlarm.alarmDescription)
                 print("\n")
-                //only happens on first send to watch
                 
                 #if os(watchOS)
                 let alarm = Alarm()
-                alarm.testSave(decodedAlarm: decodedAlarm)
+                alarm.processAlarmFromPhone()
                 #endif
             } else {
                 return

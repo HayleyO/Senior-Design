@@ -100,11 +100,10 @@ class DataController: ObservableObject {
     
     // save alarms to core data
     func saveAlarm(alarm: AlarmEntity){
-        //var toSave = AlarmEntity(context: container.viewContext)
-        //toSave = alarm
+        var toSave = AlarmEntity(context: container.viewContext)
+        toSave = alarm
         do{
-            try
-          //  container.viewContext.save()
+            try container.viewContext.save()
             print("Alarm saved successfully")
             
         } catch {
