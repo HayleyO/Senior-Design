@@ -18,13 +18,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
         // authorization to allow notifications
         let authorization = NotificationAuthorization()
         authorization.requestAuthorization()
-        
-        //deploying alarm here for testing
-        UNUserNotificationCenter.current().delegate = self
-        let alarm = Alarm()
-        alarm.deployAlarm()
     }
-    
    
     
     // what happens when the notification center recieves certain responses for notifications

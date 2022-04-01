@@ -86,4 +86,53 @@ class DataController: ObservableObject {
        saveSettings(buffer: buffer, weak: weak, strong: strong)
         
     }
+    
+    // Get all alarms from core data
+    func getAlarms() -> [AlarmEntity]{
+        let alarmRequest: NSFetchRequest<AlarmEntity> = AlarmEntity.fetchRequest()
+      do{
+          return try container.viewContext.fetch(alarmRequest)
+      } catch {
+          print("Error getting alarms \(error)")
+          return []
+      }
+    }
+    
+    // delete the specified AlarmEntity
+    func deleteAlarms(alarm: AlarmEntity){
+        container.viewContext.delete(alarm)
+        
+        do{
+            try container.viewContext.save()
+        } catch {
+            container.viewContext.rollback()
+            print("Error deleting alarm")
+        }
+    }
+    
+    // save alarm to core data
+    func saveAlarm(receivedAlarm: Connectivity.AlarmInfo){
+        let all = getAlarms()
+        do{
+            let existingAlarm = all.first(where: {$0.id == receivedAlarm.alarmID})
+            if(existingAlarm != nil)
+            {
+                // if there is a preexisting alarm with the same id, delete it to be replaced
+                deleteAlarms(alarm: existingAlarm!)
+                print("there is already an alarm")
+            }
+            // create a new AlarmEntity and save it
+            let toSave = AlarmEntity(context: container.viewContext)
+            toSave.name = receivedAlarm.alarmName
+            toSave.desc = receivedAlarm.alarmDescription
+            toSave.alarmTime = receivedAlarm.alarmTime
+            toSave.id = receivedAlarm.alarmID
+            toSave.isEnabled = receivedAlarm.alarmEnabled
+            try container.viewContext.save()
+            print("Alarm saved successfully")
+        }
+        catch {
+            print("Failed to save alarm: \(error)")
+        }
+    }
 }
