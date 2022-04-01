@@ -111,10 +111,10 @@ class DataController: ObservableObject {
     }
     
     // save alarm to core data
-    func saveAlarm(alarm: AlarmEntity){
+    func saveAlarm(receivedAlarm: Connectivity.AlarmInfo){
         let all = getAlarms()
         do{
-            let existingAlarm = all.first(where: {$0.id == alarm.id})
+            let existingAlarm = all.first(where: {$0.id == receivedAlarm.alarmID})
             if(existingAlarm != nil)
             {
                 // if there is a preexisting alarm with the same id, delete it to be replaced
@@ -122,8 +122,12 @@ class DataController: ObservableObject {
                 print("there is already an alarm")
             }
             // create a new AlarmEntity and save it
-            var toSave = AlarmEntity(context: container.viewContext)
-            toSave = alarm
+            let toSave = AlarmEntity(context: container.viewContext)
+            toSave.name = receivedAlarm.alarmName
+            toSave.desc = receivedAlarm.alarmDescription
+            toSave.alarmTime = receivedAlarm.alarmTime
+            toSave.id = receivedAlarm.alarmID
+            toSave.isEnabled = receivedAlarm.alarmEnabled
             try container.viewContext.save()
             print("Alarm saved successfully")
         }

@@ -15,26 +15,9 @@ class Alarm {
     let vibration = Vibration()
     
     func processAlarmFromPhone(){
-        let newAlarm = AlarmEntity(context: controller.container.viewContext)
         let recieved = Connectivity.shared.AlarmChanged
-        newAlarm.name = recieved.alarmName
-        newAlarm.desc = recieved.alarmDescription
-        newAlarm.alarmTime = recieved.alarmTime
-        newAlarm.id = recieved.alarmID
-        newAlarm.isEnabled = recieved.alarmEnabled
-        print("processing")
-        controller.saveAlarm(alarm: newAlarm)
-        prepareAlarms()
+        controller.saveAlarm(receivedAlarm: recieved)
     }
-    
-    func prepareAlarms(){
-        let results = controller.getAlarms()
-        for alarm in results{
-            print(alarm)
-        }
-        print("alarms are here")
-    }
-    
     
     func deployAlarm(alarm: AlarmEntity){
         //notification
