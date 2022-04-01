@@ -98,6 +98,16 @@ class DataController: ObservableObject {
       }
     }
     
+    //get one alarm from core data using its ID
+    func getAlarm(id: UUID) -> AlarmEntity{
+        let all = getAlarms()
+        let alarm = all.first(where: {$0.id == id})
+        if(alarm != nil){
+            return alarm!
+        }
+        return AlarmEntity()
+    }
+    
     // delete the specified AlarmEntity
     func deleteAlarms(alarm: AlarmEntity){
         container.viewContext.delete(alarm)
@@ -112,14 +122,12 @@ class DataController: ObservableObject {
     
     // save alarm to core data
     func saveAlarm(receivedAlarm: Connectivity.AlarmInfo){
-        let all = getAlarms()
         do{
-            let existingAlarm = all.first(where: {$0.id == receivedAlarm.alarmID})
+            let existingAlarm = getAlarm(id: receivedAlarm.alarmID)
             if(existingAlarm != nil)
             {
                 // if there is a preexisting alarm with the same id, delete it to be replaced
-                deleteAlarms(alarm: existingAlarm!)
-                print("there is already an alarm")
+                deleteAlarms(alarm: existingAlarm)
             }
             // create a new AlarmEntity and save it
             let toSave = AlarmEntity(context: container.viewContext)

@@ -15,8 +15,9 @@ class Alarm {
     let vibration = Vibration()
     
     func processAlarmFromPhone(){
-        let recieved = Connectivity.shared.AlarmChanged
-        controller.saveAlarm(receivedAlarm: recieved)
+        let received = Connectivity.shared.AlarmChanged
+        controller.saveAlarm(receivedAlarm: received)
+        deployAlarm(alarm: controller.getAlarm(id: received.alarmID))
     }
     
     func deployAlarm(alarm: AlarmEntity){
