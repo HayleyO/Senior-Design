@@ -98,15 +98,36 @@ class DataController: ObservableObject {
       }
     }
     
-    // save alarms to core data
-    func saveAlarm(alarm: AlarmEntity){
-        var toSave = AlarmEntity(context: container.viewContext)
-        toSave = alarm
+    // delete the specified AlarmEntity
+    func deleteAlarms(alarm: AlarmEntity){
+        container.viewContext.delete(alarm)
+        
         do{
             try container.viewContext.save()
-            print("Alarm saved successfully")
-            
         } catch {
+            container.viewContext.rollback()
+            print("Error deleting alarm")
+        }
+    }
+    
+    // save alarm to core data
+    func saveAlarm(alarm: AlarmEntity){
+        let all = getAlarms()
+        do{
+            let existingAlarm = all.first(where: {$0.id == alarm.id})
+            if(existingAlarm != nil)
+            {
+                // if there is a preexisting alarm with the same id, delete it to be replaced
+                deleteAlarms(alarm: existingAlarm!)
+                print("there is already an alarm")
+            }
+            // create a new AlarmEntity and save it
+            var toSave = AlarmEntity(context: container.viewContext)
+            toSave = alarm
+            try container.viewContext.save()
+            print("Alarm saved successfully")
+        }
+        catch {
             print("Failed to save alarm: \(error)")
         }
     }

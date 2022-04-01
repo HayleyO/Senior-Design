@@ -21,6 +21,7 @@ class Alarm {
         newAlarm.desc = recieved.alarmDescription
         newAlarm.alarmTime = recieved.alarmTime
         newAlarm.id = recieved.alarmID
+        newAlarm.isEnabled = recieved.alarmEnabled
         print("processing")
         controller.saveAlarm(alarm: newAlarm)
         prepareAlarms()
@@ -28,7 +29,9 @@ class Alarm {
     
     func prepareAlarms(){
         let results = controller.getAlarms()
-        print(results)
+        for alarm in results{
+            print(alarm)
+        }
         print("alarms are here")
     }
     
