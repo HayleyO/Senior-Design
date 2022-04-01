@@ -11,6 +11,8 @@
 		0790746527C05D370070E105 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746427C05D370070E105 /* Alarm.swift */; };
 		0790746727C499EC0070E105 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746627C499EC0070E105 /* ExtensionDelegate.swift */; };
 		0790746C27C4AD300070E105 /* NotificationAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746B27C4AD300070E105 /* NotificationAuthorization.swift */; };
+		07E1BFFA27F255FB0026E4BC /* SettingsSliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E1BFF927F255FB0026E4BC /* SettingsSliderController.swift */; };
+		07E1BFFB27F255FB0026E4BC /* SettingsSliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E1BFF927F255FB0026E4BC /* SettingsSliderController.swift */; };
 		7A0F128D27BB199B003D2938 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F128C27BB199B003D2938 /* MainView.swift */; };
 		7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F128E27BB1A63003D2938 /* SettingsView.swift */; };
 		7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F129027BB1BE3003D2938 /* AlarmView.swift */; };
@@ -24,6 +26,7 @@
 		7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
 		7A9F995F27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
 		7ADCB3B527E2821C009FAB55 /* AlarmCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */; };
+		8623E28D27F26106008CB47C /* CTC_Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623E28C27F26106008CB47C /* CTC_Decoding.swift */; };
 		869F833F27C575FC00B66A55 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F833E27C575FC00B66A55 /* Speech.swift */; };
 		86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */; };
 		86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA727BAB9DF00EF0362 /* ContentView.swift */; };
@@ -133,6 +136,7 @@
 		0790746627C499EC0070E105 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		0790746827C49BD60070E105 /* hearRingiOSWatchOS-WatchKit-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "hearRingiOSWatchOS-WatchKit-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0790746B27C4AD300070E105 /* NotificationAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAuthorization.swift; sourceTree = "<group>"; };
+		07E1BFF927F255FB0026E4BC /* SettingsSliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSliderController.swift; sourceTree = "<group>"; };
 		7A0F128C27BB199B003D2938 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7A0F128E27BB1A63003D2938 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
+		8623E28C27F26106008CB47C /* CTC_Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTC_Decoding.swift; sourceTree = "<group>"; };
 		869F833E27C575FC00B66A55 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		86AF8EA227BAB9DF00EF0362 /* hearRingiOSWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearRingiOSWatchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSApp.swift; sourceTree = "<group>"; };
@@ -249,9 +254,18 @@
 			path = Alarm;
 			sourceTree = "<group>";
 		};
+		8623E28B27F260E4008CB47C /* Speech_Rec_Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8623E28C27F26106008CB47C /* CTC_Decoding.swift */,
+			);
+			path = Speech_Rec_Utilities;
+			sourceTree = "<group>";
+		};
 		869F833D27C575E800B66A55 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				8623E28B27F260E4008CB47C /* Speech_Rec_Utilities */,
 				869F833E27C575FC00B66A55 /* Speech.swift */,
 			);
 			path = Sound;
@@ -408,6 +422,7 @@
 				966237EE27C05FA800D91EBA /* DeliveryPriority.swift */,
 				7A9F995B27BDBDE500EC1DB0 /* DataController.swift */,
 				966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */,
+				07E1BFF927F255FB0026E4BC /* SettingsSliderController.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -678,6 +693,8 @@
 				86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */,
 				7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */,
 				7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */,
+				8623E28D27F26106008CB47C /* CTC_Decoding.swift in Sources */,
+				07E1BFFA27F255FB0026E4BC /* SettingsSliderController.swift in Sources */,
 				7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
 				969324E027E917AF00D1A515 /* TtsView.swift in Sources */,
 				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
@@ -716,6 +733,7 @@
 				86AF8F2A27BC778100EF0362 /* Vibration.swift in Sources */,
 				86AF8EDB27BAB9E200EF0362 /* NotificationController.swift in Sources */,
 				0790746727C499EC0070E105 /* ExtensionDelegate.swift in Sources */,
+				07E1BFFB27F255FB0026E4BC /* SettingsSliderController.swift in Sources */,
 				86AF8F2727BC353300EF0362 /* Chunking.swift in Sources */,
 				86AF8ED927BAB9E200EF0362 /* ContentView.swift in Sources */,
 				86AF8F1D27BAEFBE00EF0362 /* Record.swift in Sources */,
@@ -913,7 +931,7 @@
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = hearRingiOSWatchOS_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For using microphone";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -947,7 +965,7 @@
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = hearRingiOSWatchOS_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For using microphone";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1115,7 +1133,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 268358U34W;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -1136,7 +1154,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 268358U34W;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -1157,7 +1175,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 268358U34W;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -1177,7 +1195,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 268358U34W;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
