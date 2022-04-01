@@ -8,7 +8,6 @@
 import SwiftUI
 import Foundation
 import WatchConnectivity
-import CoreData
 
 final class Connectivity : NSObject, ObservableObject
 {
@@ -199,6 +198,7 @@ extension Connectivity: WCSessionDelegate {
             } else if(SettingsOrAlarm == "Alarm") {
                 let decodedAlarm = try JSONDecoder().decode(AlarmInfo.self, from: dictionary["JSON"] as! Data)
                 AlarmChanged = decodedAlarm
+                
                 #if os(watchOS)
                 let AlarmEnabled = decodedAlarm.alarmEnabled
                 if(AlarmEnabled == true) {
@@ -216,7 +216,11 @@ extension Connectivity: WCSessionDelegate {
                 print(decodedAlarm.alarmName)
                 print(decodedAlarm.alarmDescription)
                 print("\n")
-                //only happens on first send to watch
+                
+                #if os(watchOS)
+                let alarm = Alarm()
+                alarm.processAlarmFromPhone()
+                #endif
             } else {
                 return
             }
