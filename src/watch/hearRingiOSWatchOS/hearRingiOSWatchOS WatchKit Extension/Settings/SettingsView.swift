@@ -35,6 +35,7 @@ struct SettingsView: View{
                     newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.high, lowThreshold: weakValue)
                 }
         }
+        // Do NOT pull thresholdBuffer from connectivity
         .onAppear{
             settings = controller.getSettings()
             weakValue = shared.SettingsChanged.weakValue
