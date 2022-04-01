@@ -10,8 +10,8 @@ import CoreData
 
 struct SettingsView: View{
     @Environment(\.managedObjectContext) var moc
-    @State var weakerValue: Double = 50.0
-    @State var strongerValue: Double = 90.0
+    @State var weakValue: Double = 50.0
+    @State var strongValue: Double = 90.0
     @State var thresholdBuffer: Double = 10.0
     
     @StateObject var shared = Connectivity.shared
@@ -22,19 +22,19 @@ struct SettingsView: View{
     
     var body: some View {
         VStack{
-            Text("Low Threshold: \(Int(round(weakerValue)))")
-            Slider(value: $weakerValue,
-                   in: 0.0...strongerValue-thresholdBuffer)
+            Text("Low Threshold: \(Int(round(weakValue)))")
+            Slider(value: $weakValue,
+                   in: 0.0...strongValue-thresholdBuffer)
                 .accentColor(.yellow)
-                .onChange(of: weakerValue){
-                    newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.low, highThreshold: strongerValue)
+                .onChange(of: weakValue){
+                    newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.low, highThreshold: strongValue)
                 }
-            Text("High Threshold: \(Int(round(strongerValue)))")
-            Slider(value: $strongerValue,
-               in: weakerValue+thresholdBuffer...120.0)
+            Text("High Threshold: \(Int(round(strongValue)))")
+            Slider(value: $strongValue,
+               in: weakValue+thresholdBuffer...120.0)
                 .accentColor(.red)
-                .onChange(of: strongerValue){
-                    newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.high, lowThreshold: weakerValue)
+                .onChange(of: strongValue){
+                    newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.high, lowThreshold: weakValue)
                 }
         }
         // Do NOT pull thresholdBuffer from connectivity
@@ -44,12 +44,8 @@ struct SettingsView: View{
         .onChange(of: shared.SettingsChanged) { Settings in
             slidercontroller.updated_from_connectivity = true
             
-            weakerValue = Settings.weakValue
-            strongerValue = Settings.strongValue
-            
-            print("Weak and strong values changed: ")
-            print(weakerValue)
-            print(strongerValue)
+            weakValue = Settings.weakValue
+            strongValue = Settings.strongValue
         }
     }
 }
