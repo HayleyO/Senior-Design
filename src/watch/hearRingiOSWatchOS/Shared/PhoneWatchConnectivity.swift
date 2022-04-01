@@ -22,7 +22,7 @@ final class Connectivity : NSObject, ObservableObject
     
     static let shared = Connectivity()
     
-    struct AlarmInfo: Codable {
+    struct AlarmInfo: Codable, Equatable {
         let alarmID: UUID
         let alarmName: String
         let alarmTime: Date
@@ -30,7 +30,7 @@ final class Connectivity : NSObject, ObservableObject
         let alarmDescription: String
     }
     
-    struct SettingsInfo: Codable {
+    struct SettingsInfo: Codable, Equatable {
         let bufferValue: Double
         let weakValue: Double
         let strongValue: Double
@@ -66,7 +66,6 @@ final class Connectivity : NSObject, ObservableObject
                 print("JSON \(jsonString)")
             }
             let SendingDict = ["JSON":EncodeAlarmInfoObj, "SettingsOrAlarm":AlarmToData]
-            
             deliver(SendingDict: SendingDict, delivery: delivery)
             
         }
@@ -216,7 +215,7 @@ extension Connectivity: WCSessionDelegate {
                 print(decodedAlarm.alarmName)
                 print(decodedAlarm.alarmDescription)
                 print("\n")
-                //only happens on first send to watch
+            //only happens on first send to watch
             } else {
                 return
             }

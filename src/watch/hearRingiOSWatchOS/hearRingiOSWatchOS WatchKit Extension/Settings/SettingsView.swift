@@ -10,38 +10,47 @@ import CoreData
 
 struct SettingsView: View{
     @Environment(\.managedObjectContext) var moc
-    @State var weakValue: Double = 50.0
-    @State var strongValue: Double = 90.0
+    @State var weakerValue: Double = 50.0
+    @State var strongerValue: Double = 90.0
     @State var thresholdBuffer: Double = 10.0
+    
     @StateObject var shared = Connectivity.shared
+    
     @StateObject var controller = DataController()
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
     
     var body: some View {
         VStack{
-            Text("Low Threshold: \(Int(round(weakValue)))")
-            Slider(value: $weakValue,
-                   in: 0.0...strongValue-thresholdBuffer)
+            Text("Low Threshold: \(Int(round(weakerValue)))")
+            Slider(value: $weakerValue,
+                   in: 0.0...strongerValue-thresholdBuffer)
                 .accentColor(.yellow)
-                .onChange(of: weakValue){
-                    newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.low, highThreshold: strongValue)
+                .onChange(of: weakerValue){
+                    newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.low, highThreshold: strongerValue)
                 }
-            Text("High Threshold: \(Int(round(strongValue)))")
-            Slider(value: $strongValue,
-               in: weakValue+thresholdBuffer...120.0)
+            Text("High Threshold: \(Int(round(strongerValue)))")
+            Slider(value: $strongerValue,
+               in: weakerValue+thresholdBuffer...120.0)
                 .accentColor(.red)
-                .onChange(of: strongValue){
-                    newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.high, lowThreshold: weakValue)
+                .onChange(of: strongerValue){
+                    newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.high, lowThreshold: weakerValue)
                 }
         }
         .onAppear{
             settings = controller.getSettings()
-            weakValue = shared.SettingsChanged.weakValue
-            strongValue = shared.SettingsChanged.strongValue
+        }
+        .onChange(of: shared.SettingsChanged) { Settings in
+            slidercontroller.updated_from_connectivity = true
+            
+            weakerValue = Settings.weakValue
+            strongerValue = Settings.strongValue
+            
+            print("Weak and strong values changed: ")
+            print(weakerValue)
+            print(strongerValue)
         }
     }
-        
 }
 
 struct SettingsView_Previews: PreviewProvider {

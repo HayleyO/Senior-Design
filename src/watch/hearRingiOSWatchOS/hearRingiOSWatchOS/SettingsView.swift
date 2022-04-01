@@ -16,6 +16,7 @@ struct SettingsView: View {
     @State var weakerValue: Double = 50
     @State var strongerValue: Double = 90
     @State var separatorValue: Double = 10
+    
     @StateObject var shared = Connectivity.shared
     @StateObject var controller = DataController()
     @StateObject var slidercontroller = SettingsSliderController()
@@ -58,9 +59,18 @@ struct SettingsView: View {
         .onAppear() {
             Connectivity.shared.SendFirst()
             settings = controller.getSettings()
-            weakerValue = shared.SettingsChanged.weakValue
-            strongerValue = shared.SettingsChanged.strongValue
-            separatorValue = shared.SettingsChanged.bufferValue
+        }
+        .onChange(of: shared.SettingsChanged) { Settings in
+            slidercontroller.updated_from_connectivity = true
+            
+            weakerValue = Settings.weakValue
+            strongerValue = Settings.strongValue
+            separatorValue = Settings.bufferValue
+            
+            
+            print("Weak and strong values changed: ")
+            print(weakerValue)
+            print(strongerValue)
         }
     }
 }
