@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
@@ -28,6 +29,14 @@ struct ContentView: View {
         }
         .onDisappear{
             speechRecognizer.stopTranscribing()
+            
+            let audioSession = AVAudioSession.sharedInstance()
+            do {
+                try audioSession.setCategory(AVAudioSession.Category.playback)
+                try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
+            } catch {
+                // handle errors
+            }
         }
     }
 }
