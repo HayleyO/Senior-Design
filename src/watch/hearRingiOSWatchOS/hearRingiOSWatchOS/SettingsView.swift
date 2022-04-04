@@ -4,7 +4,7 @@
 //
 //  Created by Ashley Palmer on 2/14/22.
 //
-//  Written by Tyler Lane
+//  Written by Tyler Lane.
 
 import SwiftUI
 import CoreData
@@ -19,10 +19,25 @@ struct SettingsView: View {
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
     
+    enum Preset: String, CaseIterable, Identifiable {
+        case indoors, outdoors, resturaunt, sleep
+        var id: Self { self }
+    }
+
+    @State private var selectedPreset: Preset = .indoors
+    
     var body: some View {
         NavigationView {
-            HStack (alignment: .center) {
-                VStack (alignment: .center) {
+            ZStack {
+                List {
+                    Picker("Preset", selection: $selectedPreset) {
+                        Text("Indoors").tag(Preset.indoors)
+                        Text("Outdoors").tag(Preset.outdoors)
+                        Text("Resturaunt").tag(Preset.resturaunt)
+                        Text("Sleep").tag(Preset.sleep)
+                    }
+                }
+                VStack {
                     // Weak Vibration Slider
                     Text("Weak Vibration Threshold")
                         .font(.body)
@@ -34,10 +49,10 @@ struct SettingsView: View {
                         }
                     Text("\(weakValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
-                    
+                   
                     Divider()
                         .padding()
-                    
+                   
                     // Strong Vibration Slider
                     Text("Strong Vibration Threshold")
                         .font(.body)
@@ -50,8 +65,8 @@ struct SettingsView: View {
                     Text("\(strongValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
                 }
-            .navigationTitle("Settings")
             }
+            .navigationTitle("Settings")
         }
         // Do NOT pull thresholdBuffer from connectivity
         .onAppear() {
