@@ -51,14 +51,6 @@ struct TtsView: View {
                 let tempVoiceSelection = VoiceSelection(id: voiceIndex, name: TTSVoices[voiceIndex].name, voice: TTSVoices[voiceIndex])
                 Voices.append(tempVoiceSelection)
             }
-            
-            let audioSession = AVAudioSession.sharedInstance()
-            do {
-                try audioSession.setCategory(AVAudioSession.Category.playback)
-                try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
-            } catch {
-                // handle errors
-            }
         }
     }
 }
@@ -66,7 +58,6 @@ struct TtsView: View {
 private func doSpeech() {
     ViewModel.speechUtterance = AVSpeechUtterance(string: currentText)
     
-    print(currentText)
     let voice = TTSVoices[currentVoiceIndex]
     ViewModel.speechUtterance.voice = voice
     
