@@ -13,6 +13,7 @@ let ViewModel = TTSViewModel()
 //Voice Selection Variables
 let TTSVoices = AVSpeechSynthesisVoice.speechVoices()
 var currentVoiceIndex: Int = 0
+
 struct VoiceSelection: Identifiable {
     var id: Int
     let name: String
@@ -50,7 +51,14 @@ struct TtsView: View {
                 let tempVoiceSelection = VoiceSelection(id: voiceIndex, name: TTSVoices[voiceIndex].name, voice: TTSVoices[voiceIndex])
                 Voices.append(tempVoiceSelection)
             }
-                        
+            
+            let audioSession = AVAudioSession.sharedInstance()
+            do {
+                try audioSession.setCategory(AVAudioSession.Category.playback)
+                try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
+            } catch {
+                // handle errors
+            }
         }
     }
 }
