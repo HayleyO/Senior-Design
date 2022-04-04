@@ -17,7 +17,6 @@ struct AlarmCreate: View {
     
     @State private var calendar = Calendar.current
     @State private var newTime = Date()
-    @State private var newDate = Date.now
     @State private var newName = ""
     @State private var newDesc = ""
     @Environment(\.managedObjectContext) var moc
@@ -29,7 +28,7 @@ struct AlarmCreate: View {
                     DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                         .padding()
-                    DatePicker("Please enter a date", selection: $newDate, displayedComponents: .date)
+                    DatePicker("Please enter a date", selection: $newTime, displayedComponents: .date)
                         .labelsHidden()
                         .padding()
                 }
@@ -46,7 +45,6 @@ struct AlarmCreate: View {
             }
             
             Button("Save", action: { self.presentationMode.wrappedValue.dismiss()
-                newTime = calendar.date(bySettingHour: calendar.component(.hour, from: newTime), minute: calendar.component(.minute, from: newTime), second: calendar.component(.second, from: newTime), of: newDate)!
                 let newalarm = AlarmEntity(context: moc)
                           newalarm.id = UUID()
                           newalarm.alarmTime = newTime
