@@ -11,6 +11,7 @@ import CoreData
 
 struct SettingsView: View {
     @Environment(\.managedObjectContext) var moc
+    
     @State var weakValue: Double = 50.0
     @State var strongValue: Double = 90.0
     @State var thresholdBuffer: Double = 10.0
@@ -19,22 +20,30 @@ struct SettingsView: View {
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
     
-    enum Preset: String, CaseIterable, Identifiable {
+    @FetchRequest(sortDescriptors: []) var presets: FetchedResults<PresetEntity>
+    
+    /*enum Preset: String, CaseIterable, Identifiable {
         case indoors, outdoors, resturaunt, sleep
         var id: Self { self }
-    }
+    }*/
 
-    @State private var selectedPreset: Preset = .indoors
+    @State private var selectedPreset: String = "No Preset"
     
     var body: some View {
         NavigationView {
             ZStack {
                 List {
                     Picker("Preset", selection: $selectedPreset) {
+                        Text("No Preset")
+                        ForEach(presets, id: \.self) { preset in
+                            Text(preset.name ?? "")
+                        }
+                        /*
                         Text("Indoors").tag(Preset.indoors)
                         Text("Outdoors").tag(Preset.outdoors)
                         Text("Resturaunt").tag(Preset.resturaunt)
                         Text("Sleep").tag(Preset.sleep)
+                         */
                     }
                 }
                 VStack {

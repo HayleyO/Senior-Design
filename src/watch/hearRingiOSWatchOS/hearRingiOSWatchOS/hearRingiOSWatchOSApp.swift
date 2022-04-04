@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct hearRingiOSWatchOSApp: App {
     @StateObject private var dataController = DataController()
-    
     var body: some Scene {
         WindowGroup {
             MainView()

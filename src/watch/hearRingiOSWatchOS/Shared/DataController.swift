@@ -18,6 +18,51 @@ class DataController: ObservableObject {
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
         }
+        // if there are no PresetEntities
+        if (presetsIsEmpty) {
+            initializePresets()
+        }
+    }
+    
+    var presetsIsEmpty: Bool {
+        do {
+            //throwing error here and not catching it
+            let request: NSFetchRequest<PresetEntity> = PresetEntity.fetchRequest()
+            let count  = try container.viewContext.count(for: request)
+            return count == 0
+        } catch {
+            return true
+        }
+    }
+    
+    //default presets
+    func initializePresets() {
+        let preset1 = PresetEntity(context: container.viewContext)
+            preset1.id = UUID()
+            preset1.name = "Indoors"
+            preset1.weakValue = 30.0
+            preset1.strongValue = 70.0
+        let preset2 = PresetEntity(context: container.viewContext)
+            preset2.id = UUID()
+            preset2.name = "Outdoors"
+            preset2.weakValue = 70.0
+            preset2.strongValue = 100.0
+        let preset3 = PresetEntity(context: container.viewContext)
+            preset3.id = UUID()
+            preset3.name = "Resturaunt"
+            preset3.weakValue = 60.0
+            preset3.strongValue = 105.0
+        let preset4 = PresetEntity(context: container.viewContext)
+            preset4.id = UUID()
+            preset4.name = "Sleep"
+            preset4.weakValue = 20.0
+            preset4.strongValue = 50.0
+        
+        do {
+            try container.viewContext.save()
+        } catch {
+            print("Failed to save default presets: \(error)")
+        }
     }
     
     // save a new ThresholdEntity object to core data
