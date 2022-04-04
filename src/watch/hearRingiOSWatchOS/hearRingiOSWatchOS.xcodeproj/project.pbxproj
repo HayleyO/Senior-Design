@@ -52,13 +52,13 @@
 		86AF8F1D27BAEFBE00EF0362 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8F1C27BAEFBE00EF0362 /* Record.swift */; };
 		86AF8F2727BC353300EF0362 /* Chunking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8F2627BC353300EF0362 /* Chunking.swift */; };
 		86AF8F2A27BC778100EF0362 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8F2927BC778100EF0362 /* Vibration.swift */; };
+		961CC22927FB97B90058E168 /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 961CC22827FB97B90058E168 /* stt.mlpackage */; };
 		966237F027C05FA800D91EBA /* DeliveryPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EE27C05FA800D91EBA /* DeliveryPriority.swift */; };
 		966237F127C05FA800D91EBA /* DeliveryPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EE27C05FA800D91EBA /* DeliveryPriority.swift */; };
 		966237F227C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */; };
 		966237F327C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */; };
 		969324E027E917AF00D1A515 /* TtsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969324DF27E917AF00D1A515 /* TtsView.swift */; };
 		969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969324E227E91FCF00D1A515 /* TTSViewModel.swift */; };
-		96DB49EC27FB7F8A00EA7EE5 /* stt.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 96DB49EB27FB7F8A00EA7EE5 /* stt.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,11 +179,11 @@
 		86AF8F1C27BAEFBE00EF0362 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		86AF8F2627BC353300EF0362 /* Chunking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chunking.swift; sourceTree = "<group>"; };
 		86AF8F2927BC778100EF0362 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		961CC22827FB97B90058E168 /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = stt.mlpackage; path = ../../../../../../../../../Downloads/stt.mlpackage; sourceTree = "<group>"; };
 		966237EE27C05FA800D91EBA /* DeliveryPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryPriority.swift; sourceTree = "<group>"; };
 		966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneWatchConnectivity.swift; sourceTree = "<group>"; };
 		969324DF27E917AF00D1A515 /* TtsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsView.swift; sourceTree = "<group>"; };
 		969324E227E91FCF00D1A515 /* TTSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSViewModel.swift; sourceTree = "<group>"; };
-		96DB49EB27FB7F8A00EA7EE5 /* stt.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = stt.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,7 +270,7 @@
 		8623E29E27F7A968008CB47C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				96DB49EB27FB7F8A00EA7EE5 /* stt.mlmodel */,
+				961CC22827FB97B90058E168 /* stt.mlpackage */,
 				8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */,
 			);
 			path = Model;
@@ -706,10 +706,10 @@
 				7ADCB3B527E2821C009FAB55 /* AlarmCreate.swift in Sources */,
 				86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */,
 				7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */,
-				96DB49EC27FB7F8A00EA7EE5 /* stt.mlmodel in Sources */,
 				7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */,
 				8623E28D27F26106008CB47C /* CTC_Decoding.swift in Sources */,
 				07E1BFFA27F255FB0026E4BC /* SettingsSliderController.swift in Sources */,
+				961CC22927FB97B90058E168 /* stt.mlpackage in Sources */,
 				7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
 				8623E2A027F7A978008CB47C /* Speech_To_Text_Model.swift in Sources */,
 				969324E027E917AF00D1A515 /* TtsView.swift in Sources */,
