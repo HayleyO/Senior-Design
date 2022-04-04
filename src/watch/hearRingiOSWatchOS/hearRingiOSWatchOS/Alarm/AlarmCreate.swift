@@ -15,7 +15,9 @@ struct AlarmCreate: View {
         return dateFormatter
     }
     
+    @State private var calendar = Calendar.current
     @State private var newTime = Date()
+    @State private var newDate = Date.now
     @State private var newName = ""
     @State private var newDesc = ""
     @Environment(\.managedObjectContext) var moc
@@ -23,9 +25,14 @@ struct AlarmCreate: View {
     var body: some View {
         VStack {
             Form {
-                DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
-                    .labelsHidden()
-                    .padding()
+                HStack{
+                    DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
+                        .labelsHidden()
+                        .padding()
+                    DatePicker("Please enter a date", selection: $newDate, displayedComponents: .date)
+                        .labelsHidden()
+                        .padding()
+                }
                 
                 TextField(text: $newName, prompt: Text("Name your new alarm")) {
                     Text("Name")
@@ -39,6 +46,7 @@ struct AlarmCreate: View {
             }
             
             Button("Save", action: { self.presentationMode.wrappedValue.dismiss()
+                newTime = calendar.date(bySettingHour: calendar.component(.hour, from: newTime), minute: calendar.component(.minute, from: newTime), second: calendar.component(.second, from: newTime), of: newDate)!
                 let newalarm = AlarmEntity(context: moc)
                           newalarm.id = UUID()
                           newalarm.alarmTime = newTime

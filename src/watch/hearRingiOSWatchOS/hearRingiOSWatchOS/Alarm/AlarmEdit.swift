@@ -16,8 +16,10 @@ struct AlarmEdit: View {
         return dateFormatter
     }
     
+    @State private var calendar = Calendar.current
     @State private var newName = ""
     @State private var newTime = Date.now
+    @State private var newDate = Date.now
     @State private var newDesc = ""
     @State private var isEnabled = false
     @Environment(\.managedObjectContext) var moc
@@ -31,10 +33,16 @@ struct AlarmEdit: View {
                 .textFieldStyle(.roundedBorder)
                 .multilineTextAlignment(.center)
             
-            DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
-                .labelsHidden()
-                .padding()
-                .font(.title2)
+            HStack{
+                DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
+                    .labelsHidden()
+                    .padding()
+                    .font(.title2)
+            DatePicker("Please enter a date",
+                    selection: $newDate, displayedComponents: .date)
+                    .labelsHidden()
+            }
+                
             
             TextField("Please enter a description", text: $newDesc,
                 prompt: Text(alarm.desc ?? "Provide a description")
@@ -76,9 +84,10 @@ struct AlarmEdit: View {
         }
         .onDisappear {
             alarm.name = newName
+            newTime = calendar.date(bySettingHour: calendar.component(.hour, from: newTime), minute: calendar.component(.minute, from: newTime), second: calendar.component(.second, from: newTime), of: newDate)!
             alarm.alarmTime = newTime
             alarm.desc = newDesc
-            
+    
             Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .guaranteed)
         }
     }
