@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 
 class TTSViewModel: NSObject {
-    let speechSynthesis: AVSpeechSynthesizer = AVSpeechSynthesizer()
+    let speechSynthesis: AVSpeechSynthesizer! = AVSpeechSynthesizer()
     var speechUtterance: AVSpeechUtterance = AVSpeechUtterance()
     
     override init() {
