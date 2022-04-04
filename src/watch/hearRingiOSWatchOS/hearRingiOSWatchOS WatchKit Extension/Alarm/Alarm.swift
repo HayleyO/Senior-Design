@@ -28,17 +28,19 @@ class Alarm {
         content.categoryIdentifier = "snoozeCategory"
         
         //determine time interval
+        var interval = alarm.alarmTime!.timeIntervalSinceNow
+        print("\(interval) alarm interval without editing")
+        if(interval <= 0){
+            interval += 86400 // assume that if the alarm is at a time that has passed in the current day, that the alarm is for the next day
+        }
         if(alarm.alarmTime != nil){
-            let interval = abs(Date.now.timeIntervalSince1970 - alarm.alarmTime!.timeIntervalSince1970)
             print (interval)
-        
+            print ("Sending notification request for \(alarm.name ?? "alarm")")
+            
             setActions()
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
-            let request  = UNNotificationRequest(identifier: "alarm", content: content, trigger: trigger)
+            let request  = UNNotificationRequest(identifier: alarm.name ?? "Alarm", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request)
-            //vibrate for alarm
-            
-            vibration.vibrateAlarm()
         }
         else {
             print("No alarm time provided - alarm not set")
