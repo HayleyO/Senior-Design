@@ -26,6 +26,8 @@
 		7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
 		7A9F995F27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
 		7ADCB3B527E2821C009FAB55 /* AlarmCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */; };
+		86011F9827FB913E00101644 /* Fourier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86011F9727FB913E00101644 /* Fourier.swift */; };
+		86011F9A27FB917C00101644 /* LJ001-0078.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86011F9927FB917C00101644 /* LJ001-0078.wav */; };
 		8623E28D27F26106008CB47C /* CTC_Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623E28C27F26106008CB47C /* CTC_Decoding.swift */; };
 		8623E2A027F7A978008CB47C /* Speech_To_Text_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */; };
 		8623E2A227F7A987008CB47C /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 8623E2A127F7A987008CB47C /* stt.mlpackage */; };
@@ -146,6 +148,8 @@
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
+		86011F9727FB913E00101644 /* Fourier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fourier.swift; sourceTree = "<group>"; };
+		86011F9927FB917C00101644 /* LJ001-0078.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "LJ001-0078.wav"; sourceTree = "<group>"; };
 		8623E28C27F26106008CB47C /* CTC_Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTC_Decoding.swift; sourceTree = "<group>"; };
 		8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_To_Text_Model.swift; sourceTree = "<group>"; };
 		8623E2A127F7A987008CB47C /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = stt.mlpackage; path = ../../../../../../../../../Desktop/Model/stt.mlpackage; sourceTree = "<group>"; };
@@ -258,6 +262,14 @@
 			path = Alarm;
 			sourceTree = "<group>";
 		};
+		86011F9627FB913300101644 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				86011F9927FB917C00101644 /* LJ001-0078.wav */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
 		8623E28B27F260E4008CB47C /* Speech_Rec_Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,8 +282,10 @@
 		8623E29E27F7A968008CB47C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				86011F9627FB913300101644 /* Testing */,
 				8623E2A127F7A987008CB47C /* stt.mlpackage */,
 				8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */,
+				86011F9727FB913E00101644 /* Fourier.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -645,6 +659,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86011F9A27FB917C00101644 /* LJ001-0078.wav in Resources */,
 				86AF8EAD27BAB9E100EF0362 /* Preview Assets.xcassets in Resources */,
 				86AF8EAA27BAB9E100EF0362 /* Assets.xcassets in Resources */,
 			);
@@ -703,6 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				869F833F27C575FC00B66A55 /* Speech.swift in Sources */,
+				86011F9827FB913E00101644 /* Fourier.swift in Sources */,
 				7ADCB3B527E2821C009FAB55 /* AlarmCreate.swift in Sources */,
 				86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */,
 				7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */,
