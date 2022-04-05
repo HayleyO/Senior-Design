@@ -19,21 +19,24 @@ struct SettingsView: View {
     @StateObject var controller = DataController()
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
-    
-    @FetchRequest(sortDescriptors: []) var presets: FetchedResults<PresetEntity>
-    
-    /*enum Preset: String, CaseIterable, Identifiable {
-        case indoors, outdoors, resturaunt, sleep
-        var id: Self { self }
-    }*/
 
-    @State private var selectedPreset: String = "No Preset"
+    @State var selectedPreset: String = "No Preset"
     
     var body: some View {
         NavigationView {
             ZStack {
                 List {
-                    Picker("Preset", selection: $selectedPreset) {
+                    NavigationLink {
+                        PresetsView(originalSelected: self.$selectedPreset)
+                    } label : {
+                        HStack {
+                            Text("Preset")
+                            Spacer()
+                            Text(selectedPreset)
+                                .font(.subheadline)
+                        }
+                    }
+                    /*Picker("Preset", selection: $selectedPreset) {
                         Text("No Preset")
                         ForEach(presets, id: \.self) { preset in
                             Text(preset.name ?? "")
@@ -43,8 +46,8 @@ struct SettingsView: View {
                         Text("Outdoors").tag(Preset.outdoors)
                         Text("Resturaunt").tag(Preset.resturaunt)
                         Text("Sleep").tag(Preset.sleep)
-                         */
-                    }
+                         */*/
+                    //}
                 }
                 VStack {
                     // Weak Vibration Slider

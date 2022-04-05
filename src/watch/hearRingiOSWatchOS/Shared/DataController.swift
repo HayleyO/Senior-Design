@@ -19,13 +19,13 @@ class DataController: ObservableObject {
             }
         }
         // if there are no PresetEntities
-        if (presetsIsEmpty()) {
+        /*if (presetsIsEmpty()) {
             initializePresets()
-        }
+        }*/
     }
     
     //default presets
-    func initializePresets() {
+    /*func initializePresets() {
         let preset1 = PresetEntity(context: container.viewContext)
             preset1.id = UUID()
             preset1.name = "Indoors"
@@ -71,7 +71,7 @@ class DataController: ObservableObject {
         }
     }
     
-    /*func presetsIsEmpty() -> Bool {
+    func presetsIsEmpty() -> Bool {
         let presets = getAllPresets()
         let count = presets.count
         return count == 0
