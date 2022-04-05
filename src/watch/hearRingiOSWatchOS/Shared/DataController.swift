@@ -19,19 +19,8 @@ class DataController: ObservableObject {
             }
         }
         // if there are no PresetEntities
-        if (presetsIsEmpty) {
+        if (presetsIsEmpty()) {
             initializePresets()
-        }
-    }
-    
-    var presetsIsEmpty: Bool {
-        do {
-            //throwing error here and not catching it
-            let request: NSFetchRequest<PresetEntity> = PresetEntity.fetchRequest()
-            let count  = try container.viewContext.count(for: request)
-            return count == 0
-        } catch {
-            return true
         }
     }
     
@@ -64,6 +53,40 @@ class DataController: ObservableObject {
             print("Failed to save default presets: \(error)")
         }
     }
+    
+    func presetsIsEmpty() -> Bool {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "PresetEntity")
+        fetchRequest.fetchLimit =  1
+
+        do {
+            let count = try container.viewContext.count(for: fetchRequest)
+            if count > 0 {
+                return true
+            } else {
+                return false
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error)")
+            return false
+        }
+    }
+    
+    /*func presetsIsEmpty() -> Bool {
+        let presets = getAllPresets()
+        let count = presets.count
+        return count == 0
+    }
+    
+    func getAllPresets() -> [PresetEntity]{
+        let request: NSFetchRequest<PresetEntity> = PresetEntity.fetchRequest()
+        do{
+            return try container.viewContext.fetch(request)
+        } catch {
+            print("Error getting all presets \(error)")
+            return []
+        }
+        
+    }*/
     
     // save a new ThresholdEntity object to core data
     func saveSettings(buffer: Double, weak: Double, strong: Double){
