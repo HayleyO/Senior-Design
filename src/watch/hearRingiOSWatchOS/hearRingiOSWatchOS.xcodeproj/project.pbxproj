@@ -18,6 +18,7 @@
 		7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F129027BB1BE3003D2938 /* AlarmView.swift */; };
 		7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */; };
 		7A8FF26E27FCC14D008030FF /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF26D27FCC14D008030FF /* PresetsView.swift */; };
+		7A8FF27127FD2D0F008030FF /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF27027FD2D0F008030FF /* stt.mlpackage */; };
 		7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F994827BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F994927BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
@@ -144,6 +145,7 @@
 		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
 		7A8FF26D27FCC14D008030FF /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsView.swift; sourceTree = "<group>"; };
+		7A8FF27027FD2D0F008030FF /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = stt.mlpackage; path = ../../../../../../../../../.Trash/stt.mlpackage; sourceTree = "<group>"; };
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		8623E29E27F7A968008CB47C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7A8FF27027FD2D0F008030FF /* stt.mlpackage */,
 				8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */,
 			);
 			path = Model;
@@ -719,6 +722,7 @@
 				8623E28D27F26106008CB47C /* CTC_Decoding.swift in Sources */,
 				07E1BFFA27F255FB0026E4BC /* SettingsSliderController.swift in Sources */,
 				7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+				7A8FF27127FD2D0F008030FF /* stt.mlpackage in Sources */,
 				8623E2A027F7A978008CB47C /* Speech_To_Text_Model.swift in Sources */,
 				969324E027E917AF00D1A515 /* TtsView.swift in Sources */,
 				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
