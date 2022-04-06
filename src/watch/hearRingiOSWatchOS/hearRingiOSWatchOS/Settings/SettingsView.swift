@@ -11,10 +11,11 @@ import CoreData
 
 struct SettingsView: View {
     @Environment(\.managedObjectContext) var moc
-    
+
     @State var weakValue: Double = 50.0
     @State var strongValue: Double = 90.0
     @State var thresholdBuffer: Double = 10.0
+
     @StateObject var shared = Connectivity.shared
     //this call of DataController() may be what is throwing the coredata errors, need to investigate further but outside of scope for this card
     @StateObject var controller = DataController()
@@ -73,8 +74,12 @@ struct SettingsView: View {
         .onAppear() {
             Connectivity.shared.SendFirst()
             settings = controller.getSettings()
-            weakValue = shared.SettingsChanged.weakValue
-            strongValue = shared.SettingsChanged.strongValue
+        }
+        .onChange(of: shared.SettingsChanged) { Settings in
+            slidercontroller.updated_from_connectivity = true
+            
+            weakValue = Settings.weakValue
+            strongValue = Settings.strongValue
         }
     }
 }

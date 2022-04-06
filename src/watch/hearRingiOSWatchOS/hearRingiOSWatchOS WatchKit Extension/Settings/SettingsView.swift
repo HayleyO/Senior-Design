@@ -13,7 +13,9 @@ struct SettingsView: View{
     @State var weakValue: Double = 50.0
     @State var strongValue: Double = 90.0
     @State var thresholdBuffer: Double = 10.0
+    
     @StateObject var shared = Connectivity.shared
+    
     @StateObject var controller = DataController()
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
@@ -38,11 +40,14 @@ struct SettingsView: View{
         // Do NOT pull thresholdBuffer from connectivity
         .onAppear{
             settings = controller.getSettings()
-            weakValue = shared.SettingsChanged.weakValue
-            strongValue = shared.SettingsChanged.strongValue
+        }
+        .onChange(of: shared.SettingsChanged) { Settings in
+            slidercontroller.updated_from_connectivity = true
+            
+            weakValue = Settings.weakValue
+            strongValue = Settings.strongValue
         }
     }
-        
 }
 
 struct SettingsView_Previews: PreviewProvider {
