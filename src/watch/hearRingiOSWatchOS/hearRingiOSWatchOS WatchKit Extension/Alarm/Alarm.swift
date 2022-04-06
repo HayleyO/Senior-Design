@@ -22,8 +22,8 @@ class Alarm {
     
     func processAlarmFromPhone(){
         let received = Connectivity.shared.AlarmChanged
-        controller.saveAlarm(receivedAlarm: received)
-        deployAlarm(alarm: controller.getAlarm(id: received.alarmID))
+        controller.saveAlarm(id: received.alarmID, name: received.alarmName, time: received.alarmTime, desc: received.alarmDescription, enabled: received.alarmEnabled)
+        deployAlarm(alarm: controller.getAlarm(id: received.alarmID)!)
     }
     
     func deployAlarm(alarm: AlarmEntity){
@@ -35,14 +35,11 @@ class Alarm {
         
         //determine time interval
         var interval = alarm.alarmTime!.timeIntervalSinceNow
-        print("\(interval) alarm interval without editing")
         if(interval <= 0){
             interval += 86400 // assume that if the alarm is at a time that has passed in the current day, that the alarm is for the next day
         }
         if(alarm.alarmTime != nil){
-            print (interval)
-            print ("Sending notification request for \(alarm.name ?? "alarm")")
-            print(dateFormatter.string(from: alarm.alarmTime!))
+            print ("Sending notification request for \(alarm.name ?? "alarm") at \(dateFormatter.string(from: alarm.alarmTime!))")
             setActions()
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
             let request  = UNNotificationRequest(identifier: alarm.name ?? "Alarm", content: content, trigger: trigger)
