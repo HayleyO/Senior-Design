@@ -13,9 +13,11 @@ struct AlarmEdit: View {
     var dateFormatter : DateFormatter{
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .short
         return dateFormatter
     }
     
+    @State private var calendar = Calendar.current
     @State private var newName = ""
     @State private var newTime = Date.now
     @State private var newDesc = ""
@@ -31,10 +33,15 @@ struct AlarmEdit: View {
                 .textFieldStyle(.roundedBorder)
                 .multilineTextAlignment(.center)
             
-            DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
-                .labelsHidden()
-                .padding()
-                .font(.title2)
+            HStack{
+                DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
+                    .labelsHidden()
+                    .padding()
+                    .font(.title2)
+            DatePicker("Please enter a date",
+                    selection: $newTime, displayedComponents: .date)
+                    .labelsHidden()
+            }
             
             TextField("Please enter a description", text: $newDesc,
                 prompt: Text(alarm.desc ?? "Provide a description")
@@ -78,8 +85,10 @@ struct AlarmEdit: View {
             alarm.name = newName
             alarm.alarmTime = newTime
             alarm.desc = newDesc
-            
+    
             Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .guaranteed)
+            
+            try? moc.save()
         }
     }
 }

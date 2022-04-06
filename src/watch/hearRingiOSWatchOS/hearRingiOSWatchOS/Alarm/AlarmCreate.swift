@@ -15,6 +15,7 @@ struct AlarmCreate: View {
         return dateFormatter
     }
     
+    @State private var calendar = Calendar.current
     @State private var newTime = Date()
     @State private var newName = ""
     @State private var newDesc = ""
@@ -23,9 +24,14 @@ struct AlarmCreate: View {
     var body: some View {
         VStack {
             Form {
-                DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
-                    .labelsHidden()
-                    .padding()
+                HStack{
+                    DatePicker("Please enter a time", selection: $newTime, displayedComponents: .hourAndMinute)
+                        .labelsHidden()
+                        .padding()
+                    DatePicker("Please enter a date", selection: $newTime, displayedComponents: .date)
+                        .labelsHidden()
+                        .padding()
+                }
                 
                 TextField(text: $newName, prompt: Text("Name your new alarm")) {
                     Text("Name")
