@@ -260,6 +260,15 @@
 			path = Alarm;
 			sourceTree = "<group>";
 		};
+		7A8FF26F27FD2287008030FF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7A0F128E27BB1A63003D2938 /* SettingsView.swift */,
+				7A8FF26D27FCC14D008030FF /* PresetsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		8623E28B27F260E4008CB47C /* Speech_Rec_Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,8 +335,7 @@
 				86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */,
 				86AF8EA727BAB9DF00EF0362 /* ContentView.swift */,
 				7A0F128C27BB199B003D2938 /* MainView.swift */,
-				7A0F128E27BB1A63003D2938 /* SettingsView.swift */,
-				7A8FF26D27FCC14D008030FF /* PresetsView.swift */,
+				7A8FF26F27FD2287008030FF /* Settings */,
 				7A21A31A27BC4DF600DDC3A6 /* Alarm */,
 				86AF8EA927BAB9E100EF0362 /* Assets.xcassets */,
 				86AF8EAB27BAB9E100EF0362 /* Preview Content */,

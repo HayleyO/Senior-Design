@@ -33,8 +33,6 @@ struct PresetsView: View {
     var body: some View {
         List {
             Section(header: Text("None")) {
-                //make the hstack part a custom component to simplify code
-                //see: https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-grouped-and-inset-grouped-lists
                 HStack {
                     Text("No Preset")
                     Spacer()
@@ -42,6 +40,7 @@ struct PresetsView: View {
                         Image(systemName: "checkmark")
                     }
                 }
+                .contentShape(Rectangle())
                 .onTapGesture {
                     selectedPreset = "No Preset"
                 }
@@ -58,6 +57,8 @@ struct PresetsView: View {
                     .contentShape(Rectangle())
                     .onTapGesture {
                         selectedPreset = preset.name
+                        //modify SettingsEntity in core data here, set equal to preset.lowThreshold and preset.highThreshold
+                        //don't forget to try? moc.save() and send to Connectivity
                     }
                 }
             }
@@ -74,10 +75,12 @@ struct PresetsView: View {
                      }
                      .contentShape(Rectangle())
                      .onTapGesture {
-                         selectedPreset = preset.name
+                         selectedPreset = preset.name ?? ""
+                         //same logic as above
                      }
                 }
-            }*/
+            }
+            */
         }
         .onAppear {
             selectedPreset = originalSelected
@@ -88,8 +91,4 @@ struct PresetsView: View {
     }
 }
 
-/*struct PresetsView_Previews: PreviewProvider {
-    static var previews: some View {
-        PresetsView(originalSelected: )
-    }
-}*/
+//no previews available for this page due to how it takes a binding from SettingsView

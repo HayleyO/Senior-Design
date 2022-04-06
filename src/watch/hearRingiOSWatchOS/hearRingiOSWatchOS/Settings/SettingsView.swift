@@ -16,6 +16,7 @@ struct SettingsView: View {
     @State var strongValue: Double = 90.0
     @State var thresholdBuffer: Double = 10.0
     @StateObject var shared = Connectivity.shared
+    //this call of DataController() may be what is throwing the coredata errors, need to investigate further but outside of scope for this card
     @StateObject var controller = DataController()
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
@@ -36,18 +37,6 @@ struct SettingsView: View {
                                 .font(.subheadline)
                         }
                     }
-                    /*Picker("Preset", selection: $selectedPreset) {
-                        Text("No Preset")
-                        ForEach(presets, id: \.self) { preset in
-                            Text(preset.name ?? "")
-                        }
-                        /*
-                        Text("Indoors").tag(Preset.indoors)
-                        Text("Outdoors").tag(Preset.outdoors)
-                        Text("Resturaunt").tag(Preset.resturaunt)
-                        Text("Sleep").tag(Preset.sleep)
-                         */*/
-                    //}
                 }
                 VStack {
                     // Weak Vibration Slider
