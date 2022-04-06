@@ -9,7 +9,8 @@
 import SwiftUI
 import CoreData
 
-class DataController: ObservableObject {
+final class DataController: ObservableObject {
+    static let Controller = DataController()
     let container = NSPersistentContainer(name: "Model")
     
     init() {

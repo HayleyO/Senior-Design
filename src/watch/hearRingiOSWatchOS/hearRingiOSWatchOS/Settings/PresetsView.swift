@@ -28,7 +28,7 @@ struct PresetsView: View {
     ]
     
     //will call user-defined presets from core data - there are currently none so this is commented out
-    //@FetchRequest(sortDescriptors: []) var userPresets: FetchedResults<PresetEntity>
+    @FetchRequest(sortDescriptors: []) var userPresets: FetchedResults<PresetEntity>
     
     var body: some View {
         List {
@@ -63,7 +63,7 @@ struct PresetsView: View {
                 }
             }
             // will display user-defined presets from core data - there are currently none so this is commented out
-            /*
+            
             Section(header: Text("Custom")) {
                 ForEach(userPresets, id: \.self) { preset in
                      HStack {
@@ -80,7 +80,7 @@ struct PresetsView: View {
                      }
                 }
             }
-            */
+            
         }
         .onAppear {
             selectedPreset = originalSelected
