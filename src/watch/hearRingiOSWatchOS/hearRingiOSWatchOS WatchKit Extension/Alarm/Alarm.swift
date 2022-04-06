@@ -13,6 +13,12 @@ import SwiftUI
 class Alarm {
     let controller = DataController()
     let vibration = Vibration()
+    var dateFormatter : DateFormatter{
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .short
+        return dateFormatter
+    }
     
     func processAlarmFromPhone(){
         let received = Connectivity.shared.AlarmChanged
@@ -36,7 +42,7 @@ class Alarm {
         if(alarm.alarmTime != nil){
             print (interval)
             print ("Sending notification request for \(alarm.name ?? "alarm")")
-            
+            print(dateFormatter.string(from: alarm.alarmTime!))
             setActions()
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
             let request  = UNNotificationRequest(identifier: alarm.name ?? "Alarm", content: content, trigger: trigger)
