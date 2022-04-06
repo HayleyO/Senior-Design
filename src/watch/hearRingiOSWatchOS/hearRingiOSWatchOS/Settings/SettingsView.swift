@@ -4,7 +4,7 @@
 //
 //  Created by Ashley Palmer on 2/14/22.
 //
-//  Written by Tyler Lane
+//  Written by Tyler Lane.
 
 import SwiftUI
 import CoreData
@@ -17,14 +17,29 @@ struct SettingsView: View {
     @State var thresholdBuffer: Double = 10.0
 
     @StateObject var shared = Connectivity.shared
+    //this call of DataController() may be what is throwing the coredata errors, need to investigate further but outside of scope for this card
     @StateObject var controller = DataController()
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
+
+    @State var selectedPreset: String = "No Preset"
     
     var body: some View {
         NavigationView {
-            HStack (alignment: .center) {
-                VStack (alignment: .center) {
+            ZStack {
+                List {
+                    NavigationLink {
+                        PresetsView(originalSelected: self.$selectedPreset)
+                    } label : {
+                        HStack {
+                            Text("Preset")
+                            Spacer()
+                            Text(selectedPreset)
+                                .font(.subheadline)
+                        }
+                    }
+                }
+                VStack {
                     // Weak Vibration Slider
                     Text("Weak Vibration Threshold")
                         .font(.body)
@@ -36,10 +51,10 @@ struct SettingsView: View {
                         }
                     Text("\(weakValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
-                    
+                   
                     Divider()
                         .padding()
-                    
+                   
                     // Strong Vibration Slider
                     Text("Strong Vibration Threshold")
                         .font(.body)
@@ -52,8 +67,8 @@ struct SettingsView: View {
                     Text("\(strongValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
                 }
-            .navigationTitle("Settings")
             }
+            .navigationTitle("Settings")
         }
         // Do NOT pull thresholdBuffer from connectivity
         .onAppear() {
