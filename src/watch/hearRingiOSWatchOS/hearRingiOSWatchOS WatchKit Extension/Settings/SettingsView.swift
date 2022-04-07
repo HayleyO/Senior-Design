@@ -16,7 +16,7 @@ struct SettingsView: View{
     
     @StateObject var shared = Connectivity.shared
     
-    @StateObject var controller = DataController()
+    @StateObject var controller = DataController.Controller
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
     

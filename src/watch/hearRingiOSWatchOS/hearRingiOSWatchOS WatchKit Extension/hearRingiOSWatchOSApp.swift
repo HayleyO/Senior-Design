@@ -9,7 +9,7 @@ import SwiftUI
 @main
 struct hearRingiOSWatchOSApp: App {
     @WKExtensionDelegateAdaptor(ExtensionDelegate.self) var extensionDelegate
-    @StateObject var controller = DataController()
+    @StateObject var controller = DataController.Controller
     
     @SceneBuilder var body: some Scene {
         WindowGroup {
