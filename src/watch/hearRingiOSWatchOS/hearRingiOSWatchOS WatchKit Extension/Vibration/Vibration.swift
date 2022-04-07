@@ -11,7 +11,7 @@ import WatchKit
 class Vibration: NSObject{
     
     // use core data to update these!
-    var controller = DataController()
+    var controller = DataController.Controller
     
     //tracks previous volume value to determine whether the change in decibel level is significant enough for a vibration
     var storedVolume: Double = 0.0
