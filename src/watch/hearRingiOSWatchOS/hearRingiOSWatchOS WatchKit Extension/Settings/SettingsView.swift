@@ -40,6 +40,9 @@ struct SettingsView: View{
         // Do NOT pull thresholdBuffer from connectivity
         .onAppear{
             settings = controller.getSettings()
+            
+            weakValue = settings.weakValue
+            strongValue = settings.strongValue
         }
         .onChange(of: shared.SettingsChanged) { Settings in
             slidercontroller.updated_from_connectivity = true
