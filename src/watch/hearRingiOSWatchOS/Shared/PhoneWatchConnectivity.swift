@@ -11,7 +11,7 @@ import WatchConnectivity
 
 final class Connectivity : NSObject, ObservableObject
 {
-    @StateObject private var data_controller = DataController()
+    @StateObject private var data_controller = DataController.Controller
     @Environment(\.managedObjectContext) var moc
     
     //published variables for use elsewhere

@@ -9,7 +9,7 @@ import Foundation
 
 
 class SettingsSliderController: NSObject, ObservableObject{
-    let controller = DataController()
+    let controller = DataController.Controller
     let shared = Connectivity.shared
     
     var updated_from_connectivity: Bool = false
