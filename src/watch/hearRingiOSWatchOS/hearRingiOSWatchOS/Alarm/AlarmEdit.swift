@@ -55,7 +55,7 @@ struct AlarmEdit: View {
                 .onChange(of: isEnabled){ value in
                     alarm.isEnabled = value
 
-                    Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .failable)
+                    Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, isDeleted: false, delivery: .failable)
                     
                     print(alarm.isEnabled)
 
@@ -65,10 +65,11 @@ struct AlarmEdit: View {
             
             Spacer()
             Button(action: {
+                Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.description, isDeleted: alarm.isDeleted, delivery: .guaranteed)
                 moc.delete(alarm)
-                try? moc.save()
-            }, label: {
-                Text("Delete")
+                try? moc.save()},
+            label: {
+                NavigationLink("Delete",destination: AlarmView())
                     .foregroundColor(Color.red)
             }
             )
@@ -83,10 +84,10 @@ struct AlarmEdit: View {
         }
         .onDisappear {
             alarm.name = newName
-            alarm.alarmTime = newTime
+            alarm.alarmTime = newTime.addingTimeInterval(-1.0 * Double(calendar.component(.second, from: newTime)))
             alarm.desc = newDesc
     
-            Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, delivery: .guaranteed)
+            Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, isDeleted: false, delivery: .guaranteed)
             
             try? moc.save()
         }

@@ -22,8 +22,17 @@ class Alarm {
     
     func processAlarmFromPhone(){
         let received = Connectivity.shared.AlarmChanged
-        controller.saveAlarm(id: received.alarmID, name: received.alarmName, time: received.alarmTime, desc: received.alarmDescription, enabled: received.alarmEnabled)
-        deployAlarm(alarm: controller.getAlarm(id: received.alarmID)!)
+        if(received.isDeleted)
+        {
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [received.alarmID.uuidString])
+            
+        }
+        else{
+            controller.saveAlarm(id: received.alarmID, name: received.alarmName, time: received.alarmTime, desc: received.alarmDescription, enabled: received.alarmEnabled)
+            if(received.alarmEnabled){
+                deployAlarm(alarm: controller.getAlarm(id: received.alarmID)!)
+            }
+        }
     }
     
     func deployAlarm(alarm: AlarmEntity){
@@ -42,7 +51,7 @@ class Alarm {
             print ("Sending notification request for \(alarm.name ?? "alarm") at \(dateFormatter.string(from: alarm.alarmTime!))")
             setActions()
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
-            let request  = UNNotificationRequest(identifier: alarm.name ?? "Alarm", content: content, trigger: trigger)
+            let request  = UNNotificationRequest(identifier: alarm.id?.uuidString ?? "Alarm", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request)
         }
         else {
