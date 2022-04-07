@@ -28,6 +28,7 @@
 		7A9F995F27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
 		7ADCB3B527E2821C009FAB55 /* AlarmCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */; };
 		86011F9C27FF715400101644 /* Fourier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86011F9B27FF715400101644 /* Fourier.swift */; };
+		86011FA127FF728400101644 /* LJ001-0078.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86011FA027FF728400101644 /* LJ001-0078.wav */; };
 		8623E28D27F26106008CB47C /* CTC_Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623E28C27F26106008CB47C /* CTC_Decoding.swift */; };
 		8623E2A027F7A978008CB47C /* Speech_To_Text_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */; };
 		869F833F27C575FC00B66A55 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F833E27C575FC00B66A55 /* Speech.swift */; };
@@ -149,6 +150,8 @@
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
 		86011F9B27FF715400101644 /* Fourier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fourier.swift; sourceTree = "<group>"; };
+		86011F9D27FF720D00101644 /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = stt.mlpackage; sourceTree = "<group>"; };
+		86011FA027FF728400101644 /* LJ001-0078.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "LJ001-0078.wav"; sourceTree = "<group>"; };
 		8623E28C27F26106008CB47C /* CTC_Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTC_Decoding.swift; sourceTree = "<group>"; };
 		8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_To_Text_Model.swift; sourceTree = "<group>"; };
 		869F833E27C575FC00B66A55 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
@@ -269,9 +272,18 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		86011F9F27FF726A00101644 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				86011FA027FF728400101644 /* LJ001-0078.wav */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
 		8623E28B27F260E4008CB47C /* Speech_Rec_Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				86011F9F27FF726A00101644 /* Testing */,
 				8623E29E27F7A968008CB47C /* Model */,
 				8623E28C27F26106008CB47C /* CTC_Decoding.swift */,
 				86011F9B27FF715400101644 /* Fourier.swift */,
@@ -282,6 +294,7 @@
 		8623E29E27F7A968008CB47C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				86011F9D27FF720D00101644 /* stt.mlpackage */,
 				8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */,
 			);
 			path = Model;
@@ -656,6 +669,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86011FA127FF728400101644 /* LJ001-0078.wav in Resources */,
 				86AF8EAD27BAB9E100EF0362 /* Preview Assets.xcassets in Resources */,
 				86AF8EAA27BAB9E100EF0362 /* Assets.xcassets in Resources */,
 			);
@@ -728,6 +742,7 @@
 				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
 				7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */,
 				966237F027C05FA800D91EBA /* DeliveryPriority.swift in Sources */,
+				86011F9E27FF720D00101644 /* stt.mlpackage in Sources */,
 				969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */,
 				7A0F128D27BB199B003D2938 /* MainView.swift in Sources */,
 				86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,

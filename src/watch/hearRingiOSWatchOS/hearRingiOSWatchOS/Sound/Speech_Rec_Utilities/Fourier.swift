@@ -25,6 +25,12 @@ func read_in_wav() -> [Float]{
     return floatArray
 }
 
+func preprocess(input:[Float])-> [[Float]]
+{
+    let output_1 = fourier_calculate(freqs: input)
+    return normalize(input: output_1)
+}
+
 func fourier_calculate(freqs: [Float]) -> [[Float]]{
     
     let signal = freqs
@@ -100,14 +106,15 @@ func normalize(input:[[Float]]) -> [[Float]]
     print(inputReAbs)
     //normalization
     var result = [[Float]](repeating: [Float](repeating: 0.0, count: input[0].count), count: input.count)
-    for x in 0..<input.count
+    for x in 0..<inputReAbs.count
     {
-        let mean = get_mean(input: input[x])
-        let std_dev = get_std_dev(input: input[x])
-        for y in 0..<input[x].count
+        print(inputReAbs[x])
+        let mean = get_mean(input: inputReAbs[x])
+        let std_dev = get_std_dev(input: inputReAbs[x])
+        for y in 0..<inputReAbs[x].count
         {
             //result = (input - means)/ (std_devs + 1e-10)
-            result[x][y] = (input[x][y] - mean)/(std_dev + 1e-10)
+            result[x][y] = (inputReAbs[x][y] - mean)/(std_dev + 1e-10)
         }
     }
     return result

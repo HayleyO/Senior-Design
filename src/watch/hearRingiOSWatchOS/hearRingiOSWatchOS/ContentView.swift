@@ -24,9 +24,6 @@ struct ContentView: View {
             .navigationTitle("Listening...")
         }
         .onAppear{
-            let wav_output = read_in_wav()
-            let result_1 = fourier_calculate(freqs: wav_output)
-            let result_2 = normalize(input: result_1)
             speechRecognizer.reset()
             speechRecognizer.transcribe()
         }
