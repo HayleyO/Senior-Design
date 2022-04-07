@@ -1,0 +1,4 @@
+*.mlmodel filter=lfs diff=lfs merge=lfs -text
+stt.mlmodel filter=lfs diff=lfs merge=lfs -text
+src/watch/hearRingiOSWatchOS/hearRingiOSWatchOS/Sound/Speech_Rec_Utilities/Model/stt.mlpackage filter=lfs diff=lfs merge=lfs -text
+src/watch/hearRingiOSWatchOS/hearRingiOSWatchOS/Sound/Speech_Rec_Utilities/Model/stt.mlpackage/Data/com.apple.CoreML/stt.mlmodel filter=lfs diff=lfs merge=lfs -text

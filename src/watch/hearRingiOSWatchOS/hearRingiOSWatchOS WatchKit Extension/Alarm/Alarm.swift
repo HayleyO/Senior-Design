@@ -11,7 +11,7 @@ import UserNotifications
 import SwiftUI
 
 class Alarm {
-    let controller = DataController()
+    let controller = DataController.Controller
     let vibration = Vibration()
     var dateFormatter : DateFormatter{
         let dateFormatter = DateFormatter()

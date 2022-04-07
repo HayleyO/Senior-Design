@@ -11,7 +11,7 @@ import WatchConnectivity
 
 final class Connectivity : NSObject, ObservableObject
 {
-    @StateObject private var data_controller = DataController()
+    @StateObject private var data_controller = DataController.Controller
     @Environment(\.managedObjectContext) var moc
     
     //published variables for use elsewhere
@@ -21,7 +21,7 @@ final class Connectivity : NSObject, ObservableObject
     
     static let shared = Connectivity()
     
-    struct AlarmInfo: Codable {
+    struct AlarmInfo: Codable, Equatable {
         let alarmID: UUID
         let alarmName: String
         let alarmTime: Date
@@ -30,7 +30,7 @@ final class Connectivity : NSObject, ObservableObject
         let isDeleted: Bool
     }
     
-    struct SettingsInfo: Codable {
+    struct SettingsInfo: Codable, Equatable {
         let bufferValue: Double
         let weakValue: Double
         let strongValue: Double
@@ -66,7 +66,6 @@ final class Connectivity : NSObject, ObservableObject
                 print("JSON \(jsonString)")
             }
             let SendingDict = ["JSON":EncodeAlarmInfoObj, "SettingsOrAlarm":AlarmToData]
-            
             deliver(SendingDict: SendingDict, delivery: delivery)
             
         }
@@ -222,6 +221,8 @@ extension Connectivity: WCSessionDelegate {
                 let alarm = Alarm()
                 alarm.processAlarmFromPhone()
                 #endif
+            
+            //only happens on first send to watch
             } else {
                 return
             }
