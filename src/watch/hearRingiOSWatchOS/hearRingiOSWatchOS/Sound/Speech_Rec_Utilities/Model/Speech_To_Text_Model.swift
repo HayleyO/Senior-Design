@@ -8,9 +8,9 @@
 import Foundation
 import CoreML
     
-func predict(input: [[Float]])
+func predict(input: [[Float]]) -> String
 {
-    
+    var string = "Listening..."
     let temp_input = float_array_to_MLMultiArray(input: input)
     print(MLMultiArray_to_float_array(input: temp_input, length_1: 269, length_2: 193))
     do{
@@ -18,12 +18,12 @@ func predict(input: [[Float]])
         let prediction = try model.prediction(input: temp_input)
         let prediction_float = MLMultiArray_to_float_array(input: prediction.Identity)
         //print(prediction_float)
-        var string = CTC_Decode(input: prediction_float, input_len: prediction_float.count)
-        print(string)
+        string = CTC_Decode(input: prediction_float, input_len: prediction_float.count)
     }
     catch{
         print(error)
     }
+    return string
 }
 
 func float_array_to_MLMultiArray(input: [[Float]]) -> MLMultiArray
