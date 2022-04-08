@@ -13,6 +13,7 @@ let ViewModel = TTSViewModel()
 //Voice Selection Variables
 let TTSVoices = AVSpeechSynthesisVoice.speechVoices()
 var currentVoiceIndex: Int = 0
+
 struct VoiceSelection: Identifiable {
     var id: Int
     let name: String
@@ -50,7 +51,6 @@ struct TtsView: View {
                 let tempVoiceSelection = VoiceSelection(id: voiceIndex, name: TTSVoices[voiceIndex].name, voice: TTSVoices[voiceIndex])
                 Voices.append(tempVoiceSelection)
             }
-                        
         }
     }
 }
@@ -58,7 +58,6 @@ struct TtsView: View {
 private func doSpeech() {
     ViewModel.speechUtterance = AVSpeechUtterance(string: currentText)
     
-    print(currentText)
     let voice = TTSVoices[currentVoiceIndex]
     ViewModel.speechUtterance.voice = voice
     

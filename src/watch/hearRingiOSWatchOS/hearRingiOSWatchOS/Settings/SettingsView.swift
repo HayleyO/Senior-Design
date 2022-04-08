@@ -4,25 +4,42 @@
 //
 //  Created by Ashley Palmer on 2/14/22.
 //
-//  Written by Tyler Lane
+//  Written by Tyler Lane.
 
 import SwiftUI
 import CoreData
 
 struct SettingsView: View {
     @Environment(\.managedObjectContext) var moc
+
     @State var weakValue: Double = 50.0
     @State var strongValue: Double = 90.0
     @State var thresholdBuffer: Double = 10.0
+
     @StateObject var shared = Connectivity.shared
-    @StateObject var controller = DataController()
+    //this call of DataController() may be what is throwing the coredata errors, need to investigate further but outside of scope for this card
+    @StateObject var controller = DataController.Controller
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
+
+    @State var selectedPreset: String = "No Preset"
     
     var body: some View {
         NavigationView {
-            HStack (alignment: .center) {
-                VStack (alignment: .center) {
+            ZStack {
+                List {
+                    NavigationLink {
+                        PresetsView(originalSelected: self.$selectedPreset)
+                    } label : {
+                        HStack {
+                            Text("Preset")
+                            Spacer()
+                            Text(selectedPreset)
+                                .font(.subheadline)
+                        }
+                    }
+                }
+                VStack {
                     // Weak Vibration Slider
                     Text("Weak Vibration Threshold")
                         .font(.body)
@@ -34,10 +51,10 @@ struct SettingsView: View {
                         }
                     Text("\(weakValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
-                    
+                   
                     Divider()
                         .padding()
-                    
+                   
                     // Strong Vibration Slider
                     Text("Strong Vibration Threshold")
                         .font(.body)
@@ -50,15 +67,23 @@ struct SettingsView: View {
                     Text("\(strongValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
                 }
-            .navigationTitle("Settings")
             }
+            .navigationTitle("Settings")
         }
         // Do NOT pull thresholdBuffer from connectivity
         .onAppear() {
             Connectivity.shared.SendFirst()
+            
             settings = controller.getSettings()
-            weakValue = shared.SettingsChanged.weakValue
-            strongValue = shared.SettingsChanged.strongValue
+            weakValue = settings.weakValue
+            strongValue = settings.strongValue
+            thresholdBuffer = settings.bufferValue
+        }
+        .onChange(of: shared.SettingsChanged) { Settings in
+            slidercontroller.updated_from_connectivity = true
+            
+            weakValue = Settings.weakValue
+            strongValue = Settings.strongValue
         }
     }
 }
