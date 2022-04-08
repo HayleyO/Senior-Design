@@ -27,7 +27,6 @@ struct PresetsView: View {
         DefaultPreset(name: "Sleep", lowThreshold: 20.0, highThreshold: 50.0)
     ]
     
-    //will call user-defined presets from core data - there are currently none so this is commented out
     @FetchRequest(sortDescriptors: []) var userPresets: FetchedResults<PresetEntity>
     
     var body: some View {
@@ -62,8 +61,7 @@ struct PresetsView: View {
                     }
                 }
             }
-            // will display user-defined presets from core data - there are currently none so this is commented out
-            
+            // displays user-defined presets from core data
             Section(header: Text("Custom")) {
                 ForEach(userPresets, id: \.self) { preset in
                      HStack {
@@ -81,6 +79,12 @@ struct PresetsView: View {
                 }
             }
             
+        }
+        .toolbar {
+            NavigationLink(destination: PresetCreate()) {
+                Image(systemName: "plus")
+            }
+            .accessibilityIdentifier("Create New Alarm")
         }
         .onAppear {
             selectedPreset = originalSelected
