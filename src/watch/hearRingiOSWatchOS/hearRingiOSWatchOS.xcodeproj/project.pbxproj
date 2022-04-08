@@ -19,6 +19,7 @@
 		7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */; };
 		7A8FF26E27FCC14D008030FF /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF26D27FCC14D008030FF /* PresetsView.swift */; };
 		7A8FF27B27FF829F008030FF /* PresetCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF27A27FF829F008030FF /* PresetCreate.swift */; };
+		7A8FF2822800DBAC008030FF /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF2812800DBAC008030FF /* stt.mlpackage */; };
 		7A8FF27F28009876008030FF /* PresetEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF27E28009876008030FF /* PresetEdit.swift */; };
 		7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F994827BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
@@ -150,7 +151,6 @@
 		7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
 		7A8FF26D27FCC14D008030FF /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsView.swift; sourceTree = "<group>"; };
 		7A8FF27A27FF829F008030FF /* PresetCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCreate.swift; sourceTree = "<group>"; };
-		7A8FF27E28009876008030FF /* PresetEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetEdit.swift; sourceTree = "<group>"; };
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };

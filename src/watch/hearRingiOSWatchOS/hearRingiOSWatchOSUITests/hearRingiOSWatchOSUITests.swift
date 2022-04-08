@@ -19,11 +19,29 @@ class hearRingiOSWatchOSUITests: XCTestCase {
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
         app.launch()
     }
+    
+    func testListenTab() throws {
+        let listenbutton = app.buttons["Listen"]
+        XCTAssert(listenbutton.exists)
+        XCTAssertEqual(listenbutton.label, "Listen")
+    }
+    
+    func testSpeakTab() throws {
+        let ttsbutton = app.buttons["Speak"]
+        XCTAssert(ttsbutton.exists)
+        XCTAssertEqual(ttsbutton.label, "Speak")
+    }
      
     func testAlarmTab() throws {
         let alarmbutton = app.buttons["Alarm"]
         XCTAssert(alarmbutton.exists)
         XCTAssertEqual(alarmbutton.label, "Alarm")
+    }
+    
+    func testSettingsTab() throws {
+        let settingsbutton = app.buttons["Settings"]
+        XCTAssert(settingsbutton.exists)
+        XCTAssertEqual(settingsbutton.label, "Settings")
     }
     
     func testAlarmView() throws {
@@ -32,6 +50,13 @@ class hearRingiOSWatchOSUITests: XCTestCase {
             XCTAssert(navBar.exists)
         let create = app.buttons["Create New Alarm"]
             XCTAssert(create.exists)
+    }
+    
+    func testAlarmCreate() throws {
+        app.buttons["Alarm"].tap()
+        app.buttons["Create New Alarm"].tap()
+        let saveButton = app.buttons["Save"]
+            XCTAssert(saveButton.exists)
     }
 
     override func tearDownWithError() throws {
