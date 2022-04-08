@@ -3,7 +3,7 @@
 //  hearRingiOSWatchOS
 //
 //  Created by Ashley Palmer on 2/16/22.
-//  Edited by Hannah Folkertsma on 3/22/22.
+//  Written by Hannah Folkertsma
 //
 
 import SwiftUI
@@ -167,12 +167,23 @@ final class DataController: ObservableObject {
       }
     }
     
+    //get one alarm from core data using its ID
+    func getAlarm(id: UUID) -> AlarmEntity?{
+        let all = getAlarms()
+        let alarm = all.first(where: {$0.id == id})
+        if(alarm != nil){
+            return alarm!
+        }
+        return nil
+    }
+    
     // delete the specified AlarmEntity
     func deleteAlarms(alarm: AlarmEntity){
         container.viewContext.delete(alarm)
         
         do{
             try container.viewContext.save()
+            print("alarm deleted, hopefully")
         } catch {
             container.viewContext.rollback()
             print("Error deleting alarm")
@@ -180,23 +191,24 @@ final class DataController: ObservableObject {
     }
     
     // save alarm to core data
-    func saveAlarm(receivedAlarm: Connectivity.AlarmInfo){
-        let all = getAlarms()
+    func saveAlarm(id: UUID, name: String, time: Date, desc: String, enabled: Bool){
         do{
-            let existingAlarm = all.first(where: {$0.id == receivedAlarm.alarmID})
-            if(existingAlarm != nil)
-            {
-                // if there is a preexisting alarm with the same id, delete it to be replaced
-                deleteAlarms(alarm: existingAlarm!)
-                print("there is already an alarm")
+            let existingAlarm = getAlarm(id: id)
+            do{
+                if(existingAlarm != nil)
+                {
+                    // if there is a preexisting alarm with the same id, delete it to be replaced
+                    print("there is an existing alarm with this id")
+                    deleteAlarms(alarm: existingAlarm!)
+                }
             }
             // create a new AlarmEntity and save it
             let toSave = AlarmEntity(context: container.viewContext)
-            toSave.name = receivedAlarm.alarmName
-            toSave.desc = receivedAlarm.alarmDescription
-            toSave.alarmTime = receivedAlarm.alarmTime
-            toSave.id = receivedAlarm.alarmID
-            toSave.isEnabled = receivedAlarm.alarmEnabled
+            toSave.name = name
+            toSave.desc = desc
+            toSave.alarmTime = time
+            toSave.id = id
+            toSave.isEnabled = enabled
             try container.viewContext.save()
             print("Alarm saved successfully")
         }
