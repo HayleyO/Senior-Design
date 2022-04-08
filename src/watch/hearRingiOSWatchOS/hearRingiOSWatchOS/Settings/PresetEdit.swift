@@ -8,13 +8,62 @@
 import SwiftUI
 
 struct PresetEdit: View {
+    var preset: PresetEntity
+    @Binding var selectedPresetName: String
+    
+    @State private var newName = ""
+    @State private var newLow = 50.0
+    @State private var newHigh = 90.0
+    @State var thresholdBuffer: Double = 10.0
+    
+    @Environment(\.managedObjectContext) var moc
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TextField("Please enter a name", text: $newName,
+                prompt: Text(preset.name ?? "Provide a name")
+                )
+                .font(.title)
+                .padding()
+                .textFieldStyle(.roundedBorder)
+                .multilineTextAlignment(.center)
+            // Weak Vibration Slider
+            Text("Weak Vibration Threshold")
+                .font(.body)
+            Slider(value: $newLow, in: 0.0...newHigh-thresholdBuffer)
+                .accentColor(.yellow)
+                .padding()
+            Text("\(newLow, specifier: "%.1f") Decibels")
+                .font(.subheadline)
+           
+            Divider()
+                .padding()
+           
+            // Strong Vibration Slider
+            Text("Strong Vibration Threshold")
+                .font(.body)
+            Slider(value: $newHigh, in: newLow+thresholdBuffer...120.0)
+                .accentColor(.red)
+                .padding()
+            Text("\(newHigh, specifier: "%.1f") Decibels")
+                .font(.subheadline)
+        }
+        .onAppear {
+            newName = preset.name ?? ""
+            newLow = preset.weakValue
+            newHigh = preset.strongValue
+        }
+        .onDisappear {
+            if (preset.name == selectedPresetName) {
+                selectedPresetName = newName
+            }
+            
+            preset.name = newName
+            preset.weakValue = newLow
+            preset.strongValue = newHigh
+            try? moc.save()
+        }
     }
 }
 
-struct PresetEdit_Previews: PreviewProvider {
-    static var previews: some View {
-        PresetEdit()
-    }
-}
+//no previews for this because of binding
