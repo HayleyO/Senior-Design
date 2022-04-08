@@ -11,7 +11,7 @@ struct ContentView: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
     var body: some View {
         NavigationView {
-            HStack(alignment: .top){
+            HStack(alignment: .top) {
                 VStack(alignment: .leading){
                     Text(speechRecognizer.transcript)
                         .padding()
