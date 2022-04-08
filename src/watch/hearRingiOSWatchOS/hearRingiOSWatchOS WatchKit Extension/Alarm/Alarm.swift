@@ -13,10 +13,26 @@ import SwiftUI
 class Alarm {
     let controller = DataController.Controller
     let vibration = Vibration()
+    var dateFormatter : DateFormatter{
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .short
+        return dateFormatter
+    }
     
     func processAlarmFromPhone(){
-        let recieved = Connectivity.shared.AlarmChanged
-        controller.saveAlarm(receivedAlarm: recieved)
+        let received = Connectivity.shared.AlarmChanged
+        print(received)
+        if(received.isDeleted)
+        {
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [received.alarmID.uuidString])
+            print("Alarm notification cancelled")
+            
+        }
+        else if(received.alarmEnabled){
+            controller.saveAlarm(id: received.alarmID, name: received.alarmName, time: received.alarmTime, desc: received.alarmDescription, enabled: received.alarmEnabled)
+            deployAlarm(alarm: controller.getAlarm(id: received.alarmID)!)
+        }
     }
     
     func deployAlarm(alarm: AlarmEntity){
@@ -27,17 +43,15 @@ class Alarm {
         content.categoryIdentifier = "snoozeCategory"
         
         //determine time interval
-        if(alarm.alarmTime != nil){
-            let interval = abs(Date.now.timeIntervalSince1970 - alarm.alarmTime!.timeIntervalSince1970)
-            print (interval)
-        
+        let interval = alarm.alarmTime!.timeIntervalSinceNow
+        print(interval)
+        if(alarm.alarmTime != nil && interval > 0){
+            print ("Sending notification request for \(alarm.name ?? "alarm") at \(dateFormatter.string(from: alarm.alarmTime!))")
             setActions()
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
-            let request  = UNNotificationRequest(identifier: "alarm", content: content, trigger: trigger)
+            let request  = UNNotificationRequest(identifier: alarm.id?.uuidString ?? "Alarm", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request)
-            //vibrate for alarm
             
-            vibration.vibrateAlarm()
         }
         else {
             print("No alarm time provided - alarm not set")

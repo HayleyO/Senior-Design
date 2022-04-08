@@ -69,6 +69,7 @@ struct AlarmView: View {
         for index in offsets {
                 let alarm = alarms[index]
                 moc.delete(alarm)
+                Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, isDeleted: true, delivery: .guaranteed)
             }
         try? moc.save()
     }
