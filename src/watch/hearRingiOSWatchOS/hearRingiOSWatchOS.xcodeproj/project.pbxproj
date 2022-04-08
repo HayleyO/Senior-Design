@@ -18,6 +18,8 @@
 		7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F129027BB1BE3003D2938 /* AlarmView.swift */; };
 		7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */; };
 		7A8FF26E27FCC14D008030FF /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF26D27FCC14D008030FF /* PresetsView.swift */; };
+		7A8FF27927FF8257008030FF /* stt.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF27827FF8257008030FF /* stt.mlmodel */; };
+		7A8FF27B27FF829F008030FF /* PresetCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF27A27FF829F008030FF /* PresetCreate.swift */; };
 		7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F994827BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F994927BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
@@ -61,7 +63,6 @@
 		966237F327C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */; };
 		969324E027E917AF00D1A515 /* TtsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969324DF27E917AF00D1A515 /* TtsView.swift */; };
 		969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969324E227E91FCF00D1A515 /* TTSViewModel.swift */; };
-		96BF07F327FE40A8001296A0 /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 96BF07F227FE40A8001296A0 /* stt.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,8 @@
 		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
 		7A8FF26D27FCC14D008030FF /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsView.swift; sourceTree = "<group>"; };
+		7A8FF27827FF8257008030FF /* stt.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = stt.mlmodel; path = ../../../../../../../../../.Trash/stt.mlmodel; sourceTree = "<group>"; };
+		7A8FF27A27FF829F008030FF /* PresetCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCreate.swift; sourceTree = "<group>"; };
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
@@ -190,7 +193,6 @@
 		966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneWatchConnectivity.swift; sourceTree = "<group>"; };
 		969324DF27E917AF00D1A515 /* TtsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsView.swift; sourceTree = "<group>"; };
 		969324E227E91FCF00D1A515 /* TTSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSViewModel.swift; sourceTree = "<group>"; };
-		96BF07F227FE40A8001296A0 /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = stt.mlpackage; path = ../../../../../../../../../Downloads/stt.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 			children = (
 				7A0F128E27BB1A63003D2938 /* SettingsView.swift */,
 				7A8FF26D27FCC14D008030FF /* PresetsView.swift */,
+				7A8FF27A27FF829F008030FF /* PresetCreate.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -296,7 +299,7 @@
 		8623E29E27F7A968008CB47C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				96BF07F227FE40A8001296A0 /* stt.mlpackage */,
+				7A8FF27827FF8257008030FF /* stt.mlmodel */,
 				8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */,
 			);
 			path = Model;
@@ -734,6 +737,7 @@
 				7ADCB3B527E2821C009FAB55 /* AlarmCreate.swift in Sources */,
 				86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */,
 				7A8FF26E27FCC14D008030FF /* PresetsView.swift in Sources */,
+				7A8FF27B27FF829F008030FF /* PresetCreate.swift in Sources */,
 				7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */,
 				7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */,
 				8623E28D27F26106008CB47C /* CTC_Decoding.swift in Sources */,
@@ -744,10 +748,10 @@
 				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
 				7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */,
 				966237F027C05FA800D91EBA /* DeliveryPriority.swift in Sources */,
-				96BF07F327FE40A8001296A0 /* stt.mlpackage in Sources */,
 				969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */,
 				7A0F128D27BB199B003D2938 /* MainView.swift in Sources */,
 				86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,
+				7A8FF27927FF8257008030FF /* stt.mlmodel in Sources */,
 				966237F227C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
