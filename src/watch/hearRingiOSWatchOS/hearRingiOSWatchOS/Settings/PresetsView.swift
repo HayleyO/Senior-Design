@@ -12,19 +12,23 @@ struct PresetsView: View {
     
     @State var selectedPreset: String = "No Preset"
     
+    @State var controller = DataController.Controller
+    @State var settings: ThresholdEntity = ThresholdEntity()
+    
     //user-immutable default pre-loaded presets
     struct DefaultPreset: Identifiable {
         var id = UUID()
         var name: String
-        var lowThreshold: Double
-        var highThreshold: Double
+        var weakValue: Double
+        var strongValue: Double
     }
+    
     let defaultPresets =
     [
-        DefaultPreset(name: "Indoors", lowThreshold: 30.0, highThreshold: 70.0),
-        DefaultPreset(name: "Outdoors", lowThreshold: 70.0, highThreshold: 100.0),
-        DefaultPreset(name: "Resturaunt", lowThreshold: 60.0, highThreshold: 105.0),
-        DefaultPreset(name: "Sleep", lowThreshold: 20.0, highThreshold: 50.0)
+        DefaultPreset(name: "Indoors", weakValue: 30.0, strongValue: 70.0),
+        DefaultPreset(name: "Outdoors", weakValue: 70.0, strongValue: 100.0),
+        DefaultPreset(name: "Resturaunt", weakValue: 60.0, strongValue: 105.0),
+        DefaultPreset(name: "Sleep", weakValue: 20.0, strongValue: 50.0)
     ]
     
     @FetchRequest(sortDescriptors: []) var userPresets: FetchedResults<PresetEntity>
@@ -56,8 +60,9 @@ struct PresetsView: View {
                     .contentShape(Rectangle())
                     .onTapGesture {
                         selectedPreset = preset.name
-                        //modify SettingsEntity in core data here, set equal to preset.lowThreshold and preset.highThreshold
-                        //don't forget to try? moc.save() and send to Connectivity
+                        
+                        settings.weakValue = preset.weakValue
+                        settings.strongValue = preset.strongValue
                     }
                 }
             }
@@ -74,7 +79,9 @@ struct PresetsView: View {
                      .contentShape(Rectangle())
                      .onTapGesture {
                          selectedPreset = preset.name ?? ""
-                         //same logic as above
+                         
+                         settings.weakValue = preset.weakValue
+                         settings.strongValue = preset.strongValue
                      }
                 }
             }
@@ -88,9 +95,12 @@ struct PresetsView: View {
         }
         .onAppear {
             selectedPreset = originalSelected
+            settings = controller.getSettings()
         }
         .onDisappear {
             originalSelected = selectedPreset
+            controller.updateSettings(buffer: settings.bufferValue, weak: settings.weakValue, strong: settings.strongValue)
+            Connectivity.shared.send(bufferValue: 10, strongValue: settings.strongValue, weakValue: settings.weakValue, delivery: .guaranteed)
         }
     }
 }
