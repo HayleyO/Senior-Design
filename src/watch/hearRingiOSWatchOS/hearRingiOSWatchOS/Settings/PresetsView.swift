@@ -122,10 +122,10 @@ struct PresetsView: View {
         }
         .onDisappear {
             originalSelected = selectedPreset
-            print(settings.strongValue)
-            print(settings.weakValue)
             controller.updateSettings(buffer: settings.bufferValue, weak: settings.weakValue, strong: settings.strongValue)
-            
+            settings = controller.getSettings()
+
+            Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: settings.bufferValue, weakValue: settings.weakValue, strongValue: settings.strongValue)
             Connectivity.shared.send(bufferValue: 10, strongValue: settings.strongValue, weakValue: settings.weakValue, delivery: .guaranteed)
         }
     }
