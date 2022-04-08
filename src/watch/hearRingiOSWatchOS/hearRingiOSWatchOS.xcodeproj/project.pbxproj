@@ -62,7 +62,6 @@
 		966237F327C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */; };
 		969324E027E917AF00D1A515 /* TtsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969324DF27E917AF00D1A515 /* TtsView.swift */; };
 		969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969324E227E91FCF00D1A515 /* TTSViewModel.swift */; };
-		96BF07F327FE40A8001296A0 /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 96BF07F227FE40A8001296A0 /* stt.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,7 +152,6 @@
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
 		86011F9B27FF715400101644 /* Fourier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fourier.swift; sourceTree = "<group>"; };
-		86011F9D27FF720D00101644 /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = stt.mlpackage; sourceTree = "<group>"; };
 		86011FA027FF728400101644 /* LJ001-0078.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "LJ001-0078.wav"; sourceTree = "<group>"; };
 		8623E28C27F26106008CB47C /* CTC_Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTC_Decoding.swift; sourceTree = "<group>"; };
 		8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_To_Text_Model.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 		966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneWatchConnectivity.swift; sourceTree = "<group>"; };
 		969324DF27E917AF00D1A515 /* TtsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsView.swift; sourceTree = "<group>"; };
 		969324E227E91FCF00D1A515 /* TTSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSViewModel.swift; sourceTree = "<group>"; };
-		96BF07F227FE40A8001296A0 /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = stt.mlpackage; path = ../../../../../../../../../Downloads/stt.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -747,7 +744,6 @@
 				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
 				7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */,
 				966237F027C05FA800D91EBA /* DeliveryPriority.swift in Sources */,
-				96BF07F327FE40A8001296A0 /* stt.mlpackage in Sources */,
 				969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */,
 				7A0F128D27BB199B003D2938 /* MainView.swift in Sources */,
 				86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,

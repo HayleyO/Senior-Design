@@ -17,12 +17,14 @@ struct AlarmEdit: View {
         return dateFormatter
     }
     
+    @State private var isDeleted = false
     @State private var calendar = Calendar.current
     @State private var newName = ""
     @State private var newTime = Date.now
     @State private var newDesc = ""
     @State private var isEnabled = false
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         VStack{
             TextField("Please enter a name", text: $newName,
@@ -65,11 +67,14 @@ struct AlarmEdit: View {
             
             Spacer()
             Button(action: {
-                Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.description, isDeleted: alarm.isDeleted, delivery: .guaranteed)
+                isDeleted = true
+                Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, isDeleted: isDeleted, delivery: .guaranteed)
                 moc.delete(alarm)
-                try? moc.save()},
+                try? moc.save()
+                self.presentationMode.wrappedValue.dismiss()
+            },
             label: {
-                NavigationLink("Delete",destination: AlarmView())
+            Text("Delete")
                     .foregroundColor(Color.red)
             }
             )
@@ -81,13 +86,15 @@ struct AlarmEdit: View {
             newTime = alarm.alarmTime ?? Date.now
             newDesc = alarm.desc ?? ""
             isEnabled = alarm.isEnabled
+            isDeleted = false
         }
         .onDisappear {
-            alarm.name = newName
-            alarm.alarmTime = newTime.addingTimeInterval(-1.0 * Double(calendar.component(.second, from: newTime)))
-            alarm.desc = newDesc
-    
-            Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, isDeleted: false, delivery: .guaranteed)
+            if(!isDeleted){
+                alarm.name = newName
+                alarm.alarmTime = newTime.addingTimeInterval(-1.0 * Double(calendar.component(.second, from: newTime)))
+                alarm.desc = newDesc
+                Connectivity.shared.send(AlarmTime: alarm.alarmTime!, alarmEnabled: alarm.isEnabled, alarmID: alarm.id!, alarmName: alarm.name!, alarmDescription: alarm.desc!, isDeleted: isDeleted, delivery: .guaranteed)
+            }
             
             try? moc.save()
         }

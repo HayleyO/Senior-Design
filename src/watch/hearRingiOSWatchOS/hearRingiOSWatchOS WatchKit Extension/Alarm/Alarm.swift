@@ -22,16 +22,16 @@ class Alarm {
     
     func processAlarmFromPhone(){
         let received = Connectivity.shared.AlarmChanged
+        print(received)
         if(received.isDeleted)
         {
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [received.alarmID.uuidString])
+            print("Alarm notification cancelled")
             
         }
-        else{
+        else if(received.alarmEnabled){
             controller.saveAlarm(id: received.alarmID, name: received.alarmName, time: received.alarmTime, desc: received.alarmDescription, enabled: received.alarmEnabled)
-            if(received.alarmEnabled){
-                deployAlarm(alarm: controller.getAlarm(id: received.alarmID)!)
-            }
+            deployAlarm(alarm: controller.getAlarm(id: received.alarmID)!)
         }
     }
     
@@ -43,16 +43,15 @@ class Alarm {
         content.categoryIdentifier = "snoozeCategory"
         
         //determine time interval
-        var interval = alarm.alarmTime!.timeIntervalSinceNow
-        if(interval <= 0){
-            interval += 86400 // assume that if the alarm is at a time that has passed in the current day, that the alarm is for the next day
-        }
-        if(alarm.alarmTime != nil){
+        let interval = alarm.alarmTime!.timeIntervalSinceNow
+        print(interval)
+        if(alarm.alarmTime != nil && interval > 0){
             print ("Sending notification request for \(alarm.name ?? "alarm") at \(dateFormatter.string(from: alarm.alarmTime!))")
             setActions()
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
             let request  = UNNotificationRequest(identifier: alarm.id?.uuidString ?? "Alarm", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request)
+            
         }
         else {
             print("No alarm time provided - alarm not set")

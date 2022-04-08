@@ -219,7 +219,9 @@ extension Connectivity: WCSessionDelegate {
                 
                 #if os(watchOS)
                 let alarm = Alarm()
-                alarm.processAlarmFromPhone()
+                if(!decodedAlarm.isDeleted){
+                    alarm.processAlarmFromPhone()
+                }
                 #endif
             
             //only happens on first send to watch
