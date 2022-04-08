@@ -17,6 +17,8 @@ struct PresetEdit: View {
     @State var thresholdBuffer: Double = 10.0
     
     @Environment(\.managedObjectContext) var moc
+    @State var controller = DataController.Controller
+    @State var settings: ThresholdEntity = ThresholdEntity()
     
     var body: some View {
         VStack {
@@ -56,6 +58,11 @@ struct PresetEdit: View {
         .onDisappear {
             if (preset.name == selectedPresetName) {
                 selectedPresetName = newName
+                
+                settings = controller.getSettings()
+                settings.weakValue = preset.weakValue
+                settings.strongValue = preset.strongValue
+                controller.updateSettings(buffer: thresholdBuffer, weak: preset.weakValue, strong: preset.strongValue)
             }
             
             preset.name = newName

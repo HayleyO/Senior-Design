@@ -92,7 +92,9 @@ struct PresetsView: View {
                          .contentShape(Rectangle())
                          .onTapGesture {
                              selectedPreset = preset.name ?? ""
-                             //same logic as above
+                             
+                             settings.weakValue = preset.weakValue
+                             settings.strongValue = preset.strongValue
                          }
                     }
                 }
@@ -103,18 +105,9 @@ struct PresetsView: View {
                          } label: {
                          Text(preset.name ?? "")
                          }
-                     }
-                     .contentShape(Rectangle())
-                     .onTapGesture {
-                         selectedPreset = preset.name ?? ""
-                         
-                         settings.weakValue = preset.weakValue
-                         settings.strongValue = preset.strongValue
-                     }
                     }
                 }
-            }
-            )
+            })
         }
         .toolbar {
             NavigationLink(destination: PresetCreate()) {
@@ -129,7 +122,10 @@ struct PresetsView: View {
         }
         .onDisappear {
             originalSelected = selectedPreset
+            print(settings.strongValue)
+            print(settings.weakValue)
             controller.updateSettings(buffer: settings.bufferValue, weak: settings.weakValue, strong: settings.strongValue)
+            
             Connectivity.shared.send(bufferValue: 10, strongValue: settings.strongValue, weakValue: settings.weakValue, delivery: .guaranteed)
         }
     }
