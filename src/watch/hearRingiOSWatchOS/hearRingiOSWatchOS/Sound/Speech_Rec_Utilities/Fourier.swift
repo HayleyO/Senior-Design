@@ -101,20 +101,20 @@ func normalize(input:[[Float]]) -> [[Float]]
 {
     let inputAbs = input.map { $0.map { abs($0) } }
     let inputPow = inputAbs.map { $0.map { pow($0, 0.5)}}
-    let inputReAbs = inputPow.map { $0.map { abs($0) } }
+    //let inputReAbs = inputPow.map { $0.map { abs($0) } }
     
-    print(inputReAbs)
+    //print(inputReAbs)
     //normalization
     var result = [[Float]](repeating: [Float](repeating: 0.0, count: input[0].count), count: input.count)
-    for x in 0..<inputReAbs.count
+    for x in 0..<inputPow.count
     {
-        print(inputReAbs[x])
-        let mean = get_mean(input: inputReAbs[x])
-        let std_dev = get_std_dev(input: inputReAbs[x])
-        for y in 0..<inputReAbs[x].count
+        //print(inputPow[x])
+        let mean = get_mean(input: inputPow[x])
+        let std_dev = get_std_dev(input: inputPow[x])
+        for y in 0..<inputPow[x].count
         {
             //result = (input - means)/ (std_devs + 1e-10)
-            result[x][y] = (inputReAbs[x][y] - mean)/(std_dev + 1e-10)
+            result[x][y] = (inputPow[x][y] - mean)/(std_dev + 1e-10)
         }
     }
     return result
