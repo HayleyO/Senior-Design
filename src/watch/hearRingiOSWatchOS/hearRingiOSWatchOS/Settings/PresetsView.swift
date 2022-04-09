@@ -11,6 +11,7 @@ struct PresetsView: View {
     @Binding var originalSelected: String
     
     @State var selectedPreset: String = "No Preset"
+    @State var editingEnabled: Bool = false
     
     //user-immutable default pre-loaded presets
     struct DefaultPreset: Identifiable {
@@ -27,7 +28,6 @@ struct PresetsView: View {
         DefaultPreset(name: "Sleep", lowThreshold: 20.0, highThreshold: 50.0)
     ]
     
-    //will call user-defined presets from core data - there are currently none so this is commented out
     @FetchRequest(sortDescriptors: []) var userPresets: FetchedResults<PresetEntity>
     
     var body: some View {
@@ -62,28 +62,56 @@ struct PresetsView: View {
                     }
                 }
             }
-            // will display user-defined presets from core data - there are currently none so this is commented out
-            
-            Section(header: Text("Custom")) {
-                ForEach(userPresets, id: \.self) { preset in
-                     HStack {
-                         Text(preset.name ?? "")
-                         Spacer()
-                         if (preset.name == selectedPreset) {
-                             Image(systemName: "checkmark")
+            // displays user-defined presets from core data
+            Section (header:
+                HStack {
+                    Text("Custom")
+                    Spacer()
+                    Button(action: {
+                        editingEnabled.toggle()
+                        },
+                        label: {
+                            Text("Edit")
+                        })
+                    },
+                content: {
+                if (editingEnabled == false) {
+                    ForEach(userPresets, id: \.self) { preset in
+                         HStack {
+                             Text(preset.name ?? "")
+                             Spacer()
+                             if (preset.name == selectedPreset) {
+                                 Image(systemName: "checkmark")
+                             }
                          }
-                     }
-                     .contentShape(Rectangle())
-                     .onTapGesture {
-                         selectedPreset = preset.name ?? ""
-                         //same logic as above
-                     }
+                         .contentShape(Rectangle())
+                         .onTapGesture {
+                             selectedPreset = preset.name ?? ""
+                             //same logic as above
+                         }
+                    }
+                }
+                else {
+                    ForEach(userPresets, id: \.self) { preset in
+                         NavigationLink {
+                             PresetEdit(preset: preset, selectedPresetName: self.$selectedPreset)
+                         } label: {
+                         Text(preset.name ?? "")
+                         }
+                    }
                 }
             }
-            
+            )
+        }
+        .toolbar {
+            NavigationLink(destination: PresetCreate()) {
+                Image(systemName: "plus")
+            }
+            .accessibilityIdentifier("Create New Alarm")
         }
         .onAppear {
             selectedPreset = originalSelected
+            //editingEnabled = false
         }
         .onDisappear {
             originalSelected = selectedPreset

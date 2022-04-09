@@ -16,7 +16,7 @@ final class Connectivity : NSObject, ObservableObject
     
     //published variables for use elsewhere
     @Published var strr: String = "disabled"
-    @Published var AlarmChanged: AlarmInfo = AlarmInfo(alarmID: UUID(), alarmName: "NameUnknown", alarmTime: Date.now, alarmEnabled: false, alarmDescription: "DescriptionUnknown")
+    @Published var AlarmChanged: AlarmInfo = AlarmInfo(alarmID: UUID(), alarmName: "NameUnknown", alarmTime: Date.now, alarmEnabled: false, alarmDescription: "DescriptionUnknown", isDeleted: false)
     @Published var SettingsChanged: SettingsInfo = SettingsInfo(bufferValue: 0.0, weakValue: 50.0, strongValue: 90.0)
     
     static let shared = Connectivity()
@@ -27,6 +27,7 @@ final class Connectivity : NSObject, ObservableObject
         let alarmTime: Date
         let alarmEnabled: Bool
         let alarmDescription: String
+        let isDeleted: Bool
     }
     
     struct SettingsInfo: Codable, Equatable {
@@ -51,11 +52,11 @@ final class Connectivity : NSObject, ObservableObject
     }
     
     //sends an alarm whenever alarm arguments are supplied
-    public func send(AlarmTime: Date, alarmEnabled: Bool, alarmID: UUID, alarmName: String, alarmDescription: String, delivery: DeliveryPriority) {
+    public func send(AlarmTime: Date, alarmEnabled: Bool, alarmID: UUID, alarmName: String, alarmDescription: String, isDeleted: Bool, delivery: DeliveryPriority) {
         //If not activated or watch/app not present, do not run function
         guard canSendToPeer() else {return}
           
-        let AlarmInfoObj = AlarmInfo(alarmID: alarmID, alarmName: alarmName, alarmTime: AlarmTime, alarmEnabled: alarmEnabled, alarmDescription: alarmDescription)
+        let AlarmInfoObj = AlarmInfo(alarmID: alarmID, alarmName: alarmName, alarmTime: AlarmTime, alarmEnabled: alarmEnabled, alarmDescription: alarmDescription, isDeleted: isDeleted)
         
         do{
             let EncodeAlarmInfoObj = try JSONEncoder().encode(AlarmInfoObj)
@@ -219,6 +220,7 @@ extension Connectivity: WCSessionDelegate {
                 #if os(watchOS)
                 let alarm = Alarm()
                 alarm.processAlarmFromPhone()
+                
                 #endif
             
             //only happens on first send to watch

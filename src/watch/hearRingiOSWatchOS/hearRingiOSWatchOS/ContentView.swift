@@ -24,6 +24,7 @@ struct ContentView: View {
             .navigationTitle("Listening...")
         }
         .onAppear{
+            //var string = predict(input: preprocess(input: read_in_wav()))
             speechRecognizer.reset()
             speechRecognizer.transcribe()
         }
