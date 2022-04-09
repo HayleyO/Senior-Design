@@ -6,49 +6,44 @@
 
 import AVFoundation
 import Foundation
-import Speech
+import SoundAnalysis
 import SwiftUI
+import Speech
+import AVFAudio
 
-class soundRecognizer : SNAudioStreamAnalyzer {
-    init() {
-        startAudioEngine()
-        self.soundAnalyzer = SNAudioStreamAnalyzer(format: self.inputFormat)
-        
-        let version1 = SNClassifierIdentifier.version1
-        let self.soundRecRequest = try SNClassifySoundRequest(classifierIdentifier: version1)
-        
-        let self.resultsObserver = ResultsObserver()
-        
-        try self.soundAnalyzer.add(self.soundRecRequest, withObserver: self.resultsObserver)
-    }
+class soundRecognizer : NSObject {
+    private let audioEngine: AVAudioEngine = AVAudioEngine() // Mark 1
+    private let inputBus: AVAudioNodeBus = AVAudioNodeBus(0) // Mark 2
+    private var inputFormat: AVAudioFormat!
+    private var streamAnalyzer: SNAudioStreamAnalyzer!
+    private let sound = SoundResultsObserver()
     
-    deinit {
-        reset()
-    }
-    
-    func startAudioEngine() {
-        // Create a new audio engine.
-        self.audioEngine = AVAudioEngine()
-
-        // Get the native audio format of the engine's input bus.
-        self.inputBus = AVAudioNodeBus(0)
-        self.inputFormat = audioEngine.inputNode.inputFormat(forBus: inputBus)
+    override init() {
+        super.init()
+        
+        inputFormat = audioEngine.inputNode.inputFormat(forBus: inputBus)
         
         do {
-            // Start the stream of audio data.
-            try self.audioEngine.start()
+            try audioEngine.start()
+
+            audioEngine.inputNode.installTap(onBus: inputBus, bufferSize: 8192, format: inputFormat, block: analyzeAudio(buffer:at:))
+
+            streamAnalyzer = SNAudioStreamAnalyzer(format: inputFormat)
+
+            let request = try SNClassifySoundRequest(classifierIdentifier: SNClassifierIdentifier.version1) // Mark 5
+
+            try streamAnalyzer.add(request, withObserver: sound) // Mark 6
+
+
         } catch {
             print("Unable to start AVAudioEngine: \(error.localizedDescription)")
         }
     }
     
-    func installAudioTap() {
-        self.audioEngine.inputNode.installTap(onBus: self.inputBus, bufferSize: 8192, format: self.inputFormat, block: analyzeAudio(buffer:at:))
-    }
-    
     func analyzeAudio(buffer: AVAudioBuffer, at time: AVAudioTime) {
         DispatchQueue.main.async {
-            self.soundAnalyzer.analyze(buffer, atAudioFramePosition: time.sampleTime)
+            self.streamAnalyzer.analyze(buffer,
+                                        atAudioFramePosition: time.sampleTime)
         }
     }
 }

@@ -12,7 +12,13 @@ struct soundRecView: View {
     var body: some View {
         VStack {
             var recognizer = soundRecognizer()
-            
+            Text(recognizer.AnalyzeAudio())
         }
+    }
+}
+
+struct soundRecViewPreviews: PreviewProvider {
+    static var previews: some View {
+        soundRecView()
     }
 }
