@@ -11,7 +11,7 @@ import CoreData
 struct AlarmCreate: View {
     var dateFormatter : DateFormatter {
         let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .short
+        dateFormatter.timeStyle = .long
         return dateFormatter
     }
     
@@ -45,6 +45,8 @@ struct AlarmCreate: View {
             }
             
             Button("Save", action: { self.presentationMode.wrappedValue.dismiss()
+                newTime = newTime.addingTimeInterval(-1.0 * Double(calendar.component(.second, from: newTime)))
+                print(dateFormatter.string(from: newTime))
                 let newalarm = AlarmEntity(context: moc)
                           newalarm.id = UUID()
                           newalarm.alarmTime = newTime
@@ -52,7 +54,7 @@ struct AlarmCreate: View {
                           newalarm.desc = newDesc
                           newalarm.isEnabled = true
                 try? moc.save()
-                Connectivity.shared.send(AlarmTime: newalarm.alarmTime!, alarmEnabled: newalarm.isEnabled, alarmID: newalarm.id!, alarmName: newalarm.name!, alarmDescription: newalarm.desc!, delivery: .guaranteed)
+                Connectivity.shared.send(AlarmTime: newalarm.alarmTime!, alarmEnabled: newalarm.isEnabled, alarmID: newalarm.id!, alarmName: newalarm.name!, alarmDescription: newalarm.desc!, isDeleted: false, delivery: .guaranteed)
                 }
             )
                 .padding()

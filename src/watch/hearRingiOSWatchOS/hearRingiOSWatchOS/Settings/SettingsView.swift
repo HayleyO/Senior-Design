@@ -18,7 +18,7 @@ struct SettingsView: View {
 
     @StateObject var shared = Connectivity.shared
     //this call of DataController() may be what is throwing the coredata errors, need to investigate further but outside of scope for this card
-    @StateObject var controller = DataController()
+    @StateObject var controller = DataController.Controller
     @StateObject var slidercontroller = SettingsSliderController()
     @State var settings: ThresholdEntity = ThresholdEntity()
 
@@ -73,7 +73,11 @@ struct SettingsView: View {
         // Do NOT pull thresholdBuffer from connectivity
         .onAppear() {
             Connectivity.shared.SendFirst()
+            
             settings = controller.getSettings()
+            weakValue = settings.weakValue
+            strongValue = settings.strongValue
+            thresholdBuffer = settings.bufferValue
         }
         .onChange(of: shared.SettingsChanged) { Settings in
             slidercontroller.updated_from_connectivity = true
