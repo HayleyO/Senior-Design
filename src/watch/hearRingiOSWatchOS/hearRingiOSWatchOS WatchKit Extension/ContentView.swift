@@ -24,8 +24,8 @@ struct ContentView: View {
                     }
                 }
             
-            Text(sharedData.AlarmChanged.alarmName)
-            Text(String(sharedData.AlarmChanged.alarmEnabled))
+            var recognizer = soundRecognizer()
+            Text(recognizer.AnalyzeAudio())
         }
     }
 }

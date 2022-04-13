@@ -10,10 +10,8 @@ import SwiftUI
 
 struct soundRecView: View {
     var body: some View {
-        VStack {
-            var recognizer = soundRecognizer()
-            Text(recognizer.AnalyzeAudio())
-        }
+        var recognizer = soundRecognizer()
+        Text(recognizer.AnalyzeAudio())
     }
 }
 
