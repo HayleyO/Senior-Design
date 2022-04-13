@@ -13,9 +13,11 @@ function FAQ() {
             <Header style={{ width: "100%" }} />
             <div className="pageHeader">Frequently Asked Questions</div>
             <FAQuestion
+                qid={0}
                 header={"What does HearRing do with my data?"}
                 body={"HearRING doesn't store any of your data. All your information stays on your device, and all recording data is deleted after one minute. Sound recordings are only used to provide transcripts and vibrations."} />
             <FAQuestion
+                qid={1}
                 header={"Is there a HearRING Android app?"}
                 body={"Unfortunately, there is no Android version of HearRING. Android smartwatches don't have the microphone capability needed for our recording."} />
         </div>

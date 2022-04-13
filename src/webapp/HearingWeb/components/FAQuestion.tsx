@@ -4,7 +4,7 @@ import React from "react"
 declare var require: any
 var React = require('react');
 
-export const FAQuestion = (props) => {
+export function FAQuestion(props){
     return (
             <div>
         <div className="pagePanel">
@@ -13,10 +13,10 @@ export const FAQuestion = (props) => {
                 <td>
                    <div className="subHeader">{props.header}</div>
                         </td>
-                        <td style={{ textAlign: "right", borderColor: "azure", backgroundColor: "azure" }} id="button" onClick={(e) => open(e, props.body)}><button>v</button></td>
+                        <td style={{ textAlign: "right", borderColor: "azure", backgroundColor: "azure" }} id="button" onClick={(e) => open(e, props.body, props.qid)}><button>v</button></td>
                         </tr>
                 </table>
-                <div id="answer" className="indentedBodyText" ></div>
+                <div name="answer" className="indentedBodyText" ></div>
 
             </div>
             <script type="text/javascript">
@@ -26,11 +26,14 @@ export const FAQuestion = (props) => {
             )
 }
 
-const open = (event: React.MouseEvent<HTMLButtonElement>, body) => {
-    var ans = document.getElementById("answer")
+const open = (event: React.MouseEvent<HTMLButtonElement>, body, qid) => {
+    var ans = document.getElementsByName("answer")[qid]
 
-    if (ans != null) {
+    if (ans.innerHTML == "") {
         ans.innerHTML = body
+    }
+    else {
+        ans.innerHTML = ""
     }
 }
 
