@@ -9,10 +9,10 @@ import Foundation
 import AVFoundation
 import Accelerate
     
-func read_in_wav() -> [Float]{
+func read_in_audio(url:URL) -> [Float]{
     
-    let path = Bundle.main.path(forResource: "LJ001-0078.wav", ofType: nil)!
-    let url = URL(fileURLWithPath: path)
+    //let path = Bundle.main.path(forResource: fileName, ofType: nil)!
+    //let url = URL(fileURLWithPath: path)
     let file = try! AVAudioFile(forReading: url)
     let audioFrameCount = UInt32(file.length)
     let format = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: file.fileFormat.sampleRate, channels: 1, interleaved: false)!
@@ -59,7 +59,7 @@ func fourier_calculate(freqs: [Float]) -> [[Float]]{
         //store result
         x[k] = transformed_data
     }
-    //Should be the shape 256, 193 when it exits
+    //Should be the shape 269, 193 when it exits
     return x
 }
 

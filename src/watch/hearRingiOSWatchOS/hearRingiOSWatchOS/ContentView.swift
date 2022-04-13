@@ -10,6 +10,7 @@ import AVFoundation
 
 struct ContentView: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
+    @StateObject var speechSTT = Recorder()
     var body: some View {
         NavigationView {
             HStack(alignment: .top){
@@ -25,8 +26,9 @@ struct ContentView: View {
         }
         .onAppear{
             //var string = predict(input: preprocess(input: read_in_wav()))
-            speechRecognizer.reset()
-            speechRecognizer.transcribe()
+            try! speechSTT.startRecording()
+            //speechRecognizer.reset()
+            //speechRecognizer.transcribe()
         }
         .onDisappear{
             speechRecognizer.stopTranscribing()
