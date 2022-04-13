@@ -17,14 +17,12 @@ export const Header = () => {
                         <td >
                             <img src={require('../images/hearringtransparent.png').default} alt="heaRING logo" style={{ width: "200"}}></img>
                         </td>
-                    <td className="applyFont">The Hearing Bracelet</td>
-                    <td><button className="button" style={{backgroundColor:"orange"}} onClick={connectBluetoothDevices}>Connect to Bluetooth device</button></td>
+                    <td className="applyFont">Slogan</td>
+                    <td></td>
                     </tr>
                     <tr style={{ height: "40" }}>
-                        <td onClick={() => navigate('/', {replace: true})} className="headerTab" style={{ backgroundColor: colors.headertab1 }}>Home</td>
-                        <td onClick={() => navigate('/settings', { replace: true })} className="headerTab" style={{ backgroundColor: colors.headertab2 }}>Settings</td>
-                        <td onClick={() => navigate('/howtoconnect', { replace: true })} className="headerTab" style={{ backgroundColor: colors.headertab3 }}>How To Connect</td>
-                        <td onClick={() => navigate('/about', {replace:true})} className="headerTab" style={{ backgroundColor: colors.headertab4 }}>About</td>
+                        <td onClick={() => navigate('/', {replace: true})} className="headerTab" style={{ backgroundColor: colors.headertab1 }}>About HearRING</td>
+                        <td onClick={() => navigate('/faq', {replace:true})} className="headerTab" style={{ backgroundColor: colors.headertab3 }}>FAQ</td>
                     </tr>
                 </table>
             </div>
