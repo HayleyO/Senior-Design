@@ -59,16 +59,17 @@ struct PresetEdit: View {
                 selectedPresetName = newName
                 
                 settings = controller.getSettings()
-                settings.weakValue = preset.weakValue
-                settings.strongValue = preset.strongValue
+                settings.weakValue = newLow
+                settings.strongValue = newHigh
+                print(newLow, newHigh)
                 controller.updateSettings(buffer: thresholdBuffer, weak: preset.weakValue, strong: preset.strongValue)
                 
-                Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: thresholdBuffer, weakValue: preset.weakValue, strongValue: preset.strongValue)
             }
             
             preset.name = newName
             preset.weakValue = newLow
             preset.strongValue = newHigh
+            print(newLow, newHigh)
             try? moc.save()
         }
     }

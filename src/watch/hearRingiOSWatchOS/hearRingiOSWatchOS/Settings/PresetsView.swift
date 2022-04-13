@@ -77,11 +77,14 @@ struct PresetsView: View {
                     Spacer()
                     Button(action: {
                         editingEnabled.toggle()
-                        },
-                        label: {
-                            Text("Edit")
-                        })
+                        if(editingEnabled == true) {
+                            selectedPreset = "No Preset"
+                        }
                     },
+                    label: {
+                        Text("Edit")
+                    })
+                },
                 content: {
                 if (editingEnabled == false) {
                     ForEach(userPresets, id: \.self) { preset in
@@ -135,6 +138,7 @@ struct PresetsView: View {
             
             if(exit_presets == true) {
                 let settings2 = controller.getSettings()
+                print(settings2.weakValue, settings2.strongValue)
                 Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: settings2.bufferValue, weakValue: settings2.weakValue, strongValue: settings2.strongValue)
                 Connectivity.shared.send(bufferValue: 10, strongValue: settings2.strongValue, weakValue: settings2.weakValue, delivery: .guaranteed)
             } else {
