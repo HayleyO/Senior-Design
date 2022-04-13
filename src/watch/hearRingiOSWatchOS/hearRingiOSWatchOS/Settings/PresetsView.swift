@@ -33,6 +33,7 @@ struct PresetsView: View {
     ]
     
     @FetchRequest(sortDescriptors: []) var userPresets: FetchedResults<PresetEntity>
+    @Environment(\.managedObjectContext) var moc
     
     var body: some View {
         List {
@@ -106,6 +107,7 @@ struct PresetsView: View {
                          Text(preset.name ?? "")
                          }
                     }
+                    .onDelete(perform: delete)
                 }
             })
         }
@@ -118,7 +120,7 @@ struct PresetsView: View {
         .onAppear {
             selectedPreset = originalSelected
             settings = controller.getSettings()
-            //editingEnabled = false
+            editingEnabled = false
         }
         .onDisappear {
             originalSelected = selectedPreset
@@ -128,6 +130,17 @@ struct PresetsView: View {
             Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: settings.bufferValue, weakValue: settings.weakValue, strongValue: settings.strongValue)
             Connectivity.shared.send(bufferValue: 10, strongValue: settings.strongValue, weakValue: settings.weakValue, delivery: .guaranteed)
         }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        for index in offsets {
+                let preset = userPresets[index]
+                if (preset.name == selectedPreset) {
+                    selectedPreset = "No Preset"
+                }
+                moc.delete(preset)
+            }
+        try? moc.save()
     }
 }
 

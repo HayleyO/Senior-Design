@@ -19,8 +19,8 @@
 		7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */; };
 		7A8FF26E27FCC14D008030FF /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF26D27FCC14D008030FF /* PresetsView.swift */; };
 		7A8FF27B27FF829F008030FF /* PresetCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF27A27FF829F008030FF /* PresetCreate.swift */; };
-		7A8FF2822800DBAC008030FF /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF2812800DBAC008030FF /* stt.mlpackage */; };
-		7A8FF27F28009876008030FF /* PresetEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8FF27E28009876008030FF /* PresetEdit.swift */; };
+		7A8FF27F28009876008030FF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		7A8FF2822800DBAC008030FF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7A9F994727BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F994827BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F994927BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
@@ -29,6 +29,8 @@
 		7A9F994C27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F994527BDB3C500EC1DB0 /* Model.xcdatamodeld */; };
 		7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
 		7A9F995F27BDBDE500EC1DB0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F995B27BDBDE500EC1DB0 /* DataController.swift */; };
+		7AAB56FF2800E26F00C7FD9B /* PresetEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAB56FE2800E26F00C7FD9B /* PresetEdit.swift */; };
+		7AAB57032800E4B300C7FD9B /* stt.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7AAB57022800E4B300C7FD9B /* stt.mlmodel */; };
 		7ADCB3B527E2821C009FAB55 /* AlarmCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */; };
 		86011F9C27FF715400101644 /* Fourier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86011F9B27FF715400101644 /* Fourier.swift */; };
 		86011FA127FF728400101644 /* LJ001-0078.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86011FA027FF728400101644 /* LJ001-0078.wav */; };
@@ -154,6 +156,8 @@
 		7A8FF27A27FF829F008030FF /* PresetCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCreate.swift; sourceTree = "<group>"; };
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7A9F995B27BDBDE500EC1DB0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		7AAB56FE2800E26F00C7FD9B /* PresetEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetEdit.swift; sourceTree = "<group>"; };
+		7AAB57022800E4B300C7FD9B /* stt.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = stt.mlmodel; path = ../../../../../../../../../.Trash/stt.mlmodel; sourceTree = "<group>"; };
 		7ADCB3B427E2821C009FAB55 /* AlarmCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreate.swift; sourceTree = "<group>"; };
 		86011F9B27FF715400101644 /* Fourier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fourier.swift; sourceTree = "<group>"; };
 		86011FA027FF728400101644 /* LJ001-0078.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "LJ001-0078.wav"; sourceTree = "<group>"; };
@@ -276,7 +280,7 @@
 				7A0F128E27BB1A63003D2938 /* SettingsView.swift */,
 				7A8FF26D27FCC14D008030FF /* PresetsView.swift */,
 				7A8FF27A27FF829F008030FF /* PresetCreate.swift */,
-				7A8FF27E28009876008030FF /* PresetEdit.swift */,
+				7AAB56FE2800E26F00C7FD9B /* PresetEdit.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -755,6 +759,7 @@
 				869F833F27C575FC00B66A55 /* Speech.swift in Sources */,
 				86011F9C27FF715400101644 /* Fourier.swift in Sources */,
 				7ADCB3B527E2821C009FAB55 /* AlarmCreate.swift in Sources */,
+				7AAB56FF2800E26F00C7FD9B /* PresetEdit.swift in Sources */,
 				86906E902800E01C004D6798 /* stt.mlpackage in Sources */,
 				86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */,
 				7A8FF26E27FCC14D008030FF /* PresetsView.swift in Sources */,
@@ -770,6 +775,7 @@
 				969324E027E917AF00D1A515 /* TtsView.swift in Sources */,
 				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
 				7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */,
+				7AAB57032800E4B300C7FD9B /* stt.mlmodel in Sources */,
 				966237F027C05FA800D91EBA /* DeliveryPriority.swift in Sources */,
 				969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */,
 				7A0F128D27BB199B003D2938 /* MainView.swift in Sources */,
