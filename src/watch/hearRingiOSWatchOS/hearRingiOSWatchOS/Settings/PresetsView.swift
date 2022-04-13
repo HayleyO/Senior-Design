@@ -16,6 +16,8 @@ struct PresetsView: View {
     @State var controller = DataController.Controller
     @State var settings: ThresholdEntity = ThresholdEntity()
     
+    @State var exit_presets: Bool = true
+    
     //user-immutable default pre-loaded presets
     struct DefaultPreset: Identifiable {
         var id = UUID()
@@ -102,17 +104,22 @@ struct PresetsView: View {
                 else {
                     ForEach(userPresets, id: \.self) { preset in
                          NavigationLink {
-                             PresetEdit(preset: preset, selectedPresetName: self.$selectedPreset)
+                             PresetEdit(preset: preset, selectedPresetName: self.$selectedPreset).onAppear() {
+                                 exit_presets = false
+                             }
                          } label: {
                          Text(preset.name ?? "")
                          }
                     }
                     .onDelete(perform: delete)
+                    
                 }
             })
         }
         .toolbar {
-            NavigationLink(destination: PresetCreate()) {
+            NavigationLink(destination: PresetCreate().onAppear() {
+                exit_presets = false
+            }) {
                 Image(systemName: "plus")
             }
             .accessibilityIdentifier("Create New Alarm")
@@ -125,10 +132,14 @@ struct PresetsView: View {
         .onDisappear {
             originalSelected = selectedPreset
             controller.updateSettings(buffer: settings.bufferValue, weak: settings.weakValue, strong: settings.strongValue)
-            settings = controller.getSettings()
-
-            Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: settings.bufferValue, weakValue: settings.weakValue, strongValue: settings.strongValue)
-            Connectivity.shared.send(bufferValue: 10, strongValue: settings.strongValue, weakValue: settings.weakValue, delivery: .guaranteed)
+            
+            if(exit_presets == true) {
+                let settings2 = controller.getSettings()
+                Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: settings2.bufferValue, weakValue: settings2.weakValue, strongValue: settings2.strongValue)
+                Connectivity.shared.send(bufferValue: 10, strongValue: settings2.strongValue, weakValue: settings2.weakValue, delivery: .guaranteed)
+            } else {
+                exit_presets = true
+            }
         }
     }
     

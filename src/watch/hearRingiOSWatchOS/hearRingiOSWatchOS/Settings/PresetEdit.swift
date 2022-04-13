@@ -62,6 +62,8 @@ struct PresetEdit: View {
                 settings.weakValue = preset.weakValue
                 settings.strongValue = preset.strongValue
                 controller.updateSettings(buffer: thresholdBuffer, weak: preset.weakValue, strong: preset.strongValue)
+                
+                Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: thresholdBuffer, weakValue: preset.weakValue, strongValue: preset.strongValue)
             }
             
             preset.name = newName
