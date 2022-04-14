@@ -12,7 +12,7 @@ func predict(input: [[Float]]) -> String
 {
     var string = "Listening..."
     let temp_input = float_array_to_MLMultiArray(input: input)
-    print(MLMultiArray_to_float_array(input: temp_input, length_1: 269, length_2: 193))
+    //print(MLMultiArray_to_float_array(input: temp_input, output_length: 193))
     do{
         let model = try stt()
         let prediction = try model.prediction(input: temp_input)
@@ -45,10 +45,11 @@ func float_array_to_MLMultiArray(input: [[Float]]) -> MLMultiArray
     return mlArray
 }
 
-func MLMultiArray_to_float_array(input:MLMultiArray, length_1:Int = 135, length_2:Int = 32) -> [[Float]]
+func MLMultiArray_to_float_array(input:MLMultiArray, output_length:Int = 32) -> [[Float]]
 {
-    //let length = input.count
-    
+    let length = input.count
+    let length_1 = length/output_length
+    let length_2 = output_length
     /*var array: [Float] = []
     
     for i in 0..<length

@@ -10,12 +10,12 @@ import AVFoundation
 
 struct ContentView: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
-    @StateObject var speechSTT = Recorder()
+    @StateObject var speechSTT = STTRecorder()
     var body: some View {
         NavigationView {
             HStack(alignment: .top){
                 VStack(alignment: .leading){
-                    Text(speechRecognizer.transcript)
+                    Text(speechSTT.transcript)
                         .padding()
                         
                     Spacer()
@@ -25,8 +25,9 @@ struct ContentView: View {
             .navigationTitle("Listening...")
         }
         .onAppear{
-            //var string = predict(input: preprocess(input: read_in_wav()))
-            try! speechSTT.startRecording()
+            //read_in_wav()
+            //var string = predict(input: preprocess(input: read_in_wav(fileName: "LJ001-0136.wav")))
+            speechSTT.startRecording()
             //speechRecognizer.reset()
             //speechRecognizer.transcribe()
         }

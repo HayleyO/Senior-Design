@@ -9,6 +9,22 @@ import Foundation
 import AVFoundation
 import Accelerate
     
+func read_in_wav(fileName:String = "LJ001-0078.wav") -> [Float]{
+    
+    let path = Bundle.main.path(forResource: fileName, ofType: nil)!
+    let url = URL(fileURLWithPath: path)
+    let file = try! AVAudioFile(forReading: url)
+    let audioFrameCount = UInt32(file.length)
+    let format = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: file.fileFormat.sampleRate, channels: 1, interleaved: false)!
+
+    let buf = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: audioFrameCount)
+    try! file.read(into: buf!)
+
+    // this makes a copy, you might not want that
+    let floatArray = Array<Float>(UnsafeBufferPointer(start: buf?.floatChannelData![0], count:Int(buf!.frameLength)))
+    return floatArray
+}
+
 func read_in_audio(url:URL) -> [Float]{
     
     //let path = Bundle.main.path(forResource: fileName, ofType: nil)!
@@ -22,6 +38,7 @@ func read_in_audio(url:URL) -> [Float]{
 
     // this makes a copy, you might not want that
     let floatArray = Array<Float>(UnsafeBufferPointer(start: buf?.floatChannelData![0], count:Int(buf!.frameLength)))
+    //let returnArray = Array(floatArray[(movement*hop)..<((movement+1)*hop)])
     return floatArray
 }
 
@@ -59,7 +76,6 @@ func fourier_calculate(freqs: [Float]) -> [[Float]]{
         //store result
         x[k] = transformed_data
     }
-    //Should be the shape 269, 193 when it exits
     return x
 }
 
@@ -72,19 +88,27 @@ func dft(freqs: [Float], fft_length: Int) -> [Float]
     var xReal: [Float] = Array(repeating: 0, count: N)
     var xImaginary: [Float] = Array(repeating: 0, count: N)
     
-    for k in 0..<N
-    {
-        for n in 0..<N
-        {
-            //X_j*e^(-2j*pi*n*k/N)
-            let q = -2.0 * Double(n) * Double.pi * Double(k)/Double(N)
-            xReal[k] += freqs[n]*Float(cos(q))
-            xImaginary[k] -= freqs[n]*Float(sin(q))
+    let f = 2.0 * Double.pi / Double(N)
+    for k in 0 ..< N {
+
+        let kf = Double(k) * f
+        let (cosa, sina) = (cos(kf), sin(kf))
+        var (cosq, sinq) = (1.0, 0.0)
+
+        for n in 0 ..< N {
+            xReal[k] += freqs[n] * Float(cosq)
+            xImaginary[k] -= freqs[n] * Float(sinq)
+            (cosq, sinq) = (cosq * cosa - sinq * sina, sinq * cosa + cosq * sina)
         }
     }
     
     let new_length = 1+fft_length/2
     return Array(xReal[0...new_length-1])
+}
+
+func fft()
+{
+    
 }
 
 func pad_signal(signal: inout [Float], fft_length: Int) -> [Float]

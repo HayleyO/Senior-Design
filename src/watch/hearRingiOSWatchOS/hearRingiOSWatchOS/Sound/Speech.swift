@@ -93,10 +93,10 @@ class SpeechRecognizer: ObservableObject {
         
         let request = SFSpeechAudioBufferRecognitionRequest()
         request.shouldReportPartialResults = true
-        /**if #available(iOS 13, *){
+        if #available(iOS 13, *){
             request.requiresOnDeviceRecognition = true
         }
-        **/
+        
         let audioSession = AVAudioSession.sharedInstance()
         try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)

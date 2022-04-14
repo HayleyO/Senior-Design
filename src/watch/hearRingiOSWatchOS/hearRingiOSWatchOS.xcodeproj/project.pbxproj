@@ -35,7 +35,8 @@
 		8623E28D27F26106008CB47C /* CTC_Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623E28C27F26106008CB47C /* CTC_Decoding.swift */; };
 		8623E2A027F7A978008CB47C /* Speech_To_Text_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */; };
 		86906E9C280755DE004D6798 /* STT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86906E9B280755DE004D6798 /* STT.swift */; };
-		86906E9E280758C8004D6798 /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 86906E9D280758C8004D6798 /* stt.mlpackage */; };
+		86906EA228077374004D6798 /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 86906EA128077374004D6798 /* stt.mlpackage */; };
+		86906EA42808BC3F004D6798 /* LJ001-0136.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86906EA32808BC3F004D6798 /* LJ001-0136.wav */; };
 		869F833F27C575FC00B66A55 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F833E27C575FC00B66A55 /* Speech.swift */; };
 		86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */; };
 		86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA727BAB9DF00EF0362 /* ContentView.swift */; };
@@ -161,7 +162,8 @@
 		8623E28C27F26106008CB47C /* CTC_Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTC_Decoding.swift; sourceTree = "<group>"; };
 		8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech_To_Text_Model.swift; sourceTree = "<group>"; };
 		86906E9B280755DE004D6798 /* STT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STT.swift; sourceTree = "<group>"; };
-		86906E9D280758C8004D6798 /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = stt.mlpackage; sourceTree = "<group>"; };
+		86906EA128077374004D6798 /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = stt.mlpackage; path = ../../../../../../../../../Downloads/stt.mlpackage; sourceTree = "<group>"; };
+		86906EA32808BC3F004D6798 /* LJ001-0136.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "LJ001-0136.wav"; sourceTree = "<group>"; };
 		869F833E27C575FC00B66A55 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		86AF8EA227BAB9DF00EF0362 /* hearRingiOSWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearRingiOSWatchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSApp.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				86011FA027FF728400101644 /* LJ001-0078.wav */,
+				86906EA32808BC3F004D6798 /* LJ001-0136.wav */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
@@ -305,7 +308,7 @@
 		8623E29E27F7A968008CB47C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				86906E9D280758C8004D6798 /* stt.mlpackage */,
+				86906EA128077374004D6798 /* stt.mlpackage */,
 				8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */,
 			);
 			path = Model;
@@ -680,6 +683,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86906EA42808BC3F004D6798 /* LJ001-0136.wav in Resources */,
 				86011FA127FF728400101644 /* LJ001-0078.wav in Resources */,
 				86AF8EAD27BAB9E100EF0362 /* Preview Assets.xcassets in Resources */,
 				86AF8EAA27BAB9E100EF0362 /* Assets.xcassets in Resources */,
@@ -757,7 +761,7 @@
 				7A9F995C27BDBDE500EC1DB0 /* DataController.swift in Sources */,
 				7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */,
 				966237F027C05FA800D91EBA /* DeliveryPriority.swift in Sources */,
-				86906E9E280758C8004D6798 /* stt.mlpackage in Sources */,
+				86906EA228077374004D6798 /* stt.mlpackage in Sources */,
 				969324E327E91FCF00D1A515 /* TTSViewModel.swift in Sources */,
 				7A0F128D27BB199B003D2938 /* MainView.swift in Sources */,
 				86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,
