@@ -26,7 +26,7 @@ struct ContentView: View {
         }
         .onAppear{
             //read_in_wav()
-            //var string = predict(input: preprocess(input: read_in_wav(fileName: "LJ001-0136.wav")))
+            //var string = predict(input: preprocess(input: read_in_wav()))//fileName: "LJ001-0136.wav")))
             speechSTT.startRecording()
             //speechRecognizer.reset()
             //speechRecognizer.transcribe()

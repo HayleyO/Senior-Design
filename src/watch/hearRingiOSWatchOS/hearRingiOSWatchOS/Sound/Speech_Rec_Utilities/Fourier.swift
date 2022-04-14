@@ -42,13 +42,13 @@ func read_in_audio(url:URL) -> [Float]{
     return floatArray
 }
 
-func preprocess(input:[Float])-> [[Float]]
+func preprocess(input:[Float])-> [[Double]]
 {
     let output_1 = fourier_calculate(freqs: input)
-    return normalize(input: output_1)
+    return normalize(input: (output_1))
 }
 
-func fourier_calculate(freqs: [Float]) -> [[Float]]{
+func fourier_calculate(freqs: [Float]) -> [[Double]]{
     
     let signal = freqs
     
@@ -61,7 +61,7 @@ func fourier_calculate(freqs: [Float]) -> [[Float]]{
     
     //frame signal
     let frame_count = 1 + (signal.count - frame_length) / frame_step
-    var x = [[Float]](repeating: [Float](repeating: 0.0, count: frame_length), count: frame_count) //1+fft_length/2), count: frame_count)
+    var x = [[Double]](repeating: [Double](repeating: 0.0, count: frame_length), count: frame_count) //1+fft_length/2), count: frame_count)
 
     //perform calculations
     for k in 0...(frame_count-1){
@@ -79,14 +79,14 @@ func fourier_calculate(freqs: [Float]) -> [[Float]]{
     return x
 }
 
-func dft(freqs: [Float], fft_length: Int) -> [Float]
+func dft(freqs: [Double], fft_length: Int) -> [Double]
 {
     let N = freqs.count
     //let x_even = stride(from: 0, to: N, by: 2)
     //let x_odd = stride(from: 1, to: N, by: 2)
     
-    var xReal: [Float] = Array(repeating: 0, count: N)
-    var xImaginary: [Float] = Array(repeating: 0, count: N)
+    var xReal: [Double] = Array(repeating: 0, count: N)
+    var xImaginary: [Double] = Array(repeating: 0, count: N)
     
     let f = 2.0 * Double.pi / Double(N)
     for k in 0 ..< N {
@@ -96,8 +96,8 @@ func dft(freqs: [Float], fft_length: Int) -> [Float]
         var (cosq, sinq) = (1.0, 0.0)
 
         for n in 0 ..< N {
-            xReal[k] += freqs[n] * Float(cosq)
-            xImaginary[k] -= freqs[n] * Float(sinq)
+            xReal[k] += freqs[n] * cosq
+            xImaginary[k] -= freqs[n] * sinq
             (cosq, sinq) = (cosq * cosa - sinq * sina, sinq * cosa + cosq * sina)
         }
     }
@@ -111,17 +111,25 @@ func fft()
     
 }
 
-func pad_signal(signal: inout [Float], fft_length: Int) -> [Float]
+func pad_signal(signal: inout [Float], fft_length: Int) -> [Double]
 {
     let new_dimension_padding = fft_length - signal.count
     for _ in 0...new_dimension_padding-1
     {
         signal.append(0.0)
     }
-    return signal
+    let newSignal: [Double] = signal.map { Double($0)}
+    return newSignal
 }
 
-func normalize(input:[[Float]]) -> [[Float]]
+func sqrt(_ x: [Double]) -> [Double] {
+    var results = [Double](repeating: 0.0, count: x.count)
+    vvsqrt(&results, x, [Int32(x.count)])
+
+    return results
+}
+
+func normalize(input:[[Double]]) -> [[Double]]
 {
     let inputAbs = input.map { $0.map { abs($0) } }
     let inputPow = inputAbs.map { $0.map { pow($0, 0.5)}}
@@ -129,7 +137,7 @@ func normalize(input:[[Float]]) -> [[Float]]
     
     //print(inputReAbs)
     //normalization
-    var result = [[Float]](repeating: [Float](repeating: 0.0, count: input[0].count), count: input.count)
+    var result = [[Double]](repeating: [Double](repeating: 0.0, count: input[0].count), count: input.count)
     for x in 0..<inputPow.count
     {
         //print(inputPow[x])
@@ -144,15 +152,15 @@ func normalize(input:[[Float]]) -> [[Float]]
     return result
 }
 
-func get_mean(input:[Float]) -> Float
+func get_mean(input:[Double]) -> Double
 {
     let sumArray = input.reduce(0, +) //Add up all values starting at 0
-    return sumArray / Float(input.count)
+    return sumArray / Double(input.count)
 }
 
-func get_std_dev(input:[Float]) -> Float
+func get_std_dev(input:[Double]) -> Double
 {
     let mean = get_mean(input: input)
     let v = input.reduce(0, {$0 + ($1-mean) * ($1-mean) })
-    return sqrt(v / Float(input.count - 1))
+    return sqrt(v / Double(input.count - 1))
 }

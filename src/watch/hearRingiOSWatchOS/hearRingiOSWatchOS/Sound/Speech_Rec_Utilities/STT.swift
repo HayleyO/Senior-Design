@@ -90,11 +90,13 @@ class STTRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudioP
 
 
         let settings = [
-            AVFormatIDKey:Int(kAudioFormatLinearPCM),
-            AVSampleRateKey:48000,
-            AVNumberOfChannelsKey:1,
-            AVLinearPCMBitDepthKey:8,
-            AVEncoderAudioQualityKey:AVAudioQuality.max.rawValue
+                AVFormatIDKey:Int(kAudioFormatLinearPCM),
+                AVSampleRateKey:48000,
+                AVNumberOfChannelsKey:1,
+                AVLinearPCMBitDepthKey:8,
+                AVLinearPCMIsFloatKey:false,
+                AVLinearPCMIsBigEndianKey:false,
+                AVEncoderAudioQualityKey:AVAudioQuality.max.rawValue
         ] as [String : Any]
 
         audioRecorder = try! AVAudioRecorder(url: getFileUrl(), settings: settings)
@@ -124,7 +126,6 @@ class STTRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudioP
     
     func interrupts()
     {
-        //playRecording()
         self.sttTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false){_ in
             self.timerCallback()
         }
@@ -132,6 +133,7 @@ class STTRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudioP
     
     @objc func timerCallback() {
         stopRecording()
+        playRecording()
         let audio = read_in_audio(url: getFileUrl())
         DispatchQueue.main.async { [self] in
             let string = predict(input: preprocess(input: audio))
