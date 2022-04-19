@@ -14,6 +14,7 @@ struct AlarmView: View {
     
     var dateFormatter : DateFormatter{
         let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .short
         return dateFormatter
     }
@@ -29,8 +30,24 @@ struct AlarmView: View {
                     {
                         HStack(alignment: .top) {
                           VStack(alignment: .leading) {
-                              Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
-                              .font(.headline)
+                              if (Calendar.current.isDateInToday(alarm.alarmTime ?? Date.now)) {
+                                  HStack (spacing: 0) {
+                                      Text("Today at ")
+                                      Text(alarm.alarmTime ?? Date.now, style: .time)
+                                  }
+                                  .font(.headline)
+                              }
+                              else if (Calendar.current.isDateInTomorrow(alarm.alarmTime ?? Date.now)) {
+                                  HStack (spacing: 0) {
+                                      Text("Tomorrow at ")
+                                      Text(alarm.alarmTime ?? Date.now, style: .time)
+                                  }
+                                  .font(.headline)
+                              }
+                              else {
+                                  Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
+                                  .font(.headline)
+                              }
                             Text(alarm.name ?? "NameUnknown")
                               .font(.subheadline)
                           }
@@ -40,13 +57,28 @@ struct AlarmView: View {
                     else {
                         HStack(alignment: .top) {
                           VStack(alignment: .leading) {
-                            Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
-                              .font(.headline)
-                              .foregroundColor(.secondary)
-                            Text(alarm.name ?? "NameUnknown")
-                              .font(.subheadline)
-                              .foregroundColor(.secondary)
+                              if (Calendar.current.isDateInToday(alarm.alarmTime ?? Date.now)) {
+                                  HStack (spacing: 0) {
+                                      Text("Today at ")
+                                      Text(alarm.alarmTime ?? Date.now, style: .time)
+                                  }
+                                  .font(.headline)
+                              }
+                              else if (Calendar.current.isDateInTomorrow(alarm.alarmTime ?? Date.now)) {
+                                  HStack (spacing: 0) {
+                                      Text("Tomorrow at ")
+                                      Text(alarm.alarmTime ?? Date.now, style: .time)
+                                  }
+                                  .font(.headline)
+                              }
+                              else {
+                                  Text(dateFormatter.string(for: alarm.alarmTime) ?? "TimeUnknown")
+                                  .font(.headline)
+                              }
+                              Text(alarm.name ?? "NameUnknown")
+                                  .font(.subheadline)
                           }
+                          .foregroundColor(.secondary)
                           Spacer()
                         }
                     }
