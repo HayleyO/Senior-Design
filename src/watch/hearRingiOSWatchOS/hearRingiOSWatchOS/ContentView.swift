@@ -10,12 +10,12 @@ import AVFoundation
 
 struct ContentView: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
-    @StateObject var speechSTT = STTRecorder()
+
     var body: some View {
         NavigationView {
             HStack(alignment: .top){
                 VStack(alignment: .leading){
-                    Text(speechSTT.transcript)
+                    Text(speechRecognizer.transcript)
                         .padding()
                         
                     Spacer()
@@ -25,15 +25,11 @@ struct ContentView: View {
             .navigationTitle("Listening...")
         }
         .onAppear{
-            //read_in_wav()
-            //var string = predict(input: preprocess(input: read_in_wav()))//fileName: "LJ001-0136.wav")))
-            speechSTT.startRecording()
-            //speechRecognizer.reset()
-            //speechRecognizer.transcribe()
+            speechRecognizer.reset()
+            speechRecognizer.transcribe()
         }
         .onDisappear{
-            speechRecognizer.stopTranscribing()
-            
+            speechRecognizer.reset()
             let audioSession = AVAudioSession.sharedInstance()
             do {
                 try audioSession.setCategory(AVAudioSession.Category.playback)

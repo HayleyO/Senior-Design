@@ -37,6 +37,7 @@
 		86906E9C280755DE004D6798 /* STT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86906E9B280755DE004D6798 /* STT.swift */; };
 		86906EA228077374004D6798 /* stt.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 86906EA128077374004D6798 /* stt.mlpackage */; };
 		86906EA42808BC3F004D6798 /* LJ001-0136.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86906EA32808BC3F004D6798 /* LJ001-0136.wav */; };
+		86906EA62808D535004D6798 /* test.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86906EA52808D535004D6798 /* test.wav */; };
 		869F833F27C575FC00B66A55 /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F833E27C575FC00B66A55 /* Speech.swift */; };
 		86AF8EA627BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */; };
 		86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF8EA727BAB9DF00EF0362 /* ContentView.swift */; };
@@ -164,6 +165,7 @@
 		86906E9B280755DE004D6798 /* STT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STT.swift; sourceTree = "<group>"; };
 		86906EA128077374004D6798 /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = stt.mlpackage; path = ../../../../../../../../../Downloads/stt.mlpackage; sourceTree = "<group>"; };
 		86906EA32808BC3F004D6798 /* LJ001-0136.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "LJ001-0136.wav"; sourceTree = "<group>"; };
+		86906EA52808D535004D6798 /* test.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test.wav; sourceTree = "<group>"; };
 		869F833E27C575FC00B66A55 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		86AF8EA227BAB9DF00EF0362 /* hearRingiOSWatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hearRingiOSWatchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86AF8EA527BAB9DF00EF0362 /* hearRingiOSWatchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hearRingiOSWatchOSApp.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		86011F9F27FF726A00101644 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
+				86906EA52808D535004D6798 /* test.wav */,
 				86011FA027FF728400101644 /* LJ001-0078.wav */,
 				86906EA32808BC3F004D6798 /* LJ001-0136.wav */,
 			);
@@ -683,6 +686,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86906EA62808D535004D6798 /* test.wav in Resources */,
 				86906EA42808BC3F004D6798 /* LJ001-0136.wav in Resources */,
 				86011FA127FF728400101644 /* LJ001-0078.wav in Resources */,
 				86AF8EAD27BAB9E100EF0362 /* Preview Assets.xcassets in Resources */,

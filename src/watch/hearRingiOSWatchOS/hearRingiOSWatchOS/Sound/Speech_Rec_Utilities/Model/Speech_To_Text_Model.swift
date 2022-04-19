@@ -14,11 +14,11 @@ func predict(input: [[Double]]) -> String
     let temp_input = float_array_to_MLMultiArray(input: input)
     //print(MLMultiArray_to_float_array(input: temp_input, output_length: 193))
     do{
-        let model = try stt()
-        let prediction = try model.prediction(input: temp_input)
-        let prediction_float = MLMultiArray_to_float_array(input: prediction.Identity)
+        //let model = try stt()
+        //let prediction = try model.prediction(input: temp_input)
+        //let prediction_float = MLMultiArray_to_float_array(input: prediction.Identity)
         //print(prediction_float)
-        string = CTC_Decode(input: prediction_float, input_len: prediction_float.count)
+        //string = CTC_Decode(input: prediction_float, input_len: prediction_float.count)
     }
     catch{
         print(error)

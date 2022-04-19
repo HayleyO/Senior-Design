@@ -91,11 +91,8 @@ class STTRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudioP
 
         let settings = [
                 AVFormatIDKey:Int(kAudioFormatLinearPCM),
-                AVSampleRateKey:48000,
+                AVSampleRateKey:44100,
                 AVNumberOfChannelsKey:1,
-                AVLinearPCMBitDepthKey:8,
-                AVLinearPCMIsFloatKey:false,
-                AVLinearPCMIsBigEndianKey:false,
                 AVEncoderAudioQualityKey:AVAudioQuality.max.rawValue
         ] as [String : Any]
 
@@ -120,6 +117,13 @@ class STTRecorder: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudioP
     {
         audioPlayer = try? AVAudioPlayer(contentsOf: getFileUrl())
         audioPlayer.play()
+        let url = getFileUrl()
+        
+        
+        let data = try! Data.init(contentsOf: url)
+        let newURL = URL(fileURLWithPath: "/Users/hjo005/Documents/recording.wav")
+        try! data.write(to: newURL, options: .atomic)
+        
     }
     
     var sttTimer = Timer()
