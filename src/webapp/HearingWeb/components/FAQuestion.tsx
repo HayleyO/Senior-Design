@@ -10,7 +10,9 @@ export function FAQuestion(props){
             <table style={{width:"100%"}}>
                 <tr>
                     <td><div className="subHeader">{props.header}</div></td>
-                    <td className="button" style={{ textAlign: "right" }}  name="button" onClick={(e) => open(e, props.body, props.qid)}><button>view</button></td>
+                    <td className="button" style={{ textAlign: "right" }} onClick={(e) => open(e, props.body, props.qid)}>
+                        <button className="button" name="button" style={{ textAlign: "right" }} >view</button>
+                    </td>
                 </tr>
             </table>
             <div name="answer" className="indentedBodyText" ></div>

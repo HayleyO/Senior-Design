@@ -35,10 +35,6 @@ function FAQ() {
                 header={"Do I need cellular data on my Apple Watch to use hearRING?"}
                 body={`No! <br>
                         HearRING works using the Bluetooth connection between your Apple Watch and iPhone, no cellular data required! `} />
-            <FAQuestion
-                qid={4}
-                header={"Is there a HearRING Android app?"}
-                body={"Unfortunately, there is no Android version of HearRING. Android smartwatches don't have the microphone capability needed for our recording."} />
         </div>
     );
 }
