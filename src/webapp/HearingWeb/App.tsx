@@ -9,6 +9,7 @@ import HowToConnectLinux from "./navigation/HowToConnectLinux";
 import HowToConnectIOS from "./navigation/HowToConnectIOS";
 import HowToConnectAndroid from "./navigation/HowToConnectAndroid";
 import Settings from "./navigation/Settings";
+import FAQ from "./navigation/FAQ";
 
 
 declare var require: any
@@ -21,7 +22,8 @@ export class App extends React.Component {
             <div>
                 <HashRouter>
                     <Routes>
-                        <Route path="/" element={<Home />} />
+                        <Route path="/" element={<About />} />
+                        <Route path="/faq" element={<FAQ />}/>
                         <Route path="/about" element={<About />} />
                         <Route path="/howtoconnect" element={<HowToConnect />} />
                         <Route path="/settings" element={<Settings />} />

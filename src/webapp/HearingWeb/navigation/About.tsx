@@ -8,7 +8,7 @@ var React = require('react');
 
 function About() {
     return (
-        <div className="pageBackground" style={{backgroundColor: colors.headertab4}}>
+        <div className="pageBackground" style={{backgroundColor: colors.headertab1}}>
             <Header style={{ width: "100%" }} />
             <div style={{ width: "100%", textAlign: "center" }}>
                 <div className="pageHeader">About the Bracelet</div>

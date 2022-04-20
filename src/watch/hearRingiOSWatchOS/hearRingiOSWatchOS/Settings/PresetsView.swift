@@ -13,19 +13,25 @@ struct PresetsView: View {
     @State var selectedPreset: String = "No Preset"
     @State var editingEnabled: Bool = false
     
+    @State var controller = DataController.Controller
+    @State var settings: ThresholdEntity = ThresholdEntity()
+    
+    @State var exit_presets: Bool = true
+    
     //user-immutable default pre-loaded presets
     struct DefaultPreset: Identifiable {
         var id = UUID()
         var name: String
-        var lowThreshold: Double
-        var highThreshold: Double
+        var weakValue: Double
+        var strongValue: Double
     }
+    
     let defaultPresets =
     [
-        DefaultPreset(name: "Indoors", lowThreshold: 30.0, highThreshold: 70.0),
-        DefaultPreset(name: "Outdoors", lowThreshold: 70.0, highThreshold: 100.0),
-        DefaultPreset(name: "Resturaunt", lowThreshold: 60.0, highThreshold: 105.0),
-        DefaultPreset(name: "Sleep", lowThreshold: 20.0, highThreshold: 50.0)
+        DefaultPreset(name: "Indoors", weakValue: 30.0, strongValue: 70.0),
+        DefaultPreset(name: "Outdoors", weakValue: 70.0, strongValue: 100.0),
+        DefaultPreset(name: "Resturaunt", weakValue: 60.0, strongValue: 105.0),
+        DefaultPreset(name: "Sleep", weakValue: 20.0, strongValue: 50.0)
     ]
     
     @FetchRequest(sortDescriptors: []) var userPresets: FetchedResults<PresetEntity>
@@ -58,8 +64,9 @@ struct PresetsView: View {
                     .contentShape(Rectangle())
                     .onTapGesture {
                         selectedPreset = preset.name
-                        //modify SettingsEntity in core data here, set equal to preset.lowThreshold and preset.highThreshold
-                        //don't forget to try? moc.save() and send to Connectivity
+                        
+                        settings.weakValue = preset.weakValue
+                        settings.strongValue = preset.strongValue
                     }
                 }
             }
@@ -70,11 +77,14 @@ struct PresetsView: View {
                     Spacer()
                     Button(action: {
                         editingEnabled.toggle()
-                        },
-                        label: {
-                            Text("Edit")
-                        })
+                        if(editingEnabled == true) {
+                            selectedPreset = "No Preset"
+                        }
                     },
+                    label: {
+                        Text("Edit")
+                    })
+                },
                 content: {
                 if (editingEnabled == false) {
                     ForEach(userPresets, id: \.self) { preset in
@@ -88,35 +98,52 @@ struct PresetsView: View {
                          .contentShape(Rectangle())
                          .onTapGesture {
                              selectedPreset = preset.name ?? ""
-                             //same logic as above
+                             
+                             settings.weakValue = preset.weakValue
+                             settings.strongValue = preset.strongValue
                          }
                     }
                 }
                 else {
                     ForEach(userPresets, id: \.self) { preset in
                          NavigationLink {
-                             PresetEdit(preset: preset, selectedPresetName: self.$selectedPreset)
+                             PresetEdit(preset: preset, selectedPresetName: self.$selectedPreset).onAppear() {
+                                 exit_presets = false
+                             }
                          } label: {
                          Text(preset.name ?? "")
                          }
                     }
                     .onDelete(perform: delete)
+                    
                 }
-            }
-            )
+            })
         }
         .toolbar {
-            NavigationLink(destination: PresetCreate()) {
+            NavigationLink(destination: PresetCreate().onAppear() {
+                exit_presets = false
+            }) {
                 Image(systemName: "plus")
             }
             .accessibilityIdentifier("Create New Alarm")
         }
         .onAppear {
             selectedPreset = originalSelected
+            settings = controller.getSettings()
             editingEnabled = false
         }
         .onDisappear {
             originalSelected = selectedPreset
+            controller.updateSettings(buffer: settings.bufferValue, weak: settings.weakValue, strong: settings.strongValue)
+            
+            if(exit_presets == true) {
+                let settings2 = controller.getSettings()
+                print(settings2.weakValue, settings2.strongValue)
+                Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: settings2.bufferValue, weakValue: settings2.weakValue, strongValue: settings2.strongValue)
+                Connectivity.shared.send(bufferValue: 10, strongValue: settings2.strongValue, weakValue: settings2.weakValue, delivery: .guaranteed)
+            } else {
+                exit_presets = true
+            }
         }
     }
     
