@@ -11,33 +11,15 @@ function About() {
         <div className="pageBackground" style={{backgroundColor: colors.headertab4}}>
             <Header style={{ width: "100%" }} />
             <div style={{ width: "100%", textAlign: "center" }}>
-                <div className="pageHeader">About the Bracelet</div>
+                <div className="pageHeader">About HearRING</div>
+                <div className="subHeader">subheader</div>
                 <div className="bodyText">
-                    <p>Compatible with any Bluetooth-enabled device.</p>
-                    <p>Customizable bands with a myriad of color selections.</p>
-                    <table style={{ margin: "auto", width:"40%"}}>
-                        <tr>
-                            <td>
-                                <div className="bands" style={{ backgroundColor: colors.band1 }} />
-                            </td>
-                            <td>
-                                <div className="bands" style={{ backgroundColor: colors.band2 }} />
-                            </td>
-                            <td>
-                                <div className="bands" style={{ backgroundColor: colors.band3 }} />
-                            </td>
-                            <td>
-                                <div className="bands" style={{ backgroundColor: colors.band4 }} />
-                            </td>
-                            <td>
-                                <div className="bands" style={{ backgroundColor: colors.band5 }} />
-                            </td>
-                            <td>
-                                <div className="bands" style={{ backgroundColor: colors.band6 }} />
-                            </td>
-                        </tr>
-                    </table>
-                    <p>Specs: blah blah blah placeholder add this later</p>
+                    <p>'HearRING is an iOS app and connected Apple Watch app with the goal of connecting hard of hearing people to their surroundings.
+                        Whether someone is yelling at you, a car is driving by, or a dog is barking, our HearRING watch app will vibrate to get the wearer's attention</p>
+                    <p>Unfortunately, we live in a world where not everyone knows sign language.
+                        HearRING's goal is to overcome obstacles to communication by providing a transcript of conversations - like closed captions for everyday life.
+                        The Listening feature is powered by artificial intelligence to bring you a real-time conversion of sounds into text, and the Speak feature allows you to reply through your phone.
+                    </p>
                 </div>
                 <div className="pageHeader">About Us</div>
                 <div className="bodyText">
