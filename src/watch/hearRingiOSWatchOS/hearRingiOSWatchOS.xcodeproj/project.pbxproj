@@ -150,7 +150,6 @@
 		7A0F128E27BB1A63003D2938 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
-		7A3F301128076C3C008451D7 /* stt.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = stt.mlmodel; path = /.Trash/stt.mlmodel; sourceTree = "<absolute>"; };
 		7A8FF26D27FCC14D008030FF /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsView.swift; sourceTree = "<group>"; };
 		7A8FF27A27FF829F008030FF /* PresetCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCreate.swift; sourceTree = "<group>"; };
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -199,7 +198,6 @@
 		966237EF27C05FA800D91EBA /* PhoneWatchConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneWatchConnectivity.swift; sourceTree = "<group>"; };
 		969324DF27E917AF00D1A515 /* TtsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsView.swift; sourceTree = "<group>"; };
 		969324E227E91FCF00D1A515 /* TTSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSViewModel.swift; sourceTree = "<group>"; };
-		96BF07FD28076CCE001296A0 /* stt.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = stt.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,14 +314,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		86906EA8280F5AC6004D6798 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				7A3F301128076C3C008451D7 /* stt.mlmodel */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		869F833D27C575E800B66A55 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,7 +335,6 @@
 				86AF8EEE27BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppTests */,
 				86AF8EF827BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppUITests */,
 				86AF8EA327BAB9DF00EF0362 /* Products */,
-				86906EA8280F5AC6004D6798 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
