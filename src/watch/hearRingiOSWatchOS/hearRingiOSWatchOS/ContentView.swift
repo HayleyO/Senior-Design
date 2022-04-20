@@ -25,8 +25,7 @@ struct ContentView: View {
             .navigationTitle("Listening...")
         }
         .onAppear{
-            speechRecognizer.reset()
-            speechRecognizer.transcribe()
+            try! speechRecognizer.startRecording()
         }
         .onDisappear{
             speechRecognizer.reset()
