@@ -79,6 +79,7 @@ class SpeechRecognizer: ObservableObject {
     
     func refresh(){
         reset()
+        transcript = "" 
         try! startRecording()
     }
 
