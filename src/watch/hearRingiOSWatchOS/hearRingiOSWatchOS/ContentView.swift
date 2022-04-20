@@ -33,6 +33,8 @@ struct ContentView: View {
             let audioSession = AVAudioSession.sharedInstance()
             do {
                 try audioSession.setCategory(AVAudioSession.Category.playback)
+                try audioSession.setMode(AVAudioSession.Mode.default)
+                try audioSession.overrideOutputAudioPort(.speaker)
                 try audioSession.setActive(false, options: .notifyOthersOnDeactivation)
             } catch {
                 // handle errors
