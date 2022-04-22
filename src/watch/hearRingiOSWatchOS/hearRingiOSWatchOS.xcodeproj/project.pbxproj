@@ -13,6 +13,26 @@
 		0790746C27C4AD300070E105 /* NotificationAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790746B27C4AD300070E105 /* NotificationAuthorization.swift */; };
 		07E1BFFA27F255FB0026E4BC /* SettingsSliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E1BFF927F255FB0026E4BC /* SettingsSliderController.swift */; };
 		07E1BFFB27F255FB0026E4BC /* SettingsSliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E1BFF927F255FB0026E4BC /* SettingsSliderController.swift */; };
+		2CB12AC228135014003CFF3F /* soundRec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AC128135014003CFF3F /* soundRec.swift */; };
+		2CB12AC328135014003CFF3F /* soundRec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AC128135014003CFF3F /* soundRec.swift */; };
+		2CB12AC52813502D003CFF3F /* Chunking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AC42813502D003CFF3F /* Chunking.swift */; };
+		2CB12AC62813502D003CFF3F /* Chunking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AC42813502D003CFF3F /* Chunking.swift */; };
+		2CB12AC72813502D003CFF3F /* Chunking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AC42813502D003CFF3F /* Chunking.swift */; };
+		2CB12AC82813502D003CFF3F /* Chunking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AC42813502D003CFF3F /* Chunking.swift */; };
+		2CB12AC92813502D003CFF3F /* Chunking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AC42813502D003CFF3F /* Chunking.swift */; };
+		2CB12ACA2813502D003CFF3F /* Chunking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AC42813502D003CFF3F /* Chunking.swift */; };
+		2CB12ACC28135037003CFF3F /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12ACB28135037003CFF3F /* Record.swift */; };
+		2CB12ACD28135037003CFF3F /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12ACB28135037003CFF3F /* Record.swift */; };
+		2CB12ACE28135037003CFF3F /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12ACB28135037003CFF3F /* Record.swift */; };
+		2CB12ACF28135037003CFF3F /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12ACB28135037003CFF3F /* Record.swift */; };
+		2CB12AD028135037003CFF3F /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12ACB28135037003CFF3F /* Record.swift */; };
+		2CB12AD128135037003CFF3F /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12ACB28135037003CFF3F /* Record.swift */; };
+		2CB12AD328135042003CFF3F /* SoundResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AD228135042003CFF3F /* SoundResultsObserver.swift */; };
+		2CB12AD428135042003CFF3F /* SoundResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AD228135042003CFF3F /* SoundResultsObserver.swift */; };
+		2CB12AD528135042003CFF3F /* SoundResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AD228135042003CFF3F /* SoundResultsObserver.swift */; };
+		2CB12AD628135042003CFF3F /* SoundResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AD228135042003CFF3F /* SoundResultsObserver.swift */; };
+		2CB12AD728135042003CFF3F /* SoundResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AD228135042003CFF3F /* SoundResultsObserver.swift */; };
+		2CB12AD828135042003CFF3F /* SoundResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB12AD228135042003CFF3F /* SoundResultsObserver.swift */; };
 		7A0F128D27BB199B003D2938 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F128C27BB199B003D2938 /* MainView.swift */; };
 		7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F128E27BB1A63003D2938 /* SettingsView.swift */; };
 		7A0F129127BB1BE3003D2938 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F129027BB1BE3003D2938 /* AlarmView.swift */; };
@@ -146,6 +166,10 @@
 		0790746827C49BD60070E105 /* hearRingiOSWatchOS-WatchKit-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "hearRingiOSWatchOS-WatchKit-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0790746B27C4AD300070E105 /* NotificationAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAuthorization.swift; sourceTree = "<group>"; };
 		07E1BFF927F255FB0026E4BC /* SettingsSliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSliderController.swift; sourceTree = "<group>"; };
+		2CB12AC128135014003CFF3F /* soundRec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = soundRec.swift; sourceTree = "<group>"; };
+		2CB12AC42813502D003CFF3F /* Chunking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chunking.swift; sourceTree = "<group>"; };
+		2CB12ACB28135037003CFF3F /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		2CB12AD228135042003CFF3F /* SoundResultsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundResultsObserver.swift; sourceTree = "<group>"; };
 		7A0F128C27BB199B003D2938 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7A0F128E27BB1A63003D2938 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
@@ -308,7 +332,6 @@
 		8623E29E27F7A968008CB47C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				96BF07FD28076CCE001296A0 /* stt.mlpackage */,
 				8623E29F27F7A978008CB47C /* Speech_To_Text_Model.swift */,
 			);
 			path = Model;
@@ -454,6 +477,10 @@
 		86AF8F1627BAEE7B00EF0362 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				2CB12AC128135014003CFF3F /* soundRec.swift */,
+				2CB12AD228135042003CFF3F /* SoundResultsObserver.swift */,
+				2CB12ACB28135037003CFF3F /* Record.swift */,
+				2CB12AC42813502D003CFF3F /* Chunking.swift */,
 				86AF8F1C27BAEFBE00EF0362 /* Record.swift */,
 				86AF8F2627BC353300EF0362 /* Chunking.swift */,
 			);
@@ -743,14 +770,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB12AC52813502D003CFF3F /* Chunking.swift in Sources */,
 				869F833F27C575FC00B66A55 /* Speech.swift in Sources */,
+				2CB12ACC28135037003CFF3F /* Record.swift in Sources */,
 				86011F9C27FF715400101644 /* Fourier.swift in Sources */,
 				7ADCB3B527E2821C009FAB55 /* AlarmCreate.swift in Sources */,
 				7AAB56FF2800E26F00C7FD9B /* PresetEdit.swift in Sources */,
+				2CB12AD328135042003CFF3F /* SoundResultsObserver.swift in Sources */,
 				86AF8EA827BAB9DF00EF0362 /* ContentView.swift in Sources */,
 				7A8FF26E27FCC14D008030FF /* PresetsView.swift in Sources */,
 				7A8FF27B27FF829F008030FF /* PresetCreate.swift in Sources */,
 				7A21A31927BC4B8E00DDC3A6 /* AlarmEdit.swift in Sources */,
+				2CB12AC228135014003CFF3F /* soundRec.swift in Sources */,
 				7A0F128F27BB1A63003D2938 /* SettingsView.swift in Sources */,
 				8623E28D27F26106008CB47C /* CTC_Decoding.swift in Sources */,
 				07E1BFFA27F255FB0026E4BC /* SettingsSliderController.swift in Sources */,
@@ -772,8 +803,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB12AC62813502D003CFF3F /* Chunking.swift in Sources */,
 				86AF8EB727BAB9E100EF0362 /* hearRingiOSWatchOSTests.swift in Sources */,
+				2CB12ACD28135037003CFF3F /* Record.swift in Sources */,
 				7A9F994827BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+				2CB12AD428135042003CFF3F /* SoundResultsObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,7 +815,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB12AC72813502D003CFF3F /* Chunking.swift in Sources */,
 				86AF8EC327BAB9E100EF0362 /* hearRingiOSWatchOSUITestsLaunchTests.swift in Sources */,
+				2CB12AD528135042003CFF3F /* SoundResultsObserver.swift in Sources */,
+				2CB12ACE28135037003CFF3F /* Record.swift in Sources */,
 				86AF8EC127BAB9E100EF0362 /* hearRingiOSWatchOSUITests.swift in Sources */,
 				7A9F994927BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
 			);
@@ -793,6 +830,7 @@
 			files = (
 				86AF8F2A27BC778100EF0362 /* Vibration.swift in Sources */,
 				86AF8EDB27BAB9E200EF0362 /* NotificationController.swift in Sources */,
+				2CB12ACF28135037003CFF3F /* Record.swift in Sources */,
 				0790746727C499EC0070E105 /* ExtensionDelegate.swift in Sources */,
 				07E1BFFB27F255FB0026E4BC /* SettingsSliderController.swift in Sources */,
 				86AF8F2727BC353300EF0362 /* Chunking.swift in Sources */,
@@ -805,9 +843,12 @@
 				7A9F995F27BDBDE500EC1DB0 /* DataController.swift in Sources */,
 				86AF8ED727BAB9E200EF0362 /* hearRingiOSWatchOSApp.swift in Sources */,
 				86AF8EDD27BAB9E200EF0362 /* NotificationView.swift in Sources */,
+				2CB12AC328135014003CFF3F /* soundRec.swift in Sources */,
 				966237F327C05FA800D91EBA /* PhoneWatchConnectivity.swift in Sources */,
 				0790746C27C4AD300070E105 /* NotificationAuthorization.swift in Sources */,
+				2CB12AC82813502D003CFF3F /* Chunking.swift in Sources */,
 				0790746527C05D370070E105 /* Alarm.swift in Sources */,
+				2CB12AD628135042003CFF3F /* SoundResultsObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,8 +856,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB12AC92813502D003CFF3F /* Chunking.swift in Sources */,
 				86AF8EF027BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppTests.swift in Sources */,
+				2CB12AD028135037003CFF3F /* Record.swift in Sources */,
 				7A9F994B27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
+				2CB12AD728135042003CFF3F /* SoundResultsObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,7 +868,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB12ACA2813502D003CFF3F /* Chunking.swift in Sources */,
 				86AF8EFA27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITests.swift in Sources */,
+				2CB12AD828135042003CFF3F /* SoundResultsObserver.swift in Sources */,
+				2CB12AD128135037003CFF3F /* Record.swift in Sources */,
 				86AF8EFC27BAB9E300EF0362 /* hearRingiOSWatchOS_WatchKit_AppUITestsLaunchTests.swift in Sources */,
 				7A9F994C27BDB3C500EC1DB0 /* Model.xcdatamodeld in Sources */,
 			);
