@@ -19,7 +19,7 @@ struct ContentView: View {
                 
                 .onAppear() {
                     DispatchQueue.main.async {
-                        recordModel.setup()
+                            
                         recordModel.start()
                     }
                 }
