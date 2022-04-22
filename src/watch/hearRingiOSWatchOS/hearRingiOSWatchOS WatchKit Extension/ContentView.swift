@@ -14,18 +14,19 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            let recordModel = Record(chunker: dataModel)
             ProgressView("Recording...", value: dataModel.decibel, total: 160).progressViewStyle(LinearProgressViewStyle(tint: dataModel.tintColor))
                 
                 .onAppear() {
                     DispatchQueue.main.async {
-                        let recordModel = Record(chunker: dataModel)
                         recordModel.setup()
                         recordModel.start()
                     }
                 }
             
-            Text(sharedData.AlarmChanged.alarmName)
-            Text(String(sharedData.AlarmChanged.alarmEnabled))
+            Text("This will be where the sound recognition goes.")
+            /*Text(sharedData.AlarmChanged.alarmName)
+            Text(String(sharedData.AlarmChanged.alarmEnabled))*/
         }
     }
 }
