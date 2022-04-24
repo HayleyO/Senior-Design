@@ -128,15 +128,17 @@ struct PresetsView: View {
             .accessibilityIdentifier("Create New Alarm")
         }
         .onAppear {
-            selectedPreset = originalSelected
+            //selectedPreset = originalSelected
+            selectedPreset = "No Preset"
             settings = controller.getSettings()
             editingEnabled = false
         }
         .onDisappear {
-            originalSelected = selectedPreset
             controller.updateSettings(buffer: settings.bufferValue, weak: settings.weakValue, strong: settings.strongValue)
             
             if(exit_presets == true) {
+                originalSelected = selectedPreset
+                
                 let settings2 = controller.getSettings()
                 print(settings2.weakValue, settings2.strongValue)
                 Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: settings2.bufferValue, weakValue: settings2.weakValue, strongValue: settings2.strongValue)
