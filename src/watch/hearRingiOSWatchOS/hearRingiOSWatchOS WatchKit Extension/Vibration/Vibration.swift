@@ -42,6 +42,8 @@ class Vibration: NSObject{
     // vibrate for alarms 
     func vibrateAlarm(){
         WKInterfaceDevice.current().play(.notification)
+        WKInterfaceDevice.current().play(.notification)
+        WKInterfaceDevice.current().play(.notification)
     }
 
 }

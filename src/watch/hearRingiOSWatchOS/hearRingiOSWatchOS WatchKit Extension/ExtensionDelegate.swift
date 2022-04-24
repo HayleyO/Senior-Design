@@ -13,6 +13,7 @@ import CoreData
 class ExtensionDelegate: NSObject, WKExtensionDelegate{
     
     let container = NSPersistentContainer(name: "Model")
+    var dismissed = false
     
     func applicationDidFinishLaunching() {
         // authorization to allow notifications
@@ -32,6 +33,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
             UNUserNotificationCenter.current().add(newRequest)
         }
         completionHandler()
+        dismissed = true
         
     }
 }
@@ -41,6 +43,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
 extension ExtensionDelegate : UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(.banner)
+        let v = Vibration()
+        v.vibrateAlarm()
     }
 }
 
