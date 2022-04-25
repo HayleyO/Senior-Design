@@ -11,11 +11,11 @@ import SwiftUI
 import AVFAudio
 
 class soundRecognizer : NSObject {
-    private let audioEngine: AVAudioEngine = AVAudioEngine() // Mark 1
-    private let inputBus: AVAudioNodeBus = AVAudioNodeBus(0) // Mark 2
-    private var inputFormat: AVAudioFormat!
-    private var streamAnalyzer: SNAudioStreamAnalyzer!
-    private let sound = SoundResultsObserver()
+    let audioEngine: AVAudioEngine = AVAudioEngine()
+    let inputBus: AVAudioNodeBus = AVAudioNodeBus(0)
+    var inputFormat: AVAudioFormat!
+    var streamAnalyzer: SNAudioStreamAnalyzer!
+    let sound = SoundResultsObserver()
     
     override init() {
         super.init()
@@ -29,9 +29,9 @@ class soundRecognizer : NSObject {
 
             streamAnalyzer = SNAudioStreamAnalyzer(format: inputFormat)
 
-            let request = try SNClassifySoundRequest(classifierIdentifier: SNClassifierIdentifier.version1) // Mark 5
+            let request = try SNClassifySoundRequest(classifierIdentifier: SNClassifierIdentifier.version1)
 
-            try streamAnalyzer.add(request, withObserver: sound) // Mark 6
+            try streamAnalyzer.add(request, withObserver: sound)
 
 
         } catch {

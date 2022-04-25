@@ -454,3 +454,6 @@ iOSInjectionProject/
 #Ignore VS Code
 .vscode/
 /src/watch/hearRING/hearRING
+
+#ignore the mlmodel
+src/watch/hearRingiOSWatchOS/hearRingiOSWatchOS/Sound/Speech_Rec_Utilities/Model/stt.mlmodel

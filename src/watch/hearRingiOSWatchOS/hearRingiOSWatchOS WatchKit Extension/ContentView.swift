@@ -25,10 +25,8 @@ struct ContentView: View {
                     }
                 }
             
-            var sound = soundRec.analyzeAudio(buffer: <#AVAudioBuffer#>, at: <#AVAudioTime#>)
-            Text(sound)
-            //Text(sharedData.AlarmChanged.alarmName)
-            //Text(String(sharedData.AlarmChanged.alarmEnabled))
+            var sound = soundRec.analyzeAudio(buffer:at:)
+            //Text(sound)
         }
     }
 }
