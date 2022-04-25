@@ -28,7 +28,7 @@ struct PresetsView: View {
     
     let defaultPresets =
     [
-        DefaultPreset(name: "Indoors", weakValue: 60.0, strongValue: 75.0),
+        DefaultPreset(name: "Indoors", weakValue: 50.0, strongValue: 75.0),
         DefaultPreset(name: "Outdoors", weakValue: 70.0, strongValue: 85.0),
         DefaultPreset(name: "Resturaunt", weakValue: 80.0, strongValue: 90.0),
         DefaultPreset(name: "Sleep", weakValue: 73.0, strongValue: 100.0)
