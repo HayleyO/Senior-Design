@@ -26,7 +26,7 @@ struct AlarmView: View {
                 NavigationLink {
                     AlarmEdit(alarm: alarm)
                 } label: {
-                    if (alarm.isEnabled)
+                    if (alarm.isEnabled && alarm.alarmTime?.timeIntervalSinceNow.sign == .plus)
                     {
                         HStack(alignment: .top) {
                           VStack(alignment: .leading) {
