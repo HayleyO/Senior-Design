@@ -47,7 +47,11 @@ struct SettingsView: View {
                         .accentColor(.yellow)
                         .padding()
                         .onChange(of: weakValue){
-                            newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.low, highThreshold: strongValue)
+                            newThreshold in settings = controller.getSettings();
+                            if(settings.weakValue != weakValue){
+                                selectedPreset = "No Preset"
+                            };
+                            slidercontroller.sliderChanged(value: newThreshold, slider: sliders.low, highThreshold: strongValue)
                         }
                     Text("\(weakValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
@@ -62,7 +66,11 @@ struct SettingsView: View {
                         .accentColor(.red)
                         .padding()
                         .onChange(of: strongValue){
-                            newThreshold in slidercontroller.sliderChanged(value: newThreshold, slider: sliders.high, lowThreshold: weakValue)
+                            newThreshold in settings = controller.getSettings();
+                            if(settings.strongValue != strongValue){
+                                selectedPreset = "No Preset"
+                            };
+                            slidercontroller.sliderChanged(value: newThreshold, slider: sliders.high, lowThreshold: weakValue)
                         }
                     Text("\(strongValue, specifier: "%.1f") Decibels")
                         .font(.subheadline)
