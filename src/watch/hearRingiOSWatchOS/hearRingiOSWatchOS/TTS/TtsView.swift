@@ -10,8 +10,9 @@ import AVFoundation
 
 let ViewModel = TTSViewModel()
 
-//Voice Selection Variables
+//Voice Creation Variables
 let TTSVoices = AVSpeechSynthesisVoice.speechVoices()
+var VoiceGroup: [AVSpeechSynthesisVoice] = []
 var currentVoiceIndex: Int = 0
 
 struct VoiceSelection: Identifiable {
@@ -24,33 +25,58 @@ var currentText = "You forgot to input a message!"
 
 struct TtsView: View {
     @State var Voices: [VoiceSelection] = []
-    @State var voiceSelected = 0
+    @State var current_voice: Int = 0
+    @State var voiceText: String = "No Voice Selected"
+    
     @State var text = ""
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .center) {
-                Text("Voice List")
-                Picker("Voice", selection: $voiceSelected) {
-                    ForEach(Voices) { voice in
-                        Text(voice.name).tag(voice.id)
+            ZStack(alignment: .center) {
+                List {
+                    NavigationLink {
+                        VoicesView(voice_list: Voices, current_voice: self.$current_voice)
+                    } label : {
+                        HStack {
+                            Text("Voices")
+                            Spacer()
+                            Text(voiceText)
+                                .font(.subheadline)
+                                .onChange(of: current_voice) { _ in
+                                    voiceText = Voices[current_voice].name
+                                    currentVoiceIndex = current_voice
+                                }
+                        }
                     }
-                }.pickerStyle(WheelPickerStyle())
-                .onChange(of: voiceSelected) {_ in
-                    currentVoiceIndex = voiceSelected
-                }.padding()
+                }
+                VStack {
                 TextField("Type your message here...", text: $text)
                     .onChange(of: text) {_ in currentText = text}.padding()
                     .textFieldStyle(.roundedBorder)
                 Button("Speak", action: doSpeech)
                     .buttonStyle(.borderedProminent)
+                    
+                }
             }
             .navigationTitle("Text to Speech")
         }.onAppear() {
-            for voiceIndex in 0...TTSVoices.count-1 {
-                let tempVoiceSelection = VoiceSelection(id: voiceIndex, name: TTSVoices[voiceIndex].name, voice: TTSVoices[voiceIndex])
-                Voices.append(tempVoiceSelection)
+            if(Voices.isEmpty) {
+                var appendedValue = 0
+                
+                for voiceIndex in 0...TTSVoices.count-1 {
+                    let tempCondition = TTSVoices[voiceIndex].language.split(separator:"-")
+                    
+                    if(tempCondition[0] == "en") {
+                        let tempVoiceName: String = TTSVoices[voiceIndex].name + " (" + TTSVoices[voiceIndex].language + ")"
+                        let tempVoiceSelection = VoiceSelection(id: appendedValue, name: tempVoiceName, voice: TTSVoices[voiceIndex])
+                        
+                        Voices.append(tempVoiceSelection)
+                        VoiceGroup.append(TTSVoices[voiceIndex])
+                        appendedValue += 1
+                    } else {}
+                }
             }
+            current_voice = currentVoiceIndex
         }
     }
 }
@@ -58,7 +84,7 @@ struct TtsView: View {
 private func doSpeech() {
     ViewModel.speechUtterance = AVSpeechUtterance(string: currentText)
     
-    let voice = TTSVoices[currentVoiceIndex]
+    let voice = VoiceGroup[currentVoiceIndex]
     ViewModel.speechUtterance.voice = voice
     
     ViewModel.speechSynthesis.speak(ViewModel.speechUtterance)
