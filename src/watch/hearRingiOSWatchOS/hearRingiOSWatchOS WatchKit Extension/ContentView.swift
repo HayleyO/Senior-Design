@@ -19,14 +19,12 @@ struct ContentView: View {
                 
                 .onAppear() {
                     DispatchQueue.main.async {
-                            
+                        recordModel.setup()    
                         recordModel.start()
                     }
                 }
             
             Text("This will be where the sound recognition goes.")
-            /*Text(sharedData.AlarmChanged.alarmName)
-            Text(String(sharedData.AlarmChanged.alarmEnabled))*/
         }
     }
 }
