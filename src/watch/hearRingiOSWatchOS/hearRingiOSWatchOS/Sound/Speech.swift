@@ -26,8 +26,8 @@ class SpeechRecognizer: ObservableObject {
       
       // Audio session, to get information from the microphone.
       let audioSession = AVAudioSession.sharedInstance()
-      try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-      try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        try audioSession.setCategory(.record, mode: .spokenAudio, options: .duckOthers)
+        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         let inputNode = audioEngine.inputNode
       
       // The AudioBuffer
