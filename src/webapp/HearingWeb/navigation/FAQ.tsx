@@ -35,6 +35,10 @@ function FAQ() {
                 header={"Do I need cellular data on my Apple Watch to use hearRING?"}
                 body={`No! <br>
                         HearRING works using the Bluetooth connection between your Apple Watch and iPhone, no cellular data required! `} />
+            <FAQuestion
+                qid={4}
+                header={"Why isn't the app picking up my voice accurately?"}
+                body={`Artificial intelligence isn't perfect, so there will likely be an incorrect word every so often. If errors are common, try enunciating your words as clearly as possible. `} />
         </div>
     );
 }

@@ -51,13 +51,16 @@
 .bodyText {
     font-family: 'Montserrat';
     font-size:small;
+    text-align: left;
+    line-height:20px;
 }
 
 .indentedBodyText {
     font-family: 'Montserrat';
     font-size: small;
-    margin-left:25px;
-    line-height:20px;
+    margin-left: 25px;
+    line-height: 20px;
+    text-align: left;
 }
 
 .button {
@@ -94,8 +97,9 @@
 }
 
 .divider{
-    background-color:orange;
+    background-color:goldenrod;
     height:1px;
-    width:100%;
-    margin: 10px 10px 10px 10px;
+    margin: 20px;
+  
+
 }

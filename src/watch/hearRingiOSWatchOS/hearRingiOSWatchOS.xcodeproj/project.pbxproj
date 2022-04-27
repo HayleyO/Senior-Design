@@ -151,7 +151,6 @@
 		7A0F128E27BB1A63003D2938 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7A0F129027BB1BE3003D2938 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		7A21A31827BC4B8E00DDC3A6 /* AlarmEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEdit.swift; sourceTree = "<group>"; };
-		7A3F301128076C3C008451D7 /* stt.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = stt.mlmodel; path = /.Trash/stt.mlmodel; sourceTree = "<absolute>"; };
 		7A8FF26D27FCC14D008030FF /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsView.swift; sourceTree = "<group>"; };
 		7A8FF27A27FF829F008030FF /* PresetCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCreate.swift; sourceTree = "<group>"; };
 		7A9F994627BDB3C500EC1DB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -316,14 +315,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		86906EA8280F5AC6004D6798 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				7A3F301128076C3C008451D7 /* stt.mlmodel */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		869F833D27C575E800B66A55 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,7 +336,6 @@
 				86AF8EEE27BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppTests */,
 				86AF8EF827BAB9E300EF0362 /* hearRingiOSWatchOS WatchKit AppUITests */,
 				86AF8EA327BAB9DF00EF0362 /* Products */,
-				86906EA8280F5AC6004D6798 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -997,7 +987,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearRingiOSWatchOS WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "hearRingiOSWatchOS WatchKit Extension/Info.plist";
@@ -1013,7 +1003,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS9002.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS7.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1047,7 +1037,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS9002.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS7.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1068,13 +1058,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = hearRingiOSWatchOS_WatchKit_Extension;
 				INFOPLIST_FILE = "hearRingiOSWatchOS-WatchKit-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "hearRingiOSWatchOS WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS9002;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS7;
 				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_App.ExtensionDelegate;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1082,7 +1072,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS9002.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS7.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1110,7 +1100,7 @@
 				INFOPLIST_FILE = "hearRingiOSWatchOS-WatchKit-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "hearRingiOSWatchOS WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS9002;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hearRing.hearRingiOSWatchOS7;
 				INFOPLIST_KEY_WKExtensionDelegateClassName = hearRingiOSWatchOS_WatchKit_App.ExtensionDelegate;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1118,7 +1108,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS9002.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS7.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1139,23 +1129,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hearRingiOSWatchOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 6H4XF9MB56;
+				DEVELOPMENT_TEAM = 76TL7FCR92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearRingiOSWatchOS/Info.plist;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record audio for speech transcription";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Speech transcription ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record audio for speech transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Use speech recognition on the Listening Tab in order to transcribe speech. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS9002;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1177,19 +1167,19 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hearRingiOSWatchOS/Info.plist;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record audio for speech transcription";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Speech transcription ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record audio for speech transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Use speech recognition on the Listening Tab in order to transcribe speech. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS9002;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearRing.hearRingiOSWatchOS7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;

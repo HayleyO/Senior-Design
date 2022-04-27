@@ -28,10 +28,10 @@ struct PresetsView: View {
     
     let defaultPresets =
     [
-        DefaultPreset(name: "Indoors", weakValue: 30.0, strongValue: 70.0),
-        DefaultPreset(name: "Outdoors", weakValue: 70.0, strongValue: 100.0),
-        DefaultPreset(name: "Resturaunt", weakValue: 60.0, strongValue: 105.0),
-        DefaultPreset(name: "Sleep", weakValue: 20.0, strongValue: 50.0)
+        DefaultPreset(name: "Indoors", weakValue: 50.0, strongValue: 75.0),
+        DefaultPreset(name: "Outdoors", weakValue: 70.0, strongValue: 85.0),
+        DefaultPreset(name: "Resturaunt", weakValue: 80.0, strongValue: 90.0),
+        DefaultPreset(name: "Sleep", weakValue: 73.0, strongValue: 100.0)
     ]
     
     @FetchRequest(sortDescriptors: []) var userPresets: FetchedResults<PresetEntity>
@@ -128,15 +128,17 @@ struct PresetsView: View {
             .accessibilityIdentifier("Create New Alarm")
         }
         .onAppear {
-            selectedPreset = originalSelected
+            //selectedPreset = originalSelected
+            selectedPreset = "No Preset"
             settings = controller.getSettings()
             editingEnabled = false
         }
         .onDisappear {
-            originalSelected = selectedPreset
             controller.updateSettings(buffer: settings.bufferValue, weak: settings.weakValue, strong: settings.strongValue)
             
             if(exit_presets == true) {
+                originalSelected = selectedPreset
+                
                 let settings2 = controller.getSettings()
                 print(settings2.weakValue, settings2.strongValue)
                 Connectivity.shared.SettingsChanged = Connectivity.SettingsInfo(bufferValue: settings2.bufferValue, weakValue: settings2.weakValue, strongValue: settings2.strongValue)

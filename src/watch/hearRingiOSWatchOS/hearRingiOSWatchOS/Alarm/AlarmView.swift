@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 
 struct AlarmView: View {
-  @FetchRequest(sortDescriptors: []) var alarms: FetchedResults<AlarmEntity>
-  @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.alarmTime), SortDescriptor(\.name)]) var alarms: FetchedResults<AlarmEntity>
+    @Environment(\.managedObjectContext) var moc
     
     var dateFormatter : DateFormatter{
         let dateFormatter = DateFormatter()
@@ -26,7 +26,7 @@ struct AlarmView: View {
                 NavigationLink {
                     AlarmEdit(alarm: alarm)
                 } label: {
-                    if (alarm.isEnabled)
+                    if (alarm.isEnabled && alarm.alarmTime?.timeIntervalSinceNow.sign == .plus)
                     {
                         HStack(alignment: .top) {
                           VStack(alignment: .leading) {
@@ -93,10 +93,13 @@ struct AlarmView: View {
                 }
                 .accessibilityIdentifier("Create New Alarm")
             }
-      }.onAppear() {
+      }
+      .onAppear() {
+          //sortedAlarms = alarms.sorted(by: { $0.alarmTime!.compare($1.alarmTime!) == .orderedDescending })
           Connectivity.shared.SendFirst()
       }
     }
+    
     func delete(at offsets: IndexSet) {
         for index in offsets {
                 let alarm = alarms[index]
