@@ -7,24 +7,22 @@
 
 import Foundation
 import SoundAnalysis
+import SwiftUI
 
 class SoundResultsObserver: NSObject, SNResultsObserving {
+    var globalResult:SNClassificationResult!
+    var globalClassification:SNClassification!
+    
+    func request(_ request: SNRequest, didProduce result: SNResult) {
 
-    func request(_ request: SNRequest, didProduce result: SNResult) { // Mark 1
-
-        guard let result = result as? SNClassificationResult else  { return } // Mark 2
-
-        guard let classification = result.classifications.first else { return } // Mark 3
-
-        let timeInSeconds = result.timeRange.start.seconds // Mark 4
-
-        let formattedTime = String(format: "%.2f", timeInSeconds)
-        print("Analysis result for audio at time: \(formattedTime)")
-
-        let confidence = classification.confidence * 100.0
-        let percentString = String(format: "%.2f%%", confidence)
-
-        print("\(classification.identifier): \(percentString) confidence.\n") // Mark 5
+        guard let result = result as? SNClassificationResult else  { return }
+        
+        guard let classification = result.classifications.first else { return }
+        
+        globalResult = result
+        globalClassification = classification
+        
+        print("You are hearing " + classification.identifier)
     }
 
     func request(_ request: SNRequest, didFailWithError error: Error) {

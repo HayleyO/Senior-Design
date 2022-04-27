@@ -16,6 +16,8 @@ class soundRecognizer : NSObject {
     var inputFormat: AVAudioFormat!
     var streamAnalyzer: SNAudioStreamAnalyzer!
     let sound = SoundResultsObserver()
+    var sound_val:SNClassification!
+    var out:String!
     
     override init() {
         super.init()
@@ -33,7 +35,6 @@ class soundRecognizer : NSObject {
 
             try streamAnalyzer.add(request, withObserver: sound)
 
-
         } catch {
             print("Unable to start AVAudioEngine: \(error.localizedDescription)")
         }
@@ -41,9 +42,11 @@ class soundRecognizer : NSObject {
     
     func analyzeAudio(buffer: AVAudioBuffer, at time: AVAudioTime) {
         DispatchQueue.main.async {
-            return self.streamAnalyzer.analyze(buffer,
-                                        atAudioFramePosition: time.sampleTime)
-            
+            self.streamAnalyzer.analyze(buffer, atAudioFramePosition: time.sampleTime)
+        }
+        sound_val = sound.globalClassification
+        if sound_val != nil {
+            out = sound_val.identifier
         }
     }
 }
