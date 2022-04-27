@@ -11,6 +11,8 @@ import Foundation
 struct ContentView: View {
     @StateObject var sharedData = Connectivity.shared
     @ObservedObject var dataModel = Chunking()
+    let soundrec = soundRecognizer()
+    var message:String!
     
     var body: some View {
         VStack {
@@ -23,9 +25,13 @@ struct ContentView: View {
                         recordModel.start()
                     }
                 }
-            
-            Text(sharedData.AlarmChanged.alarmName)
-            Text(String(sharedData.AlarmChanged.alarmEnabled))
+            let val = soundrec.analyzeAudio(buffer:at:)
+            let out:String = soundrec.out ?? ""
+            let message = "The watch is hearing: \n" + out
+        
+            Text(message)
+            /*Text(sharedData.AlarmChanged.alarmName)
+            Text(String(sharedData.AlarmChanged.alarmEnabled))*/
         }
     }
 }
