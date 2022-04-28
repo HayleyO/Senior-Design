@@ -55,10 +55,8 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "32">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/hearRingiOSWatchOS WatchKit App">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86AF8EC527BAB9E100EF0362"
@@ -66,7 +64,7 @@
             BlueprintName = "hearRingiOSWatchOS WatchKit App"
             ReferencedContainer = "container:hearRingiOSWatchOS.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,10 +73,8 @@
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "32">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/hearRingiOSWatchOS WatchKit App">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86AF8EC527BAB9E100EF0362"
@@ -86,16 +82,7 @@
             BlueprintName = "hearRingiOSWatchOS WatchKit App"
             ReferencedContainer = "container:hearRingiOSWatchOS.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "86AF8EC527BAB9E100EF0362"
-            BuildableName = "hearRingiOSWatchOS WatchKit App.app"
-            BlueprintName = "hearRingiOSWatchOS WatchKit App"
-            ReferencedContainer = "container:hearRingiOSWatchOS.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

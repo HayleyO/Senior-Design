@@ -43,16 +43,18 @@ class Vibration: NSObject{
     }
     
     // vibrate for alarms 
-    func vibrateAlarm() async{
-        var v = vibrate
-        while(v){
-            v = vibrate
-            await WKInterfaceDevice.current().play(.notification)
+    func vibrateAlarm() {
+        var i = 0
+        while(i<5){
+            print(i)
+            WKInterfaceDevice.current().play(.notification)
+            sleep(2)
+            i += 1
         }
     }
     
     func stopAlarmVibration(){
-        vibrate=false
+        self.vibrate=false
     }
 
 }

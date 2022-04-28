@@ -13,7 +13,6 @@ import CoreData
 class ExtensionDelegate: NSObject, WKExtensionDelegate{
     
     let container = NSPersistentContainer(name: "Model")
-    public var dismissed = false
     let alarms = DispatchQueue(label:"alarmQueue")
     let v = Vibration()
     
@@ -35,11 +34,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
             UNUserNotificationCenter.current().add(newRequest)
         }
         completionHandler()
-        dismissed = true
-        //test.async {
-            self.v.stopAlarmVibration()
-        //}
-        
     }
 }
 
@@ -47,12 +41,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
 // stackoverflow.com/questions/14872088
 extension ExtensionDelegate: UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
+        completionHandler([.banner])
         alarms.async {
-            completionHandler([.banner])
             self.v.vibrateAlarm()
         }
-        
     }
+
 }
+
 
