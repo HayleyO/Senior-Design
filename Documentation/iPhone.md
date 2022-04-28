@@ -2,7 +2,10 @@
 This page contains a transcript of what is being said in the area surrounding the user's iPhone. This is accomplished via speech-to-text. After one minute the iPhone will clear the screen and begin printing the transcript at the top of the screen again.
 
 # Speak Page
-This page features a voice list with numerous system voices to read the specified dialogue. There is a text field towards the bottom of the page that allows user input. There is a button underneath that when pushed will read out what the user has typed. This will better enable the user to communicate with someone who does not comprehend sign language.
+This page features a "Voices" button at the top that takes the user to a voice selection page. There is a text field towards the middle of the page that allows user input. There is a button underneath, titled "Speak," that when pushed will read out what the user has typed. This will better enable the user to communicate with someone who does not comprehend sign language.
+
+## Voice Selection
+This page features numerous voices for the user to select. The selected voice will speak the words, phrases, or sentences that the user specifies. The voices will have a name followed by the two letter abbreviation "en" signifying that they are intended for English. This will be followed by another two letter abbreviation signifying their intended accent. The abbreviations are as follows AU for Australian, GB for British, IE for Irish, IN for Indian, US for United States, ZA for South Africa.
 
 # Alarm List Page
 This page displays all the alarms that the user has created through our app. These alarms are synchronized with the watchOS app. The alarms will ring and vibrate on the watch. The user can delete an alarm by swiping left on it, which will reveal the delete button for them to click. There is a "+" button in the top right corner of the page for creating new alarms and it takes the user to the alarm creation page. Alarms that are set in the past or have already gone off will appear greyed out.
