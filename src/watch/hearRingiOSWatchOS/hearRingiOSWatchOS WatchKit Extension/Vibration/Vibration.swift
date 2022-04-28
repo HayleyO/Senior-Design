@@ -16,6 +16,9 @@ class Vibration: NSObject{
     //tracks previous volume value to determine whether the change in decibel level is significant enough for a vibration
     var storedVolume: Double = 0.0
     
+    // whether the alarm should be vibrating
+    var vibrate: Bool = true
+    
     
     // vibrate according to decibel level
     // if a threshold is hit, vibrate
@@ -40,8 +43,17 @@ class Vibration: NSObject{
     }
     
     // vibrate for alarms 
-    func vibrateAlarm(){
-        WKInterfaceDevice.current().play(.notification)
+    func vibrateAlarm() {
+        var i = 0
+        while(i<3){
+            WKInterfaceDevice.current().play(.notification)
+            sleep(2)
+            i += 1
+        }
+    }
+    
+    func stopAlarmVibration(){
+        self.vibrate=false
     }
 
 }

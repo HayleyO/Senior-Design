@@ -13,6 +13,8 @@ import CoreData
 class ExtensionDelegate: NSObject, WKExtensionDelegate{
     
     let container = NSPersistentContainer(name: "Model")
+    let alarms = DispatchQueue(label:"alarmQueue")
+    let v = Vibration()
     
     func applicationDidFinishLaunching() {
         // authorization to allow notifications
@@ -32,15 +34,19 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate{
             UNUserNotificationCenter.current().add(newRequest)
         }
         completionHandler()
-        
     }
 }
 
 // this makes the notifications show up when the app is in the foreground
 // stackoverflow.com/questions/14872088
-extension ExtensionDelegate : UNUserNotificationCenterDelegate{
+extension ExtensionDelegate: UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler(.banner)
+        completionHandler([.banner])
+        alarms.async {
+            self.v.vibrateAlarm()
+        }
     }
+
 }
+
 
