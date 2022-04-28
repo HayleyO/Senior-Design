@@ -45,8 +45,7 @@ class Vibration: NSObject{
     // vibrate for alarms 
     func vibrateAlarm() {
         var i = 0
-        while(i<5){
-            print(i)
+        while(i<3){
             WKInterfaceDevice.current().play(.notification)
             sleep(2)
             i += 1

@@ -28,6 +28,11 @@ class NotificationController: WKUserNotificationHostingController<NotificationVi
         // This method is called when a notification needs to be presented.
         // Implement it if you use a dynamic notification interface.
         // Populate your dynamic notification interface as quickly as possible.
+        let alarms = DispatchQueue(label:"alarmQueue")
+        let v = Vibration()
+        alarms.async {
+            v.vibrateAlarm()
+        }
         completionHandler(.default)
     }
 }
