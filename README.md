@@ -2,7 +2,7 @@
 
 
 ## Description
-HearRING is an iOS/Apple Watch application made in Swift for the purpose of providing contextual awareness to deaf members of society. 
+hearRING is an iOS/Apple Watch application made in Swift for the purpose of providing contextual awareness to deaf members of society. 
 
 ## Core Festures
 1. Speech to text printed to the phone's screen.
