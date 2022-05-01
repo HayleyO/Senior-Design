@@ -38,8 +38,8 @@ function About() {
                 <div className="divider" />
                     <div className="subHeader" style={{ marginLeft: "25px" }}>Acknowledgements</div>
                     <div className="indentedBodyText" style={{ marginLeft: "50px" }}>
-                    <p>Thank you to Dr. Jim Palmer, Mrs. Sylvia Schultz, Dr. Mary Caldorera-Moore, and the Lousiana Tech Computer Help Desk and Library for providing the devices we needed for this project. </p>
-                    <p>Thank you to Jacob Hicks, Dr. Steven Madix, Dr. Mike O'Neal and Kyle Prather for insight and feedback.</p>
+                    <p>Thank you to Dr. Jim Palmer, Mrs. Sylvia Schultz, Dr. Mary Caldorera-Moore, and the Louisiana Tech Computer Help Desk and Library for providing the devices we needed for this project. </p>
+                    <p>Thank you to Jacob Hicks, Dr. Steven Madix, Dr. Mike O'Neal, and Kyle Prather for insight and feedback.</p>
                 </div>
                 </div>
                 </div>
