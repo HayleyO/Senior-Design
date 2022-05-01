@@ -12,16 +12,16 @@ function About() {
             <Header style={{ width: "100%" }} />
 
             <div style={{ width: "100%", textAlign: "center" }}>
-                <div className="pageHeader">About HearRING</div>
+                <div className="pageHeader">About hearRING</div>
                 <div className="pagePanel">
                 <div className="indentedBodyText">
-                    <p>HearRING is an iOS app and connected Apple Watch app with the goal of connecting hearing-impaired users to their surroundings.
-                        Whether someone is yelling at you, a car is driving by, or a dog is barking, our HearRING watch app will vibrate to get your attention.</p>
+                    <p>hearRING is an iOS app and connected Apple Watch app with the goal of connecting hearing-impaired users to their surroundings.
+                        Whether someone is yelling at you, a car is driving by, or a dog is barking, our hearRING watch app will vibrate to get your attention.</p>
                     <p>Unfortunately, we live in a world where not everyone knows sign language.
-                        HearRING's goal is to overcome obstacles to communication by providing a transcript of conversations - like closed captions for everyday life.
+                        hearRING's goal is to overcome obstacles to communication by providing a transcript of conversations - like closed captions for everyday life.
                         The Listening feature is powered by artificial intelligence to bring you a real-time conversion of sounds into text, and the Speak feature allows you to reply through your phone.
                         </p>
-                    <p>HearRING combines features into a one stop shop for all your accessibility needs: vibration, real-time transcript, text to speech, vibrating alarms, and customizable settings all in one straighforward app.
+                    <p>hearRING combines features into a one stop shop for all your accessibility needs: vibration, real-time transcript, text to speech, vibrating alarms, and customizable settings all in one straighforward app.
                         </p>
                 </div>
                 <div className="divider"/>
@@ -38,8 +38,8 @@ function About() {
                 <div className="divider" />
                     <div className="subHeader" style={{ marginLeft: "25px" }}>Acknowledgements</div>
                     <div className="indentedBodyText" style={{ marginLeft: "50px" }}>
-                    <p>Thank you to Dr. Jim Palmer, Mrs. Sylvia Schultz, Dr. Mary Caldorera-Moore, and the Lousiana Tech Computer Help Desk and Library for providing the devices we needed for this project. </p>
-                    <p>Thank you to Jacob Hicks, Dr. Steven Madix, Dr. Mike O'Neal and Kyle Prather for insight and feedback.</p>
+                    <p>Thank you to Dr. Jim Palmer, Mrs. Sylvia Schultz, Dr. Mary Caldorera-Moore, and the Louisiana Tech Computer Help Desk and Library for providing the devices we needed for this project. </p>
+                    <p>Thank you to Jacob Hicks, Dr. Steven Madix, Dr. Mike O'Neal, and Kyle Prather for insight and feedback.</p>
                 </div>
                 </div>
                 </div>
