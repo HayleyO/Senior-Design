@@ -20,5 +20,5 @@ Requirements: A modern (Mojave or later) MacOS environment with Xcode 13 or late
 To build the project: 
 1. Open the hearRINGiOSWatchOS.xcodeproject file, located in the app's main folder, in Xcode. 
 2. Either: 
-  a. build the project to a built-in emulator
-  b. Connect an iPhone (6 or later) paired to an Apple Watch (Series 3 or later) to the computer running Xcode and build to the physical devices.
+   - Build the project to a built-in emulator
+   - Connect an iPhone (6 or later) paired to an Apple Watch (Series 3 or later) to the computer running Xcode and build to the physical devices.
